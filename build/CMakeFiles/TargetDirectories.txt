@@ -1,0 +1,3 @@
+C:/Projects/Appetito/build/CMakeFiles/hicmake.dir
+C:/Projects/Appetito/build/CMakeFiles/edit_cache.dir
+C:/Projects/Appetito/build/CMakeFiles/rebuild_cache.dir
