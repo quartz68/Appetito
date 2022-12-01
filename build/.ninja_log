@@ -1,4 +1,5 @@
 # ninja log v5
 3	577	6915758066267114	CMakeFiles/cpp-compiler.dir/hicmake.cpp.obj	61873d77edc8ef4d
 14	608	6915758615155983	CMakeFiles/hicmake.dir/hicmake.cpp.obj	e9a9c9e50f9e77b2
-613	802	6915758617019230	bin/hicmake.exe	2a9e8ba8ed1c8f96
+4	5141	6915780777217394	CMakeFiles/main.dir/src/main.cpp.obj	7b72ba2eab2939a3
+23	573	6915782962069682	bin/main.exe	7f34128ab39a21fd

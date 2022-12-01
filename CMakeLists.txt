@@ -5,4 +5,12 @@ cmake_minimum_required(VERSION 3.25)
 
 project(Appetito)
 
-add_executable(hicmake main.cpp)
+add_definitions(-DASIO_STANDALONE)
+
+include_directories(./libs/asio/include)
+
+add_executable(main src/main.cpp)
+
+if(MINGW)
+  target_link_libraries(main ws2_32)
+endif()

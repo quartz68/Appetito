@@ -1,7 +1,7 @@
 [
 {
   "directory": "C:/Projects/Appetito/build",
-  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -g -o CMakeFiles\\hicmake.dir\\main.cpp.obj -c C:\\Projects\\Appetito\\main.cpp",
-  "file": "C:\\Projects\\Appetito\\main.cpp"
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DASIO_STANDALONE -IC:/Projects/Appetito/./libs/asio/include -g -o CMakeFiles\\main.dir\\src\\main.cpp.obj -c C:\\Projects\\Appetito\\src\\main.cpp",
+  "file": "C:\\Projects\\Appetito\\src\\main.cpp"
 }
 ]

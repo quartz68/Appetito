@@ -41,37 +41,39 @@ include CMakeFiles/rules.ninja
 
 cmake_ninja_workdir = C$:/Projects/Appetito/build/
 # =============================================================================
-# Object build statements for EXECUTABLE target hicmake
+# Object build statements for EXECUTABLE target main
 
 
 #############################################
-# Order-only phony target for hicmake
+# Order-only phony target for main
 
-build cmake_object_order_depends_target_hicmake: phony || CMakeFiles/hicmake.dir
+build cmake_object_order_depends_target_main: phony || CMakeFiles/main.dir
 
-build CMakeFiles/hicmake.dir/main.cpp.obj: CXX_COMPILER__hicmake_Debug C$:/Projects/Appetito/main.cpp || cmake_object_order_depends_target_hicmake
-  DEP_FILE = CMakeFiles\hicmake.dir\main.cpp.obj.d
+build CMakeFiles/main.dir/src/main.cpp.obj: CXX_COMPILER__main_Debug C$:/Projects/Appetito/src/main.cpp || cmake_object_order_depends_target_main
+  DEFINES = -DASIO_STANDALONE
+  DEP_FILE = CMakeFiles\main.dir\src\main.cpp.obj.d
   FLAGS = -g
-  OBJECT_DIR = CMakeFiles\hicmake.dir
-  OBJECT_FILE_DIR = CMakeFiles\hicmake.dir
+  INCLUDES = -IC:/Projects/Appetito/./libs/asio/include
+  OBJECT_DIR = CMakeFiles\main.dir
+  OBJECT_FILE_DIR = CMakeFiles\main.dir\src
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target hicmake
+# Link build statements for EXECUTABLE target main
 
 
 #############################################
-# Link the executable bin\hicmake.exe
+# Link the executable bin\main.exe
 
-build bin/hicmake.exe: CXX_EXECUTABLE_LINKER__hicmake_Debug CMakeFiles/hicmake.dir/main.cpp.obj
+build bin/main.exe: CXX_EXECUTABLE_LINKER__main_Debug CMakeFiles/main.dir/src/main.cpp.obj
   FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\hicmake.dir
+  LINK_LIBRARIES = -lws2_32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\main.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = bin\hicmake.exe
-  TARGET_IMPLIB = libhicmake.dll.a
-  TARGET_PDB = hicmake.exe.dbg
+  TARGET_FILE = bin\main.exe
+  TARGET_IMPLIB = libmain.dll.a
+  TARGET_PDB = main.exe.dbg
 
 
 #############################################
@@ -100,9 +102,9 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build hicmake: phony bin/hicmake.exe
+build main: phony bin/main.exe
 
-build hicmake.exe: phony bin/hicmake.exe
+build main.exe: phony bin/main.exe
 
 # =============================================================================
 # Folder targets.
@@ -112,7 +114,7 @@ build hicmake.exe: phony bin/hicmake.exe
 #############################################
 # Folder: C:/Projects/Appetito/build
 
-build all: phony bin/hicmake.exe
+build all: phony bin/main.exe
 
 # =============================================================================
 # Built-in targets
