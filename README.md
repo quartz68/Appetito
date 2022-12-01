@@ -1,6 +1,6 @@
-# Appetito
+# 🍜 吃了没 Appetito
 
-Restaurant order management system based on C++ and Qt
+Restaurant order management system based on C++ and Qt (WIP)
 
 ---
 
@@ -8,6 +8,7 @@ Restaurant order management system based on C++ and Qt
 
 Restaurant order management system based on C++ and Qt, with one server and three clients, networking implemented using TCP and sockets with asio library.
 The goal is to be as efficient, modular, and deployable as we are able to implement.
+Work in progress.
 This is a student project by three students at Hefei University of Technology.
 
 ## Roadmap
