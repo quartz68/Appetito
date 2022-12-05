@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "libconcli_lib.a"
+			"path" : "libcustomer_notif_lib.a"
 		}
 	],
 	"backtrace" : 1,
@@ -27,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 17,
+				"line" : 32,
 				"parent" : 0
 			},
 			{
@@ -58,6 +58,12 @@
 				"command" : 2,
 				"file" : 0,
 				"line" : 13,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 14,
 				"parent" : 0
 			}
 		]
@@ -94,7 +100,11 @@
 				},
 				{
 					"backtrace" : 6,
-					"path" : "C:/Projects/Appetito/./libs/include"
+					"path" : "C:/Projects/Appetito/./libs/protocol/include"
+				},
+				{
+					"backtrace" : 7,
+					"path" : "C:/Projects/Appetito/./libs/restaurant_util/include"
 				}
 			],
 			"language" : "CXX",
@@ -104,9 +114,9 @@
 			]
 		}
 	],
-	"id" : "concli_lib::@6890427a1f51a3e7e1df",
-	"name" : "concli_lib",
-	"nameOnDisk" : "libconcli_lib.a",
+	"id" : "customer_notif_lib::@6890427a1f51a3e7e1df",
+	"name" : "customer_notif_lib",
+	"nameOnDisk" : "libcustomer_notif_lib.a",
 	"paths" : 
 	{
 		"build" : ".",
@@ -133,13 +143,13 @@
 	[
 		{
 			"backtrace" : 1,
-			"path" : "libs/server/include/connected_client.hpp",
+			"path" : "libs/restaurant_util/include/customer_notif.hpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "libs/server/src/connected_client.cpp",
+			"path" : "libs/restaurant_util/src/customer_notif.cpp",
 			"sourceGroupIndex" : 1
 		}
 	],

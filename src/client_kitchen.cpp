@@ -6,7 +6,7 @@ int main(int argc, char* argv[])
 {
     try {
         if (argc != 4) {
-            std::cerr << "Usage: chat_client <nickname> <host> <port>\n";
+            std::cerr << "Usage: client_kitchen <client_id> <host> <port>\n";
             return 1;
         }
         asio::io_context io_context;

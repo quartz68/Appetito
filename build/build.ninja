@@ -53,7 +53,7 @@ build CMakeFiles/client_lib.dir/libs/client/src/client.cpp.obj: CXX_COMPILER__cl
   DEFINES = -DASIO_STANDALONE
   DEP_FILE = CMakeFiles\client_lib.dir\libs\client\src\client.cpp.obj.d
   FLAGS = -g
-  INCLUDES = -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/include
+  INCLUDES = -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/protocol/include -IC:/Projects/Appetito/./libs/restaurant_util/include
   OBJECT_DIR = CMakeFiles\client_lib.dir
   OBJECT_FILE_DIR = CMakeFiles\client_lib.dir\libs\client\src
 
@@ -86,7 +86,7 @@ build CMakeFiles/red_lib.dir/libs/server/src/redirector.cpp.obj: CXX_COMPILER__r
   DEFINES = -DASIO_STANDALONE
   DEP_FILE = CMakeFiles\red_lib.dir\libs\server\src\redirector.cpp.obj.d
   FLAGS = -g
-  INCLUDES = -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/include
+  INCLUDES = -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/protocol/include -IC:/Projects/Appetito/./libs/restaurant_util/include
   OBJECT_DIR = CMakeFiles\red_lib.dir
   OBJECT_FILE_DIR = CMakeFiles\red_lib.dir\libs\server\src
 
@@ -119,7 +119,7 @@ build CMakeFiles/concli_lib.dir/libs/server/src/connected_client.cpp.obj: CXX_CO
   DEFINES = -DASIO_STANDALONE
   DEP_FILE = CMakeFiles\concli_lib.dir\libs\server\src\connected_client.cpp.obj.d
   FLAGS = -g
-  INCLUDES = -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/include
+  INCLUDES = -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/protocol/include -IC:/Projects/Appetito/./libs/restaurant_util/include
   OBJECT_DIR = CMakeFiles\concli_lib.dir
   OBJECT_FILE_DIR = CMakeFiles\concli_lib.dir\libs\server\src
 
@@ -152,7 +152,7 @@ build CMakeFiles/server_lib.dir/libs/server/src/server.cpp.obj: CXX_COMPILER__se
   DEFINES = -DASIO_STANDALONE
   DEP_FILE = CMakeFiles\server_lib.dir\libs\server\src\server.cpp.obj.d
   FLAGS = -g
-  INCLUDES = -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/include
+  INCLUDES = -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/protocol/include -IC:/Projects/Appetito/./libs/restaurant_util/include
   OBJECT_DIR = CMakeFiles\server_lib.dir
   OBJECT_FILE_DIR = CMakeFiles\server_lib.dir\libs\server\src
 
@@ -173,39 +173,307 @@ build libserver_lib.a: CXX_STATIC_LIBRARY_LINKER__server_lib_Debug CMakeFiles/se
   TARGET_PDB = server_lib.a.dbg
 
 # =============================================================================
-# Object build statements for EXECUTABLE target client
+# Object build statements for STATIC_LIBRARY target food_lib
 
 
 #############################################
-# Order-only phony target for client
+# Order-only phony target for food_lib
 
-build cmake_object_order_depends_target_client: phony || cmake_object_order_depends_target_client_lib
+build cmake_object_order_depends_target_food_lib: phony || CMakeFiles/food_lib.dir
 
-build CMakeFiles/client.dir/src/Client1.cpp.obj: CXX_COMPILER__client_Debug C$:/Projects/Appetito/src/Client1.cpp || cmake_object_order_depends_target_client
+build CMakeFiles/food_lib.dir/libs/restaurant_util/src/food.cpp.obj: CXX_COMPILER__food_lib_Debug C$:/Projects/Appetito/libs/restaurant_util/src/food.cpp || cmake_object_order_depends_target_food_lib
   DEFINES = -DASIO_STANDALONE
-  DEP_FILE = CMakeFiles\client.dir\src\Client1.cpp.obj.d
+  DEP_FILE = CMakeFiles\food_lib.dir\libs\restaurant_util\src\food.cpp.obj.d
   FLAGS = -g
-  INCLUDES = -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/include
-  OBJECT_DIR = CMakeFiles\client.dir
-  OBJECT_FILE_DIR = CMakeFiles\client.dir\src
+  INCLUDES = -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/protocol/include -IC:/Projects/Appetito/./libs/restaurant_util/include
+  OBJECT_DIR = CMakeFiles\food_lib.dir
+  OBJECT_FILE_DIR = CMakeFiles\food_lib.dir\libs\restaurant_util\src
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target client
+# Link build statements for STATIC_LIBRARY target food_lib
 
 
 #############################################
-# Link the executable bin\client.exe
+# Link the static library libfood_lib.a
 
-build bin/client.exe: CXX_EXECUTABLE_LINKER__client_Debug CMakeFiles/client.dir/src/Client1.cpp.obj | libclient_lib.a || libclient_lib.a
-  FLAGS = -g
-  LINK_LIBRARIES = libclient_lib.a  -lws2_32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\client.dir
+build libfood_lib.a: CXX_STATIC_LIBRARY_LINKER__food_lib_Debug CMakeFiles/food_lib.dir/libs/restaurant_util/src/food.cpp.obj
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = CMakeFiles\food_lib.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = bin\client.exe
-  TARGET_IMPLIB = libclient.dll.a
-  TARGET_PDB = client.exe.dbg
+  TARGET_FILE = libfood_lib.a
+  TARGET_PDB = food_lib.a.dbg
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target table_lib
+
+
+#############################################
+# Order-only phony target for table_lib
+
+build cmake_object_order_depends_target_table_lib: phony || CMakeFiles/table_lib.dir
+
+build CMakeFiles/table_lib.dir/libs/restaurant_util/src/table.cpp.obj: CXX_COMPILER__table_lib_Debug C$:/Projects/Appetito/libs/restaurant_util/src/table.cpp || cmake_object_order_depends_target_table_lib
+  DEFINES = -DASIO_STANDALONE
+  DEP_FILE = CMakeFiles\table_lib.dir\libs\restaurant_util\src\table.cpp.obj.d
+  FLAGS = -g
+  INCLUDES = -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/protocol/include -IC:/Projects/Appetito/./libs/restaurant_util/include
+  OBJECT_DIR = CMakeFiles\table_lib.dir
+  OBJECT_FILE_DIR = CMakeFiles\table_lib.dir\libs\restaurant_util\src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target table_lib
+
+
+#############################################
+# Link the static library libtable_lib.a
+
+build libtable_lib.a: CXX_STATIC_LIBRARY_LINKER__table_lib_Debug CMakeFiles/table_lib.dir/libs/restaurant_util/src/table.cpp.obj
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = CMakeFiles\table_lib.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = libtable_lib.a
+  TARGET_PDB = table_lib.a.dbg
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target customer_menu_lib
+
+
+#############################################
+# Order-only phony target for customer_menu_lib
+
+build cmake_object_order_depends_target_customer_menu_lib: phony || cmake_object_order_depends_target_food_lib
+
+build CMakeFiles/customer_menu_lib.dir/libs/restaurant_util/src/customer_menu.cpp.obj: CXX_COMPILER__customer_menu_lib_Debug C$:/Projects/Appetito/libs/restaurant_util/src/customer_menu.cpp || cmake_object_order_depends_target_customer_menu_lib
+  DEFINES = -DASIO_STANDALONE
+  DEP_FILE = CMakeFiles\customer_menu_lib.dir\libs\restaurant_util\src\customer_menu.cpp.obj.d
+  FLAGS = -g
+  INCLUDES = -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/protocol/include -IC:/Projects/Appetito/./libs/restaurant_util/include
+  OBJECT_DIR = CMakeFiles\customer_menu_lib.dir
+  OBJECT_FILE_DIR = CMakeFiles\customer_menu_lib.dir\libs\restaurant_util\src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target customer_menu_lib
+
+
+#############################################
+# Link the static library libcustomer_menu_lib.a
+
+build libcustomer_menu_lib.a: CXX_STATIC_LIBRARY_LINKER__customer_menu_lib_Debug CMakeFiles/customer_menu_lib.dir/libs/restaurant_util/src/customer_menu.cpp.obj || libfood_lib.a
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = CMakeFiles\customer_menu_lib.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = libcustomer_menu_lib.a
+  TARGET_PDB = customer_menu_lib.a.dbg
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target customer_order_deal_lib
+
+
+#############################################
+# Order-only phony target for customer_order_deal_lib
+
+build cmake_object_order_depends_target_customer_order_deal_lib: phony || cmake_object_order_depends_target_food_lib cmake_object_order_depends_target_table_lib
+
+build CMakeFiles/customer_order_deal_lib.dir/libs/restaurant_util/src/customer_order_deal.cpp.obj: CXX_COMPILER__customer_order_deal_lib_Debug C$:/Projects/Appetito/libs/restaurant_util/src/customer_order_deal.cpp || cmake_object_order_depends_target_customer_order_deal_lib
+  DEFINES = -DASIO_STANDALONE
+  DEP_FILE = CMakeFiles\customer_order_deal_lib.dir\libs\restaurant_util\src\customer_order_deal.cpp.obj.d
+  FLAGS = -g
+  INCLUDES = -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/protocol/include -IC:/Projects/Appetito/./libs/restaurant_util/include
+  OBJECT_DIR = CMakeFiles\customer_order_deal_lib.dir
+  OBJECT_FILE_DIR = CMakeFiles\customer_order_deal_lib.dir\libs\restaurant_util\src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target customer_order_deal_lib
+
+
+#############################################
+# Link the static library libcustomer_order_deal_lib.a
+
+build libcustomer_order_deal_lib.a: CXX_STATIC_LIBRARY_LINKER__customer_order_deal_lib_Debug CMakeFiles/customer_order_deal_lib.dir/libs/restaurant_util/src/customer_order_deal.cpp.obj || libfood_lib.a libtable_lib.a
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = CMakeFiles\customer_order_deal_lib.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = libcustomer_order_deal_lib.a
+  TARGET_PDB = customer_order_deal_lib.a.dbg
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target customer_notif_lib
+
+
+#############################################
+# Order-only phony target for customer_notif_lib
+
+build cmake_object_order_depends_target_customer_notif_lib: phony || CMakeFiles/customer_notif_lib.dir
+
+build CMakeFiles/customer_notif_lib.dir/libs/restaurant_util/src/customer_notif.cpp.obj: CXX_COMPILER__customer_notif_lib_Debug C$:/Projects/Appetito/libs/restaurant_util/src/customer_notif.cpp || cmake_object_order_depends_target_customer_notif_lib
+  DEFINES = -DASIO_STANDALONE
+  DEP_FILE = CMakeFiles\customer_notif_lib.dir\libs\restaurant_util\src\customer_notif.cpp.obj.d
+  FLAGS = -g
+  INCLUDES = -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/protocol/include -IC:/Projects/Appetito/./libs/restaurant_util/include
+  OBJECT_DIR = CMakeFiles\customer_notif_lib.dir
+  OBJECT_FILE_DIR = CMakeFiles\customer_notif_lib.dir\libs\restaurant_util\src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target customer_notif_lib
+
+
+#############################################
+# Link the static library libcustomer_notif_lib.a
+
+build libcustomer_notif_lib.a: CXX_STATIC_LIBRARY_LINKER__customer_notif_lib_Debug CMakeFiles/customer_notif_lib.dir/libs/restaurant_util/src/customer_notif.cpp.obj
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = CMakeFiles\customer_notif_lib.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = libcustomer_notif_lib.a
+  TARGET_PDB = customer_notif_lib.a.dbg
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target kitchen_request_lib
+
+
+#############################################
+# Order-only phony target for kitchen_request_lib
+
+build cmake_object_order_depends_target_kitchen_request_lib: phony || CMakeFiles/kitchen_request_lib.dir
+
+build CMakeFiles/kitchen_request_lib.dir/libs/restaurant_util/src/kitchen_request.cpp.obj: CXX_COMPILER__kitchen_request_lib_Debug C$:/Projects/Appetito/libs/restaurant_util/src/kitchen_request.cpp || cmake_object_order_depends_target_kitchen_request_lib
+  DEFINES = -DASIO_STANDALONE
+  DEP_FILE = CMakeFiles\kitchen_request_lib.dir\libs\restaurant_util\src\kitchen_request.cpp.obj.d
+  FLAGS = -g
+  INCLUDES = -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/protocol/include -IC:/Projects/Appetito/./libs/restaurant_util/include
+  OBJECT_DIR = CMakeFiles\kitchen_request_lib.dir
+  OBJECT_FILE_DIR = CMakeFiles\kitchen_request_lib.dir\libs\restaurant_util\src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target kitchen_request_lib
+
+
+#############################################
+# Link the static library libkitchen_request_lib.a
+
+build libkitchen_request_lib.a: CXX_STATIC_LIBRARY_LINKER__kitchen_request_lib_Debug CMakeFiles/kitchen_request_lib.dir/libs/restaurant_util/src/kitchen_request.cpp.obj
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = CMakeFiles\kitchen_request_lib.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = libkitchen_request_lib.a
+  TARGET_PDB = kitchen_request_lib.a.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target client_customer
+
+
+#############################################
+# Order-only phony target for client_customer
+
+build cmake_object_order_depends_target_client_customer: phony || cmake_object_order_depends_target_client_lib
+
+build CMakeFiles/client_customer.dir/src/client_customer.cpp.obj: CXX_COMPILER__client_customer_Debug C$:/Projects/Appetito/src/client_customer.cpp || cmake_object_order_depends_target_client_customer
+  DEFINES = -DASIO_STANDALONE
+  DEP_FILE = CMakeFiles\client_customer.dir\src\client_customer.cpp.obj.d
+  FLAGS = -g
+  INCLUDES = -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/protocol/include -IC:/Projects/Appetito/./libs/restaurant_util/include
+  OBJECT_DIR = CMakeFiles\client_customer.dir
+  OBJECT_FILE_DIR = CMakeFiles\client_customer.dir\src
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target client_customer
+
+
+#############################################
+# Link the executable bin\client_customer.exe
+
+build bin/client_customer.exe: CXX_EXECUTABLE_LINKER__client_customer_Debug CMakeFiles/client_customer.dir/src/client_customer.cpp.obj | libclient_lib.a || libclient_lib.a
+  FLAGS = -g
+  LINK_LIBRARIES = libclient_lib.a  -lws2_32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\client_customer.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = bin\client_customer.exe
+  TARGET_IMPLIB = libclient_customer.dll.a
+  TARGET_PDB = client_customer.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target client_kitchen
+
+
+#############################################
+# Order-only phony target for client_kitchen
+
+build cmake_object_order_depends_target_client_kitchen: phony || cmake_object_order_depends_target_client_lib
+
+build CMakeFiles/client_kitchen.dir/src/client_kitchen.cpp.obj: CXX_COMPILER__client_kitchen_Debug C$:/Projects/Appetito/src/client_kitchen.cpp || cmake_object_order_depends_target_client_kitchen
+  DEFINES = -DASIO_STANDALONE
+  DEP_FILE = CMakeFiles\client_kitchen.dir\src\client_kitchen.cpp.obj.d
+  FLAGS = -g
+  INCLUDES = -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/protocol/include -IC:/Projects/Appetito/./libs/restaurant_util/include
+  OBJECT_DIR = CMakeFiles\client_kitchen.dir
+  OBJECT_FILE_DIR = CMakeFiles\client_kitchen.dir\src
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target client_kitchen
+
+
+#############################################
+# Link the executable bin\client_kitchen.exe
+
+build bin/client_kitchen.exe: CXX_EXECUTABLE_LINKER__client_kitchen_Debug CMakeFiles/client_kitchen.dir/src/client_kitchen.cpp.obj | libclient_lib.a || libclient_lib.a
+  FLAGS = -g
+  LINK_LIBRARIES = libclient_lib.a  -lws2_32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\client_kitchen.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = bin\client_kitchen.exe
+  TARGET_IMPLIB = libclient_kitchen.dll.a
+  TARGET_PDB = client_kitchen.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target client_waiter
+
+
+#############################################
+# Order-only phony target for client_waiter
+
+build cmake_object_order_depends_target_client_waiter: phony || cmake_object_order_depends_target_client_lib
+
+build CMakeFiles/client_waiter.dir/src/client_waiter.cpp.obj: CXX_COMPILER__client_waiter_Debug C$:/Projects/Appetito/src/client_waiter.cpp || cmake_object_order_depends_target_client_waiter
+  DEFINES = -DASIO_STANDALONE
+  DEP_FILE = CMakeFiles\client_waiter.dir\src\client_waiter.cpp.obj.d
+  FLAGS = -g
+  INCLUDES = -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/protocol/include -IC:/Projects/Appetito/./libs/restaurant_util/include
+  OBJECT_DIR = CMakeFiles\client_waiter.dir
+  OBJECT_FILE_DIR = CMakeFiles\client_waiter.dir\src
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target client_waiter
+
+
+#############################################
+# Link the executable bin\client_waiter.exe
+
+build bin/client_waiter.exe: CXX_EXECUTABLE_LINKER__client_waiter_Debug CMakeFiles/client_waiter.dir/src/client_waiter.cpp.obj | libclient_lib.a || libclient_lib.a
+  FLAGS = -g
+  LINK_LIBRARIES = libclient_lib.a  -lws2_32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\client_waiter.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = bin\client_waiter.exe
+  TARGET_IMPLIB = libclient_waiter.dll.a
+  TARGET_PDB = client_waiter.exe.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target server
@@ -216,11 +484,11 @@ build bin/client.exe: CXX_EXECUTABLE_LINKER__client_Debug CMakeFiles/client.dir/
 
 build cmake_object_order_depends_target_server: phony || cmake_object_order_depends_target_red_lib cmake_object_order_depends_target_server_lib
 
-build CMakeFiles/server.dir/src/Server1.cpp.obj: CXX_COMPILER__server_Debug C$:/Projects/Appetito/src/Server1.cpp || cmake_object_order_depends_target_server
+build CMakeFiles/server.dir/src/server_main.cpp.obj: CXX_COMPILER__server_Debug C$:/Projects/Appetito/src/server_main.cpp || cmake_object_order_depends_target_server
   DEFINES = -DASIO_STANDALONE
-  DEP_FILE = CMakeFiles\server.dir\src\Server1.cpp.obj.d
+  DEP_FILE = CMakeFiles\server.dir\src\server_main.cpp.obj.d
   FLAGS = -g
-  INCLUDES = -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/include
+  INCLUDES = -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/protocol/include -IC:/Projects/Appetito/./libs/restaurant_util/include
   OBJECT_DIR = CMakeFiles\server.dir
   OBJECT_FILE_DIR = CMakeFiles\server.dir\src
 
@@ -232,7 +500,7 @@ build CMakeFiles/server.dir/src/Server1.cpp.obj: CXX_COMPILER__server_Debug C$:/
 #############################################
 # Link the executable bin\server.exe
 
-build bin/server.exe: CXX_EXECUTABLE_LINKER__server_Debug CMakeFiles/server.dir/src/Server1.cpp.obj | libserver_lib.a libred_lib.a libconcli_lib.a libred_lib.a libconcli_lib.a || libred_lib.a libserver_lib.a
+build bin/server.exe: CXX_EXECUTABLE_LINKER__server_Debug CMakeFiles/server.dir/src/server_main.cpp.obj | libserver_lib.a libred_lib.a libconcli_lib.a libred_lib.a libconcli_lib.a || libred_lib.a libserver_lib.a
   FLAGS = -g
   LINK_LIBRARIES = libserver_lib.a  -lws2_32  -lwsock32  libred_lib.a  libconcli_lib.a  libred_lib.a  libconcli_lib.a  -lws2_32  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\server.dir
@@ -269,13 +537,31 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
-build client: phony bin/client.exe
+build client_customer: phony bin/client_customer.exe
 
-build client.exe: phony bin/client.exe
+build client_customer.exe: phony bin/client_customer.exe
+
+build client_kitchen: phony bin/client_kitchen.exe
+
+build client_kitchen.exe: phony bin/client_kitchen.exe
 
 build client_lib: phony libclient_lib.a
 
+build client_waiter: phony bin/client_waiter.exe
+
+build client_waiter.exe: phony bin/client_waiter.exe
+
 build concli_lib: phony libconcli_lib.a
+
+build customer_menu_lib: phony libcustomer_menu_lib.a
+
+build customer_notif_lib: phony libcustomer_notif_lib.a
+
+build customer_order_deal_lib: phony libcustomer_order_deal_lib.a
+
+build food_lib: phony libfood_lib.a
+
+build kitchen_request_lib: phony libkitchen_request_lib.a
 
 build red_lib: phony libred_lib.a
 
@@ -285,6 +571,8 @@ build server.exe: phony bin/server.exe
 
 build server_lib: phony libserver_lib.a
 
+build table_lib: phony libtable_lib.a
+
 # =============================================================================
 # Folder targets.
 
@@ -293,7 +581,7 @@ build server_lib: phony libserver_lib.a
 #############################################
 # Folder: C:/Projects/Appetito/build
 
-build all: phony libclient_lib.a libred_lib.a libconcli_lib.a libserver_lib.a bin/client.exe bin/server.exe
+build all: phony libclient_lib.a libred_lib.a libconcli_lib.a libserver_lib.a libfood_lib.a libtable_lib.a libcustomer_menu_lib.a libcustomer_order_deal_lib.a libcustomer_notif_lib.a libkitchen_request_lib.a bin/client_customer.exe bin/client_kitchen.exe bin/client_waiter.exe bin/server.exe
 
 # =============================================================================
 # Built-in targets

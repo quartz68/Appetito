@@ -18,7 +18,7 @@ int main(int argc, char* argv[])
 {
     try {
         if (argc < 2) {
-            std::cerr << "Usage: [char_server] <port> " << std::endl;
+            std::cerr << "Usage: server <port> <port> ..." << std::endl;
             return 1;
         }
 

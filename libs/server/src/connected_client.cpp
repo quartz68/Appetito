@@ -6,6 +6,11 @@ tcp::socket& ConnectedClient::socket()
     return socket_;
 }
 
+/*
+    FOR: Starts the connection, gets the client ID.
+    TAKES nothing,
+    RETURNS nothing.
+*/
 void ConnectedClient::start()
 {
     //std::cout << "connected client start called" << std::endl;
@@ -15,6 +20,11 @@ void ConnectedClient::start()
     //std::cout << "connected client start returned" << std::endl;
 }
 
+/*
+    FOR: Writes a pack to the client.
+    TAKES a pack to write,
+    RETURNS nothing.
+*/
 void ConnectedClient::write(Pack& pack)
 {
     //std::cout << "connected client write called" << std::endl;
@@ -27,6 +37,11 @@ void ConnectedClient::write(Pack& pack)
     //std::cout << "connected client write returned" << std::endl;
 }
 
+/*
+    FOR: Handles ID, client enters redirector, starts to read packs.
+    TAKES an error code,
+    RETURNS nothing.
+*/
 void ConnectedClient::id_handler(const asio::error_code& error)
 {
     //std::cout << "connected client id handler called" << std::endl;
@@ -37,6 +52,12 @@ void ConnectedClient::id_handler(const asio::error_code& error)
     //std::cout << "connected client id handler returned" << std::endl;
 }
 
+
+/*
+    FOR: Handles reading from socket.
+    TAKES an error code,
+    RETURNS nothing.
+*/
 void ConnectedClient::read_handler(const asio::error_code& error)
 {
     //std::cout << "connected client read handler called" << std::endl;
@@ -53,6 +74,11 @@ void ConnectedClient::read_handler(const asio::error_code& error)
     //std::cout << "connected client read handler returned" << std::endl;
 }
 
+/*
+    FOR: Handles writing packs waiting to be written.
+    TAKES an error code,
+    RETURNS nothing.
+*/
 void ConnectedClient::write_handler(const asio::error_code& error)
 {
     //std::cout << "connected client write handler called" << std::endl;
@@ -70,6 +96,9 @@ void ConnectedClient::write_handler(const asio::error_code& error)
     //std::cout << "connected client write handler returned" << std::endl;
 }
 
+/*
+    RETURNS client id.
+*/
 ClientID ConnectedClient::get_id()
 {
     //std::cout << "connected client get id called" << std::endl;
