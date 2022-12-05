@@ -2,6 +2,7 @@
 #include <asio.hpp>
 #include <client.hpp>
 #include <food.hpp>
+#include <customer_order_deal.hpp>
 #include <table.hpp>
 
 int main(int argc, char* argv[])
