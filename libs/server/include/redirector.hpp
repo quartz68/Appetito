@@ -18,7 +18,7 @@ class Redirector { // How to redirect message based on ID?
 public:
     void enter(std::shared_ptr<ConnectedClient> entering_client, const ClientID& client_id);
     void leave(std::shared_ptr<ConnectedClient> leaving_client);
-    void write_to_client(Pack& pack, std::shared_ptr<ConnectedClient> client);
+    void write_to_client(std::string& pack, std::shared_ptr<ConnectedClient> client);
 private:
     std::unordered_set<std::shared_ptr<ConnectedClient>> connected_clients_;
     std::unordered_map<std::shared_ptr<ConnectedClient>, ClientID> id_table_;

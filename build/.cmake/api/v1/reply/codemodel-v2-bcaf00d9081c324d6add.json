@@ -1,0 +1,177 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Appetito",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "client_customer::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-client_customer-Debug-13f54b7f1c768ec301b9.json",
+					"name" : "client_customer",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "client_kitchen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-client_kitchen-Debug-86d5e0c0357450e83db3.json",
+					"name" : "client_kitchen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "client_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-client_lib-Debug-9916220fb627ade715ee.json",
+					"name" : "client_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "client_waiter::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-client_waiter-Debug-854bbd179593b9ac4fc6.json",
+					"name" : "client_waiter",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "concli_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-concli_lib-Debug-b33384783bb88abb8db4.json",
+					"name" : "concli_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "customer_menu_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-customer_menu_lib-Debug-aa7692e613a24ade79d0.json",
+					"name" : "customer_menu_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "customer_notif_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-customer_notif_lib-Debug-b481d1679d6e8b7c4743.json",
+					"name" : "customer_notif_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "customer_order_deal_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-customer_order_deal_lib-Debug-9a402cdd75d0d5df0b49.json",
+					"name" : "customer_order_deal_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "food_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-food_lib-Debug-8655ee43ef4b4dff9b47.json",
+					"name" : "food_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "kitchen_request_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-kitchen_request_lib-Debug-c6ba8114526241fb15b1.json",
+					"name" : "kitchen_request_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "red_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-red_lib-Debug-1b01fe66e499b701d481.json",
+					"name" : "red_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "server::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-server-Debug-869f8ecf243bb8af324a.json",
+					"name" : "server",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "server_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-server_lib-Debug-a54869de86f317103725.json",
+					"name" : "server_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "table_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-table_lib-Debug-b358456cfe4fb2f9b6f8.json",
+					"name" : "table_lib",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Projects/Appetito/build",
+		"source" : "C:/Projects/Appetito"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

@@ -15,7 +15,7 @@ void Redirector::leave(std::shared_ptr<ConnectedClient> leaving_client)
     //std::cout << "redirector leave returned" << std::endl;
 }
 
-void Redirector::write_to_client(Pack& pack, std::shared_ptr<ConnectedClient> client)
+void Redirector::write_to_client(std::string& pack, std::shared_ptr<ConnectedClient> client)
 {
     //Temporary
     //std::cout << "redirector write to client called" << std::endl;

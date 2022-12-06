@@ -7,19 +7,23 @@ project(Appetito)
 
 add_definitions(-DASIO_STANDALONE)
 
+include_directories(./libs)
 include_directories(./libs/asio/include)
+include_directories(./libs/cereal)
 include_directories(./libs/client/include)
 include_directories(./libs/server/include)
-include_directories(./libs/protocol/include)
+include_directories(./libs/network/include)
 include_directories(./libs/restaurant_util/include)
 
 # Libraries
 
 # Communication libraries
+##add_library(networkio_lib STATIC libs/network/include/networkio.hpp libs/network/src/networkio.cpp)
 add_library(client_lib STATIC libs/client/include/client.hpp libs/client/src/client.cpp)
 add_library(red_lib STATIC libs/server/include/redirector.hpp libs/server/src/redirector.cpp)
 add_library(concli_lib STATIC libs/server/include/connected_client.hpp libs/server/src/connected_client.cpp)
 add_library(server_lib STATIC libs/server/include/server.hpp libs/server/src/server.cpp)
+##target_link_libraries(concli_lib networkio_lib)
 target_link_libraries(concli_lib red_lib)
 target_link_libraries(red_lib concli_lib)
 target_link_libraries(server_lib red_lib)

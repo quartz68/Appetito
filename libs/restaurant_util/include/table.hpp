@@ -31,8 +31,7 @@ private:
     TableID table_id_;
 };
 
-class TableContainer {
-protected:
+struct TableContainer {
     unordered_map<unsigned short, TableType> types;
     unordered_map<TableID, Table> tables;
 };
