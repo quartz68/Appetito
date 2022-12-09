@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "libconcli_lib.a"
+			"path" : "libkitchen_request_lib.a"
 		}
 	],
 	"backtrace" : 1,
@@ -27,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 24,
+				"line" : 39,
 				"parent" : 0
 			},
 			{
@@ -134,9 +134,9 @@
 			]
 		}
 	],
-	"id" : "concli_lib::@6890427a1f51a3e7e1df",
-	"name" : "concli_lib",
-	"nameOnDisk" : "libconcli_lib.a",
+	"id" : "kitchen_request_lib::@6890427a1f51a3e7e1df",
+	"name" : "kitchen_request_lib",
+	"nameOnDisk" : "libkitchen_request_lib.a",
 	"paths" : 
 	{
 		"build" : ".",
@@ -163,13 +163,13 @@
 	[
 		{
 			"backtrace" : 1,
-			"path" : "libs/server/include/connected_client.hpp",
+			"path" : "libs/restaurant_util/include/kitchen_request.hpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "libs/server/src/connected_client.cpp",
+			"path" : "libs/restaurant_util/src/kitchen_request.cpp",
 			"sourceGroupIndex" : 1
 		}
 	],

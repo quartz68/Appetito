@@ -10,7 +10,7 @@ using Pack = array<char, MAX_PACK_SIZE>;
 class Notif {
 public:
     Notif(Pack pack);
-    //void print_notif();
+    void print_notif();
 private:
     string message;
 };

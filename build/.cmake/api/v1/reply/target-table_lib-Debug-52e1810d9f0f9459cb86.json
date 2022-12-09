@@ -1,11 +1,9 @@
 {
+	"archive" : {},
 	"artifacts" : 
 	[
 		{
-			"path" : "bin/client_kitchen.exe"
-		},
-		{
-			"path" : "bin/client_kitchen.pdb"
+			"path" : "libtable_lib.a"
 		}
 	],
 	"backtrace" : 1,
@@ -13,8 +11,7 @@
 	{
 		"commands" : 
 		[
-			"add_executable",
-			"target_link_libraries",
+			"add_library",
 			"add_definitions",
 			"include_directories"
 		],
@@ -30,65 +27,53 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 46,
+				"line" : 35,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
-				"file" : 0,
-				"line" : 47,
-				"parent" : 0
-			},
-			{
-				"command" : 1,
-				"file" : 0,
-				"line" : 61,
-				"parent" : 0
-			},
-			{
-				"command" : 2,
 				"file" : 0,
 				"line" : 8,
 				"parent" : 0
 			},
 			{
-				"command" : 3,
+				"command" : 2,
 				"file" : 0,
 				"line" : 10,
 				"parent" : 0
 			},
 			{
-				"command" : 3,
+				"command" : 2,
 				"file" : 0,
 				"line" : 11,
 				"parent" : 0
 			},
 			{
-				"command" : 3,
+				"command" : 2,
 				"file" : 0,
 				"line" : 12,
 				"parent" : 0
 			},
 			{
-				"command" : 3,
+				"command" : 2,
 				"file" : 0,
 				"line" : 13,
 				"parent" : 0
 			},
 			{
-				"command" : 3,
+				"command" : 2,
 				"file" : 0,
 				"line" : 14,
 				"parent" : 0
 			},
 			{
-				"command" : 3,
+				"command" : 2,
 				"file" : 0,
 				"line" : 15,
 				"parent" : 0
 			},
 			{
-				"command" : 3,
+				"command" : 2,
 				"file" : 0,
 				"line" : 16,
 				"parent" : 0
@@ -107,87 +92,51 @@
 			"defines" : 
 			[
 				{
-					"backtrace" : 4,
+					"backtrace" : 2,
 					"define" : "ASIO_STANDALONE"
 				}
 			],
 			"includes" : 
 			[
 				{
-					"backtrace" : 5,
+					"backtrace" : 3,
 					"path" : "C:/Projects/Appetito/./libs"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 4,
 					"path" : "C:/Projects/Appetito/./libs/asio/include"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 5,
 					"path" : "C:/Projects/Appetito/./libs/cereal"
 				},
 				{
-					"backtrace" : 8,
+					"backtrace" : 6,
 					"path" : "C:/Projects/Appetito/./libs/client/include"
 				},
 				{
-					"backtrace" : 9,
+					"backtrace" : 7,
 					"path" : "C:/Projects/Appetito/./libs/server/include"
 				},
 				{
-					"backtrace" : 10,
+					"backtrace" : 8,
 					"path" : "C:/Projects/Appetito/./libs/network/include"
 				},
 				{
-					"backtrace" : 11,
+					"backtrace" : 9,
 					"path" : "C:/Projects/Appetito/./libs/restaurant_util/include"
 				}
 			],
 			"language" : "CXX",
 			"sourceIndexes" : 
 			[
-				0
+				1
 			]
 		}
 	],
-	"dependencies" : 
-	[
-		{
-			"backtrace" : 2,
-			"id" : "client_lib::@6890427a1f51a3e7e1df"
-		}
-	],
-	"id" : "client_kitchen::@6890427a1f51a3e7e1df",
-	"link" : 
-	{
-		"commandFragments" : 
-		[
-			{
-				"fragment" : "-g",
-				"role" : "flags"
-			},
-			{
-				"fragment" : "",
-				"role" : "flags"
-			},
-			{
-				"backtrace" : 2,
-				"fragment" : "libclient_lib.a",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 3,
-				"fragment" : "-lws2_32",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
-				"role" : "libraries"
-			}
-		],
-		"language" : "CXX"
-	},
-	"name" : "client_kitchen",
-	"nameOnDisk" : "client_kitchen.exe",
+	"id" : "table_lib::@6890427a1f51a3e7e1df",
+	"name" : "table_lib",
+	"nameOnDisk" : "libtable_lib.a",
 	"paths" : 
 	{
 		"build" : ".",
@@ -196,10 +145,17 @@
 	"sourceGroups" : 
 	[
 		{
-			"name" : "Source Files",
+			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
 				0
+			]
+		},
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				1
 			]
 		}
 	],
@@ -207,10 +163,15 @@
 	[
 		{
 			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/client_kitchen.cpp",
+			"path" : "libs/restaurant_util/include/table.hpp",
 			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "libs/restaurant_util/src/table.cpp",
+			"sourceGroupIndex" : 1
 		}
 	],
-	"type" : "EXECUTABLE"
+	"type" : "STATIC_LIBRARY"
 }

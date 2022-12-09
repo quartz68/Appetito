@@ -30,37 +30,61 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 52,
+				"line" : 55,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 53,
+				"line" : 56,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 63,
+				"line" : 66,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 64,
+				"line" : 67,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 29,
+				"line" : 31,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 30,
+				"line" : 32,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 28,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 42,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 43,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 27,
 				"parent" : 0
 			},
 			{
@@ -125,38 +149,38 @@
 			"defines" : 
 			[
 				{
-					"backtrace" : 7,
+					"backtrace" : 11,
 					"define" : "ASIO_STANDALONE"
 				}
 			],
 			"includes" : 
 			[
 				{
-					"backtrace" : 8,
+					"backtrace" : 12,
 					"path" : "C:/Projects/Appetito/./libs"
 				},
 				{
-					"backtrace" : 9,
+					"backtrace" : 13,
 					"path" : "C:/Projects/Appetito/./libs/asio/include"
 				},
 				{
-					"backtrace" : 10,
+					"backtrace" : 14,
 					"path" : "C:/Projects/Appetito/./libs/cereal"
 				},
 				{
-					"backtrace" : 11,
+					"backtrace" : 15,
 					"path" : "C:/Projects/Appetito/./libs/client/include"
 				},
 				{
-					"backtrace" : 12,
+					"backtrace" : 16,
 					"path" : "C:/Projects/Appetito/./libs/server/include"
 				},
 				{
-					"backtrace" : 13,
+					"backtrace" : 17,
 					"path" : "C:/Projects/Appetito/./libs/network/include"
 				},
 				{
-					"backtrace" : 14,
+					"backtrace" : 18,
 					"path" : "C:/Projects/Appetito/./libs/restaurant_util/include"
 				}
 			],
@@ -171,11 +195,27 @@
 	[
 		{
 			"backtrace" : 2,
+			"id" : "networkio_lib::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
 			"id" : "red_lib::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 2,
 			"id" : "server_lib::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "food_lib::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "table_lib::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "customer_menu_lib::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "server::@6890427a1f51a3e7e1df",
@@ -227,8 +267,28 @@
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 7,
+				"fragment" : "libcustomer_menu_lib.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 8,
+				"fragment" : "libfood_lib.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 9,
+				"fragment" : "libtable_lib.a",
+				"role" : "libraries"
+			},
+			{
 				"backtrace" : 3,
 				"fragment" : "-lws2_32",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 10,
+				"fragment" : "libnetworkio_lib.a",
 				"role" : "libraries"
 			},
 			{

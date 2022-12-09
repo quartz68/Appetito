@@ -8,9 +8,8 @@
 #include <protocol.hpp>
 #include <cereal.hpp>
 #include <cereal/archives/binary.hpp>
+#include <cereal/types/vector.hpp>
 using namespace std;
-using Pack = std::array<char, MAX_PACK_SIZE>; // Pack is an array of char, for transmitting pack
-using ClientID = std::array<char, MAX_ID_SIZE>; // ID is an array of char, for identifying the client
 
 class Menu {
 public:

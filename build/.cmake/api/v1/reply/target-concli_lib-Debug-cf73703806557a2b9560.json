@@ -1,11 +1,9 @@
 {
+	"archive" : {},
 	"artifacts" : 
 	[
 		{
-			"path" : "bin/client_waiter.exe"
-		},
-		{
-			"path" : "bin/client_waiter.pdb"
+			"path" : "libconcli_lib.a"
 		}
 	],
 	"backtrace" : 1,
@@ -13,7 +11,7 @@
 	{
 		"commands" : 
 		[
-			"add_executable",
+			"add_library",
 			"target_link_libraries",
 			"add_definitions",
 			"include_directories"
@@ -30,19 +28,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 49,
+				"line" : 24,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 50,
+				"line" : 27,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 62,
+				"line" : 29,
 				"parent" : 0
 			},
 			{
@@ -145,7 +143,7 @@
 			"language" : "CXX",
 			"sourceIndexes" : 
 			[
-				0
+				1
 			]
 		}
 	],
@@ -153,41 +151,24 @@
 	[
 		{
 			"backtrace" : 2,
-			"id" : "client_lib::@6890427a1f51a3e7e1df"
+			"id" : "networkio_lib::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "food_lib::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "table_lib::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "customer_menu_lib::@6890427a1f51a3e7e1df"
 		}
 	],
-	"id" : "client_waiter::@6890427a1f51a3e7e1df",
-	"link" : 
-	{
-		"commandFragments" : 
-		[
-			{
-				"fragment" : "-g",
-				"role" : "flags"
-			},
-			{
-				"fragment" : "",
-				"role" : "flags"
-			},
-			{
-				"backtrace" : 2,
-				"fragment" : "libclient_lib.a",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 3,
-				"fragment" : "-lws2_32",
-				"role" : "libraries"
-			},
-			{
-				"fragment" : "-lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32",
-				"role" : "libraries"
-			}
-		],
-		"language" : "CXX"
-	},
-	"name" : "client_waiter",
-	"nameOnDisk" : "client_waiter.exe",
+	"id" : "concli_lib::@6890427a1f51a3e7e1df",
+	"name" : "concli_lib",
+	"nameOnDisk" : "libconcli_lib.a",
 	"paths" : 
 	{
 		"build" : ".",
@@ -196,10 +177,17 @@
 	"sourceGroups" : 
 	[
 		{
-			"name" : "Source Files",
+			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
 				0
+			]
+		},
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				1
 			]
 		}
 	],
@@ -207,10 +195,15 @@
 	[
 		{
 			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "src/client_waiter.cpp",
+			"path" : "libs/server/include/connected_client.hpp",
 			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "libs/server/src/connected_client.cpp",
+			"sourceGroupIndex" : 1
 		}
 	],
-	"type" : "EXECUTABLE"
+	"type" : "STATIC_LIBRARY"
 }
