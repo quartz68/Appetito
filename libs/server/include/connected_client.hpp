@@ -4,13 +4,26 @@
 #include <iostream>
 #include <array>
 #include <deque>
+#include <networkio.hpp>
 #include <asio.hpp>
 #include <protocol.hpp>
+#include <cereal.hpp>
+#include <cereal/archives/binary.hpp>
+#include <cereal/types/string.hpp>
+#include <cereal/types/array.hpp>
 using asio::ip::tcp;
 using Pack = std::array<char, MAX_PACK_SIZE>; // Pack is an array of char, for transmitting pack
 using ClientID = std::array<char, MAX_ID_SIZE>; // ID is an array of char, for identifying the client
 
 class Redirector;
+
+struct ServerNetworkIO {
+    ServerNetworkIO(asio::io_context& io_context)
+              :socket_(io_context) { }
+    tcp::socket socket_;
+    Pack outbound_data_;
+    Pack inbound_data_;
+};
 
 class ConnectedClient
     : public std::enable_shared_from_this<ConnectedClient> {
@@ -18,20 +31,20 @@ public:
     ConnectedClient(asio::io_context& io_context,
                     asio::io_context::strand& strand,
                     Redirector& red_zone)
-                    :socket_(io_context), strand_(strand), red_zone_(red_zone) { }
+                    :network_io_(io_context), strand_(strand), red_zone_(red_zone) { }
+
     tcp::socket& socket();
     void start();
-    void write(Pack& pack);
+    void write(std::string& object);
     ClientID get_id();
 private:
     void id_handler(const asio::error_code& error);
     void read_handler(const asio::error_code& error);
     void write_handler(const asio::error_code& error);
-    tcp::socket socket_;
-    asio::io_context::strand& strand_;
+    ServerNetworkIO network_io_;
     ClientID client_id_;
-    Pack read_pack_;
-    std::deque<Pack> packs_to_write_;
+    asio::io_context::strand& strand_;
+    std::deque<std::string> strings_to_write_;
     Redirector& red_zone_;
 };
 

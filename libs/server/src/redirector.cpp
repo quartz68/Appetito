@@ -15,15 +15,12 @@ void Redirector::leave(std::shared_ptr<ConnectedClient> leaving_client)
     //std::cout << "redirector leave returned" << std::endl;
 }
 
-void Redirector::write_to_client(Pack& pack, std::shared_ptr<ConnectedClient> client)
+void Redirector::write_to_client(std::string& object, std::shared_ptr<ConnectedClient> client)
 {
     //Temporary
     //std::cout << "redirector write to client called" << std::endl;
-    Pack fpack;
-    strcpy(fpack.data(),client->get_id().data());
-    strcat(fpack.data(), pack.data());
     //std::cout << pack.data() << std::endl;
     std::for_each(connected_clients_.begin(), connected_clients_.end(),
-                      std::bind(&ConnectedClient::write, std::placeholders::_1, std::ref(fpack)));
+                      std::bind(&ConnectedClient::write, std::placeholders::_1, std::ref(object)));
     //std::cout << "redirector write to client returned" << std::endl;
 }

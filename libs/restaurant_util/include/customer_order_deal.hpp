@@ -23,7 +23,7 @@ public:
     void get_bill();
     void set_order(Order& order);
     void set_table(Table& table);
-    //string get_deal_str();
+    string get_deal_str();
 private:
     Order& order_;
     Table& table_;

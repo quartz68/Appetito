@@ -2,8 +2,10 @@
 #include <asio.hpp>
 #include <client.hpp>
 #include <food.hpp>
-#include <customer_order_deal.hpp>
 #include <table.hpp>
+#include <customer_menu.hpp>
+#include <customer_order_deal.hpp>
+
 
 int main(int argc, char* argv[])
 {
@@ -22,13 +24,12 @@ int main(int argc, char* argv[])
         Client client(client_id, io_context, iterator);
 
         std::thread t([&io_context](){io_context.run();});
-        
-        Pack pack;
+
+        std::string pack;
 
         while(true)
         {
-            memset(pack.data(), '\0', pack.size());
-            std::cin.getline(pack.data(),222);
+            cin >> pack;
             client.write(pack);
         }
 
