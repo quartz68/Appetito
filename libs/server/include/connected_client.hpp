@@ -17,14 +17,6 @@ using ClientID = std::array<char, MAX_ID_SIZE>; // ID is an array of char, for i
 
 class Redirector;
 
-struct ServerNetworkIO {
-    ServerNetworkIO(asio::io_context& io_context)
-              :socket_(io_context) { }
-    tcp::socket socket_;
-    Pack outbound_data_;
-    Pack inbound_data_;
-};
-
 class ConnectedClient
     : public std::enable_shared_from_this<ConnectedClient> {
 public:
@@ -36,15 +28,16 @@ public:
     tcp::socket& socket();
     void start();
     void write(std::string& object);
-    ClientID get_id();
+    std::string get_id();
 private:
     void id_handler(const asio::error_code& error);
     void read_handler(const asio::error_code& error);
     void write_handler(const asio::error_code& error);
-    ServerNetworkIO network_io_;
-    ClientID client_id_;
+    NetworkIO network_io_;
+    std::string client_id_;
     asio::io_context::strand& strand_;
     std::deque<std::string> strings_to_write_;
+    std::string read_string_;
     Redirector& red_zone_;
 };
 

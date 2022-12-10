@@ -73,7 +73,16 @@
 			"streambuf": "cpp",
 			"thread": "cpp",
 			"typeinfo": "cpp",
-			"variant": "cpp"
+			"variant": "cpp",
+			"bitset": "cpp",
+			"complex": "cpp",
+			"forward_list": "cpp",
+			"map": "cpp",
+			"unordered_set": "cpp",
+			"regex": "cpp",
+			"typeindex": "cpp",
+			"valarray": "cpp",
+			"*.ipp": "cpp"
 		}
 	}
 }

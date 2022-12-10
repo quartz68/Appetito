@@ -18,8 +18,8 @@ int main(int argc, char* argv[])
         tcp::resolver resolver(io_context);
         tcp::resolver::query query(argv[2], argv[3]);
         tcp::resolver::iterator iterator = resolver.resolve(query);
-        ClientID client_id;
-        strcpy(client_id.data(), argv[1]);
+        std::string client_id(argv[1]);
+        std::cout << "Client ID: " << client_id << std::endl;
 
         Client client(client_id, io_context, iterator);
 
