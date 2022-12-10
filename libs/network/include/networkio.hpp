@@ -61,7 +61,7 @@ public:
         void (NetworkIO::*f)(
             const asio::error_code&,
             T&, std::tuple<Handler>)
-        = &NetworkIO::handle_read_header<T, Handler>;
+        = &NetworkIO::read_header_handler<T, Handler>;
         asio::async_read(socket_, asio::buffer(inbound_header_),
             std::bind(f,
             this, std::placeholders::_1, std::ref(t),
@@ -69,10 +69,9 @@ public:
     }
 
     /// Handle a completed read of a message header. The handler is passed using
-    /// a tuple since boost::bind seems to have trouble binding a function object
-    /// created using boost::bind as a parameter.
+    /// a tuple.
     template <typename T, typename Handler>
-    void handle_read_header(const asio::error_code& e,
+    void read_header_handler(const asio::error_code& e,
         T& t, std::tuple<Handler> handler)
     {
         if (e) {
@@ -95,7 +94,7 @@ public:
             void (NetworkIO::*f)(
                 const asio::error_code&,
                 T&, std::tuple<Handler>)
-                = &NetworkIO::handle_read_data<T, Handler>;
+                = &NetworkIO::read_data_handler<T, Handler>;
             asio::async_read(socket_, asio::buffer(inbound_data_),
                 std::bind(f, this,
                 std::placeholders::_1, std::ref(t), handler));
@@ -104,7 +103,7 @@ public:
 
     /// Handle a completed read of message data.
     template <typename T, typename Handler>
-    void handle_read_data(const asio::error_code& e,
+    void read_data_handler(const asio::error_code& e,
         T& t, std::tuple<Handler> handler)
     {
         if (e) {

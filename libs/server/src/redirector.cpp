@@ -1,6 +1,6 @@
 #include <redirector.hpp>
 
-void Redirector::enter(std::shared_ptr<ConnectedClient> entering_client, const ClientID& client_id)
+void Redirector::enter(std::shared_ptr<ConnectedClient> entering_client, const std::string& client_id)
 {
     //std::cout << "redirector enter called" << std::endl;
     connected_clients_.insert(entering_client);

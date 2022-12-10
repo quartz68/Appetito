@@ -26,12 +26,11 @@ enum IDs {
 */
 class Client {
 public:
-    Client(const ClientID& client_id,
+    Client(const std::string& client_id,
             asio::io_context& io_context,
             tcp::resolver::iterator endpoint_iterator)
-        :io_context_(io_context), network_io_(io_context)
+        :io_context_(io_context), network_io_(io_context), client_id_(client_id)
         {
-            strcpy(client_id_.data(), client_id.data());
             asio::async_connect(network_io_.socket(), endpoint_iterator, std::bind(&Client::on_connect, this, std::placeholders::_1)); // Connect to server
         }
     void write(const std::string& object);
@@ -44,8 +43,9 @@ private:
     void write_handler(const asio::error_code& error);
     void close_implementation();
     asio::io_context& io_context_;
-    ClientID client_id_;
+    std::string client_id_;
     std::deque<std::string> strings_to_write_;
+    std::string read_string_;
     NetworkIO network_io_;
 };
 

@@ -3,7 +3,7 @@
 
 tcp::socket& ConnectedClient::socket() 
 {
-    return network_io_.socket_;
+    return network_io_.socket();
 }
 
 /*
@@ -13,11 +13,10 @@ tcp::socket& ConnectedClient::socket()
 */
 void ConnectedClient::start()
 {
-    std::cout << "connected client start called" << std::endl;
-    asio::async_read(network_io_.socket_,
-                     asio::buffer(client_id_, client_id_.size()),
+    //std::cout << "connected client start called" << std::endl;
+    network_io_.async_read(client_id_,
                      strand_.wrap(std::bind(&ConnectedClient::id_handler, shared_from_this(), std::placeholders::_1)));
-    std::cout << "connected client start returned" << std::endl;
+    //std::cout << "connected client start returned" << std::endl;
 }
 
 /*
@@ -26,20 +25,13 @@ void ConnectedClient::start()
     RETURNS nothing.
 */
 void ConnectedClient::write(std::string& object) {
-    std::cout << "connected client write called" << std::endl;
+    //std::cout << "connected client write called" << std::endl;
     strings_to_write_.push_back(object);
     if (!strings_to_write_.empty()) {
-        {
-            std::ostringstream out_archive_stream;
-            cereal::BinaryOutputArchive out_archive(out_archive_stream);
-            out_archive << strings_to_write_.front();
-            strcpy(network_io_.outbound_data_.data(), out_archive_stream.str().data());
-        }
-        asio::async_write(network_io_.socket_,
-                            asio::buffer(network_io_.outbound_data_, MAX_PACK_SIZE),
+        network_io_.async_write(strings_to_write_.front(),
                             strand_.wrap(std::bind(&ConnectedClient::write_handler, shared_from_this(), std::placeholders::_1)));
     }
-    std::cout << "connected client write returned" << std::endl;
+    //std::cout << "connected client write returned" << std::endl;
 }
 /* void ConnectedClient::write(std::string& pack)
 {
@@ -66,14 +58,14 @@ void ConnectedClient::write(std::string& object) {
 */
 void ConnectedClient::id_handler(const asio::error_code& error)
 {
-    std::cout << "connected client id handler called" << std::endl;
-    string s = "fasdfada!";
+    //std::cout << "connected client id handler called" << std::endl;
+    string s = "Hello client customer!";
     red_zone_.enter(shared_from_this(), client_id_);
     write(s);
-    asio::async_read(network_io_.socket_,
-                    asio::buffer(network_io_.inbound_data_, MAX_PACK_SIZE),
+    std::cout << client_id_ << " entered!" << std::endl;
+    network_io_.async_read(read_string_,
                     strand_.wrap(std::bind(&ConnectedClient::read_handler, shared_from_this(), std::placeholders::_1)));
-    std::cout << "connected client id handler returned" << std::endl;
+    //std::cout << "connected client id handler returned" << std::endl;
 }
 
 
@@ -84,14 +76,13 @@ void ConnectedClient::id_handler(const asio::error_code& error)
 */
 void ConnectedClient::read_handler(const asio::error_code& error)
 {
-    std::cout << "connected client read handler called" << std::endl;
+    //std::cout << "connected client read handler called" << std::endl;
     if (!error) {
         /* std::cout << read_pack_.data() << std::endl;
         red_zone_.write_to_client(read_pack_, shared_from_this());
         asio::async_read(network_io_.socket_,
                          asio::buffer(read_pack_, read_pack_.size()),
                          strand_.wrap(std::bind(&ConnectedClient::read_handler, shared_from_this(), std::placeholders::_1))); */
-        std::string pack;
         /* {
             std::istringstream in_archive_stream;
             strcpy(in_archive_stream.str().data(),network_io_.inbound_data_.data());
@@ -99,16 +90,17 @@ void ConnectedClient::read_handler(const asio::error_code& error)
             in_archive >> pack;
             std::cout << pack << std::endl;
         } */
-        std::cout << network_io_.inbound_data_.data() << std::endl;
-        red_zone_.write_to_client(pack,shared_from_this());
-        asio::async_read(network_io_.socket_,
-                         asio::buffer(network_io_.inbound_data_,MAX_PACK_SIZE),
+        std::string write_string;
+        write_string = client_id_ + ": " + read_string_;
+        std::cout << write_string << std::endl;
+        red_zone_.write_to_client(write_string,shared_from_this());
+        network_io_.async_read(read_string_,
                          strand_.wrap(std::bind(&ConnectedClient::read_handler, shared_from_this(), std::placeholders::_1)));
     } else {
         std::cout << error.message() << std::endl;
         red_zone_.leave(shared_from_this());
     }
-    std::cout << "connected client read handler returned" << std::endl;
+    //std::cout << "connected client read handler returned" << std::endl;
 }
 
 /*
@@ -118,33 +110,25 @@ void ConnectedClient::read_handler(const asio::error_code& error)
 */
 void ConnectedClient::write_handler(const asio::error_code& error)
 {
-    std::cout << "connected client write handler called" << std::endl;
+    //std::cout << "connected client write handler called" << std::endl;
     if (!error) {
         strings_to_write_.pop_front();
         if (!strings_to_write_.empty()) {
-            {
-                std::cout << strings_to_write_.front();
-                std::ostringstream out_archive_stream;
-                cereal::BinaryOutputArchive out_archive(out_archive_stream);
-                out_archive << strings_to_write_.front();
-                strcpy(network_io_.outbound_data_.data(), out_archive_stream.str().data());
-            }
-            asio::async_write(network_io_.socket_, 
-                                asio::buffer(network_io_.outbound_data_, MAX_PACK_SIZE),
+            network_io_.async_write(strings_to_write_.front(),
                                 strand_.wrap(std::bind(&ConnectedClient::read_handler, shared_from_this(), std::placeholders::_1)));
         }
     } else {
         std::cout << error.message() << std::endl;
         red_zone_.leave(shared_from_this());
     }
-    std::cout << "connected client write handler returned" << std::endl;
+    //std::cout << "connected client write handler returned" << std::endl;
 }
 
 /*
     RETURNS client id.
 */
-ClientID ConnectedClient::get_id()
+std::string ConnectedClient::get_id()
 {
-    std::cout << "connected client get id called" << std::endl;
+    //std::cout << "connected client get id called" << std::endl;
     return client_id_;
 }
