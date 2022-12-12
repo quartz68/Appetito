@@ -14,13 +14,3 @@ void Redirector::leave(std::shared_ptr<ConnectedClient> leaving_client)
     connected_clients_.erase(leaving_client);
     //std::cout << "redirector leave returned" << std::endl;
 }
-
-void Redirector::write_to_client(std::string& object, std::shared_ptr<ConnectedClient> client)
-{
-    //Temporary
-    //std::cout << "redirector write to client called" << std::endl;
-    //std::cout << pack.data() << std::endl;
-    std::for_each(connected_clients_.begin(), connected_clients_.end(),
-                      std::bind(&ConnectedClient::write, std::placeholders::_1, std::ref(object)));
-    //std::cout << "redirector write to client returned" << std::endl;
-}
