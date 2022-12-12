@@ -13,7 +13,8 @@ using namespace std;
 
 class Menu {
 public:
-    Menu(FoodContainer& all_foods, TableContainer& all_tables)
+    Menu(FoodContainer& all_foods, TableContainer& all_tables) //构造函数，遍历FoodContainer和TableContainer，分别将Food和Table存入二维vector types_foods和types_tables
+    : all_foods_(all_foods), all_tables_(all_tables)
     {
         for (auto food : all_foods.foods) {
             types_foods_[food.first.type].push_back(food.second);
@@ -22,17 +23,18 @@ public:
             types_tables_[table.first.type].push_back(table.second);
         }
     };
-    void get_menu();
-    void refresh_menu();
-    void print_menu();
+    void print(); //从二维vector types_foods和types_tables打印菜单
+    void refresh(); //刷新菜单，操作基本上和构造函数相同，向服务器请求的部分我后面来加
     template<class Archive>
     void serialize(Archive& archive)
     {
         archive(types_foods_,types_tables_);
     }
-private:
-    vector<vector<Food>> types_foods_;
-    vector<vector<Table>> types_tables_;
+protected:
+    vector<vector<Food>> types_foods_; // 二维vector，一个类型的Food是一行
+    vector<vector<Table>> types_tables_; // 参考上一个
+    FoodContainer& all_foods_;
+    TableContainer& all_tables_;
 };
 
 #endif

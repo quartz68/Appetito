@@ -11,14 +11,9 @@
 #include <cereal/archives/binary.hpp>
 #include <cereal/types/string.hpp>
 #include <cereal/types/array.hpp>
+#include <food.hpp>
+#include <table.hpp>
 using asio::ip::tcp;
-using Pack = std::array<char, MAX_PACK_SIZE>; // Pack is an array of char, for transmitting pack
-using ClientID = std::array<char, MAX_ID_SIZE>; // ID is an array of char, for identifying the client
-
-enum IDs {
-    customer_id = 1,
-    kitchen_id
-};
 
 /*
     CLIENT CLASS
@@ -46,6 +41,8 @@ private:
     std::string client_id_;
     std::deque<std::string> strings_to_write_;
     std::string read_string_;
+    FoodContainer all_foods_;
+    TableContainer all_tables_;
     NetworkIO network_io_;
 };
 

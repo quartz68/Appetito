@@ -10,10 +10,10 @@
 #include <asio.hpp>
 #include <protocol.hpp>
 #include <redirector.hpp>
+#include <food.hpp>
+#include <table.hpp>
 #include <connected_client.hpp>
 using asio::ip::tcp;
-using Pack = std::array<char, MAX_PACK_SIZE>; // Pack is an array of char, for transmitting pack
-using ClientID = std::array<char, MAX_ID_SIZE>; // ID is an array of char, for identifying the client
 
 enum IDs {
     customer_id = 0,
@@ -44,8 +44,10 @@ class Server {
 public:
     Server(asio::io_context& io_context,
            asio::io_context::strand& strand,
-           const tcp::endpoint& endpoint)
-        :io_context_(io_context), strand_(strand), acceptor_(io_context, endpoint) { run(); }
+           const tcp::endpoint& endpoint,
+           FoodContainer& all_foods,
+           TableContainer& all_tables)
+        :io_context_(io_context), strand_(strand), acceptor_(io_context, endpoint), all_foods_(all_foods), all_tables_(all_tables), red_zone_{all_foods_,all_tables_} { run(); }
 private:
     void run();
     void on_accept(std::shared_ptr<ConnectedClient> new_client, const asio::error_code& error);
@@ -53,6 +55,8 @@ private:
     asio::io_context::strand& strand_;
     tcp::acceptor acceptor_;
     Redirector red_zone_;
+    FoodContainer& all_foods_;
+    TableContainer& all_tables_;
 };
 
 #endif

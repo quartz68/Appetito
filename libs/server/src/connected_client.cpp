@@ -33,23 +33,6 @@ void ConnectedClient::write(std::string& object) {
     }
     //std::cout << "connected client write returned" << std::endl;
 }
-/* void ConnectedClient::write(std::string& pack)
-{
-    if (!packs_to_write_.empty()) {
-        // Create an ostream object that wraps the asio::streambuf.
-        std::ostream out(&network_io_.buf_out_);
-
-        // Write the data to the buffer using the ostream.
-        out << packs_to_write_.front();
-
-        // Initiate the asynchronous write operation using the buffer.
-        asio::async_write(network_io_.socket_, network_io_.buf_out_,
-            strand_.wrap(std::bind(&ConnectedClient::write_handler, shared_from_this(), std::placeholders::_1)));
-    } else {
-        std::cout << error.message() << std::endl;
-        red_zone_.leave(shared_from_this());
-    }
-} */
 
 /*
     FOR: Handles ID, client enters redirector, starts to read packs.
@@ -59,9 +42,9 @@ void ConnectedClient::write(std::string& object) {
 void ConnectedClient::id_handler(const asio::error_code& error)
 {
     //std::cout << "connected client id handler called" << std::endl;
-    string s = "Hello client customer!";
     red_zone_.enter(shared_from_this(), client_id_);
-    write(s);
+    red_zone_.write_to_client(red_zone_.food_container());
+    red_zone_.write_to_client(red_zone_.table_container());
     std::cout << client_id_ << " entered!" << std::endl;
     network_io_.async_read(read_string_,
                     strand_.wrap(std::bind(&ConnectedClient::read_handler, shared_from_this(), std::placeholders::_1)));
@@ -93,7 +76,7 @@ void ConnectedClient::read_handler(const asio::error_code& error)
         std::string write_string;
         write_string = client_id_ + ": " + read_string_;
         std::cout << write_string << std::endl;
-        red_zone_.write_to_client(write_string,shared_from_this());
+        red_zone_.write_to_client(write_string);
         network_io_.async_read(read_string_,
                          strand_.wrap(std::bind(&ConnectedClient::read_handler, shared_from_this(), std::placeholders::_1)));
     } else {
