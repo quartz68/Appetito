@@ -17,19 +17,6 @@ include_directories(./libs/restaurant_util/include)
 
 # Libraries
 
-# Communication libraries
-add_library(networkio_lib STATIC libs/network/include/networkio.hpp libs/network/src/networkio.cpp)
-add_library(client_lib STATIC libs/client/include/client.hpp libs/client/src/client.cpp)
-add_library(red_lib STATIC libs/server/include/redirector.hpp libs/server/src/redirector.cpp)
-add_library(concli_lib STATIC libs/server/include/connected_client.hpp libs/server/src/connected_client.cpp)
-add_library(server_lib STATIC libs/server/include/server.hpp libs/server/src/server.cpp)
-target_link_libraries(client_lib networkio_lib)
-target_link_libraries(concli_lib networkio_lib)
-target_link_libraries(red_lib customer_menu_lib)
-target_link_libraries(concli_lib red_lib)
-target_link_libraries(red_lib concli_lib)
-target_link_libraries(server_lib red_lib)
-target_link_libraries(server_lib concli_lib)
 # Restaurant Libraries
 add_library(food_lib STATIC libs/restaurant_util/include/food.hpp libs/restaurant_util/src/food.cpp)
 add_library(table_lib STATIC libs/restaurant_util/include/table.hpp libs/restaurant_util/src/table.cpp)
@@ -41,6 +28,23 @@ target_link_libraries(customer_order_deal_lib food_lib)
 target_link_libraries(customer_order_deal_lib table_lib)
 target_link_libraries(customer_menu_lib food_lib)
 target_link_libraries(customer_menu_lib table_lib)
+# Communication libraries
+add_library(networkio_lib STATIC libs/network/include/networkio.hpp libs/network/src/networkio.cpp)
+add_library(client_lib STATIC libs/client/include/client.hpp libs/client/src/client.cpp)
+add_library(red_lib STATIC libs/server/include/redirector.hpp libs/server/src/redirector.cpp)
+add_library(concli_lib STATIC libs/server/include/connected_client.hpp libs/server/src/connected_client.cpp)
+add_library(server_lib STATIC libs/server/include/server.hpp libs/server/src/server.cpp)
+target_link_libraries(concli_lib customer_menu_lib)
+target_link_libraries(client_lib customer_menu_lib)
+target_link_libraries(client_lib networkio_lib)
+target_link_libraries(concli_lib networkio_lib)
+target_link_libraries(red_lib customer_menu_lib)
+target_link_libraries(concli_lib red_lib)
+target_link_libraries(red_lib concli_lib)
+target_link_libraries(server_lib red_lib)
+target_link_libraries(server_lib concli_lib)
+target_link_libraries(server_lib customer_menu_lib)
+
 # Executables
 
 add_executable(client_customer src/client_customer.cpp)

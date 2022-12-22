@@ -19,14 +19,13 @@ using ClientID = std::array<char, MAX_ID_SIZE>; // ID is an array of char, for i
 
 class Redirector { // How to redirect message based on ID?
 public:
-    Redirector(FoodContainer& all_foods, TableContainer& all_tables)
-        :all_foods_(all_foods), all_tables_(all_tables) { }
+    Redirector(FoodContainer* all_foods, TableContainer* all_tables)
+        :all_foods_ptr_(all_foods), all_tables_ptr_(all_tables), menu_{all_foods,all_tables} { }
     void enter(std::shared_ptr<ConnectedClient> entering_client, const std::string& client_id);
     void leave(std::shared_ptr<ConnectedClient> leaving_client);
-    FoodContainer& food_container() { return all_foods_; } 
-    TableContainer& table_container() { return all_tables_; } 
+    Menu& menu() { return menu_; }
     template<typename T>
-    void Redirector::write_to_client(T& object)
+    void write_to_client(T& object)
     {
         //Temporary
         //std::cout << "redirector write to client called" << std::endl;
@@ -39,8 +38,9 @@ private:
     std::unordered_set<std::shared_ptr<ConnectedClient>> connected_clients_;
     std::unordered_map<std::shared_ptr<ConnectedClient>, std::string> id_table_;
     std::deque<Pack> recent_packs_;
-    FoodContainer& all_foods_;
-    TableContainer& all_tables_;
+    Menu menu_;
+    FoodContainer* all_foods_ptr_;
+    TableContainer* all_tables_ptr_;
 };
 
 #endif

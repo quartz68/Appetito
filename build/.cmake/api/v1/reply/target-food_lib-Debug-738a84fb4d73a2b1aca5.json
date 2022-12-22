@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "libred_lib.a"
+			"path" : "libfood_lib.a"
 		}
 	],
 	"backtrace" : 1,
@@ -27,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 23,
+				"line" : 21,
 				"parent" : 0
 			},
 			{
@@ -134,15 +134,9 @@
 			]
 		}
 	],
-	"dependencies" : 
-	[
-		{
-			"id" : "concli_lib::@6890427a1f51a3e7e1df"
-		}
-	],
-	"id" : "red_lib::@6890427a1f51a3e7e1df",
-	"name" : "red_lib",
-	"nameOnDisk" : "libred_lib.a",
+	"id" : "food_lib::@6890427a1f51a3e7e1df",
+	"name" : "food_lib",
+	"nameOnDisk" : "libfood_lib.a",
 	"paths" : 
 	{
 		"build" : ".",
@@ -169,13 +163,13 @@
 	[
 		{
 			"backtrace" : 1,
-			"path" : "libs/server/include/redirector.hpp",
+			"path" : "libs/restaurant_util/include/food.hpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "libs/server/src/redirector.cpp",
+			"path" : "libs/restaurant_util/src/food.cpp",
 			"sourceGroupIndex" : 1
 		}
 	],

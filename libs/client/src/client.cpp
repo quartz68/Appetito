@@ -39,7 +39,7 @@ void Client::on_connect(const asio::error_code& error)
     //std::cout << "client on connect called" << std::endl;
     if (!error) {
         network_io_.async_write(client_id_,
-                          std::bind(&Client::connect_handler, this, std::placeholders::_1));
+                          std::bind(&Client::connect_handler_step1, this, std::placeholders::_1));
     } else {
         std::cout << error.message() << std::endl;
         close_implementation();
@@ -47,10 +47,23 @@ void Client::on_connect(const asio::error_code& error)
     //std::cout << "client on connect returned" << std::endl;
 }
 
-void Client::connect_handler(const asio::error_code& error)
+void Client::connect_handler_step1(const asio::error_code& error)
 {
     if (!error) {
-        network_io_.async_read(read_string_,
+        network_io_.async_read(menu_,
+                         std::bind(&Client::connect_handler_step2, this, std::placeholders::_1));
+        
+    } else {
+        std::cout << error.message() << std::endl;
+        close_implementation();
+    }
+}
+
+void Client::connect_handler_step2(const asio::error_code& error)
+{
+    if (!error) {
+        menu_.print();
+        network_io_.async_read(menu_,
                          std::bind(&Client::read_handler, this, std::placeholders::_1));
     } else {
         std::cout << error.message() << std::endl;
