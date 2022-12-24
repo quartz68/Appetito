@@ -18,7 +18,7 @@ Basic functionality
 - [ ] Simple order placement
 - [ ] Table arrangement
 - [ ] Queueing
-- [ ] Working network communication
+- [x] Working network communication
 
 Advanced functionality
 
@@ -39,5 +39,9 @@ Impossibility
 
 - [ ] Cloud
 - [ ] PWA
+
+## TO-DO
+
+- [ ] Rewrite input of csv.
 
 ## Under construction 🚫
