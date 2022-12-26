@@ -14,6 +14,120 @@
 #############################################
 # Rule for compiling CXX files.
 
+rule CXX_COMPILER__food_lib_Debug
+  depfile = $DEP_FILE
+  deps = gcc
+  command = C:\msys64\mingw64\bin\g++.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building CXX object $out
+
+
+#############################################
+# Rule for linking CXX static library.
+
+rule CXX_STATIC_LIBRARY_LINKER__food_lib_Debug
+  command = cmd.exe /C "$PRE_LINK && "C:\Program Files\CMake\bin\cmake.exe" -E rm -f $TARGET_FILE && C:\msys64\mingw64\bin\ar.exe qc $TARGET_FILE $LINK_FLAGS $in && C:\msys64\mingw64\bin\ranlib.exe $TARGET_FILE && $POST_BUILD"
+  description = Linking CXX static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling CXX files.
+
+rule CXX_COMPILER__table_lib_Debug
+  depfile = $DEP_FILE
+  deps = gcc
+  command = C:\msys64\mingw64\bin\g++.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building CXX object $out
+
+
+#############################################
+# Rule for linking CXX static library.
+
+rule CXX_STATIC_LIBRARY_LINKER__table_lib_Debug
+  command = cmd.exe /C "$PRE_LINK && "C:\Program Files\CMake\bin\cmake.exe" -E rm -f $TARGET_FILE && C:\msys64\mingw64\bin\ar.exe qc $TARGET_FILE $LINK_FLAGS $in && C:\msys64\mingw64\bin\ranlib.exe $TARGET_FILE && $POST_BUILD"
+  description = Linking CXX static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling CXX files.
+
+rule CXX_COMPILER__menu_lib_Debug
+  depfile = $DEP_FILE
+  deps = gcc
+  command = C:\msys64\mingw64\bin\g++.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building CXX object $out
+
+
+#############################################
+# Rule for linking CXX static library.
+
+rule CXX_STATIC_LIBRARY_LINKER__menu_lib_Debug
+  command = cmd.exe /C "$PRE_LINK && "C:\Program Files\CMake\bin\cmake.exe" -E rm -f $TARGET_FILE && C:\msys64\mingw64\bin\ar.exe qc $TARGET_FILE $LINK_FLAGS $in && C:\msys64\mingw64\bin\ranlib.exe $TARGET_FILE && $POST_BUILD"
+  description = Linking CXX static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling CXX files.
+
+rule CXX_COMPILER__order_deal_lib_Debug
+  depfile = $DEP_FILE
+  deps = gcc
+  command = C:\msys64\mingw64\bin\g++.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building CXX object $out
+
+
+#############################################
+# Rule for linking CXX static library.
+
+rule CXX_STATIC_LIBRARY_LINKER__order_deal_lib_Debug
+  command = cmd.exe /C "$PRE_LINK && "C:\Program Files\CMake\bin\cmake.exe" -E rm -f $TARGET_FILE && C:\msys64\mingw64\bin\ar.exe qc $TARGET_FILE $LINK_FLAGS $in && C:\msys64\mingw64\bin\ranlib.exe $TARGET_FILE && $POST_BUILD"
+  description = Linking CXX static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling CXX files.
+
+rule CXX_COMPILER__notif_lib_Debug
+  depfile = $DEP_FILE
+  deps = gcc
+  command = C:\msys64\mingw64\bin\g++.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building CXX object $out
+
+
+#############################################
+# Rule for linking CXX static library.
+
+rule CXX_STATIC_LIBRARY_LINKER__notif_lib_Debug
+  command = cmd.exe /C "$PRE_LINK && "C:\Program Files\CMake\bin\cmake.exe" -E rm -f $TARGET_FILE && C:\msys64\mingw64\bin\ar.exe qc $TARGET_FILE $LINK_FLAGS $in && C:\msys64\mingw64\bin\ranlib.exe $TARGET_FILE && $POST_BUILD"
+  description = Linking CXX static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling CXX files.
+
+rule CXX_COMPILER__kitchen_request_lib_Debug
+  depfile = $DEP_FILE
+  deps = gcc
+  command = C:\msys64\mingw64\bin\g++.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
+  description = Building CXX object $out
+
+
+#############################################
+# Rule for linking CXX static library.
+
+rule CXX_STATIC_LIBRARY_LINKER__kitchen_request_lib_Debug
+  command = cmd.exe /C "$PRE_LINK && "C:\Program Files\CMake\bin\cmake.exe" -E rm -f $TARGET_FILE && C:\msys64\mingw64\bin\ar.exe qc $TARGET_FILE $LINK_FLAGS $in && C:\msys64\mingw64\bin\ranlib.exe $TARGET_FILE && $POST_BUILD"
+  description = Linking CXX static library $TARGET_FILE
+  restat = $RESTAT
+
+
+#############################################
+# Rule for compiling CXX files.
+
 rule CXX_COMPILER__networkio_lib_Debug
   depfile = $DEP_FILE
   deps = gcc
@@ -101,120 +215,6 @@ rule CXX_COMPILER__server_lib_Debug
 # Rule for linking CXX static library.
 
 rule CXX_STATIC_LIBRARY_LINKER__server_lib_Debug
-  command = cmd.exe /C "$PRE_LINK && "C:\Program Files\CMake\bin\cmake.exe" -E rm -f $TARGET_FILE && C:\msys64\mingw64\bin\ar.exe qc $TARGET_FILE $LINK_FLAGS $in && C:\msys64\mingw64\bin\ranlib.exe $TARGET_FILE && $POST_BUILD"
-  description = Linking CXX static library $TARGET_FILE
-  restat = $RESTAT
-
-
-#############################################
-# Rule for compiling CXX files.
-
-rule CXX_COMPILER__food_lib_Debug
-  depfile = $DEP_FILE
-  deps = gcc
-  command = C:\msys64\mingw64\bin\g++.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
-  description = Building CXX object $out
-
-
-#############################################
-# Rule for linking CXX static library.
-
-rule CXX_STATIC_LIBRARY_LINKER__food_lib_Debug
-  command = cmd.exe /C "$PRE_LINK && "C:\Program Files\CMake\bin\cmake.exe" -E rm -f $TARGET_FILE && C:\msys64\mingw64\bin\ar.exe qc $TARGET_FILE $LINK_FLAGS $in && C:\msys64\mingw64\bin\ranlib.exe $TARGET_FILE && $POST_BUILD"
-  description = Linking CXX static library $TARGET_FILE
-  restat = $RESTAT
-
-
-#############################################
-# Rule for compiling CXX files.
-
-rule CXX_COMPILER__table_lib_Debug
-  depfile = $DEP_FILE
-  deps = gcc
-  command = C:\msys64\mingw64\bin\g++.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
-  description = Building CXX object $out
-
-
-#############################################
-# Rule for linking CXX static library.
-
-rule CXX_STATIC_LIBRARY_LINKER__table_lib_Debug
-  command = cmd.exe /C "$PRE_LINK && "C:\Program Files\CMake\bin\cmake.exe" -E rm -f $TARGET_FILE && C:\msys64\mingw64\bin\ar.exe qc $TARGET_FILE $LINK_FLAGS $in && C:\msys64\mingw64\bin\ranlib.exe $TARGET_FILE && $POST_BUILD"
-  description = Linking CXX static library $TARGET_FILE
-  restat = $RESTAT
-
-
-#############################################
-# Rule for compiling CXX files.
-
-rule CXX_COMPILER__customer_menu_lib_Debug
-  depfile = $DEP_FILE
-  deps = gcc
-  command = C:\msys64\mingw64\bin\g++.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
-  description = Building CXX object $out
-
-
-#############################################
-# Rule for linking CXX static library.
-
-rule CXX_STATIC_LIBRARY_LINKER__customer_menu_lib_Debug
-  command = cmd.exe /C "$PRE_LINK && "C:\Program Files\CMake\bin\cmake.exe" -E rm -f $TARGET_FILE && C:\msys64\mingw64\bin\ar.exe qc $TARGET_FILE $LINK_FLAGS $in && C:\msys64\mingw64\bin\ranlib.exe $TARGET_FILE && $POST_BUILD"
-  description = Linking CXX static library $TARGET_FILE
-  restat = $RESTAT
-
-
-#############################################
-# Rule for compiling CXX files.
-
-rule CXX_COMPILER__customer_order_deal_lib_Debug
-  depfile = $DEP_FILE
-  deps = gcc
-  command = C:\msys64\mingw64\bin\g++.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
-  description = Building CXX object $out
-
-
-#############################################
-# Rule for linking CXX static library.
-
-rule CXX_STATIC_LIBRARY_LINKER__customer_order_deal_lib_Debug
-  command = cmd.exe /C "$PRE_LINK && "C:\Program Files\CMake\bin\cmake.exe" -E rm -f $TARGET_FILE && C:\msys64\mingw64\bin\ar.exe qc $TARGET_FILE $LINK_FLAGS $in && C:\msys64\mingw64\bin\ranlib.exe $TARGET_FILE && $POST_BUILD"
-  description = Linking CXX static library $TARGET_FILE
-  restat = $RESTAT
-
-
-#############################################
-# Rule for compiling CXX files.
-
-rule CXX_COMPILER__customer_notif_lib_Debug
-  depfile = $DEP_FILE
-  deps = gcc
-  command = C:\msys64\mingw64\bin\g++.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
-  description = Building CXX object $out
-
-
-#############################################
-# Rule for linking CXX static library.
-
-rule CXX_STATIC_LIBRARY_LINKER__customer_notif_lib_Debug
-  command = cmd.exe /C "$PRE_LINK && "C:\Program Files\CMake\bin\cmake.exe" -E rm -f $TARGET_FILE && C:\msys64\mingw64\bin\ar.exe qc $TARGET_FILE $LINK_FLAGS $in && C:\msys64\mingw64\bin\ranlib.exe $TARGET_FILE && $POST_BUILD"
-  description = Linking CXX static library $TARGET_FILE
-  restat = $RESTAT
-
-
-#############################################
-# Rule for compiling CXX files.
-
-rule CXX_COMPILER__kitchen_request_lib_Debug
-  depfile = $DEP_FILE
-  deps = gcc
-  command = C:\msys64\mingw64\bin\g++.exe $DEFINES $INCLUDES $FLAGS -MD -MT $out -MF $DEP_FILE -o $out -c $in
-  description = Building CXX object $out
-
-
-#############################################
-# Rule for linking CXX static library.
-
-rule CXX_STATIC_LIBRARY_LINKER__kitchen_request_lib_Debug
   command = cmd.exe /C "$PRE_LINK && "C:\Program Files\CMake\bin\cmake.exe" -E rm -f $TARGET_FILE && C:\msys64\mingw64\bin\ar.exe qc $TARGET_FILE $LINK_FLAGS $in && C:\msys64\mingw64\bin\ranlib.exe $TARGET_FILE && $POST_BUILD"
   description = Linking CXX static library $TARGET_FILE
   restat = $RESTAT

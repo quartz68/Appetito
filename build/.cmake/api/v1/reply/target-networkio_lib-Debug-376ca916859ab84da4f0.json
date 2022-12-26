@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "libclient_lib.a"
+			"path" : "libnetworkio_lib.a"
 		}
 	],
 	"backtrace" : 1,
@@ -12,7 +12,6 @@
 		"commands" : 
 		[
 			"add_library",
-			"target_link_libraries",
 			"add_definitions",
 			"include_directories"
 		],
@@ -28,61 +27,61 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 22,
+				"line" : 34,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 26,
+				"line" : 8,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 8,
-				"parent" : 0
-			},
-			{
-				"command" : 3,
-				"file" : 0,
 				"line" : 10,
 				"parent" : 0
 			},
 			{
-				"command" : 3,
+				"command" : 2,
 				"file" : 0,
 				"line" : 11,
 				"parent" : 0
 			},
 			{
-				"command" : 3,
+				"command" : 2,
 				"file" : 0,
 				"line" : 12,
 				"parent" : 0
 			},
 			{
-				"command" : 3,
+				"command" : 2,
 				"file" : 0,
 				"line" : 13,
 				"parent" : 0
 			},
 			{
-				"command" : 3,
+				"command" : 2,
 				"file" : 0,
 				"line" : 14,
 				"parent" : 0
 			},
 			{
-				"command" : 3,
+				"command" : 2,
 				"file" : 0,
 				"line" : 15,
 				"parent" : 0
 			},
 			{
-				"command" : 3,
+				"command" : 2,
 				"file" : 0,
 				"line" : 16,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 17,
 				"parent" : 0
 			}
 		]
@@ -99,12 +98,16 @@
 			"defines" : 
 			[
 				{
-					"backtrace" : 3,
+					"backtrace" : 2,
 					"define" : "ASIO_STANDALONE"
 				}
 			],
 			"includes" : 
 			[
+				{
+					"backtrace" : 3,
+					"path" : "C:/Projects/libraries/nana/include/nana"
+				},
 				{
 					"backtrace" : 4,
 					"path" : "C:/Projects/Appetito/./libs"
@@ -141,16 +144,9 @@
 			]
 		}
 	],
-	"dependencies" : 
-	[
-		{
-			"backtrace" : 2,
-			"id" : "networkio_lib::@6890427a1f51a3e7e1df"
-		}
-	],
-	"id" : "client_lib::@6890427a1f51a3e7e1df",
-	"name" : "client_lib",
-	"nameOnDisk" : "libclient_lib.a",
+	"id" : "networkio_lib::@6890427a1f51a3e7e1df",
+	"name" : "networkio_lib",
+	"nameOnDisk" : "libnetworkio_lib.a",
 	"paths" : 
 	{
 		"build" : ".",
@@ -177,13 +173,13 @@
 	[
 		{
 			"backtrace" : 1,
-			"path" : "libs/client/include/client.hpp",
+			"path" : "libs/network/include/networkio.hpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "libs/client/src/client.cpp",
+			"path" : "libs/network/src/networkio.cpp",
 			"sourceGroupIndex" : 1
 		}
 	],

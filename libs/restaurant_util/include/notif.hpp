@@ -5,11 +5,10 @@
 #include <string>
 #include <protocol.hpp>
 using namespace std;
-using Pack = array<char, MAX_PACK_SIZE>;
 
 class Notif {
 public:
-    Notif(Pack pack);
+    Notif(std::string& notif);
     void print_notif();
 private:
     string message;

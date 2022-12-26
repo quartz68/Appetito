@@ -3,8 +3,9 @@
 #include <client.hpp>
 #include <food.hpp>
 #include <table.hpp>
-#include <customer_menu.hpp>
-#include <customer_order_deal.hpp>
+#include <menu.hpp>
+#include <order_deal.hpp>
+
 
 
 int main(int argc, char* argv[])
@@ -20,7 +21,6 @@ int main(int argc, char* argv[])
         tcp::resolver::iterator iterator = resolver.resolve(query);
         std::string client_id(argv[1]);
         std::cout << "Client ID: " << client_id << std::endl;
-
         Client client(client_id, io_context, iterator);
 
         std::thread t([&io_context](){io_context.run();});

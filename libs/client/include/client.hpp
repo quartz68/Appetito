@@ -11,6 +11,7 @@
 #include <cereal/archives/binary.hpp>
 #include <cereal/types/string.hpp>
 #include <cereal/types/array.hpp>
+#include <menu.hpp>
 #include <food.hpp>
 #include <table.hpp>
 using asio::ip::tcp;
@@ -32,7 +33,8 @@ public:
     void close();
 private:
     void on_connect(const asio::error_code& error);
-    void connect_handler(const asio::error_code& error);
+    void connect_handler_step1(const asio::error_code& error);
+    void connect_handler_step2(const asio::error_code& error);
     void read_handler(const asio::error_code& error);
     void write_implementation(std::string object);
     void write_handler(const asio::error_code& error);
@@ -41,8 +43,7 @@ private:
     std::string client_id_;
     std::deque<std::string> strings_to_write_;
     std::string read_string_;
-    FoodContainer all_foods_;
-    TableContainer all_tables_;
+    Menu menu_;
     NetworkIO network_io_;
 };
 

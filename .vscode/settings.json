@@ -76,6 +76,7 @@
         "regex": "cpp",
         "fstream": "cpp",
         "typeindex": "cpp",
-        "valarray": "cpp"
+        "valarray": "cpp",
+        "iomanip": "cpp"
     }
 }
