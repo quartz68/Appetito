@@ -63,91 +63,91 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "client_customer::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-client_customer-Debug-d0a1862e119ce1a9e2d0.json",
+					"jsonFile" : "target-client_customer-Debug-7c82a9f0ed666b09e981.json",
 					"name" : "client_customer",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "client_lib::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-client_lib-Debug-7513394714aa85b53e78.json",
+					"jsonFile" : "target-client_lib-Debug-621a5051c73c5837ac22.json",
 					"name" : "client_lib",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "concli_lib::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-concli_lib-Debug-cf73703806557a2b9560.json",
+					"jsonFile" : "target-concli_lib-Debug-0e0d4361f0d6ada15439.json",
 					"name" : "concli_lib",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
-					"id" : "customer_menu_lib::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-customer_menu_lib-Debug-28ccbee201e7a9efa71b.json",
-					"name" : "customer_menu_lib",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 0,
-					"id" : "customer_notif_lib::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-customer_notif_lib-Debug-4181d63132b01a04485d.json",
-					"name" : "customer_notif_lib",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 0,
-					"id" : "customer_order_deal_lib::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-customer_order_deal_lib-Debug-15ebf9208ebdb96f2f53.json",
-					"name" : "customer_order_deal_lib",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 0,
 					"id" : "food_lib::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-food_lib-Debug-f0e5640f3ed87cd745aa.json",
+					"jsonFile" : "target-food_lib-Debug-9df8a29f954f5023cecc.json",
 					"name" : "food_lib",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "kitchen_request_lib::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-kitchen_request_lib-Debug-ff86121a919dbd06b489.json",
+					"jsonFile" : "target-kitchen_request_lib-Debug-2da632aaa5a3c33eccac.json",
 					"name" : "kitchen_request_lib",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
+					"id" : "menu_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-menu_lib-Debug-21481c04323102b60a94.json",
+					"name" : "menu_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
 					"id" : "networkio_lib::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-networkio_lib-Debug-78329f93f769a7fde260.json",
+					"jsonFile" : "target-networkio_lib-Debug-376ca916859ab84da4f0.json",
 					"name" : "networkio_lib",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
+					"id" : "notif_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-notif_lib-Debug-1945b1ec269ba5f79a91.json",
+					"name" : "notif_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "order_deal_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-order_deal_lib-Debug-a8de2443714ec8851a78.json",
+					"name" : "order_deal_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
 					"id" : "red_lib::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-red_lib-Debug-1b01fe66e499b701d481.json",
+					"jsonFile" : "target-red_lib-Debug-2032d6f3f5ededf69a8c.json",
 					"name" : "red_lib",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "server::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-server-Debug-e91a7e5b2d970668d7b5.json",
+					"jsonFile" : "target-server-Debug-59212d08a3d72019fff7.json",
 					"name" : "server",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "server_lib::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-server_lib-Debug-0d10282f4015b23a19bf.json",
+					"jsonFile" : "target-server_lib-Debug-0d31700c22968d04a922.json",
 					"name" : "server_lib",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "table_lib::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-table_lib-Debug-52e1810d9f0f9459cb86.json",
+					"jsonFile" : "target-table_lib-Debug-eec658c955b76e36c4d2.json",
 					"name" : "table_lib",
 					"projectIndex" : 0
 				}

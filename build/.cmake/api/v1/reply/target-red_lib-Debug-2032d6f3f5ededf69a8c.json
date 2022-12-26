@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "libcustomer_notif_lib.a"
+			"path" : "libred_lib.a"
 		}
 	],
 	"backtrace" : 1,
@@ -27,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 38,
+				"line" : 36,
 				"parent" : 0
 			},
 			{
@@ -77,6 +77,12 @@
 				"file" : 0,
 				"line" : 16,
 				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 17,
+				"parent" : 0
 			}
 		]
 	},
@@ -100,30 +106,34 @@
 			[
 				{
 					"backtrace" : 3,
-					"path" : "C:/Projects/Appetito/./libs"
+					"path" : "C:/Projects/libraries/nana/include/nana"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "C:/Projects/Appetito/./libs/asio/include"
+					"path" : "C:/Projects/Appetito/./libs"
 				},
 				{
 					"backtrace" : 5,
-					"path" : "C:/Projects/Appetito/./libs/cereal"
+					"path" : "C:/Projects/Appetito/./libs/asio/include"
 				},
 				{
 					"backtrace" : 6,
-					"path" : "C:/Projects/Appetito/./libs/client/include"
+					"path" : "C:/Projects/Appetito/./libs/cereal"
 				},
 				{
 					"backtrace" : 7,
-					"path" : "C:/Projects/Appetito/./libs/server/include"
+					"path" : "C:/Projects/Appetito/./libs/client/include"
 				},
 				{
 					"backtrace" : 8,
-					"path" : "C:/Projects/Appetito/./libs/network/include"
+					"path" : "C:/Projects/Appetito/./libs/server/include"
 				},
 				{
 					"backtrace" : 9,
+					"path" : "C:/Projects/Appetito/./libs/network/include"
+				},
+				{
+					"backtrace" : 10,
 					"path" : "C:/Projects/Appetito/./libs/restaurant_util/include"
 				}
 			],
@@ -134,9 +144,15 @@
 			]
 		}
 	],
-	"id" : "customer_notif_lib::@6890427a1f51a3e7e1df",
-	"name" : "customer_notif_lib",
-	"nameOnDisk" : "libcustomer_notif_lib.a",
+	"dependencies" : 
+	[
+		{
+			"id" : "concli_lib::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "red_lib::@6890427a1f51a3e7e1df",
+	"name" : "red_lib",
+	"nameOnDisk" : "libred_lib.a",
 	"paths" : 
 	{
 		"build" : ".",
@@ -163,13 +179,13 @@
 	[
 		{
 			"backtrace" : 1,
-			"path" : "libs/restaurant_util/include/customer_notif.hpp",
+			"path" : "libs/server/include/redirector.hpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "libs/restaurant_util/src/customer_notif.cpp",
+			"path" : "libs/server/src/redirector.cpp",
 			"sourceGroupIndex" : 1
 		}
 	],

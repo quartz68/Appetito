@@ -7,6 +7,7 @@ project(Appetito)
 
 add_definitions(-DASIO_STANDALONE)
 
+include_directories(C:/Projects/libraries/nana/include/nana)
 include_directories(./libs)
 include_directories(./libs/asio/include)
 include_directories(./libs/cereal)
@@ -17,34 +18,41 @@ include_directories(./libs/restaurant_util/include)
 
 # Libraries
 
+# Restaurant Libraries
+add_library(food_lib STATIC libs/restaurant_util/include/food.hpp libs/restaurant_util/src/food.cpp)
+add_library(table_lib STATIC libs/restaurant_util/include/table.hpp libs/restaurant_util/src/table.cpp)
+add_library(menu_lib STATIC libs/restaurant_util/include/menu.hpp libs/restaurant_util/src/menu.cpp)
+add_library(order_deal_lib STATIC libs/restaurant_util/include/order_deal.hpp libs/restaurant_util/src/order_deal.cpp)
+add_library(notif_lib STATIC libs/restaurant_util/include/notif.hpp libs/restaurant_util/src/notif.cpp)
+add_library(kitchen_request_lib STATIC libs/restaurant_util/include/kitchen_request.hpp libs/restaurant_util/src/kitchen_request.cpp)
+target_link_libraries(order_deal_lib food_lib)
+target_link_libraries(order_deal_lib table_lib)
+target_link_libraries(menu_lib food_lib)
+target_link_libraries(menu_lib table_lib)
+target_link_libraries(order_deal_lib menu_lib)
 # Communication libraries
 add_library(networkio_lib STATIC libs/network/include/networkio.hpp libs/network/src/networkio.cpp)
 add_library(client_lib STATIC libs/client/include/client.hpp libs/client/src/client.cpp)
 add_library(red_lib STATIC libs/server/include/redirector.hpp libs/server/src/redirector.cpp)
 add_library(concli_lib STATIC libs/server/include/connected_client.hpp libs/server/src/connected_client.cpp)
 add_library(server_lib STATIC libs/server/include/server.hpp libs/server/src/server.cpp)
+target_link_libraries(concli_lib menu_lib)
+target_link_libraries(client_lib menu_lib)
 target_link_libraries(client_lib networkio_lib)
 target_link_libraries(concli_lib networkio_lib)
-target_link_libraries(red_lib customer_menu_lib)
+target_link_libraries(red_lib menu_lib)
 target_link_libraries(concli_lib red_lib)
 target_link_libraries(red_lib concli_lib)
 target_link_libraries(server_lib red_lib)
 target_link_libraries(server_lib concli_lib)
-# Restaurant Libraries
-add_library(food_lib STATIC libs/restaurant_util/include/food.hpp libs/restaurant_util/src/food.cpp)
-add_library(table_lib STATIC libs/restaurant_util/include/table.hpp libs/restaurant_util/src/table.cpp)
-add_library(customer_menu_lib STATIC libs/restaurant_util/include/customer_menu.hpp libs/restaurant_util/src/customer_menu.cpp)
-add_library(customer_order_deal_lib STATIC libs/restaurant_util/include/customer_order_deal.hpp libs/restaurant_util/src/customer_order_deal.cpp)
-add_library(customer_notif_lib STATIC libs/restaurant_util/include/customer_notif.hpp libs/restaurant_util/src/customer_notif.cpp)
-add_library(kitchen_request_lib STATIC libs/restaurant_util/include/kitchen_request.hpp libs/restaurant_util/src/kitchen_request.cpp)
-target_link_libraries(customer_order_deal_lib food_lib)
-target_link_libraries(customer_order_deal_lib table_lib)
-target_link_libraries(customer_menu_lib food_lib)
-target_link_libraries(customer_menu_lib table_lib)
+target_link_libraries(server_lib menu_lib)
+# Main Application Libraries
+#add_library(selection_menu_lib STATIC libs/main_app/include/selection_menu.hpp libs/main_app/src/selection_menu.cpp)
 # Executables
 
 add_executable(client_customer src/client_customer.cpp)
 target_link_libraries(client_customer client_lib)
+#target_link_libraries(client_customer selection_menu_lib)
 
 #add_executable(client_kitchen src/client_kitchen.cpp)
 #target_link_libraries(client_kitchen client_lib)

@@ -11,9 +11,8 @@
 #include <cereal/archives/binary.hpp>
 #include <cereal/types/string.hpp>
 #include <cereal/types/array.hpp>
+#include <menu.hpp>
 using asio::ip::tcp;
-using Pack = std::array<char, MAX_PACK_SIZE>; // Pack is an array of char, for transmitting pack
-using ClientID = std::array<char, MAX_ID_SIZE>; // ID is an array of char, for identifying the client
 
 class Redirector;
 
@@ -27,7 +26,12 @@ public:
 
     tcp::socket& socket();
     void start();
-    void write(std::string& object);
+    template<typename T>
+    void write(T& object)
+    {
+        network_io_.async_write( object,
+                                strand_.wrap(std::bind(&ConnectedClient::write_handler, shared_from_this(), std::placeholders::_1)));
+    }
     std::string get_id();
 private:
     void id_handler(const asio::error_code& error);

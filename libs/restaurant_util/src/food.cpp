@@ -50,10 +50,10 @@ void Food::set_name(string name) {
     name_ = name;
 }
 
-void Food::set_price(double price) {
-    price_.set_price(price);
+void Food::set_price(Price price) {
+    price_ = price;
 }
 
-void Food::set_type(unsigned short type_id) {
-    type_ = container_.types[type_id];
+void Food::set_type(FoodType type) {
+    type_ = type;
 }
