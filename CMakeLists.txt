@@ -7,6 +7,7 @@ project(Appetito)
 
 add_definitions(-DASIO_STANDALONE)
 
+include_directories(C:/Projects/libraries/nana/include/nana)
 include_directories(./libs)
 include_directories(./libs/asio/include)
 include_directories(./libs/cereal)
@@ -45,11 +46,13 @@ target_link_libraries(red_lib concli_lib)
 target_link_libraries(server_lib red_lib)
 target_link_libraries(server_lib concli_lib)
 target_link_libraries(server_lib menu_lib)
-
+# Main Application Libraries
+#add_library(selection_menu_lib STATIC libs/main_app/include/selection_menu.hpp libs/main_app/src/selection_menu.cpp)
 # Executables
 
 add_executable(client_customer src/client_customer.cpp)
 target_link_libraries(client_customer client_lib)
+#target_link_libraries(client_customer selection_menu_lib)
 
 #add_executable(client_kitchen src/client_kitchen.cpp)
 #target_link_libraries(client_kitchen client_lib)

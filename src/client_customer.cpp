@@ -21,7 +21,6 @@ int main(int argc, char* argv[])
         tcp::resolver::iterator iterator = resolver.resolve(query);
         std::string client_id(argv[1]);
         std::cout << "Client ID: " << client_id << std::endl;
-
         Client client(client_id, io_context, iterator);
 
         std::thread t([&io_context](){io_context.run();});
