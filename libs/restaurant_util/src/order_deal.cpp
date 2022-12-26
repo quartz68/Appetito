@@ -1,16 +1,26 @@
 #include <order_deal.hpp>
 
 void Order::add_item(Food item, unsigned short quantity) {
-    auto it = find(food_list_.begin(), food_list_.end(), item);
+    // Find if there is FoodID in food_list_ equal to item.get_id().
+    FoodID itemid = item.get_id();
+    auto it = std::find_if(food_list_.begin(), food_list_.end(), 
+                        [itemid = std::as_const(itemid)](const pair<FoodID, unsigned short>& p)
+                        { return p.first == itemid; });
+    // Add the quantity if there is; emplace if it isn't.
     if (it != food_list_.end()) {
         (*it).second += quantity;
     } else {
-        food_list_.emplace_back(item, quantity);
+        food_list_.emplace_back(item.get_id(), quantity);
     }
 }
 
 void Order::delete_item(Food item, unsigned short quantity) {
-    auto it = find(food_list_.begin(), food_list_.end(), item);
+    // Find if there is FoodID in food_list_ equal to item.get_id().
+    FoodID itemid = item.get_id();
+    auto it = std::find_if(food_list_.begin(), food_list_.end(), 
+                        [itemid = std::as_const(itemid)](const pair<FoodID, unsigned short>& p)
+                        { return p.first == itemid; });
+    // Subtract the quantity if there is and quantity on the list is larger than that we would like to delete.
     if (it != food_list_.end()) {
         if ((*it).second >= quantity) (*it).second -= quantity;
         else cerr << "The quantity of items you want to delete is too large." << endl;

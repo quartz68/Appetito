@@ -15,6 +15,9 @@ class Food;
  * @brief ID of food.
  */
 struct FoodID {
+    bool operator== (const FoodID& other) const {
+        return (type == other.type) && (id == other.id);
+    }
     bool operator< (const FoodID& other) const {
         if (type < other.type) return true;
         else if (type > other.type) return false;

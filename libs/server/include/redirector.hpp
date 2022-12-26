@@ -12,7 +12,7 @@
 #include <protocol.hpp>
 #include <food.hpp>
 #include <table.hpp>
-#include <customer_menu.hpp>
+#include <menu.hpp>
 using asio::ip::tcp;
 
 class Redirector { // How to redirect message based on ID?

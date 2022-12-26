@@ -4,7 +4,7 @@
 #include <vector>
 #include <food.hpp>
 #include <table.hpp>
-#include <customer_menu.hpp>
+#include <menu.hpp>
 #include <cereal.hpp>
 #include <cereal/archives/binary.hpp>
 #include <cereal/types/vector.hpp>
@@ -15,8 +15,22 @@ using namespace std;
  */
 class Order {
 public:
+    /**
+     * Construct a new Order object from menu.
+     * @brief Constructor.
+     * 
+     * @param menu Menu.
+     */
     Order(Menu& menu) 
         :menu_(menu) { }
+    Order(const Order& order)
+        :food_list_(order.food_list_), bill_(order.bill_), menu_(order.menu_) { }
+    void operator=(const Order& order)
+    {
+        food_list_ = order.food_list_;
+        bill_ = order.bill_;
+        menu_ = order.menu_;
+    }
     /**
      * @brief Add items of Food to the order.
      * 
@@ -63,7 +77,7 @@ public:
      * @param table Table.
      */
     Deal(Order& order, Table& table)
-        :order_(order), table_(table.get_id()), bill_(order.get_bill()) { }
+        :order_(order), tableid_(table.get_id()), bill_(order.get_bill()) { }
     /**
      * @brief Calculate the bill and return the total price.
      * 
@@ -81,7 +95,7 @@ public:
      * 
      * @param table Table.
      */
-    void set_table(Table& table) { tableid_ = table.get_id; }
+    void set_table(Table& table) { tableid_ = table.get_id(); }
     /**
      * @brief Print the deal.
      */

@@ -11,7 +11,7 @@
 #include <cereal/archives/binary.hpp>
 #include <cereal/types/string.hpp>
 #include <cereal/types/array.hpp>
-#include <customer_menu.hpp>
+#include <menu.hpp>
 using asio::ip::tcp;
 
 class Redirector;

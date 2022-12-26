@@ -3,8 +3,8 @@
 #include <client.hpp>
 #include <food.hpp>
 #include <table.hpp>
-#include <customer_menu.hpp>
-#include <customer_order_deal.hpp>
+#include <menu.hpp>
+#include <order_deal.hpp>
 
 
 
