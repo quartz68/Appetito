@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "libcustomer_notif_lib.a"
+			"path" : "libnotif_lib.a"
 		}
 	],
 	"backtrace" : 1,
@@ -134,9 +134,9 @@
 			]
 		}
 	],
-	"id" : "customer_notif_lib::@6890427a1f51a3e7e1df",
-	"name" : "customer_notif_lib",
-	"nameOnDisk" : "libcustomer_notif_lib.a",
+	"id" : "notif_lib::@6890427a1f51a3e7e1df",
+	"name" : "notif_lib",
+	"nameOnDisk" : "libnotif_lib.a",
 	"paths" : 
 	{
 		"build" : ".",
@@ -163,13 +163,13 @@
 	[
 		{
 			"backtrace" : 1,
-			"path" : "libs/restaurant_util/include/customer_notif.hpp",
+			"path" : "libs/restaurant_util/include/notif.hpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "libs/restaurant_util/src/customer_notif.cpp",
+			"path" : "libs/restaurant_util/src/notif.cpp",
 			"sourceGroupIndex" : 1
 		}
 	],

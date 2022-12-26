@@ -63,43 +63,22 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "client_customer::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-client_customer-Debug-aea6fde482b462ec5ed7.json",
+					"jsonFile" : "target-client_customer-Debug-5757ba4ceb28090cebdb.json",
 					"name" : "client_customer",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "client_lib::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-client_lib-Debug-c62a84586b48e34c349c.json",
+					"jsonFile" : "target-client_lib-Debug-39766a322254262a1fa8.json",
 					"name" : "client_lib",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "concli_lib::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-concli_lib-Debug-1f600f371f3eabff1ed0.json",
+					"jsonFile" : "target-concli_lib-Debug-9e6d02f595f8c34be79d.json",
 					"name" : "concli_lib",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 0,
-					"id" : "customer_menu_lib::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-customer_menu_lib-Debug-318b79c93a9a6553f9f6.json",
-					"name" : "customer_menu_lib",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 0,
-					"id" : "customer_notif_lib::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-customer_notif_lib-Debug-f51f9bff54b57a45b06b.json",
-					"name" : "customer_notif_lib",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 0,
-					"id" : "customer_order_deal_lib::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-customer_order_deal_lib-Debug-095f645df205abac92c6.json",
-					"name" : "customer_order_deal_lib",
 					"projectIndex" : 0
 				},
 				{
@@ -118,29 +97,50 @@
 				},
 				{
 					"directoryIndex" : 0,
+					"id" : "menu_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-menu_lib-Debug-d18b45507f66f69ca3bb.json",
+					"name" : "menu_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
 					"id" : "networkio_lib::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-networkio_lib-Debug-f90ecd5738e414638daf.json",
+					"jsonFile" : "target-networkio_lib-Debug-3bcd06707757a17b387a.json",
 					"name" : "networkio_lib",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
+					"id" : "notif_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-notif_lib-Debug-4ee14f91ab72cfec5ad4.json",
+					"name" : "notif_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "order_deal_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-order_deal_lib-Debug-2d176e3b3828511df0d0.json",
+					"name" : "order_deal_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
 					"id" : "red_lib::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-red_lib-Debug-2ff5a3a71f2bf611fd8a.json",
+					"jsonFile" : "target-red_lib-Debug-259ddd0ae348d547e19c.json",
 					"name" : "red_lib",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "server::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-server-Debug-4fe24a2b2030fe4d6706.json",
+					"jsonFile" : "target-server-Debug-bdc19521c3aa75f2b932.json",
 					"name" : "server",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
 					"id" : "server_lib::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-server_lib-Debug-f39af8cc6ffc7d166c9d.json",
+					"jsonFile" : "target-server_lib-Debug-3d5cc0e88fb213040a6b.json",
 					"name" : "server_lib",
 					"projectIndex" : 0
 				},

@@ -3,6 +3,8 @@
 
 #include <vector>
 #include <food.hpp>
+#include <table.hpp>
+#include <customer_menu.hpp>
 #include <cereal.hpp>
 #include <cereal/archives/binary.hpp>
 #include <cereal/types/vector.hpp>
@@ -13,18 +15,20 @@ using namespace std;
  */
 class Order {
 public:
+    Order(Menu& menu) 
+        :menu_(menu) { }
     /**
-     * @brief Add an item of Food to the order.
+     * @brief Add items of Food to the order.
      * 
      * @param item Item of Food.
      */
-    void add_item(Food item);
+    void add_item(Food item, unsigned short quantity);
     /**
-     * @brief Delete an item of Food to the order.
+     * @brief Delete items of Food to the order.
      * 
      * @param item Item of Food.
      */
-    void delete_item(Food item);
+    void delete_item(Food item, unsigned short quantity);
     /**
      * @brief Calculate the bill and return the total price.
      * 
@@ -41,8 +45,9 @@ public:
         archive(food_list_,bill_);
     }
 private:
-    vector<Food> food_list_;
+    vector<pair<FoodID, unsigned short>> food_list_;
     double bill_;
+    Menu& menu_;
 };
 
 /**
@@ -58,25 +63,25 @@ public:
      * @param table Table.
      */
     Deal(Order& order, Table& table)
-        :order_(order), table_(table), bill_(order.get_bill()) { }
+        :order_(order), table_(table.get_id()), bill_(order.get_bill()) { }
     /**
      * @brief Calculate the bill and return the total price.
      * 
      * @return Total price.
      */
-    void get_bill();
+    double get_bill();
     /**
      * @brief Set the order.
      * 
      * @param order Order.
      */
-    void set_order(Order& order);
+    void set_order(Order& order) { order_ = order; }
     /**
      * @brief Set the table.
      * 
      * @param table Table.
      */
-    void set_table(Table& table);
+    void set_table(Table& table) { tableid_ = table.get_id; }
     /**
      * @brief Print the deal.
      */
@@ -84,11 +89,11 @@ public:
     template<class Archive>
     void serialize(Archive& archive)
     {
-        archive(order_,table_,bill_);
+        archive(order_,tableid_,bill_);
     }
 private:
     Order order_;
-    Table table_;
+    TableID tableid_;
     double bill_;
 };
 

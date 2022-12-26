@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "libserver_lib.a"
+			"path" : "libclient_lib.a"
 		}
 	],
 	"backtrace" : 1,
@@ -28,13 +28,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 36,
+				"line" : 34,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 44,
+				"line" : 39,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 40,
 				"parent" : 0
 			},
 			{
@@ -99,38 +105,38 @@
 			"defines" : 
 			[
 				{
-					"backtrace" : 3,
+					"backtrace" : 4,
 					"define" : "ASIO_STANDALONE"
 				}
 			],
 			"includes" : 
 			[
 				{
-					"backtrace" : 4,
+					"backtrace" : 5,
 					"path" : "C:/Projects/Appetito/./libs"
 				},
 				{
-					"backtrace" : 5,
+					"backtrace" : 6,
 					"path" : "C:/Projects/Appetito/./libs/asio/include"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 7,
 					"path" : "C:/Projects/Appetito/./libs/cereal"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 8,
 					"path" : "C:/Projects/Appetito/./libs/client/include"
 				},
 				{
-					"backtrace" : 8,
+					"backtrace" : 9,
 					"path" : "C:/Projects/Appetito/./libs/server/include"
 				},
 				{
-					"backtrace" : 9,
+					"backtrace" : 10,
 					"path" : "C:/Projects/Appetito/./libs/network/include"
 				},
 				{
-					"backtrace" : 10,
+					"backtrace" : 11,
 					"path" : "C:/Projects/Appetito/./libs/restaurant_util/include"
 				}
 			],
@@ -145,28 +151,24 @@
 	[
 		{
 			"backtrace" : 2,
-			"id" : "food_lib::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 2,
 			"id" : "table_lib::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 2,
-			"id" : "customer_menu_lib::@6890427a1f51a3e7e1df"
+			"id" : "food_lib::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 2,
+			"id" : "menu_lib::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 3,
 			"id" : "networkio_lib::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 2,
-			"id" : "red_lib::@6890427a1f51a3e7e1df"
 		}
 	],
-	"id" : "server_lib::@6890427a1f51a3e7e1df",
-	"name" : "server_lib",
-	"nameOnDisk" : "libserver_lib.a",
+	"id" : "client_lib::@6890427a1f51a3e7e1df",
+	"name" : "client_lib",
+	"nameOnDisk" : "libclient_lib.a",
 	"paths" : 
 	{
 		"build" : ".",
@@ -193,13 +195,13 @@
 	[
 		{
 			"backtrace" : 1,
-			"path" : "libs/server/include/server.hpp",
+			"path" : "libs/client/include/client.hpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "libs/server/src/server.cpp",
+			"path" : "libs/client/src/client.cpp",
 			"sourceGroupIndex" : 1
 		}
 	],

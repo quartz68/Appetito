@@ -35,7 +35,6 @@ public:
 private:
     std::unordered_set<std::shared_ptr<ConnectedClient>> connected_clients_;
     std::unordered_map<std::shared_ptr<ConnectedClient>, std::string> id_table_;
-    std::deque<Pack> recent_packs_;
     Menu menu_;
     FoodContainer* all_foods_ptr_;
     TableContainer* all_tables_ptr_;

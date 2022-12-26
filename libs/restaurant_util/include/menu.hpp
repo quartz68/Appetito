@@ -32,7 +32,6 @@ public:
     {
         archive(foods_,tables_);
     }
-protected:
     map<FoodID,Food> foods_; // 二维vector，一个类型的Food是一行
     map<TableID,Table> tables_; // 参考上一个
 };

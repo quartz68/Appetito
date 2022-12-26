@@ -11,18 +11,18 @@
 },
 {
   "directory": "C:/Projects/Appetito/build",
-  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DASIO_STANDALONE -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -g -o CMakeFiles\\customer_menu_lib.dir\\libs\\restaurant_util\\src\\customer_menu.cpp.obj -c C:\\Projects\\Appetito\\libs\\restaurant_util\\src\\customer_menu.cpp",
-  "file": "C:\\Projects\\Appetito\\libs\\restaurant_util\\src\\customer_menu.cpp"
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DASIO_STANDALONE -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -g -o CMakeFiles\\menu_lib.dir\\libs\\restaurant_util\\src\\menu.cpp.obj -c C:\\Projects\\Appetito\\libs\\restaurant_util\\src\\menu.cpp",
+  "file": "C:\\Projects\\Appetito\\libs\\restaurant_util\\src\\menu.cpp"
 },
 {
   "directory": "C:/Projects/Appetito/build",
-  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DASIO_STANDALONE -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -g -o CMakeFiles\\customer_order_deal_lib.dir\\libs\\restaurant_util\\src\\customer_order_deal.cpp.obj -c C:\\Projects\\Appetito\\libs\\restaurant_util\\src\\customer_order_deal.cpp",
-  "file": "C:\\Projects\\Appetito\\libs\\restaurant_util\\src\\customer_order_deal.cpp"
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DASIO_STANDALONE -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -g -o CMakeFiles\\order_deal_lib.dir\\libs\\restaurant_util\\src\\order_deal.cpp.obj -c C:\\Projects\\Appetito\\libs\\restaurant_util\\src\\order_deal.cpp",
+  "file": "C:\\Projects\\Appetito\\libs\\restaurant_util\\src\\order_deal.cpp"
 },
 {
   "directory": "C:/Projects/Appetito/build",
-  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DASIO_STANDALONE -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -g -o CMakeFiles\\customer_notif_lib.dir\\libs\\restaurant_util\\src\\customer_notif.cpp.obj -c C:\\Projects\\Appetito\\libs\\restaurant_util\\src\\customer_notif.cpp",
-  "file": "C:\\Projects\\Appetito\\libs\\restaurant_util\\src\\customer_notif.cpp"
+  "command": "C:\\msys64\\mingw64\\bin\\g++.exe -DASIO_STANDALONE -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -g -o CMakeFiles\\notif_lib.dir\\libs\\restaurant_util\\src\\notif.cpp.obj -c C:\\Projects\\Appetito\\libs\\restaurant_util\\src\\notif.cpp",
+  "file": "C:\\Projects\\Appetito\\libs\\restaurant_util\\src\\notif.cpp"
 },
 {
   "directory": "C:/Projects/Appetito/build",
