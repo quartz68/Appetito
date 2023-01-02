@@ -100,3 +100,7 @@
 16430	39030	6943556032389540	CMakeFiles/server.dir/src/server_main.cpp.obj	f0d943d7abe81802
 37401	47950	6943556121349474	bin/client_customer.exe	75001ad7e5dced2b
 39030	50243	6943556144384268	bin/server.exe	38d34151ed267ce8
+38	13831	6943706047485849	CMakeFiles/client_lib.dir/libs/client/src/client.cpp.obj	b276a1bca73d7712
+45	16428	6943706073453936	CMakeFiles/client_customer.dir/src/client_customer.cpp.obj	677be3125f7b23f1
+13836	16735	6943706076704905	libclient_lib.a	ae08b62b71d84c34
+16735	24024	6943706149486887	bin/client_customer.exe	75001ad7e5dced2b

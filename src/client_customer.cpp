@@ -105,7 +105,7 @@ int main(int argc, char* argv[])
         std::string client_id(argv[1]);
         std::cout << "Client ID: " << client_id << std::endl;
         // Start network client
-        Client client(client_id, io_context, iterator);
+        CustomerClient client(client_id, io_context, iterator);
         std::thread t([&io_context](){io_context.run();});
         asio::steady_timer timer(io_context, asio::chrono::milliseconds(200));
         timer.wait();

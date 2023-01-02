@@ -35,7 +35,7 @@ public:
             tcp::resolver::iterator endpoint_iterator)
         :io_context_(io_context), network_io_(io_context), client_id_(client_id)
         {
-            asio::async_connect(network_io_.socket(), endpoint_iterator, std::bind(&Client::on_connect, this, std::placeholders::_1)); // Connect to server
+            
         }
     Client(const Client& other)
         :io_context_(other.io_context_), network_io_(other.io_context_), client_id_(other.client_id_), menu_(other.menu_) { }
@@ -55,11 +55,7 @@ public:
         //std::cout << "client write returned" << std::endl;
     }
     void close();
-private:
-    void on_connect(const asio::error_code& error);
-    void connect_handler(const asio::error_code& error);
-    void connect_handler_step2(const asio::error_code& error);
-    void read_handler(const asio::error_code& error);
+protected:
     void write_completion_handler(const asio::error_code& error);
     void close_implementation();
     asio::io_context& io_context_;
@@ -67,6 +63,25 @@ private:
     std::string read_string_;
     Menu menu_;
     NetworkIO network_io_;
+};
+
+class CustomerClient
+    : public Client {
+public:
+    CustomerClient(const std::string& client_id,
+            asio::io_context& io_context,
+            tcp::resolver::iterator endpoint_iterator)
+        :Client{client_id, io_context, endpoint_iterator} 
+        {
+            asio::async_connect(network_io_.socket(), endpoint_iterator, std::bind(&CustomerClient::on_connect, this, std::placeholders::_1)); // Connect to server
+        }
+    CustomerClient(const CustomerClient& other)
+        :Client{other} { }
+protected:
+    void on_connect(const asio::error_code& error);
+    void connect_handler(const asio::error_code& error);
+    void connect_handler_step2(const asio::error_code& error);
+    void read_handler(const asio::error_code& error);
 };
 
 #endif

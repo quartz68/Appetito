@@ -1,23 +1,6 @@
 #include <client.hpp>
 
 /*
-    FOR: Interface for writing Pack to socket, to send it to server
-    TAKES a Pack to write,
-    RETURNS nothing.
-*/
-/* void Client::write(const std::string& object) {
-    //std::cout << "client write called" << std::endl;
-    io_context_.post(std::bind(&Client::write_implementation, this, object));
-    //std::cout << "client write returned" << std::endl;
-} */
-/* void Client::write(const Pack& pack) 
-{
-    //std::cout << "client write called" << std::endl;
-    io_context_.post(std::bind(&Client::write_implementation, this, pack));
-    //std::cout << "client write returned" << std::endl;
-} */
-
-/*
     FOR: Interface for closing the socket
     TAKES nothing,
     RETURNS nothing.
@@ -27,71 +10,6 @@ void Client::close()
     //std::cout << "client close called" << std::endl;
     io_context_.post(std::bind(&Client::close_implementation, this));
     //std::cout << "client close returned" << std::endl;
-}
-
-/*
-    FOR: Writes the client ID to socket, to send to server for identification
-    TAKES nothing,
-    RETURNS nothing.
-*/
-void Client::on_connect(const asio::error_code& error)
-{
-    //std::cout << "client on connect called" << std::endl;
-    if (!error) {
-        network_io_.async_write(client_id_,
-                          std::bind(&Client::connect_handler, this, std::placeholders::_1));
-    } else {
-        std::cout << error.message() << std::endl;
-        close_implementation();
-    }
-    //std::cout << "client on connect returned" << std::endl;
-}
-
-void Client::connect_handler(const asio::error_code& error)
-{
-    if (!error) {
-        network_io_.async_read(menu_,
-                         std::bind(&Client::read_handler, this, std::placeholders::_1));
-        
-    } else {
-        std::cout << error.message() << std::endl;
-        close_implementation();
-    }
-}
-
-void Client::connect_handler_step2(const asio::error_code& error)
-{
-    if (!error) {
-        menu_.print();
-        /* Order order(menu_);
-        Table table;
-        Deal deal(order,table);
-        network_io_.async_write(deal,
-                         std::bind(&Client::read_handler, this, std::placeholders::_1)); */
-        
-    } else {
-        std::cout << error.message() << std::endl;
-        close_implementation();
-    }
-}
-
-
-/*
-    FOR: Handles reading a received pack into read_pack_
-    NEEDS FURTHER CHANGE
-*/
-void Client::read_handler(const asio::error_code& error)
-{
-    //std::cout << "client read handler called" << std::endl;
-    if (!error) {
-        std::cout << read_string_ << std::endl;
-        network_io_.async_read(read_string_,
-                         std::bind(&Client::read_handler, this, std::placeholders::_1));
-    } else {
-        std::cout << error.message() << std::endl;
-        close_implementation();
-    }
-    //std::cout << "client read handler returned" << std::endl;
 }
 
 /*
@@ -122,3 +40,69 @@ void Client::close_implementation()
     network_io_.socket().close();
     //std::cout << "client close implementation returned" << std::endl;
 }
+
+/*
+    FOR: Writes the client ID to socket, to send to server for identification
+    TAKES nothing,
+    RETURNS nothing.
+*/
+void CustomerClient::on_connect(const asio::error_code& error)
+{
+    //std::cout << "client on connect called" << std::endl;
+    if (!error) {
+        network_io_.async_write(client_id_,
+                          std::bind(&CustomerClient::connect_handler, this, std::placeholders::_1));
+    } else {
+        std::cout << error.message() << std::endl;
+        close_implementation();
+    }
+    //std::cout << "client on connect returned" << std::endl;
+}
+
+void CustomerClient::connect_handler(const asio::error_code& error)
+{
+    if (!error) {
+        network_io_.async_read(menu_,
+                         std::bind(&CustomerClient::read_handler, this, std::placeholders::_1));
+        
+    } else {
+        std::cout << error.message() << std::endl;
+        close_implementation();
+    }
+}
+
+void CustomerClient::connect_handler_step2(const asio::error_code& error)
+{
+    if (!error) {
+        menu_.print();
+        /* Order order(menu_);
+        Table table;
+        Deal deal(order,table);
+        network_io_.async_write(deal,
+                         std::bind(&Client::read_handler, this, std::placeholders::_1)); */
+        
+    } else {
+        std::cout << error.message() << std::endl;
+        close_implementation();
+    }
+}
+
+
+/*
+    FOR: Handles reading a received pack into read_pack_
+    NEEDS FURTHER CHANGE
+*/
+void CustomerClient::read_handler(const asio::error_code& error)
+{
+    //std::cout << "client read handler called" << std::endl;
+    if (!error) {
+        std::cout << read_string_ << std::endl;
+        network_io_.async_read(read_string_,
+                         std::bind(&CustomerClient::read_handler, this, std::placeholders::_1));
+    } else {
+        std::cout << error.message() << std::endl;
+        close_implementation();
+    }
+    //std::cout << "client read handler returned" << std::endl;
+}
+
