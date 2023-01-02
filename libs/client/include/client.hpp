@@ -41,17 +41,18 @@ public:
         :io_context_(other.io_context_), network_io_(other.io_context_), client_id_(other.client_id_), menu_(other.menu_) { }
     Menu& menu() { return menu_; }
     /**
-     * @brief 
+     * @brief Write an object to the server.
      * 
-     * @param object 
+     * @tparam T The type of the object.
+     * @param object The object to write.
      */
     template<typename T>
     void write(T& object)
     {
-        std::cout << "client write called" << std::endl;
+        //std::cout << "client write called" << std::endl;
         network_io_.async_write( object,
                                 std::bind(&Client::write_completion_handler, this, std::placeholders::_1));
-        std::cout << "client write returned" << std::endl;
+        //std::cout << "client write returned" << std::endl;
     }
     void close();
 private:

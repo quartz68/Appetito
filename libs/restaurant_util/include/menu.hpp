@@ -18,11 +18,15 @@ public:
     Menu() { }
     Menu(FoodContainer* all_foods, TableContainer* all_tables) //构造函数，遍历FoodContainer和TableContainer，分别将Food和Table存入二维vector types_foods和types_tables
     {
-        for (auto food : (*all_foods).foods) {
-            foods_.emplace(food.first,food.second);
-        }
-        for (auto table : (*all_tables).tables) {
-            tables_.emplace(table.first,table.second);
+        if (all_foods != nullptr && all_tables != nullptr) {
+            for (auto food : (*all_foods).foods) {
+                foods_.emplace(food.first,food.second);
+            }
+            for (auto table : (*all_tables).tables) {
+                tables_.emplace(table.first,table.second);
+            }
+        } else {
+            cerr << "Trying to set nullptr as FoodContainer or TableContainer pointer!" << endl;
         }
     }
     Menu(const Menu& other)

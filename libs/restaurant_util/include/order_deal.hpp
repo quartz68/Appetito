@@ -58,7 +58,7 @@ public:
      * 
      * @param menu_ptr Raw pointer to menu.
      */
-    void set_menu_ptr(Menu* menu_ptr) { menu_ptr_ = menu_ptr; }
+    void set_menu_ptr(Menu* menu_ptr) { if (menu_ptr != nullptr) menu_ptr_ = menu_ptr; else cerr << "Trying to set nullptr as menu pointer!" << endl; }
     /**
      * @brief Print the order.
      */
@@ -111,7 +111,7 @@ public:
      * 
      * @param menu_ptr Raw pointer to menu.
      */
-    void set_menu_ptr(Menu* menu_ptr) { order_.set_menu_ptr(menu_ptr); }
+    void set_menu_ptr(Menu* menu_ptr) { if (menu_ptr != nullptr) order_.set_menu_ptr(menu_ptr); else cerr << "Trying to set nullptr as menu pointer!" << endl; }
     /**
      * @brief Print the deal.
      */
