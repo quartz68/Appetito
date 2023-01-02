@@ -47,16 +47,28 @@ public:
            const tcp::endpoint& endpoint,
            FoodContainer* all_foods,
            TableContainer* all_tables)
-        :io_context_(io_context), strand_(strand), acceptor_(io_context, endpoint), all_foods_ptr_(all_foods), all_tables_ptr_(all_tables), red_zone_{all_foods,all_tables} { run(); }
-private:
-    void run();
-    void on_accept(std::shared_ptr<ConnectedClient> new_client, const asio::error_code& error);
+        :io_context_(io_context), strand_(strand), acceptor_(io_context, endpoint), all_foods_ptr_(all_foods), all_tables_ptr_(all_tables) { }
+protected:
     asio::io_context& io_context_;
     asio::io_context::strand& strand_;
     tcp::acceptor acceptor_;
-    Redirector red_zone_;
     FoodContainer* all_foods_ptr_;
     TableContainer* all_tables_ptr_;
+};
+
+class CustomerServer
+    : public Server {
+public:
+    CustomerServer(asio::io_context& io_context,
+        asio::io_context::strand& strand,
+        const tcp::endpoint& endpoint,
+        FoodContainer* all_foods,
+        TableContainer* all_tables)
+    :Server{io_context, strand, endpoint, all_foods, all_tables}, red_zone_{all_foods,all_tables} { run(); }
+protected:
+    void run();
+    void on_accept(std::shared_ptr<ConnectedCustomerClient> new_client, const asio::error_code& error);
+    CustomerRedirector red_zone_;
 };
 
 #endif

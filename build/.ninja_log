@@ -74,3 +74,11 @@
 36132	36858	6941988307457844	libserver_lib.a	5a1bf4aadd432be0
 32971	43042	6941988369503277	bin/client_customer.exe	75001ad7e5dced2b
 36858	45254	6941988391618489	bin/server.exe	38d34151ed267ce8
+36	12941	6943336605105181	CMakeFiles/red_lib.dir/libs/server/src/redirector.cpp.obj	d88aea3375f4ca4a
+49	14090	6943336614312242	CMakeFiles/server_lib.dir/libs/server/src/server.cpp.obj	40d9a31679288261
+55	17114	6943336646668592	CMakeFiles/server.dir/src/server_main.cpp.obj	f0d943d7abe81802
+49	10328	6943337325750195	CMakeFiles/concli_lib.dir/libs/server/src/connected_client.cpp.obj	8695cc456f5cf250
+10330	13353	6943337356065914	libconcli_lib.a	baf8ca7757406000
+13354	13558	6943337358067268	libred_lib.a	3b192f455ae5daec
+13558	14045	6943337363069303	libserver_lib.a	5a1bf4aadd432be0
+14045	21544	6943337437979923	bin/server.exe	38d34151ed267ce8

@@ -19,9 +19,20 @@ class Redirector { // How to redirect message based on ID?
 public:
     Redirector(FoodContainer* all_foods, TableContainer* all_tables)
         :all_foods_ptr_(all_foods), all_tables_ptr_(all_tables), menu_{all_foods,all_tables} { }
-    void enter(std::shared_ptr<ConnectedClient> entering_client, const std::string& client_id);
-    void leave(std::shared_ptr<ConnectedClient> leaving_client);
     Menu* menu_ptr() { return &menu_; }
+protected:
+    Menu menu_;
+    FoodContainer* all_foods_ptr_;
+    TableContainer* all_tables_ptr_;
+};
+
+class CustomerRedirector
+    : public Redirector {
+public:
+    CustomerRedirector(FoodContainer* all_foods, TableContainer* all_tables)
+        :Redirector{all_foods, all_tables} { }
+    void enter(std::shared_ptr<ConnectedCustomerClient> entering_client, const std::string& client_id);
+    void leave(std::shared_ptr<ConnectedCustomerClient> leaving_client);
     template<typename T>
     void write_to_client(T& object)
     {
@@ -32,12 +43,9 @@ public:
                         std::bind(&ConnectedClient::write, std::placeholders::_1, std::ref(object)));
         //std::cout << "redirector write to client returned" << std::endl;
     }
-private:
-    std::unordered_set<std::shared_ptr<ConnectedClient>> connected_clients_;
-    std::unordered_map<std::shared_ptr<ConnectedClient>, std::string> id_table_;
-    Menu menu_;
-    FoodContainer* all_foods_ptr_;
-    TableContainer* all_tables_ptr_;
+protected:
+    std::unordered_set<std::shared_ptr<ConnectedCustomerClient>> connected_clients_;
+    std::unordered_map<std::shared_ptr<ConnectedCustomerClient>, std::string> id_table_;
 };
 
 #endif

@@ -35,17 +35,17 @@ int main(int argc, char* argv[])
         TableContainer all_tables(table_file);
         std::cout << "Server " << std::this_thread::get_id() << " starts." << std::endl;
         
-        std::list<std::shared_ptr<Server>> servers;
-        for (int i = 1; i < argc; ++i)
+        std::list<std::shared_ptr<CustomerServer>> customer_servers;
+        /* for (int i = 1; i < argc; ++i)
         {
             tcp::endpoint endpoint(tcp::v4(), std::atoi(argv[i]));
             std::shared_ptr<Server> aserver(new Server(*io_context, *strand, endpoint, &all_foods, &all_tables));
             servers.push_back(aserver);
-        }
-        /* tcp::endpoint endpoint(tcp::v4(), std::atoi("9000"));
-        std::shared_ptr<Server> aserver(new Server(*io_context, *strand, endpoint, &all_foods, &all_tables));
-        servers.push_back(aserver);
- */
+        } */
+        tcp::endpoint endpoint(tcp::v4(), std::atoi("9000"));
+        std::shared_ptr<CustomerServer> acserver(new CustomerServer(*io_context, *strand, endpoint, &all_foods, &all_tables));
+        customer_servers.push_back(acserver);
+
         std::vector<std::thread*> workers; // Thread group
         for (int i = 0; i < argc - 1; ++i) {
             std::thread* t = new std::thread{ std::bind(WorkerThread::run, io_context) };

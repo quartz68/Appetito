@@ -2,9 +2,8 @@
 #include <redirector.hpp>
 
 ConnectedClient::ConnectedClient(asio::io_context& io_context,
-                    asio::io_context::strand& strand,
-                    Redirector& red_zone)
-                    :network_io_(io_context), strand_(strand), red_zone_(red_zone), read_order_(*(red_zone_.menu_ptr())), read_deal_(read_order_,read_table_) { }
+                    asio::io_context::strand& strand)
+                    :network_io_(io_context), strand_(strand) { }
 
 tcp::socket& ConnectedClient::socket() 
 {
@@ -12,15 +11,29 @@ tcp::socket& ConnectedClient::socket()
 }
 
 /*
+    RETURNS client id.
+*/
+std::string ConnectedClient::get_id()
+{
+    //std::cout << "connected client get id called" << std::endl;
+    return client_id_;
+}
+
+ConnectedCustomerClient::ConnectedCustomerClient(asio::io_context& io_context,
+                    asio::io_context::strand& strand,
+                    CustomerRedirector& red_zone)
+                    :ConnectedClient{io_context, strand}, red_zone_(red_zone), read_order_(*(red_zone_.menu_ptr())), read_deal_(read_order_,read_table_) { }
+
+/*
     FOR: Starts the connection, gets the client ID.
     TAKES nothing,
     RETURNS nothing.
 */
-void ConnectedClient::start()
+void ConnectedCustomerClient::start()
 {
     //std::cout << "connected client start called" << std::endl;
     network_io_.async_read(client_id_,
-                     strand_.wrap(std::bind(&ConnectedClient::id_handler, shared_from_this(), std::placeholders::_1)));
+                     strand_.wrap(std::bind(&ConnectedCustomerClient::id_handler, shared_from_this(), std::placeholders::_1)));
     //std::cout << "connected client start returned" << std::endl;
 }
 
@@ -49,14 +62,14 @@ void ConnectedClient::write(Menu menu) {
     TAKES an error code,
     RETURNS nothing.
 */
-void ConnectedClient::id_handler(const asio::error_code& error)
+void ConnectedCustomerClient::id_handler(const asio::error_code& error)
 {
     std::cout << "connected client id handler called" << std::endl;
     red_zone_.enter(shared_from_this(), client_id_);
     write(*(red_zone_.menu_ptr()));
     std::cout << client_id_ << " entered!" << std::endl;
     network_io_.async_read(read_deal_,
-                    strand_.wrap(std::bind(&ConnectedClient::read_deal_handler, shared_from_this(), std::placeholders::_1)));
+                    strand_.wrap(std::bind(&ConnectedCustomerClient::read_deal_handler, shared_from_this(), std::placeholders::_1)));
     std::cout << "connected client id handler returned" << std::endl;
 }
 
@@ -66,7 +79,7 @@ void ConnectedClient::id_handler(const asio::error_code& error)
     TAKES an error code,
     RETURNS nothing.
 */
-void ConnectedClient::read_handler(const asio::error_code& error)
+void ConnectedCustomerClient::read_handler(const asio::error_code& error)
 {
     std::cout << "connected client read handler called" << std::endl;
     if (!error) {
@@ -84,7 +97,7 @@ void ConnectedClient::read_handler(const asio::error_code& error)
         } */
         std::cout << read_string_ << std::endl;
         network_io_.async_read(read_string_,
-                         strand_.wrap(std::bind(&ConnectedClient::read_handler, shared_from_this(), std::placeholders::_1)));
+                         strand_.wrap(std::bind(&ConnectedCustomerClient::read_handler, shared_from_this(), std::placeholders::_1)));
     } else {
         std::cout << error.message() << std::endl;
         red_zone_.leave(shared_from_this());
@@ -108,14 +121,14 @@ void ConnectedClient::read_handler(const asio::error_code& error)
     std::cout << "connected client read deal handler returned" << std::endl;
 } */
 
-void ConnectedClient::read_deal_handler(const asio::error_code& error)
+void ConnectedCustomerClient::read_deal_handler(const asio::error_code& error)
 {
     std::cout << "connected client read deal completion handler called" << std::endl;
     if (!error) {
         read_deal_.set_menu_ptr(red_zone_.menu_ptr());
         read_deal_.print();
         network_io_.async_read(read_deal_,
-                    strand_.wrap(std::bind(&ConnectedClient::read_deal_handler, shared_from_this(), std::placeholders::_1)));
+                    strand_.wrap(std::bind(&ConnectedCustomerClient::read_deal_handler, shared_from_this(), std::placeholders::_1)));
     } else {
         std::cout << error.message() << std::endl;
         red_zone_.leave(shared_from_this());
@@ -136,16 +149,7 @@ void ConnectedClient::write_completion_handler(const asio::error_code& error)
         std::cout << "Write completed!" << std::endl;
     } else {
         std::cout << error.message() << std::endl;
-        red_zone_.leave(shared_from_this());
     }
     std::cout << "connected client write handler returned" << std::endl;
 }
 
-/*
-    RETURNS client id.
-*/
-std::string ConnectedClient::get_id()
-{
-    //std::cout << "connected client get id called" << std::endl;
-    return client_id_;
-}
