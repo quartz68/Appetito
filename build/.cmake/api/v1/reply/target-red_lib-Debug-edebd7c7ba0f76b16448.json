@@ -27,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 36,
+				"line" : 37,
 				"parent" : 0
 			},
 			{
@@ -83,6 +83,12 @@
 				"file" : 0,
 				"line" : 17,
 				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 18,
+				"parent" : 0
 			}
 		]
 	},
@@ -135,6 +141,10 @@
 				{
 					"backtrace" : 10,
 					"path" : "C:/Projects/Appetito/./libs/restaurant_util/include"
+				},
+				{
+					"backtrace" : 11,
+					"path" : "C:/Projects/Appetito/./libs/userio/include"
 				}
 			],
 			"language" : "CXX",

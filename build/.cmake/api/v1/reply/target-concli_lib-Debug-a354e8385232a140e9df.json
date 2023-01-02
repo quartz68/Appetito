@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "libnetworkio_lib.a"
+			"path" : "libconcli_lib.a"
 		}
 	],
 	"backtrace" : 1,
@@ -12,6 +12,7 @@
 		"commands" : 
 		[
 			"add_library",
+			"target_link_libraries",
 			"add_definitions",
 			"include_directories"
 		],
@@ -27,61 +28,85 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 34,
+				"line" : 38,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 8,
+				"line" : 40,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 42,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 45,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
+				"file" : 0,
+				"line" : 8,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
 				"file" : 0,
 				"line" : 10,
 				"parent" : 0
 			},
 			{
-				"command" : 2,
+				"command" : 3,
 				"file" : 0,
 				"line" : 11,
 				"parent" : 0
 			},
 			{
-				"command" : 2,
+				"command" : 3,
 				"file" : 0,
 				"line" : 12,
 				"parent" : 0
 			},
 			{
-				"command" : 2,
+				"command" : 3,
 				"file" : 0,
 				"line" : 13,
 				"parent" : 0
 			},
 			{
-				"command" : 2,
+				"command" : 3,
 				"file" : 0,
 				"line" : 14,
 				"parent" : 0
 			},
 			{
-				"command" : 2,
+				"command" : 3,
 				"file" : 0,
 				"line" : 15,
 				"parent" : 0
 			},
 			{
-				"command" : 2,
+				"command" : 3,
 				"file" : 0,
 				"line" : 16,
 				"parent" : 0
 			},
 			{
-				"command" : 2,
+				"command" : 3,
 				"file" : 0,
 				"line" : 17,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 18,
 				"parent" : 0
 			}
 		]
@@ -98,43 +123,47 @@
 			"defines" : 
 			[
 				{
-					"backtrace" : 2,
+					"backtrace" : 5,
 					"define" : "ASIO_STANDALONE"
 				}
 			],
 			"includes" : 
 			[
 				{
-					"backtrace" : 3,
+					"backtrace" : 6,
 					"path" : "C:/Projects/libraries/nana/include/nana"
 				},
 				{
-					"backtrace" : 4,
+					"backtrace" : 7,
 					"path" : "C:/Projects/Appetito/./libs"
 				},
 				{
-					"backtrace" : 5,
+					"backtrace" : 8,
 					"path" : "C:/Projects/Appetito/./libs/asio/include"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 9,
 					"path" : "C:/Projects/Appetito/./libs/cereal"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 10,
 					"path" : "C:/Projects/Appetito/./libs/client/include"
 				},
 				{
-					"backtrace" : 8,
+					"backtrace" : 11,
 					"path" : "C:/Projects/Appetito/./libs/server/include"
 				},
 				{
-					"backtrace" : 9,
+					"backtrace" : 12,
 					"path" : "C:/Projects/Appetito/./libs/network/include"
 				},
 				{
-					"backtrace" : 10,
+					"backtrace" : 13,
 					"path" : "C:/Projects/Appetito/./libs/restaurant_util/include"
+				},
+				{
+					"backtrace" : 14,
+					"path" : "C:/Projects/Appetito/./libs/userio/include"
 				}
 			],
 			"language" : "CXX",
@@ -144,9 +173,32 @@
 			]
 		}
 	],
-	"id" : "networkio_lib::@6890427a1f51a3e7e1df",
-	"name" : "networkio_lib",
-	"nameOnDisk" : "libnetworkio_lib.a",
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "table_lib::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "food_lib::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "menu_lib::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "order_deal_lib::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 4,
+			"id" : "networkio_lib::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "concli_lib::@6890427a1f51a3e7e1df",
+	"name" : "concli_lib",
+	"nameOnDisk" : "libconcli_lib.a",
 	"paths" : 
 	{
 		"build" : ".",
@@ -173,13 +225,13 @@
 	[
 		{
 			"backtrace" : 1,
-			"path" : "libs/network/include/networkio.hpp",
+			"path" : "libs/server/include/connected_client.hpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "libs/network/src/networkio.cpp",
+			"path" : "libs/server/src/connected_client.cpp",
 			"sourceGroupIndex" : 1
 		}
 	],

@@ -1,15 +1,10 @@
 #include <menu.hpp>
 
-void Menu::print()
+void Menu::print_foods()
 {
-    
     set<FoodType> food_types;
     for (auto food : foods_) {
         food_types.insert(food.second.get_type());
-    }
-    set<TableType> table_types;
-    for (auto table : tables_) {
-        table_types.insert(table.second.get_type());
     }
     cout << "Foods:" << endl;
     cout << "ID\tName\tPrice(CNY)" << endl;
@@ -20,6 +15,14 @@ void Menu::print()
                 cout << food.second.get_id_str() << '\t' << food.second.get_name() << '\t' << food.second.get_price_cny() << endl;
         }
     }
+}
+
+void Menu::print_tables()
+{
+    set<TableType> table_types;
+    for (auto table : tables_) {
+        table_types.insert(table.second.get_type());
+    }
     cout << "Tables:" << endl;
     cout << "ID\tPrice(CNY)\tLocation" << endl;
     for (auto type : table_types) {
@@ -29,6 +32,12 @@ void Menu::print()
                 cout << table.second.get_id_str() << '\t' << table.second.get_capacity() << "\t(" << table.second.get_location().col << ',' << table.second.get_location().row << ')' << endl;
         }
     }
+}
+
+void Menu::print()
+{
+    print_foods();
+    print_tables();
 }
 
 void Menu::refresh()

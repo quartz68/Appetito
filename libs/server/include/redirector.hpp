@@ -21,7 +21,7 @@ public:
         :all_foods_ptr_(all_foods), all_tables_ptr_(all_tables), menu_{all_foods,all_tables} { }
     void enter(std::shared_ptr<ConnectedClient> entering_client, const std::string& client_id);
     void leave(std::shared_ptr<ConnectedClient> leaving_client);
-    Menu& menu() { return menu_; }
+    Menu* menu_ptr() { return &menu_; }
     template<typename T>
     void write_to_client(T& object)
     {

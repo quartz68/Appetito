@@ -9,6 +9,7 @@ C:/Projects/Appetito/build/CMakeFiles/client_lib.dir
 C:/Projects/Appetito/build/CMakeFiles/red_lib.dir
 C:/Projects/Appetito/build/CMakeFiles/concli_lib.dir
 C:/Projects/Appetito/build/CMakeFiles/server_lib.dir
+C:/Projects/Appetito/build/CMakeFiles/console_menu_lib.dir
 C:/Projects/Appetito/build/CMakeFiles/client_customer.dir
 C:/Projects/Appetito/build/CMakeFiles/server.dir
 C:/Projects/Appetito/build/CMakeFiles/edit_cache.dir

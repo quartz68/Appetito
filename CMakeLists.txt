@@ -15,6 +15,7 @@ include_directories(./libs/client/include)
 include_directories(./libs/server/include)
 include_directories(./libs/network/include)
 include_directories(./libs/restaurant_util/include)
+include_directories(./libs/userio/include)
 
 # Libraries
 
@@ -38,6 +39,8 @@ add_library(concli_lib STATIC libs/server/include/connected_client.hpp libs/serv
 add_library(server_lib STATIC libs/server/include/server.hpp libs/server/src/server.cpp)
 target_link_libraries(concli_lib menu_lib)
 target_link_libraries(client_lib menu_lib)
+target_link_libraries(concli_lib order_deal_lib)
+target_link_libraries(client_lib order_deal_lib)
 target_link_libraries(client_lib networkio_lib)
 target_link_libraries(concli_lib networkio_lib)
 target_link_libraries(red_lib menu_lib)
@@ -47,12 +50,16 @@ target_link_libraries(server_lib red_lib)
 target_link_libraries(server_lib concli_lib)
 target_link_libraries(server_lib menu_lib)
 # Main Application Libraries
-#add_library(selection_menu_lib STATIC libs/main_app/include/selection_menu.hpp libs/main_app/src/selection_menu.cpp)
+add_library(console_menu_lib STATIC libs/userio/include/console_menu.hpp libs/userio/src/console_menu.cpp)
 # Executables
 
 add_executable(client_customer src/client_customer.cpp)
+target_link_libraries(client_customer food_lib)
+target_link_libraries(client_customer table_lib)
+target_link_libraries(client_customer order_deal_lib)
+target_link_libraries(client_customer menu_lib)
 target_link_libraries(client_customer client_lib)
-#target_link_libraries(client_customer selection_menu_lib)
+target_link_libraries(client_customer console_menu_lib)
 
 #add_executable(client_kitchen src/client_kitchen.cpp)
 #target_link_libraries(client_kitchen client_lib)

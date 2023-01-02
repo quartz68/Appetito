@@ -25,6 +25,10 @@ public:
             tables_.emplace(table.first,table.second);
         }
     }
+    Menu(const Menu& other)
+        :foods_(other.foods_), tables_(other.tables_) { }
+    void print_foods();
+    void print_tables();
     void print(); //从二维vector types_foods和types_tables打印菜单
     void refresh(); //刷新菜单，操作基本上和构造函数相同，向服务器请求的部分我后面来加
     template<class Archive>

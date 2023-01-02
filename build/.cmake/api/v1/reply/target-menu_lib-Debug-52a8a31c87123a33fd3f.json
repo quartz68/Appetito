@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "libclient_lib.a"
+			"path" : "libmenu_lib.a"
 		}
 	],
 	"backtrace" : 1,
@@ -28,19 +28,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 35,
+				"line" : 25,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 40,
+				"line" : 32,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 41,
+				"line" : 31,
 				"parent" : 0
 			},
 			{
@@ -96,6 +96,12 @@
 				"file" : 0,
 				"line" : 17,
 				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 18,
+				"parent" : 0
 			}
 		]
 	},
@@ -148,6 +154,10 @@
 				{
 					"backtrace" : 12,
 					"path" : "C:/Projects/Appetito/./libs/restaurant_util/include"
+				},
+				{
+					"backtrace" : 13,
+					"path" : "C:/Projects/Appetito/./libs/userio/include"
 				}
 			],
 			"language" : "CXX",
@@ -161,24 +171,16 @@
 	[
 		{
 			"backtrace" : 2,
-			"id" : "food_lib::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 2,
 			"id" : "table_lib::@6890427a1f51a3e7e1df"
 		},
 		{
-			"backtrace" : 2,
-			"id" : "menu_lib::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 3,
-			"id" : "networkio_lib::@6890427a1f51a3e7e1df"
+			"id" : "food_lib::@6890427a1f51a3e7e1df"
 		}
 	],
-	"id" : "client_lib::@6890427a1f51a3e7e1df",
-	"name" : "client_lib",
-	"nameOnDisk" : "libclient_lib.a",
+	"id" : "menu_lib::@6890427a1f51a3e7e1df",
+	"name" : "menu_lib",
+	"nameOnDisk" : "libmenu_lib.a",
 	"paths" : 
 	{
 		"build" : ".",
@@ -205,13 +207,13 @@
 	[
 		{
 			"backtrace" : 1,
-			"path" : "libs/client/include/client.hpp",
+			"path" : "libs/restaurant_util/include/menu.hpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "libs/client/src/client.cpp",
+			"path" : "libs/restaurant_util/src/menu.cpp",
 			"sourceGroupIndex" : 1
 		}
 	],

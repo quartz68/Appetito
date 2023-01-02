@@ -44,8 +44,8 @@ int main(int argc, char* argv[])
         }
         /* tcp::endpoint endpoint(tcp::v4(), std::atoi("9000"));
         std::shared_ptr<Server> aserver(new Server(*io_context, *strand, endpoint, &all_foods, &all_tables));
-        servers.push_back(aserver); */
-
+        servers.push_back(aserver);
+ */
         std::vector<std::thread*> workers; // Thread group
         for (int i = 0; i < argc - 1; ++i) {
             std::thread* t = new std::thread{ std::bind(WorkerThread::run, io_context) };
