@@ -17,6 +17,7 @@ using asio::ip::tcp;
 
 class Redirector;
 class CustomerRedirector;
+class KitchenRedirector;
 
 /**
  * @brief The client connected to this server.
@@ -113,6 +114,46 @@ protected:
     Table read_table_;
     Deal read_deal_;
     CustomerRedirector& red_zone_;
+};
+
+/**
+ * @brief The kitchen client connected to this server.
+ */
+class ConnectedKitchenClient
+    : public ConnectedClient {
+public:
+    /**
+     * Construct a new Connected Kitchen Client object from io context and KitchenRedirector.
+     * @brief Constructor.
+     * 
+     * @param io_context 
+     * @param strand 
+     * @param red_zone KitchenRedirector.
+     */
+    ConnectedKitchenClient(asio::io_context& io_context,
+                    asio::io_context::strand& strand,
+                    KitchenRedirector& red_zone);
+    /**
+     * @brief Starts the connection, gets the kitchen client ID.
+     */
+    void start();
+    /**
+     * @brief shared_from_this() for subclass
+     * 
+     * @return Casted shared_ptr of ConnectedKitchenClient from ConnectedClient::shared_from_this().
+     */
+    std::shared_ptr<ConnectedKitchenClient> shared_from_this() { return std::static_pointer_cast<ConnectedKitchenClient>(ConnectedClient::shared_from_this()); }
+protected:
+    /**
+     * @brief Handles kitchen client ID.
+     */
+    void id_handler(const asio::error_code& error);
+    /**
+     * @brief Handles reading a finished item.
+     */
+    void read_item_handler(const asio::error_code& error);
+    pair<unsigned int, FoodID> read_item_;
+    KitchenRedirector& red_zone_;
 };
 
 #endif

@@ -1,5 +1,6 @@
 #include <connected_client.hpp>
 #include <redirector.hpp>
+#include <server.hpp>
 
 // ConnectedClient
 
@@ -49,7 +50,7 @@ void ConnectedCustomerClient::id_handler(const asio::error_code& error)
     //std::cout << "connected client id handler called" << std::endl;
     red_zone_.enter(shared_from_this(), client_id_);
     write(*(red_zone_.menu_ptr()));
-    std::cout << client_id_ << " entered!" << std::endl;
+    std::cout << "Customer " << client_id_ << " entered!" << std::endl;
     network_io_.async_read(read_deal_,
                     strand_.wrap(std::bind(&ConnectedCustomerClient::read_deal_handler, shared_from_this(), std::placeholders::_1)));
     //std::cout << "connected client id handler returned" << std::endl;
@@ -75,6 +76,18 @@ void ConnectedCustomerClient::read_deal_handler(const asio::error_code& error)
     if (!error) {
         read_deal_.set_menu_ptr(red_zone_.menu_ptr());
         read_deal_.print();
+        // Save the deal
+        red_zone_.deals_ptr()->emplace(*(red_zone_.deal_counter_ptr()), read_deal_);
+        // Push the FoodID items to customer to kitchen queue
+        {
+            std::lock_guard<std::mutex> lock(red_zone_.ctok_queue_ptr()->mtx);
+            for (auto foodid : read_deal_.get_food_list()) {
+                for (int i = 0; i < foodid.second; ++i) {
+                    red_zone_.ctok_queue_ptr()->foodid_queue.emplace(*(red_zone_.deal_counter_ptr()), foodid.first);
+                }
+            }
+        }
+        ++*(red_zone_.deal_counter_ptr());
         network_io_.async_read(read_deal_,
                     strand_.wrap(std::bind(&ConnectedCustomerClient::read_deal_handler, shared_from_this(), std::placeholders::_1)));
     } else {
@@ -84,3 +97,53 @@ void ConnectedCustomerClient::read_deal_handler(const asio::error_code& error)
     //std::cout << "connected client read deal completion handler returned" << std::endl;
 }
 
+// ConnectedKitchenClient
+
+ConnectedKitchenClient::ConnectedKitchenClient(asio::io_context& io_context,
+                    asio::io_context::strand& strand,
+                    KitchenRedirector& red_zone)
+                    :ConnectedClient{io_context, strand}, red_zone_(red_zone) { }
+
+void ConnectedKitchenClient::start()
+{
+    //std::cout << "connected client start called" << std::endl;
+    network_io_.async_read(client_id_,
+                     strand_.wrap(std::bind(&ConnectedKitchenClient::id_handler, shared_from_this(), std::placeholders::_1)));
+    //std::cout << "connected client start returned" << std::endl;
+}
+
+void ConnectedKitchenClient::id_handler(const asio::error_code& error)
+{
+    //std::cout << "connected client id handler called" << std::endl;
+    red_zone_.enter(shared_from_this(), client_id_);
+    write(*(red_zone_.menu_ptr()));
+    std::cout << "Kitchen " << client_id_ << " entered!" << std::endl;
+    /* while(true) {
+       if(!(red_zone_.ctok_queue_ptr()->foodid_queue.empty())) {
+            {
+                std::lock_guard<std::mutex> lock(red_zone_.ctok_queue_ptr()->mtx);
+                while (!(red_zone_.ctok_queue_ptr()->foodid_queue.empty())) {
+                    std::pair<unsigned int, FoodID> tmp = red_zone_.ctok_queue_ptr()->foodid_queue.front();
+                    red_zone_.ctok_queue_ptr()->foodid_queue.pop();
+                    write(tmp);
+                }
+            }
+            break;
+        }
+    } */
+    network_io_.async_read(read_item_,
+                    strand_.wrap(std::bind(&ConnectedKitchenClient::read_item_handler, shared_from_this(), std::placeholders::_1)));
+    //std::cout << "connected client id handler returned" << std::endl;
+}
+
+void ConnectedKitchenClient::read_item_handler(const asio::error_code& error)
+{
+    if (!error) {
+        red_zone_.ktoc_queue_ptr()->foodid_queue.push(read_item_);
+        network_io_.async_read(read_item_,
+                        strand_.wrap(std::bind(&ConnectedKitchenClient::read_item_handler, shared_from_this(), std::placeholders::_1)));
+    } else {
+        std::cout << error.message() << std::endl;
+        red_zone_.leave(shared_from_this());
+    }
+}

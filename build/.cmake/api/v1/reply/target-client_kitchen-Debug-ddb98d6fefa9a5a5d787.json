@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "bin/client_customer.exe"
+			"path" : "bin/client_kitchen.exe"
 		},
 		{
-			"path" : "bin/client_customer.pdb"
+			"path" : "bin/client_kitchen.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -30,55 +30,55 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 56,
+				"line" : 65,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 57,
+				"line" : 66,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 58,
+				"line" : 67,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 59,
+				"line" : 68,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 60,
+				"line" : 69,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 61,
+				"line" : 70,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 62,
-				"parent" : 0
-			},
-			{
-				"command" : 1,
-				"file" : 0,
-				"line" : 78,
+				"line" : 71,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
 				"line" : 44,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 80,
 				"parent" : 0
 			},
 			{
@@ -208,12 +208,12 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 3,
-			"id" : "table_lib::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 2,
 			"id" : "food_lib::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 3,
+			"id" : "table_lib::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 4,
@@ -236,7 +236,7 @@
 			"id" : "console_menu_lib::@6890427a1f51a3e7e1df"
 		}
 	],
-	"id" : "client_customer::@6890427a1f51a3e7e1df",
+	"id" : "client_kitchen::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -280,11 +280,6 @@
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 8,
-				"fragment" : "-lws2_32",
-				"role" : "libraries"
-			},
-			{
 				"backtrace" : 4,
 				"fragment" : "liborder_deal_lib.a",
 				"role" : "libraries"
@@ -305,8 +300,13 @@
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 9,
+				"backtrace" : 8,
 				"fragment" : "libnetworkio_lib.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 9,
+				"fragment" : "-lws2_32",
 				"role" : "libraries"
 			},
 			{
@@ -316,8 +316,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "client_customer",
-	"nameOnDisk" : "client_customer.exe",
+	"name" : "client_kitchen",
+	"nameOnDisk" : "client_kitchen.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -338,7 +338,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "src/client_customer.cpp",
+			"path" : "src/client_kitchen.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

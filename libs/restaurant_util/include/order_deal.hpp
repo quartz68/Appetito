@@ -63,6 +63,7 @@ public:
      * @brief Print the order.
      */
     void print();
+    vector<pair<FoodID, unsigned short>> get_food_list() { return food_list_; }
     template<class Archive>
     void serialize(Archive& archive)
     {
@@ -116,6 +117,7 @@ public:
      * @brief Print the deal.
      */
     void print();
+    vector<pair<FoodID, unsigned short>> get_food_list() { return order_.get_food_list(); }
     template<class Archive>
     void serialize(Archive& archive)
     {

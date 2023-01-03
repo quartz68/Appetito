@@ -30,31 +30,25 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 70,
+				"line" : 76,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 71,
+				"line" : 77,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 81,
+				"line" : 87,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 82,
-				"parent" : 0
-			},
-			{
-				"command" : 1,
-				"file" : 0,
-				"line" : 49,
+				"line" : 88,
 				"parent" : 0
 			},
 			{
@@ -66,19 +60,19 @@
 			{
 				"command" : 1,
 				"file" : 0,
+				"line" : 51,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
 				"line" : 42,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 45,
-				"parent" : 0
-			},
-			{
-				"command" : 1,
-				"file" : 0,
-				"line" : 51,
+				"line" : 52,
 				"parent" : 0
 			},
 			{
@@ -91,6 +85,12 @@
 				"command" : 1,
 				"file" : 0,
 				"line" : 32,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 45,
 				"parent" : 0
 			},
 			{
@@ -221,11 +221,11 @@
 	[
 		{
 			"backtrace" : 2,
-			"id" : "table_lib::@6890427a1f51a3e7e1df"
+			"id" : "food_lib::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 2,
-			"id" : "food_lib::@6890427a1f51a3e7e1df"
+			"id" : "table_lib::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 2,
@@ -242,10 +242,6 @@
 		{
 			"backtrace" : 2,
 			"id" : "red_lib::@6890427a1f51a3e7e1df"
-		},
-		{
-			"backtrace" : 2,
-			"id" : "server_lib::@6890427a1f51a3e7e1df"
 		}
 	],
 	"id" : "server::@6890427a1f51a3e7e1df",
@@ -287,6 +283,11 @@
 				"role" : "libraries"
 			},
 			{
+				"backtrace" : 2,
+				"fragment" : "libserver_lib.a",
+				"role" : "libraries"
+			},
+			{
 				"backtrace" : 5,
 				"fragment" : "libred_lib.a",
 				"role" : "libraries"
@@ -308,22 +309,22 @@
 			},
 			{
 				"backtrace" : 8,
-				"fragment" : "libnetworkio_lib.a",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 9,
 				"fragment" : "libmenu_lib.a",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 10,
+				"backtrace" : 9,
 				"fragment" : "libfood_lib.a",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 11,
+				"backtrace" : 10,
 				"fragment" : "libtable_lib.a",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 11,
+				"fragment" : "libnetworkio_lib.a",
 				"role" : "libraries"
 			},
 			{
