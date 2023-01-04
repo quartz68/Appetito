@@ -1,3 +1,10 @@
+/**
+ * @file redirector.cpp
+ * @brief Implementation of Redirector classes.
+ * @details
+ * @version
+ */
+
 #include <redirector.hpp>
 #include <server.hpp>
 

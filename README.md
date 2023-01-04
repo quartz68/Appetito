@@ -6,7 +6,7 @@ Restaurant order management system based on C++ and Qt (WIP)
 
 ## Overview
 
-Restaurant order management system based on C++, with one server and two clients, networking implemented using TCP and sockets with Asio library, serialization implemented using Cereal library.
+Restaurant order management system based on C++, with one multithreaded server and two clients, networking implemented using TCP and sockets with Asio library, serialization implemented using Cereal library.
 The goal is to be as efficient, modular, and deployable as we are able to implement.
 Work in progress.
 This is a student project by three students at Hefei University of Technology.

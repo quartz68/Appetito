@@ -1,3 +1,10 @@
+/**
+ * @file server.hpp
+ * @brief Header of Server classes.
+ * @details
+ * @version
+ */
+
 #ifndef SERVER_HPP_
 #define SERVER_HPP_
 

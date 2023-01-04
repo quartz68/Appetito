@@ -1,3 +1,10 @@
+/**
+ * @file redirector.hpp
+ * @brief Header of Redirector classes.
+ * @details
+ * @version
+ */
+
 #ifndef REDIRECTOR_HPP_
 #define REDIRECTOR_HPP_
 

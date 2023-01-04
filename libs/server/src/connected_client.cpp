@@ -1,3 +1,10 @@
+/**
+ * @file connectedclient.cpp
+ * @brief Implementation of ConnectedClient classes.
+ * @details
+ * @version
+ */
+
 #include <connected_client.hpp>
 #include <redirector.hpp>
 #include <server.hpp>

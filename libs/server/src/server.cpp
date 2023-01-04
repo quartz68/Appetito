@@ -1,3 +1,10 @@
+/**
+ * @file server.cpp
+ * @brief Implementation of Server classes.
+ * @details
+ * @version
+ */
+
 #include <server.hpp>
 
 std::mutex WorkerThread::mtx;

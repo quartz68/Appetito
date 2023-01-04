@@ -1,6 +1,13 @@
 #ifndef CONNECTED_CLIENT_HPP_
 #define CONNECTED_CLIENT_HPP_
 
+/**
+ * @file connectedclient.hpp
+ * @brief Header of ConnectedClient classes.
+ * @details
+ * @version
+ */
+
 #include <iostream>
 #include <chrono>
 #include <networkio.hpp>

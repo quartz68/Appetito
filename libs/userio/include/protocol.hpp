@@ -1,3 +1,10 @@
+/**
+ * @file protocol.hpp
+ * @brief Defines some console output.
+ * @details
+ * @version
+ */
+
 #ifndef PROTOCOL_HPP_
 #define PROTOCOL_HPP_
 
