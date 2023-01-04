@@ -1,3 +1,10 @@
+/**
+ * @file order_deal.hpp
+ * @brief Header of Order and Deal classes.
+ * @details
+ * @version
+ */
+
 #ifndef CUSTOMER_ORDER_DEAL_HPP_
 #define CUSTOMER_ORDER_DEAL_HPP_
 
@@ -6,6 +13,7 @@
 #include <table.hpp>
 #include <menu.hpp>
 #include <cereal.hpp>
+#include <protocol.hpp>
 #include <cereal/archives/binary.hpp>
 #include <cereal/types/utility.hpp>
 #include <cereal/types/vector.hpp>
@@ -53,6 +61,12 @@ public:
      * @return Total price.
      */
     double get_bill();
+    /**
+     * @brief Get the string of price for output.
+     * 
+     * @return String of price "price * quantity = totalprice"
+     */
+    string get_price_str(FoodID foodid, unsigned short quantity);
     /**
      * @brief Set the menu.
      * 

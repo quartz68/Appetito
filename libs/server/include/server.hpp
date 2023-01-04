@@ -5,6 +5,7 @@
 #include <queue>
 #include <thread>
 #include <mutex>
+#include <chrono>
 #include <unordered_set>
 #include <unordered_map>
 #include <asio.hpp>
@@ -15,34 +16,6 @@
 #include <connected_client.hpp>
 using asio::ip::tcp;
 
-/**
- * @brief Worker thread with mutex.
- */
-class WorkerThread {
-public:
-    /**
-     * @brief Run the io_context in a thread and use lock_guard to achieve RAII for mutex.
-     * 
-     * @param io_context 
-     */
-    static void run(std::shared_ptr<asio::io_context> io_context)
-    {
-        {
-            std::lock_guard<std::mutex> lock(mtx);
-            std::cout << "Thread " << std::this_thread::get_id() << " starts." << std::endl;
-        }
-
-        io_context->run();
-
-        {
-            std::lock_guard<std::mutex> lock(mtx);
-            std::cout << "Thread " << std::this_thread::get_id() << " ends." << std::endl;
-        }
-    }
-private:
-    static std::mutex mtx;
-};
-
 struct CustomerToKitchenQueue {
     std::queue<std::pair<unsigned int, FoodID>> foodid_queue;
     std::mutex mtx;
@@ -50,7 +23,7 @@ struct CustomerToKitchenQueue {
 
 struct KitchenToCustomerQueue {
     std::queue<std::pair<unsigned int, FoodID>> foodid_queue;
-    std::mutex myx;
+    std::mutex mtx;
 };
 
 /**
@@ -130,11 +103,12 @@ public:
             }
             run();
         }
-protected:
     /**
      * @brief Run the customer server.
      */
     void run();
+protected:
+    
     /**
      * @brief Handles accepting the connection of a new customer client.
      * 
@@ -171,27 +145,106 @@ public:
         KitchenToCustomerQueue* ktoc_queue,
         CustomerToKitchenQueue* ctok_queue,
         map<unsigned int, Deal>* deals)
-        :Server{io_context, strand, endpoint, all_foods, all_tables, deal_counter, deals}, red_zone_{all_foods,all_tables,deal_counter,ktoc_queue,ctok_queue,deals}, ctok_queue_ptr_(ctok_queue), ktoc_queue_ptr_(ktoc_queue) 
+        : Server{io_context, strand, endpoint, all_foods, all_tables, deal_counter, deals},
+          red_zone_{all_foods,all_tables,deal_counter,ktoc_queue,ctok_queue,deals},
+          ctok_queue_ptr_(ctok_queue),
+          ktoc_queue_ptr_(ktoc_queue),
+          lock_(ioc_),
+          pi_(2),
+          producer_(ioc_, pi_),
+          ci_(3),
+          consumer_(ioc_, ci_)
         {
             if (ctok_queue == nullptr || ktoc_queue == nullptr) {
                 cerr << "Trying to set nullptr as CustomerToKitchenQueue or KitchenToCustomerQueue pointer!" << endl;
             }
             run();
         }
-protected:
     /**
      * @brief Run the kitchen server.
      */
     void run();
+    void prod_cons_exec();
+protected:
     /**
      * @brief Handles accepting the connection of a new kitchen client.
      * 
      * @param new_client New kitchen client.
      */
     void on_accept(std::shared_ptr<ConnectedKitchenClient> new_client, const asio::error_code& error);
+    
+    void read_item_handler(const asio::error_code& error);
+    void producer_handler(const asio::error_code& error);
+    void consumer_handler(const asio::error_code& error);
+
+    std::thread* prod_cons_thread_;
+    std::mutex mtx_;
+    asio::io_context ioc_;
+    asio::io_context::strand lock_;
+    asio::steady_timer producer_;
+    asio::steady_timer consumer_;
+    std::chrono::seconds pi_;
+    std::chrono::seconds ci_;
+
     KitchenRedirector red_zone_;
     KitchenToCustomerQueue* ktoc_queue_ptr_;
     CustomerToKitchenQueue* ctok_queue_ptr_;
+};
+
+/**
+ * @brief Worker thread with mutex.
+ */
+class WorkerThread {
+public:
+    /**
+     * @brief Run the io_context in a thread and use lock_guard to achieve RAII for mutex.
+     * 
+     * @param io_context 
+     */
+    static void run_ioc(std::shared_ptr<asio::io_context> io_context)
+    {
+        {
+            std::lock_guard<std::mutex> lock(mtx);
+            std::cout << "IO Context Thread " << std::this_thread::get_id() << " starts." << std::endl;
+        }
+
+        io_context->run();
+
+        {
+            std::lock_guard<std::mutex> lock(mtx);
+            std::cout << "IO Context Thread " << std::this_thread::get_id() << " ends." << std::endl;
+        }
+    }
+    static void run_ks(std::shared_ptr<KitchenServer> kitchen_server)
+    {
+        {
+            std::lock_guard<std::mutex> lock(mtx);
+            std::cout << "Kitchen Server Thread " << std::this_thread::get_id() << " starts." << std::endl;
+        }
+
+        kitchen_server->run();
+
+        {
+            std::lock_guard<std::mutex> lock(mtx);
+            std::cout << "Kitchen Server Thread " << std::this_thread::get_id() << " ends." << std::endl;
+        }
+    }
+    static void run_cs(std::shared_ptr<CustomerServer> customer_server)
+    {
+        {
+            std::lock_guard<std::mutex> lock(mtx);
+            std::cout << "Customer Server Thread " << std::this_thread::get_id() << " starts." << std::endl;
+        }
+
+        customer_server->run();
+
+        {
+            std::lock_guard<std::mutex> lock(mtx);
+            std::cout << "Customer Server Thread " << std::this_thread::get_id() << " ends." << std::endl;
+        }
+    }
+private:
+    static std::mutex mtx;
 };
 
 #endif

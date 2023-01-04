@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "libkitchen_request_lib.a"
+			"path" : "libserver_lib.a"
 		}
 	],
 	"backtrace" : 1,
@@ -12,6 +12,7 @@
 		"commands" : 
 		[
 			"add_library",
+			"target_link_libraries",
 			"add_definitions",
 			"include_directories"
 		],
@@ -27,67 +28,67 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 28,
+				"line" : 38,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 8,
+				"line" : 49,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
+				"file" : 0,
+				"line" : 8,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
 				"file" : 0,
 				"line" : 10,
 				"parent" : 0
 			},
 			{
-				"command" : 2,
+				"command" : 3,
 				"file" : 0,
 				"line" : 11,
 				"parent" : 0
 			},
 			{
-				"command" : 2,
+				"command" : 3,
 				"file" : 0,
 				"line" : 12,
 				"parent" : 0
 			},
 			{
-				"command" : 2,
+				"command" : 3,
 				"file" : 0,
 				"line" : 13,
 				"parent" : 0
 			},
 			{
-				"command" : 2,
+				"command" : 3,
 				"file" : 0,
 				"line" : 14,
 				"parent" : 0
 			},
 			{
-				"command" : 2,
+				"command" : 3,
 				"file" : 0,
 				"line" : 15,
 				"parent" : 0
 			},
 			{
-				"command" : 2,
+				"command" : 3,
 				"file" : 0,
 				"line" : 16,
 				"parent" : 0
 			},
 			{
-				"command" : 2,
+				"command" : 3,
 				"file" : 0,
 				"line" : 17,
-				"parent" : 0
-			},
-			{
-				"command" : 2,
-				"file" : 0,
-				"line" : 18,
 				"parent" : 0
 			}
 		]
@@ -104,16 +105,12 @@
 			"defines" : 
 			[
 				{
-					"backtrace" : 2,
+					"backtrace" : 3,
 					"define" : "ASIO_STANDALONE"
 				}
 			],
 			"includes" : 
 			[
-				{
-					"backtrace" : 3,
-					"path" : "C:/Projects/libraries/nana/include/nana"
-				},
 				{
 					"backtrace" : 4,
 					"path" : "C:/Projects/Appetito/./libs"
@@ -154,9 +151,32 @@
 			]
 		}
 	],
-	"id" : "kitchen_request_lib::@6890427a1f51a3e7e1df",
-	"name" : "kitchen_request_lib",
-	"nameOnDisk" : "libkitchen_request_lib.a",
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 2,
+			"id" : "table_lib::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "food_lib::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "menu_lib::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "order_deal_lib::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "networkio_lib::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "server_lib::@6890427a1f51a3e7e1df",
+	"name" : "server_lib",
+	"nameOnDisk" : "libserver_lib.a",
 	"paths" : 
 	{
 		"build" : ".",
@@ -183,13 +203,13 @@
 	[
 		{
 			"backtrace" : 1,
-			"path" : "libs/restaurant_util/include/kitchen_request.hpp",
+			"path" : "libs/server/include/server.hpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "libs/restaurant_util/src/kitchen_request.cpp",
+			"path" : "libs/server/src/server.cpp",
 			"sourceGroupIndex" : 1
 		}
 	],

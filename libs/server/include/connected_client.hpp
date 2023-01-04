@@ -2,8 +2,7 @@
 #define CONNECTED_CLIENT_HPP_
 
 #include <iostream>
-#include <array>
-#include <deque>
+#include <chrono>
 #include <networkio.hpp>
 #include <asio.hpp>
 #include <protocol.hpp>
@@ -99,7 +98,7 @@ public:
     std::shared_ptr<ConnectedCustomerClient> shared_from_this() { return std::static_pointer_cast<ConnectedCustomerClient>(ConnectedClient::shared_from_this()); }
 protected:
     /**
-     * @brief Handles customer client ID.
+     * @brief Handles reading customer client ID, writing menu to client.
      */
     void id_handler(const asio::error_code& error);
     /**
@@ -107,9 +106,13 @@ protected:
      */
     void read_handler(const asio::error_code& error);
     /**
-     * @brief Handles reading a Deal.
+     * @brief Handles reading a Deal, saving Deal to vector deals_, writing deal number to client.
      */
     void read_deal_handler(const asio::error_code& error);
+    /**
+     * @brief Handles .
+     */
+    void queueing_handler(const asio::error_code& error);
     Order read_order_;
     Table read_table_;
     Deal read_deal_;
@@ -152,6 +155,7 @@ protected:
      * @brief Handles reading a finished item.
      */
     void read_item_handler(const asio::error_code& error);
+
     pair<unsigned int, FoodID> read_item_;
     KitchenRedirector& red_zone_;
 };

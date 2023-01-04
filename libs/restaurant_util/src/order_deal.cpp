@@ -1,3 +1,10 @@
+/**
+ * @file order_deal.cpp
+ * @brief Implementation of Order and Deal classes.
+ * @details
+ * @version
+ */
+
 #include <order_deal.hpp>
 
 void Order::add_item(Food item, unsigned short quantity) {
@@ -37,6 +44,10 @@ double Order::get_bill() {
     return bill_;
 }
 
+string Order::get_price_str(FoodID foodid, unsigned short quantity) {
+    return to_string(menu_ptr_->foods_[foodid].get_price_cny()) + " * " + to_string(quantity) + " = " + to_string(menu_ptr_->foods_[foodid].get_price_cny() * quantity);
+}
+
 void Order::print() {
     // Organize all FoodTypes appeared in food_list_ for printing
     set<FoodType> food_types;
@@ -45,12 +56,12 @@ void Order::print() {
     }
     // Print the order
     cout << "Foods:" << endl;
-    cout << "ID\tName\tPrice(CNY)" << endl;
+    cout << small_field << "ID" << large_field << "Name" << large_field << "Price(CNY)" << endl;
     for (auto type : food_types) {
         cout << type.name << endl;
         for (auto food : food_list_) {
             if (food.first.type == type.id)
-                cout << (*menu_ptr_).foods_[food.first].get_id_str() << '\t' << (*menu_ptr_).foods_[food.first].get_name() << '\t' << (*menu_ptr_).foods_[food.first].get_price_cny() << " * " << food.second << " = " << (*menu_ptr_).foods_[food.first].get_price_cny() * food.second << endl;
+                cout << small_field << (*menu_ptr_).foods_[food.first].get_id_str() << large_field << (*menu_ptr_).foods_[food.first].get_name() << large_field << get_price_str(food.first,food.second) << endl;
         }
     }
 }
@@ -62,7 +73,7 @@ double Deal::get_bill() {
 
 void Deal::print() {
     order_.print();
-    cout << "----------------------------------------" << endl;
-    cout << "Total: \t" << bill_ << endl;
+    cout << DIVIDE << endl;
+    cout << "Total: " << bill_ << endl;
     cout << "Table: " << tableid_.type << '-' << tableid_.id << endl;
 }

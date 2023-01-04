@@ -1,3 +1,10 @@
+/**
+ * @file consolemenu.hpp
+ * @brief Header of ConsoleMenu class.
+ * @details
+ * @version
+ */
+
 #ifndef CONSOLE_MENU_HPP_
 #define CONSOLE_MENU_HPP_
 

@@ -163,7 +163,7 @@ public:
      * @param ctok_queue Raw pointer to customer to kitchen queue.
      * @param deals Raw pointer to map of deals.
      */
-    KitchenRedirector(FoodContainer* all_foods,
+    KitchenRedirector( FoodContainer* all_foods,
                        TableContainer* all_tables,
                        unsigned int* deal_counter,
                        KitchenToCustomerQueue* ktoc_queue,
@@ -209,10 +209,11 @@ public:
     template<typename T>
     void write_to_client(T& object)
     {
-        //std::cout << "redirector write to client called" << std::endl;
-        std::for_each(connected_clients_.begin(), connected_clients_.end(),
-                        std::bind(&ConnectedClient::write, std::placeholders::_1, std::ref(object)));
-        //std::cout << "redirector write to client returned" << std::endl;
+        /* std::for_each<ConnectedClient, T>(connected_clients_.begin(), connected_clients_.end(),
+                                std::bind(&ConnectedClient::write, std::placeholders::_1, std::ref(object))); */
+        for (auto connected_client : connected_clients_) {
+            connected_client->write(object);
+        }
     }
 protected:
     std::unordered_set<std::shared_ptr<ConnectedKitchenClient>> connected_clients_;

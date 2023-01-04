@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "libfood_lib.a"
+			"path" : "libnetworkio_lib.a"
 		}
 	],
 	"backtrace" : 1,
@@ -27,7 +27,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 23,
+				"line" : 34,
 				"parent" : 0
 			},
 			{
@@ -83,12 +83,6 @@
 				"file" : 0,
 				"line" : 17,
 				"parent" : 0
-			},
-			{
-				"command" : 2,
-				"file" : 0,
-				"line" : 18,
-				"parent" : 0
 			}
 		]
 	},
@@ -112,38 +106,34 @@
 			[
 				{
 					"backtrace" : 3,
-					"path" : "C:/Projects/libraries/nana/include/nana"
-				},
-				{
-					"backtrace" : 4,
 					"path" : "C:/Projects/Appetito/./libs"
 				},
 				{
-					"backtrace" : 5,
+					"backtrace" : 4,
 					"path" : "C:/Projects/Appetito/./libs/asio/include"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "C:/Projects/Appetito/./libs/cereal"
 				},
 				{
-					"backtrace" : 7,
+					"backtrace" : 6,
 					"path" : "C:/Projects/Appetito/./libs/client/include"
 				},
 				{
-					"backtrace" : 8,
+					"backtrace" : 7,
 					"path" : "C:/Projects/Appetito/./libs/server/include"
 				},
 				{
-					"backtrace" : 9,
+					"backtrace" : 8,
 					"path" : "C:/Projects/Appetito/./libs/network/include"
 				},
 				{
-					"backtrace" : 10,
+					"backtrace" : 9,
 					"path" : "C:/Projects/Appetito/./libs/restaurant_util/include"
 				},
 				{
-					"backtrace" : 11,
+					"backtrace" : 10,
 					"path" : "C:/Projects/Appetito/./libs/userio/include"
 				}
 			],
@@ -154,9 +144,9 @@
 			]
 		}
 	],
-	"id" : "food_lib::@6890427a1f51a3e7e1df",
-	"name" : "food_lib",
-	"nameOnDisk" : "libfood_lib.a",
+	"id" : "networkio_lib::@6890427a1f51a3e7e1df",
+	"name" : "networkio_lib",
+	"nameOnDisk" : "libnetworkio_lib.a",
 	"paths" : 
 	{
 		"build" : ".",
@@ -183,13 +173,13 @@
 	[
 		{
 			"backtrace" : 1,
-			"path" : "libs/restaurant_util/include/food.hpp",
+			"path" : "libs/network/include/networkio.hpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "libs/restaurant_util/src/food.cpp",
+			"path" : "libs/network/src/networkio.cpp",
 			"sourceGroupIndex" : 1
 		}
 	],

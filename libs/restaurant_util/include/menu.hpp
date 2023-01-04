@@ -1,3 +1,10 @@
+/**
+ * @file menu.hpp
+ * @brief Header of Menu class.
+ * @details
+ * @version
+ */
+
 #ifndef CUSTOMER_MENU_HPP_
 #define CUSTOMER_MENU_HPP_
 

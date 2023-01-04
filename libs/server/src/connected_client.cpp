@@ -87,9 +87,12 @@ void ConnectedCustomerClient::read_deal_handler(const asio::error_code& error)
                 }
             }
         }
+        std::cout << "Deal " << *(red_zone_.deal_counter_ptr()) << " saved and sent to kitchen client." << std::endl;
+        // Write the deal number to the customer client
+        network_io_.async_write(*(red_zone_.deal_counter_ptr()),
+                    strand_.wrap(std::bind(&ConnectedCustomerClient::queueing_handler, shared_from_this(), std::placeholders::_1)));
+        // Increment the deal counter
         ++*(red_zone_.deal_counter_ptr());
-        network_io_.async_read(read_deal_,
-                    strand_.wrap(std::bind(&ConnectedCustomerClient::read_deal_handler, shared_from_this(), std::placeholders::_1)));
     } else {
         std::cout << error.message() << std::endl;
         red_zone_.leave(shared_from_this());
@@ -97,12 +100,22 @@ void ConnectedCustomerClient::read_deal_handler(const asio::error_code& error)
     //std::cout << "connected client read deal completion handler returned" << std::endl;
 }
 
+void ConnectedCustomerClient::queueing_handler(const asio::error_code& error) {
+    if (!error) {
+        
+    } else {
+        std::cout << error.message() << std::endl;
+        red_zone_.leave(shared_from_this());
+    }
+}
+
 // ConnectedKitchenClient
 
 ConnectedKitchenClient::ConnectedKitchenClient(asio::io_context& io_context,
                     asio::io_context::strand& strand,
                     KitchenRedirector& red_zone)
-                    :ConnectedClient{io_context, strand}, red_zone_(red_zone) { }
+                    : ConnectedClient{io_context, strand},
+                      red_zone_(red_zone) { }
 
 void ConnectedKitchenClient::start()
 {

@@ -53,7 +53,7 @@ build CMakeFiles/food_lib.dir/libs/restaurant_util/src/food.cpp.obj: CXX_COMPILE
   DEFINES = -DASIO_STANDALONE
   DEP_FILE = CMakeFiles\food_lib.dir\libs\restaurant_util\src\food.cpp.obj.d
   FLAGS = -g
-  INCLUDES = -IC:/Projects/libraries/nana/include/nana -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
+  INCLUDES = -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
   OBJECT_DIR = CMakeFiles\food_lib.dir
   OBJECT_FILE_DIR = CMakeFiles\food_lib.dir\libs\restaurant_util\src
 
@@ -86,7 +86,7 @@ build CMakeFiles/table_lib.dir/libs/restaurant_util/src/table.cpp.obj: CXX_COMPI
   DEFINES = -DASIO_STANDALONE
   DEP_FILE = CMakeFiles\table_lib.dir\libs\restaurant_util\src\table.cpp.obj.d
   FLAGS = -g
-  INCLUDES = -IC:/Projects/libraries/nana/include/nana -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
+  INCLUDES = -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
   OBJECT_DIR = CMakeFiles\table_lib.dir
   OBJECT_FILE_DIR = CMakeFiles\table_lib.dir\libs\restaurant_util\src
 
@@ -119,7 +119,7 @@ build CMakeFiles/menu_lib.dir/libs/restaurant_util/src/menu.cpp.obj: CXX_COMPILE
   DEFINES = -DASIO_STANDALONE
   DEP_FILE = CMakeFiles\menu_lib.dir\libs\restaurant_util\src\menu.cpp.obj.d
   FLAGS = -g
-  INCLUDES = -IC:/Projects/libraries/nana/include/nana -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
+  INCLUDES = -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
   OBJECT_DIR = CMakeFiles\menu_lib.dir
   OBJECT_FILE_DIR = CMakeFiles\menu_lib.dir\libs\restaurant_util\src
 
@@ -152,7 +152,7 @@ build CMakeFiles/order_deal_lib.dir/libs/restaurant_util/src/order_deal.cpp.obj:
   DEFINES = -DASIO_STANDALONE
   DEP_FILE = CMakeFiles\order_deal_lib.dir\libs\restaurant_util\src\order_deal.cpp.obj.d
   FLAGS = -g
-  INCLUDES = -IC:/Projects/libraries/nana/include/nana -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
+  INCLUDES = -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
   OBJECT_DIR = CMakeFiles\order_deal_lib.dir
   OBJECT_FILE_DIR = CMakeFiles\order_deal_lib.dir\libs\restaurant_util\src
 
@@ -185,7 +185,7 @@ build CMakeFiles/notif_lib.dir/libs/restaurant_util/src/notif.cpp.obj: CXX_COMPI
   DEFINES = -DASIO_STANDALONE
   DEP_FILE = CMakeFiles\notif_lib.dir\libs\restaurant_util\src\notif.cpp.obj.d
   FLAGS = -g
-  INCLUDES = -IC:/Projects/libraries/nana/include/nana -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
+  INCLUDES = -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
   OBJECT_DIR = CMakeFiles\notif_lib.dir
   OBJECT_FILE_DIR = CMakeFiles\notif_lib.dir\libs\restaurant_util\src
 
@@ -218,7 +218,7 @@ build CMakeFiles/kitchen_request_lib.dir/libs/restaurant_util/src/kitchen_reques
   DEFINES = -DASIO_STANDALONE
   DEP_FILE = CMakeFiles\kitchen_request_lib.dir\libs\restaurant_util\src\kitchen_request.cpp.obj.d
   FLAGS = -g
-  INCLUDES = -IC:/Projects/libraries/nana/include/nana -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
+  INCLUDES = -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
   OBJECT_DIR = CMakeFiles\kitchen_request_lib.dir
   OBJECT_FILE_DIR = CMakeFiles\kitchen_request_lib.dir\libs\restaurant_util\src
 
@@ -251,7 +251,7 @@ build CMakeFiles/networkio_lib.dir/libs/network/src/networkio.cpp.obj: CXX_COMPI
   DEFINES = -DASIO_STANDALONE
   DEP_FILE = CMakeFiles\networkio_lib.dir\libs\network\src\networkio.cpp.obj.d
   FLAGS = -g
-  INCLUDES = -IC:/Projects/libraries/nana/include/nana -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
+  INCLUDES = -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
   OBJECT_DIR = CMakeFiles\networkio_lib.dir
   OBJECT_FILE_DIR = CMakeFiles\networkio_lib.dir\libs\network\src
 
@@ -284,7 +284,7 @@ build CMakeFiles/client_lib.dir/libs/client/src/client.cpp.obj: CXX_COMPILER__cl
   DEFINES = -DASIO_STANDALONE
   DEP_FILE = CMakeFiles\client_lib.dir\libs\client\src\client.cpp.obj.d
   FLAGS = -g
-  INCLUDES = -IC:/Projects/libraries/nana/include/nana -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
+  INCLUDES = -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
   OBJECT_DIR = CMakeFiles\client_lib.dir
   OBJECT_FILE_DIR = CMakeFiles\client_lib.dir\libs\client\src
 
@@ -317,7 +317,7 @@ build CMakeFiles/red_lib.dir/libs/server/src/redirector.cpp.obj: CXX_COMPILER__r
   DEFINES = -DASIO_STANDALONE
   DEP_FILE = CMakeFiles\red_lib.dir\libs\server\src\redirector.cpp.obj.d
   FLAGS = -g
-  INCLUDES = -IC:/Projects/libraries/nana/include/nana -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
+  INCLUDES = -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
   OBJECT_DIR = CMakeFiles\red_lib.dir
   OBJECT_FILE_DIR = CMakeFiles\red_lib.dir\libs\server\src
 
@@ -350,7 +350,7 @@ build CMakeFiles/concli_lib.dir/libs/server/src/connected_client.cpp.obj: CXX_CO
   DEFINES = -DASIO_STANDALONE
   DEP_FILE = CMakeFiles\concli_lib.dir\libs\server\src\connected_client.cpp.obj.d
   FLAGS = -g
-  INCLUDES = -IC:/Projects/libraries/nana/include/nana -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
+  INCLUDES = -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
   OBJECT_DIR = CMakeFiles\concli_lib.dir
   OBJECT_FILE_DIR = CMakeFiles\concli_lib.dir\libs\server\src
 
@@ -383,7 +383,7 @@ build CMakeFiles/server_lib.dir/libs/server/src/server.cpp.obj: CXX_COMPILER__se
   DEFINES = -DASIO_STANDALONE
   DEP_FILE = CMakeFiles\server_lib.dir\libs\server\src\server.cpp.obj.d
   FLAGS = -g
-  INCLUDES = -IC:/Projects/libraries/nana/include/nana -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
+  INCLUDES = -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
   OBJECT_DIR = CMakeFiles\server_lib.dir
   OBJECT_FILE_DIR = CMakeFiles\server_lib.dir\libs\server\src
 
@@ -416,7 +416,7 @@ build CMakeFiles/console_menu_lib.dir/libs/userio/src/console_menu.cpp.obj: CXX_
   DEFINES = -DASIO_STANDALONE
   DEP_FILE = CMakeFiles\console_menu_lib.dir\libs\userio\src\console_menu.cpp.obj.d
   FLAGS = -g
-  INCLUDES = -IC:/Projects/libraries/nana/include/nana -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
+  INCLUDES = -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
   OBJECT_DIR = CMakeFiles\console_menu_lib.dir
   OBJECT_FILE_DIR = CMakeFiles\console_menu_lib.dir\libs\userio\src
 
@@ -449,7 +449,7 @@ build CMakeFiles/client_customer.dir/src/client_customer.cpp.obj: CXX_COMPILER__
   DEFINES = -DASIO_STANDALONE
   DEP_FILE = CMakeFiles\client_customer.dir\src\client_customer.cpp.obj.d
   FLAGS = -g
-  INCLUDES = -IC:/Projects/libraries/nana/include/nana -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
+  INCLUDES = -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
   OBJECT_DIR = CMakeFiles\client_customer.dir
   OBJECT_FILE_DIR = CMakeFiles\client_customer.dir\src
 
@@ -484,7 +484,7 @@ build CMakeFiles/client_kitchen.dir/src/client_kitchen.cpp.obj: CXX_COMPILER__cl
   DEFINES = -DASIO_STANDALONE
   DEP_FILE = CMakeFiles\client_kitchen.dir\src\client_kitchen.cpp.obj.d
   FLAGS = -g
-  INCLUDES = -IC:/Projects/libraries/nana/include/nana -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
+  INCLUDES = -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
   OBJECT_DIR = CMakeFiles\client_kitchen.dir
   OBJECT_FILE_DIR = CMakeFiles\client_kitchen.dir\src
 
@@ -519,7 +519,7 @@ build CMakeFiles/server.dir/src/server_main.cpp.obj: CXX_COMPILER__server_Debug 
   DEFINES = -DASIO_STANDALONE
   DEP_FILE = CMakeFiles\server.dir\src\server_main.cpp.obj.d
   FLAGS = -g
-  INCLUDES = -IC:/Projects/libraries/nana/include/nana -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
+  INCLUDES = -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
   OBJECT_DIR = CMakeFiles\server.dir
   OBJECT_FILE_DIR = CMakeFiles\server.dir\src
 

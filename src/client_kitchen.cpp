@@ -23,7 +23,7 @@ int main(int argc, char* argv[])
         tcp::resolver::iterator iterator = resolver.resolve(query);
         // Get client ID
         std::string client_id(argv[1]);
-        std::cout << "Client ID: " << client_id << std::endl;
+        std::cout << "Kitchen Client ID: " << client_id << std::endl;
         // Start network client
         FoodIDQueue queue;
         KitchenClient client(client_id, io_context, iterator, &queue);

@@ -30,6 +30,12 @@
 			{
 				"command" : 0,
 				"file" : 0,
+				"line" : 64,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
 				"line" : 65,
 				"parent" : 0
 			},
@@ -66,19 +72,13 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 71,
+				"line" : 43,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 44,
-				"parent" : 0
-			},
-			{
-				"command" : 1,
-				"file" : 0,
-				"line" : 80,
+				"line" : 79,
 				"parent" : 0
 			},
 			{
@@ -134,12 +134,6 @@
 				"file" : 0,
 				"line" : 17,
 				"parent" : 0
-			},
-			{
-				"command" : 3,
-				"file" : 0,
-				"line" : 18,
-				"parent" : 0
 			}
 		]
 	},
@@ -163,38 +157,34 @@
 			[
 				{
 					"backtrace" : 11,
-					"path" : "C:/Projects/libraries/nana/include/nana"
-				},
-				{
-					"backtrace" : 12,
 					"path" : "C:/Projects/Appetito/./libs"
 				},
 				{
-					"backtrace" : 13,
+					"backtrace" : 12,
 					"path" : "C:/Projects/Appetito/./libs/asio/include"
 				},
 				{
-					"backtrace" : 14,
+					"backtrace" : 13,
 					"path" : "C:/Projects/Appetito/./libs/cereal"
 				},
 				{
-					"backtrace" : 15,
+					"backtrace" : 14,
 					"path" : "C:/Projects/Appetito/./libs/client/include"
 				},
 				{
-					"backtrace" : 16,
+					"backtrace" : 15,
 					"path" : "C:/Projects/Appetito/./libs/server/include"
 				},
 				{
-					"backtrace" : 17,
+					"backtrace" : 16,
 					"path" : "C:/Projects/Appetito/./libs/network/include"
 				},
 				{
-					"backtrace" : 18,
+					"backtrace" : 17,
 					"path" : "C:/Projects/Appetito/./libs/restaurant_util/include"
 				},
 				{
-					"backtrace" : 19,
+					"backtrace" : 18,
 					"path" : "C:/Projects/Appetito/./libs/userio/include"
 				}
 			],
@@ -208,12 +198,12 @@
 	"dependencies" : 
 	[
 		{
-			"backtrace" : 2,
-			"id" : "food_lib::@6890427a1f51a3e7e1df"
-		},
-		{
 			"backtrace" : 3,
 			"id" : "table_lib::@6890427a1f51a3e7e1df"
+		},
+		{
+			"backtrace" : 2,
+			"id" : "food_lib::@6890427a1f51a3e7e1df"
 		},
 		{
 			"backtrace" : 4,

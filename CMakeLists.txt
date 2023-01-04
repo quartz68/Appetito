@@ -7,7 +7,6 @@ project(Appetito)
 
 add_definitions(-DASIO_STANDALONE)
 
-include_directories(C:/Projects/libraries/nana/include/nana)
 include_directories(./libs)
 include_directories(./libs/asio/include)
 include_directories(./libs/cereal)

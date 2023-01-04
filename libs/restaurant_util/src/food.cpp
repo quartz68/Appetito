@@ -1,3 +1,10 @@
+/**
+ * @file food.cpp
+ * @brief Implementation of Food, FoodID, FoodType, Price and FoodContainer classes.
+ * @details
+ * @version
+ */
+
 #include <food.hpp>
 
 // Price class

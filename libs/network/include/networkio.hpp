@@ -1,3 +1,10 @@
+/**
+ * @file networkio.hpp
+ * @brief Header of NetworkIO class.
+ * @details
+ * @version
+ */
+
 #ifndef NETWORKIO_HPP_
 #define NETWORKIO_HPP_
 
@@ -6,7 +13,6 @@
 #include <vector>
 #include <tuple>
 #include <asio.hpp>
-#include <protocol.hpp>
 #include <cereal/cereal.hpp>
 #include <cereal/archives/binary.hpp>
 #include <cereal/types/string.hpp>
@@ -162,19 +168,13 @@ public:
     }
 
 private:
-    /// The underlying socket.
-    asio::ip::tcp::socket socket_;
-    asio::io_context& io_context_;
-    /// The size of a fixed length header.
-    enum { HEADER_SIZE = 8 };
-    /// Holds an outbound header.
-    std::string outbound_header_;
-    /// Holds the outbound data.
-    std::string outbound_data_;
-    /// Holds an inbound header.
-    char inbound_header_[HEADER_SIZE];
-    /// Holds the inbound data.
-    std::vector<char> inbound_data_;
+    asio::ip::tcp::socket socket_; /**< The underlying socket. */
+    asio::io_context& io_context_; /**< The io_context. */
+    enum { HEADER_SIZE = 8 }; /**< The size of a fixed length header. */
+    std::string outbound_header_; /**< Holds an outbound header. */
+    std::string outbound_data_; /**< Holds the outbound data. */
+    char inbound_header_[HEADER_SIZE]; /**< Holds an inbound header. */
+    std::vector<char> inbound_data_; /**< Holds the inbound data. */
 };
 
 #endif

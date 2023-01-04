@@ -1,3 +1,10 @@
+/**
+ * @file client.hpp
+ * @brief Header of Client classes.
+ * @details
+ * @version
+ */
+
 #ifndef CLIENT_HPP_
 #define CLIENT_HPP_
 
@@ -93,8 +100,9 @@ public:
 protected:
     void on_connect(const asio::error_code& error);
     void connect_handler(const asio::error_code& error);
-    void connect_handler_step2(const asio::error_code& error);
+    void deal_number_handler(const asio::error_code& error);
     void read_handler(const asio::error_code& error);
+    unsigned int deal_number_;
 };
 
 class KitchenClient

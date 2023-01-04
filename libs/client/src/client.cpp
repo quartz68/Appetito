@@ -1,3 +1,10 @@
+/**
+ * @file client.cpp
+ * @brief Implementation of Client classes.
+ * @details
+ * @version
+ */
+
 #include <client.hpp>
 
 // Client
@@ -46,24 +53,27 @@ void CustomerClient::on_connect(const asio::error_code& error)
 void CustomerClient::connect_handler(const asio::error_code& error)
 {
     if (!error) {
-        network_io_.async_read(menu_,
-                         std::bind(&CustomerClient::read_handler, this, std::placeholders::_1));
+        if (menu_.foods_.empty()) {
+            network_io_.async_read(menu_,
+                         std::bind(&CustomerClient::connect_handler, this, std::placeholders::_1));
+        } else {
+            network_io_.async_read(deal_number_,
+                         std::bind(&CustomerClient::deal_number_handler, this, std::placeholders::_1));
+        }
     } else {
         std::cout << error.message() << std::endl;
         close_implementation();
     }
 }
 
-void CustomerClient::connect_handler_step2(const asio::error_code& error)
+void CustomerClient::deal_number_handler(const asio::error_code& error)
 {
     if (!error) {
-        menu_.print();
-        /* Order order(menu_);
-        Table table;
-        Deal deal(order,table);
-        network_io_.async_write(deal,
-                         std::bind(&Client::read_handler, this, std::placeholders::_1)); */
-        
+        std::cout << DEAL_NUMBER_HEADER << std::endl;
+        std::cout << "Your deal number is: " << deal_number_ << std::endl;
+        std::cout << DIVIDE << std::endl;
+        std::cout << "Please stay tuned for notification,or\nwait for the waiter to call your number." << std::endl;
+        std::cout << BOTTOM << std::endl;
     } else {
         std::cout << error.message() << std::endl;
         close_implementation();
@@ -111,7 +121,7 @@ void KitchenClient::connect_handler(const asio::error_code& error)
 void KitchenClient::connect_handler_step2(const asio::error_code& error)
 {
     if (!error) {
-        menu_.print();
+        menu_.print_foods();
         network_io_.async_read(read_foodid_,
                          std::bind(&KitchenClient::read_handler, this, std::placeholders::_1));
     } else {
@@ -127,7 +137,7 @@ void KitchenClient::read_handler(const asio::error_code& error)
             std::lock_guard<std::mutex> lock(foodid_queue_->mtx);
             foodid_queue_->queue.push(read_foodid_);
         }
-        std::cout << menu_.foods_[read_foodid_.second].get_name() << std::endl;
+        std::cout << read_foodid_.first << ' ' << menu_.foods_[read_foodid_.second].get_name() << std::endl;
         network_io_.async_read(read_foodid_,
                          std::bind(&KitchenClient::read_handler, this, std::placeholders::_1));
     } else {

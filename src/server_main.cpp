@@ -54,13 +54,13 @@ int main(int argc, char* argv[])
         // Worker threads
         std::vector<std::thread*> workers; // Thread group
         for (int i = 0; i < 2; ++i) {
-            std::thread* t = new std::thread{ std::bind(WorkerThread::run, io_context) };
+            std::thread* t = new std::thread{ std::bind(WorkerThread::run_ioc, io_context) };
             workers.push_back(t);
         }
 
         // Join threads
-        for (auto i : workers) {
-            i->join();
+        for (auto thread : workers) {
+            thread->join();
         }
     } catch (std::exception& e) {
         std::cerr << e.what() << std::endl;

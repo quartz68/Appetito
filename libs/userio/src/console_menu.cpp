@@ -1,3 +1,10 @@
+/**
+ * @file consolemenu.cpp
+ * @brief Implementation of ConsoleMenu class.
+ * @details
+ * @version
+ */
+
 #include <console_menu.hpp>
 #include <sstream>
 
