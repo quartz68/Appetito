@@ -1,0 +1,186 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.25"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Appetito",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "client_customer::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-client_customer-Debug-d0955dccd588cb3f8bc2.json",
+					"name" : "client_customer",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "client_kitchen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-client_kitchen-Debug-05f83d1338eb1f6090a1.json",
+					"name" : "client_kitchen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "client_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-client_lib-Debug-079272543035493ea23f.json",
+					"name" : "client_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "concli_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-concli_lib-Debug-c96ad80e37f6078c744c.json",
+					"name" : "concli_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "console_menu_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-console_menu_lib-Debug-6291dc19b96e5493deb7.json",
+					"name" : "console_menu_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "food_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-food_lib-Debug-bca7e6fa3e64e1a12e66.json",
+					"name" : "food_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "kitchen_request_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-kitchen_request_lib-Debug-756e562b3c3e79de4e7b.json",
+					"name" : "kitchen_request_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "menu_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-menu_lib-Debug-520980c60f7629e44ebc.json",
+					"name" : "menu_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "networkio_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-networkio_lib-Debug-95b7e99186f7ba0dbe5b.json",
+					"name" : "networkio_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "notif_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-notif_lib-Debug-157629204555736e1d2b.json",
+					"name" : "notif_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "order_deal_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-order_deal_lib-Debug-a7d9ded1d2abbe17b13c.json",
+					"name" : "order_deal_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "red_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-red_lib-Debug-b0c62fb385a2fca48b99.json",
+					"name" : "red_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "server::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-server-Debug-0a2f5332d68836a67ac1.json",
+					"name" : "server",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "server_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-server_lib-Debug-f8ad2f67f7099ac4557e.json",
+					"name" : "server_lib",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "table_lib::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-table_lib-Debug-36faae7bbc1e68af01c0.json",
+					"name" : "table_lib",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Projects/Appetito/build",
+		"source" : "C:/Projects/Appetito"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}
