@@ -1,0 +1,54 @@
+\hypertarget{menu_8hpp_source}{}\doxysection{menu.\+hpp}
+\label{menu_8hpp_source}\index{C:/Projects/Appetito/libs/restaurant\_util/include/menu.hpp@{C:/Projects/Appetito/libs/restaurant\_util/include/menu.hpp}}
+\mbox{\hyperlink{menu_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef CUSTOMER\_MENU\_HPP\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define CUSTOMER\_MENU\_HPP\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <regex>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{food_8hpp}{food.hpp}}>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{table_8hpp}{table.hpp}}>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{protocol_8hpp}{protocol.hpp}}>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <set>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <cereal.hpp>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <cereal/archives/binary.hpp>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <cereal/types/vector.hpp>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <cereal/types/map.hpp>}}
+\DoxyCodeLine{21 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{keyword}{class }\mbox{\hyperlink{class_menu}{Menu}} \{}
+\DoxyCodeLine{24 \textcolor{keyword}{public}:}
+\DoxyCodeLine{25     \mbox{\hyperlink{class_menu_ad466dd83355124a6ed958430450bfe94}{Menu}}() \{ \}}
+\DoxyCodeLine{26     \mbox{\hyperlink{class_menu_a29d7cf5e2074cfe06e900a3bbcaec8a8}{Menu}}(\mbox{\hyperlink{struct_food_container}{FoodContainer}}* all\_foods, \mbox{\hyperlink{struct_table_container}{TableContainer}}* all\_tables) \textcolor{comment}{//构造函数，遍历FoodContainer和TableContainer，分别将Food和Table存入二维vector types\_foods和types\_tables}}
+\DoxyCodeLine{27     \{}
+\DoxyCodeLine{28         \textcolor{keywordflow}{if} (all\_foods != \textcolor{keyword}{nullptr} \&\& all\_tables != \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{29             \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} food : (*all\_foods).foods) \{}
+\DoxyCodeLine{30                 \mbox{\hyperlink{class_menu_a3f23319445f0c4a84124bacedc808793}{foods\_}}.emplace(food.first,food.second);}
+\DoxyCodeLine{31             \}}
+\DoxyCodeLine{32             \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} table : (*all\_tables).tables) \{}
+\DoxyCodeLine{33                 \mbox{\hyperlink{class_menu_af31f7641bbef5b03d40ffe010c6fac0c}{tables\_}}.emplace(table.first,table.second);}
+\DoxyCodeLine{34             \}}
+\DoxyCodeLine{35         \} \textcolor{keywordflow}{else} \{}
+\DoxyCodeLine{36             cerr << \textcolor{stringliteral}{"{}Trying to set nullptr as FoodContainer or TableContainer pointer!"{}} << endl;}
+\DoxyCodeLine{37         \}}
+\DoxyCodeLine{38     \}}
+\DoxyCodeLine{39     \mbox{\hyperlink{class_menu_a910941baf35aa6a1272237b01b2ae0e4}{Menu}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_menu}{Menu}}\& other)}
+\DoxyCodeLine{40         :\mbox{\hyperlink{class_menu_a3f23319445f0c4a84124bacedc808793}{foods\_}}(other.\mbox{\hyperlink{class_menu_a3f23319445f0c4a84124bacedc808793}{foods\_}}), \mbox{\hyperlink{class_menu_af31f7641bbef5b03d40ffe010c6fac0c}{tables\_}}(other.\mbox{\hyperlink{class_menu_af31f7641bbef5b03d40ffe010c6fac0c}{tables\_}}) \{ \}}
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_a15ae4218d7e25f13a463cb3792586fb3}{print\_foods}}();}
+\DoxyCodeLine{42     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_a268b096d81c99080f73b84c68733c20c}{print\_tables}}();}
+\DoxyCodeLine{43     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_aa6ff784314cc009478562d9ab7a0af34}{print}}(); \textcolor{comment}{//从二维vector types\_foods和types\_tables打印菜单}}
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_a208bbf99c10a96230f12e0735f4230fb}{refresh}}(); \textcolor{comment}{//刷新菜单，操作基本上和构造函数相同，向服务器请求的部分我后面来加}}
+\DoxyCodeLine{45     \textcolor{keyword}{template}<\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{46     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_menu_a2e01f049a1b2954144bcbecd51938f90}{serialize}}(Archive\& archive)}
+\DoxyCodeLine{47     \{}
+\DoxyCodeLine{48         archive(\mbox{\hyperlink{class_menu_a3f23319445f0c4a84124bacedc808793}{foods\_}},\mbox{\hyperlink{class_menu_af31f7641bbef5b03d40ffe010c6fac0c}{tables\_}});}
+\DoxyCodeLine{49     \}}
+\DoxyCodeLine{50     map<FoodID,Food> \mbox{\hyperlink{class_menu_a3f23319445f0c4a84124bacedc808793}{foods\_}}; \textcolor{comment}{// 二维vector，一个类型的Food是一行}}
+\DoxyCodeLine{51     map<TableID,Table> \mbox{\hyperlink{class_menu_af31f7641bbef5b03d40ffe010c6fac0c}{tables\_}}; \textcolor{comment}{// 参考上一个}}
+\DoxyCodeLine{52 \};}
+\DoxyCodeLine{53 }
+\DoxyCodeLine{54 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

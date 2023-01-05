@@ -1,0 +1,145 @@
+\hypertarget{class_deal}{}\doxysection{Deal Class Reference}
+\label{class_deal}\index{Deal@{Deal}}
+
+
+\mbox{\hyperlink{class_deal}{Deal}}.  
+
+
+
+
+{\ttfamily \#include $<$order\+\_\+deal.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_deal_a0b707ac8aa5e4ec6a6ba08b44ce9bf71}{Deal}} (\mbox{\hyperlink{class_order}{Order}} \&order, \mbox{\hyperlink{class_table}{Table}} \&table)
+\begin{DoxyCompactList}\small\item\em Construct a \mbox{\hyperlink{class_deal}{Deal}} object from \mbox{\hyperlink{class_order}{Order}} and \mbox{\hyperlink{class_table}{Table}}. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_deal_aca111bf38efd03b9aafcb303201271cd}{get\+\_\+bill}} ()
+\begin{DoxyCompactList}\small\item\em Calculate the bill and return the total price. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_deal_a8b232873c00b96b7dc6703dbd68fe812}{set\+\_\+order}} (\mbox{\hyperlink{class_order}{Order}} \&order)
+\begin{DoxyCompactList}\small\item\em Set the order. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_deal_afe885bdfa5e086695a169fb03ad81ccb}{set\+\_\+table}} (\mbox{\hyperlink{class_table}{Table}} \&table)
+\begin{DoxyCompactList}\small\item\em Set the table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_deal_a37c8f449d406f1c4f5a98ee117f5a09c}{set\+\_\+menu\+\_\+ptr}} (\mbox{\hyperlink{class_menu}{Menu}} $\ast$menu\+\_\+ptr)
+\begin{DoxyCompactList}\small\item\em Set the menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_deal_a95afdeebb28d890702a5f598dc590aa6}{print}} ()
+\begin{DoxyCompactList}\small\item\em Print the deal. \end{DoxyCompactList}\item 
+vector$<$ pair$<$ \mbox{\hyperlink{struct_food_i_d}{Food\+ID}}, unsigned short $>$ $>$ \mbox{\hyperlink{class_deal_a59c6c98167b303739433ac4e041f7f5d}{get\+\_\+food\+\_\+list}} ()
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{class_deal_a41ce9cc2125b9bcff89fb9701f4fe494}{serialize}} (Archive \&archive)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_deal}{Deal}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_deal_a0b707ac8aa5e4ec6a6ba08b44ce9bf71}\label{class_deal_a0b707ac8aa5e4ec6a6ba08b44ce9bf71}} 
+\index{Deal@{Deal}!Deal@{Deal}}
+\index{Deal@{Deal}!Deal@{Deal}}
+\doxysubsubsection{\texorpdfstring{Deal()}{Deal()}}
+{\footnotesize\ttfamily Deal\+::\+Deal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_order}{Order}} \&}]{order,  }\item[{\mbox{\hyperlink{class_table}{Table}} \&}]{table }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a \mbox{\hyperlink{class_deal}{Deal}} object from \mbox{\hyperlink{class_order}{Order}} and \mbox{\hyperlink{class_table}{Table}}. 
+
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & \mbox{\hyperlink{class_order}{Order}}. \\
+\hline
+{\em table} & \mbox{\hyperlink{class_table}{Table}}. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_deal_aca111bf38efd03b9aafcb303201271cd}\label{class_deal_aca111bf38efd03b9aafcb303201271cd}} 
+\index{Deal@{Deal}!get\_bill@{get\_bill}}
+\index{get\_bill@{get\_bill}!Deal@{Deal}}
+\doxysubsubsection{\texorpdfstring{get\_bill()}{get\_bill()}}
+{\footnotesize\ttfamily double Deal\+::get\+\_\+bill (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculate the bill and return the total price. 
+
+\begin{DoxyReturn}{Returns}
+Total price. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_deal_a59c6c98167b303739433ac4e041f7f5d}\label{class_deal_a59c6c98167b303739433ac4e041f7f5d}} 
+\index{Deal@{Deal}!get\_food\_list@{get\_food\_list}}
+\index{get\_food\_list@{get\_food\_list}!Deal@{Deal}}
+\doxysubsubsection{\texorpdfstring{get\_food\_list()}{get\_food\_list()}}
+{\footnotesize\ttfamily vector$<$ pair$<$ \mbox{\hyperlink{struct_food_i_d}{Food\+ID}}, unsigned short $>$ $>$ Deal\+::get\+\_\+food\+\_\+list (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_deal_a95afdeebb28d890702a5f598dc590aa6}\label{class_deal_a95afdeebb28d890702a5f598dc590aa6}} 
+\index{Deal@{Deal}!print@{print}}
+\index{print@{print}!Deal@{Deal}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Deal\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Print the deal. 
+
+\mbox{\Hypertarget{class_deal_a41ce9cc2125b9bcff89fb9701f4fe494}\label{class_deal_a41ce9cc2125b9bcff89fb9701f4fe494}} 
+\index{Deal@{Deal}!serialize@{serialize}}
+\index{serialize@{serialize}!Deal@{Deal}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+void Deal\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{archive }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_deal_a37c8f449d406f1c4f5a98ee117f5a09c}\label{class_deal_a37c8f449d406f1c4f5a98ee117f5a09c}} 
+\index{Deal@{Deal}!set\_menu\_ptr@{set\_menu\_ptr}}
+\index{set\_menu\_ptr@{set\_menu\_ptr}!Deal@{Deal}}
+\doxysubsubsection{\texorpdfstring{set\_menu\_ptr()}{set\_menu\_ptr()}}
+{\footnotesize\ttfamily void Deal\+::set\+\_\+menu\+\_\+ptr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_menu}{Menu}} $\ast$}]{menu\+\_\+ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the menu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em menu\+\_\+ptr} & Raw pointer to menu. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_deal_a8b232873c00b96b7dc6703dbd68fe812}\label{class_deal_a8b232873c00b96b7dc6703dbd68fe812}} 
+\index{Deal@{Deal}!set\_order@{set\_order}}
+\index{set\_order@{set\_order}!Deal@{Deal}}
+\doxysubsubsection{\texorpdfstring{set\_order()}{set\_order()}}
+{\footnotesize\ttfamily void Deal\+::set\+\_\+order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_order}{Order}} \&}]{order }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em order} & \mbox{\hyperlink{class_order}{Order}}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_deal_afe885bdfa5e086695a169fb03ad81ccb}\label{class_deal_afe885bdfa5e086695a169fb03ad81ccb}} 
+\index{Deal@{Deal}!set\_table@{set\_table}}
+\index{set\_table@{set\_table}!Deal@{Deal}}
+\doxysubsubsection{\texorpdfstring{set\_table()}{set\_table()}}
+{\footnotesize\ttfamily void Deal\+::set\+\_\+table (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_table}{Table}} \&}]{table }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em table} & \mbox{\hyperlink{class_table}{Table}}. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Projects/\+Appetito/libs/restaurant\+\_\+util/include/\mbox{\hyperlink{order__deal_8hpp}{order\+\_\+deal.\+hpp}}\item 
+C\+:/\+Projects/\+Appetito/libs/restaurant\+\_\+util/src/\mbox{\hyperlink{order__deal_8cpp}{order\+\_\+deal.\+cpp}}\end{DoxyCompactItemize}

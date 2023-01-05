@@ -1,0 +1,91 @@
+\hypertarget{struct_food_container}{}\doxysection{Food\+Container Struct Reference}
+\label{struct_food_container}\index{FoodContainer@{FoodContainer}}
+
+
+Container that holds \mbox{\hyperlink{struct_food_type}{Food\+Type}} and \mbox{\hyperlink{class_food}{Food}} in two maps.  
+
+
+
+
+{\ttfamily \#include $<$food.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_food_container_a96c457b90542261dfc179485393bb177}{Food\+Container}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_food_container_a563a5e54d196fcde61c6f7bf1af3f5fa}{Food\+Container}} (ifstream \&file)
+\begin{DoxyCompactList}\small\item\em Construct a \mbox{\hyperlink{struct_food_container}{Food\+Container}} object from a input file stream. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{struct_food_container_af9356ada1dcf62c270e868f855f6efd3}{serialize}} (Archive \&archive)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+map$<$ unsigned short, \mbox{\hyperlink{struct_food_type}{Food\+Type}} $>$ \mbox{\hyperlink{struct_food_container_a05786868955ba581570750f840940bed}{types}}
+\item 
+map$<$ \mbox{\hyperlink{struct_food_i_d}{Food\+ID}}, \mbox{\hyperlink{class_food}{Food}} $>$ \mbox{\hyperlink{struct_food_container_a67b7789755aba422b4b7a8bae1e9857a}{foods}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Container that holds \mbox{\hyperlink{struct_food_type}{Food\+Type}} and \mbox{\hyperlink{class_food}{Food}} in two maps. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_food_container_a96c457b90542261dfc179485393bb177}\label{struct_food_container_a96c457b90542261dfc179485393bb177}} 
+\index{FoodContainer@{FoodContainer}!FoodContainer@{FoodContainer}}
+\index{FoodContainer@{FoodContainer}!FoodContainer@{FoodContainer}}
+\doxysubsubsection{\texorpdfstring{FoodContainer()}{FoodContainer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Food\+Container\+::\+Food\+Container (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. 
+
+\mbox{\Hypertarget{struct_food_container_a563a5e54d196fcde61c6f7bf1af3f5fa}\label{struct_food_container_a563a5e54d196fcde61c6f7bf1af3f5fa}} 
+\index{FoodContainer@{FoodContainer}!FoodContainer@{FoodContainer}}
+\index{FoodContainer@{FoodContainer}!FoodContainer@{FoodContainer}}
+\doxysubsubsection{\texorpdfstring{FoodContainer()}{FoodContainer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Food\+Container\+::\+Food\+Container (\begin{DoxyParamCaption}\item[{ifstream \&}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a \mbox{\hyperlink{struct_food_container}{Food\+Container}} object from a input file stream. 
+
+Constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & Input file stream. Format\+: typeid , id , name , typename , typeid , price~\newline
+\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_food_container_af9356ada1dcf62c270e868f855f6efd3}\label{struct_food_container_af9356ada1dcf62c270e868f855f6efd3}} 
+\index{FoodContainer@{FoodContainer}!serialize@{serialize}}
+\index{serialize@{serialize}!FoodContainer@{FoodContainer}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+void Food\+Container\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{archive }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_food_container_a67b7789755aba422b4b7a8bae1e9857a}\label{struct_food_container_a67b7789755aba422b4b7a8bae1e9857a}} 
+\index{FoodContainer@{FoodContainer}!foods@{foods}}
+\index{foods@{foods}!FoodContainer@{FoodContainer}}
+\doxysubsubsection{\texorpdfstring{foods}{foods}}
+{\footnotesize\ttfamily map$<$\mbox{\hyperlink{struct_food_i_d}{Food\+ID}}, \mbox{\hyperlink{class_food}{Food}}$>$ Food\+Container\+::foods}
+
+\mbox{\Hypertarget{struct_food_container_a05786868955ba581570750f840940bed}\label{struct_food_container_a05786868955ba581570750f840940bed}} 
+\index{FoodContainer@{FoodContainer}!types@{types}}
+\index{types@{types}!FoodContainer@{FoodContainer}}
+\doxysubsubsection{\texorpdfstring{types}{types}}
+{\footnotesize\ttfamily map$<$unsigned short, \mbox{\hyperlink{struct_food_type}{Food\+Type}}$>$ Food\+Container\+::types}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Projects/\+Appetito/libs/restaurant\+\_\+util/include/\mbox{\hyperlink{food_8hpp}{food.\+hpp}}\end{DoxyCompactItemize}

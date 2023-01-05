@@ -1,6 +1,14 @@
-#include <redirector.hpp>
+/**
+ * @file redirector.cpp
+ * @brief Implementation of Redirector classes.
+ * @details
+ * @version
+ */
 
-void Redirector::enter(std::shared_ptr<ConnectedClient> entering_client, const ClientID& client_id)
+#include <redirector.hpp>
+#include <server.hpp>
+
+void CustomerRedirector::enter(std::shared_ptr<ConnectedCustomerClient> entering_client, const std::string& client_id)
 {
     //std::cout << "redirector enter called" << std::endl;
     connected_clients_.insert(entering_client);
@@ -8,22 +16,24 @@ void Redirector::enter(std::shared_ptr<ConnectedClient> entering_client, const C
     //std::cout << "redirector enter returned" << std::endl;
 }
 
-void Redirector::leave(std::shared_ptr<ConnectedClient> leaving_client)
+void CustomerRedirector::leave(std::shared_ptr<ConnectedCustomerClient> leaving_client)
 {
     //std::cout << "redirector leave called" << std::endl;
     connected_clients_.erase(leaving_client);
     //std::cout << "redirector leave returned" << std::endl;
 }
 
-void Redirector::write_to_client(Pack& pack, std::shared_ptr<ConnectedClient> client)
+void KitchenRedirector::enter(std::shared_ptr<ConnectedKitchenClient> entering_client, const std::string& client_id)
 {
-    //Temporary
-    //std::cout << "redirector write to client called" << std::endl;
-    Pack fpack;
-    strcpy(fpack.data(),client->get_id().data());
-    strcat(fpack.data(), pack.data());
-    //std::cout << pack.data() << std::endl;
-    std::for_each(connected_clients_.begin(), connected_clients_.end(),
-                      std::bind(&ConnectedClient::write, std::placeholders::_1, std::ref(fpack)));
-    //std::cout << "redirector write to client returned" << std::endl;
+    //std::cout << "redirector enter called" << std::endl;
+    connected_clients_.insert(entering_client);
+    id_table_[entering_client] = client_id;
+    //std::cout << "redirector enter returned" << std::endl;
+}
+
+void KitchenRedirector::leave(std::shared_ptr<ConnectedKitchenClient> leaving_client)
+{
+    //std::cout << "redirector leave called" << std::endl;
+    connected_clients_.erase(leaving_client);
+    //std::cout << "redirector leave returned" << std::endl;
 }

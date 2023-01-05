@@ -1,0 +1,136 @@
+\hypertarget{struct_table_type}{}\doxysection{Table\+Type Struct Reference}
+\label{struct_table_type}\index{TableType@{TableType}}
+
+
+Type of table.  
+
+
+
+
+{\ttfamily \#include $<$table.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_table_type_afb0759e28f1a506fecf41318c4e7afe0}{Table\+Type}} ()
+\begin{DoxyCompactList}\small\item\em Construct a \mbox{\hyperlink{struct_table_type}{Table\+Type}} object with name of empty string, capacity and ID set to 0. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_table_type_adf67d7f0522173742d4ce10ebead9af8}{Table\+Type}} (string \mbox{\hyperlink{struct_table_type_ae735d6ad21951fbcdb608770c5a6c2a3}{name}}, unsigned short \mbox{\hyperlink{struct_table_type_ab5198d1ffe488ef6a0a003fc2f87154f}{capacity}}, unsigned short \mbox{\hyperlink{struct_table_type_a43e258fb88af282f05ec31cdf475a143}{id}})
+\begin{DoxyCompactList}\small\item\em Construct a \mbox{\hyperlink{struct_table_type}{Table\+Type}} object from name, capacity and ID. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{struct_table_type_a8feab4e45210800352f16517fdf0f47a}{operator$<$}} (const \mbox{\hyperlink{struct_table_type}{Table\+Type}} \&other) const
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{struct_table_type_af41e532a227aa2988c8d736788b15485}{serialize}} (Archive \&archive)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{struct_table_type_ae735d6ad21951fbcdb608770c5a6c2a3}{name}}
+\item 
+unsigned short \mbox{\hyperlink{struct_table_type_ab5198d1ffe488ef6a0a003fc2f87154f}{capacity}}
+\item 
+unsigned short \mbox{\hyperlink{struct_table_type_a43e258fb88af282f05ec31cdf475a143}{id}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+istream \& \mbox{\hyperlink{struct_table_type_a7f96e96f918a5761125bf578b9c05647}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{struct_table_type}{Table\+Type}} \&tabletype)
+\begin{DoxyCompactList}\small\item\em Overloading operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} \+: name , capacity , id. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Type of table. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_table_type_afb0759e28f1a506fecf41318c4e7afe0}\label{struct_table_type_afb0759e28f1a506fecf41318c4e7afe0}} 
+\index{TableType@{TableType}!TableType@{TableType}}
+\index{TableType@{TableType}!TableType@{TableType}}
+\doxysubsubsection{\texorpdfstring{TableType()}{TableType()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Table\+Type\+::\+Table\+Type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a \mbox{\hyperlink{struct_table_type}{Table\+Type}} object with name of empty string, capacity and ID set to 0. 
+
+Default constructor.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_table_type_adf67d7f0522173742d4ce10ebead9af8}{Table\+Type(string name, unsigned short capacity, unsigned short id)}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{struct_table_type_adf67d7f0522173742d4ce10ebead9af8}\label{struct_table_type_adf67d7f0522173742d4ce10ebead9af8}} 
+\index{TableType@{TableType}!TableType@{TableType}}
+\index{TableType@{TableType}!TableType@{TableType}}
+\doxysubsubsection{\texorpdfstring{TableType()}{TableType()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Table\+Type\+::\+Table\+Type (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{unsigned short}]{capacity,  }\item[{unsigned short}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a \mbox{\hyperlink{struct_table_type}{Table\+Type}} object from name, capacity and ID. 
+
+Constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the type. \\
+\hline
+{\em capacity} & Capacity of the type. \\
+\hline
+{\em id} & ID of the type.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{struct_table_type_afb0759e28f1a506fecf41318c4e7afe0}{Table\+Type()}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_table_type_a8feab4e45210800352f16517fdf0f47a}\label{struct_table_type_a8feab4e45210800352f16517fdf0f47a}} 
+\index{TableType@{TableType}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!TableType@{TableType}}
+\doxysubsubsection{\texorpdfstring{operator$<$()}{operator<()}}
+{\footnotesize\ttfamily bool Table\+Type\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{struct_table_type}{Table\+Type}} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{struct_table_type_af41e532a227aa2988c8d736788b15485}\label{struct_table_type_af41e532a227aa2988c8d736788b15485}} 
+\index{TableType@{TableType}!serialize@{serialize}}
+\index{serialize@{serialize}!TableType@{TableType}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+void Table\+Type\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{archive }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{struct_table_type_a7f96e96f918a5761125bf578b9c05647}\label{struct_table_type_a7f96e96f918a5761125bf578b9c05647}} 
+\index{TableType@{TableType}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!TableType@{TableType}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is,  }\item[{\mbox{\hyperlink{struct_table_type}{Table\+Type}} \&}]{tabletype }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Overloading operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} \+: name , capacity , id. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_table_type_ab5198d1ffe488ef6a0a003fc2f87154f}\label{struct_table_type_ab5198d1ffe488ef6a0a003fc2f87154f}} 
+\index{TableType@{TableType}!capacity@{capacity}}
+\index{capacity@{capacity}!TableType@{TableType}}
+\doxysubsubsection{\texorpdfstring{capacity}{capacity}}
+{\footnotesize\ttfamily unsigned short Table\+Type\+::capacity}
+
+\mbox{\Hypertarget{struct_table_type_a43e258fb88af282f05ec31cdf475a143}\label{struct_table_type_a43e258fb88af282f05ec31cdf475a143}} 
+\index{TableType@{TableType}!id@{id}}
+\index{id@{id}!TableType@{TableType}}
+\doxysubsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily unsigned short Table\+Type\+::id}
+
+\mbox{\Hypertarget{struct_table_type_ae735d6ad21951fbcdb608770c5a6c2a3}\label{struct_table_type_ae735d6ad21951fbcdb608770c5a6c2a3}} 
+\index{TableType@{TableType}!name@{name}}
+\index{name@{name}!TableType@{TableType}}
+\doxysubsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily string Table\+Type\+::name}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Projects/\+Appetito/libs/restaurant\+\_\+util/include/\mbox{\hyperlink{table_8hpp}{table.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,257 @@
+\hypertarget{class_food}{}\doxysection{Food Class Reference}
+\label{class_food}\index{Food@{Food}}
+
+
+\mbox{\hyperlink{class_food}{Food}}.  
+
+
+
+
+{\ttfamily \#include $<$food.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_food_a75d4d7f76fd495cc8133302ca9fdc485}{Food}} ()
+\begin{DoxyCompactList}\small\item\em Construct a \mbox{\hyperlink{class_food}{Food}} object of NULL\+\_\+\+FOOD\+\_\+\+TYPE. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_food_a60a20b404d104023718a53763bc960bc}{Food}} (string name, double price, \mbox{\hyperlink{struct_food_type}{Food\+Type}} type, \mbox{\hyperlink{struct_food_i_d}{Food\+ID}} id)
+\begin{DoxyCompactList}\small\item\em Construct a \mbox{\hyperlink{class_food}{Food}} object from name, price, type and ID. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_food_ab64bc15c917377846d9e06d1572364d2}{get\+\_\+name}} ()
+\begin{DoxyCompactList}\small\item\em Get the name of the food. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_food_ac10f60ee7118a5159a84ea48aa39b5fa}{get\+\_\+price\+\_\+cny}} ()
+\begin{DoxyCompactList}\small\item\em Get the price in CNY. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_food_a2619ce64d85bd7992e6092ec9e70188a}{get\+\_\+price\+\_\+usd}} ()
+\begin{DoxyCompactList}\small\item\em Get the price in USD. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_food_a80fdb9f516746243fcab4379c23160bf}{get\+\_\+type\+\_\+name}} ()
+\begin{DoxyCompactList}\small\item\em Get the name of the type of the food. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_food_i_d}{Food\+ID}} \mbox{\hyperlink{class_food_a2f4dcdcd9269bb0b0c4da6937c2c3dbd}{get\+\_\+id}} ()
+\begin{DoxyCompactList}\small\item\em Get the ID of the food. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_food_type}{Food\+Type}} \& \mbox{\hyperlink{class_food_a9172ce49bd4736e40f78464271c69973}{get\+\_\+type}} ()
+\begin{DoxyCompactList}\small\item\em Get the type of the food. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_food_a7dc112c4570027204b5b6b6d474acc04}{get\+\_\+id\+\_\+str}} ()
+\begin{DoxyCompactList}\small\item\em Get the ID in string. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_food_a01a747168342a302011f793d0d433af9}{set\+\_\+name}} (string name)
+\begin{DoxyCompactList}\small\item\em Set the name of the food. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_food_a14288c7453a671c89be0dcd2502ea7be}{set\+\_\+price}} (\mbox{\hyperlink{class_price}{Price}} price)
+\begin{DoxyCompactList}\small\item\em Set the price of the food. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_food_a203a9304f7ffa8bb158b48c089bd9099}{set\+\_\+type}} (\mbox{\hyperlink{struct_food_type}{Food\+Type}} type)
+\begin{DoxyCompactList}\small\item\em Set the type of the food. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{class_food_a67c49122fa68228f713c6a28e012e432}{serialize}} (Archive \&archive)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+istream \& \mbox{\hyperlink{class_food_ae7243b283b651d828650d5b0895f2499}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{class_food}{Food}} \&food)
+\begin{DoxyCompactList}\small\item\em Overloading operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} \+: \mbox{\hyperlink{struct_food_i_d}{Food\+ID}} , name , \mbox{\hyperlink{struct_food_type}{Food\+Type}} , \mbox{\hyperlink{class_price}{Price}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_food}{Food}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_food_a75d4d7f76fd495cc8133302ca9fdc485}\label{class_food_a75d4d7f76fd495cc8133302ca9fdc485}} 
+\index{Food@{Food}!Food@{Food}}
+\index{Food@{Food}!Food@{Food}}
+\doxysubsubsection{\texorpdfstring{Food()}{Food()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Food\+::\+Food (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a \mbox{\hyperlink{class_food}{Food}} object of NULL\+\_\+\+FOOD\+\_\+\+TYPE. 
+
+Default constructor.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_food_a60a20b404d104023718a53763bc960bc}{Food(string name, double price, Food\+Type type, Food\+ID id)}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_food_a60a20b404d104023718a53763bc960bc}\label{class_food_a60a20b404d104023718a53763bc960bc}} 
+\index{Food@{Food}!Food@{Food}}
+\index{Food@{Food}!Food@{Food}}
+\doxysubsubsection{\texorpdfstring{Food()}{Food()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Food\+::\+Food (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{double}]{price,  }\item[{\mbox{\hyperlink{struct_food_type}{Food\+Type}}}]{type,  }\item[{\mbox{\hyperlink{struct_food_i_d}{Food\+ID}}}]{id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a \mbox{\hyperlink{class_food}{Food}} object from name, price, type and ID. 
+
+Constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the food. \\
+\hline
+{\em price} & \mbox{\hyperlink{class_price}{Price}} of the food. \\
+\hline
+{\em type} & Type of the food. \\
+\hline
+{\em id} & ID of the food.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_food_a75d4d7f76fd495cc8133302ca9fdc485}{Food()}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_food_a2f4dcdcd9269bb0b0c4da6937c2c3dbd}\label{class_food_a2f4dcdcd9269bb0b0c4da6937c2c3dbd}} 
+\index{Food@{Food}!get\_id@{get\_id}}
+\index{get\_id@{get\_id}!Food@{Food}}
+\doxysubsubsection{\texorpdfstring{get\_id()}{get\_id()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_food_i_d}{Food\+ID}} Food\+::get\+\_\+id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the ID of the food. 
+
+\begin{DoxyReturn}{Returns}
+ID of the food. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_food_a7dc112c4570027204b5b6b6d474acc04}\label{class_food_a7dc112c4570027204b5b6b6d474acc04}} 
+\index{Food@{Food}!get\_id\_str@{get\_id\_str}}
+\index{get\_id\_str@{get\_id\_str}!Food@{Food}}
+\doxysubsubsection{\texorpdfstring{get\_id\_str()}{get\_id\_str()}}
+{\footnotesize\ttfamily string Food\+::get\+\_\+id\+\_\+str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the ID in string. 
+
+\begin{DoxyReturn}{Returns}
+ID (typeid-\/id) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_food_ab64bc15c917377846d9e06d1572364d2}\label{class_food_ab64bc15c917377846d9e06d1572364d2}} 
+\index{Food@{Food}!get\_name@{get\_name}}
+\index{get\_name@{get\_name}!Food@{Food}}
+\doxysubsubsection{\texorpdfstring{get\_name()}{get\_name()}}
+{\footnotesize\ttfamily string Food\+::get\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the name of the food. 
+
+\begin{DoxyReturn}{Returns}
+Name of the food. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_food_ac10f60ee7118a5159a84ea48aa39b5fa}\label{class_food_ac10f60ee7118a5159a84ea48aa39b5fa}} 
+\index{Food@{Food}!get\_price\_cny@{get\_price\_cny}}
+\index{get\_price\_cny@{get\_price\_cny}!Food@{Food}}
+\doxysubsubsection{\texorpdfstring{get\_price\_cny()}{get\_price\_cny()}}
+{\footnotesize\ttfamily double Food\+::get\+\_\+price\+\_\+cny (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the price in CNY. 
+
+\begin{DoxyReturn}{Returns}
+The price in CNY. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_food_a2619ce64d85bd7992e6092ec9e70188a}\label{class_food_a2619ce64d85bd7992e6092ec9e70188a}} 
+\index{Food@{Food}!get\_price\_usd@{get\_price\_usd}}
+\index{get\_price\_usd@{get\_price\_usd}!Food@{Food}}
+\doxysubsubsection{\texorpdfstring{get\_price\_usd()}{get\_price\_usd()}}
+{\footnotesize\ttfamily double Food\+::get\+\_\+price\+\_\+usd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the price in USD. 
+
+\begin{DoxyReturn}{Returns}
+The price in USD. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_food_a9172ce49bd4736e40f78464271c69973}\label{class_food_a9172ce49bd4736e40f78464271c69973}} 
+\index{Food@{Food}!get\_type@{get\_type}}
+\index{get\_type@{get\_type}!Food@{Food}}
+\doxysubsubsection{\texorpdfstring{get\_type()}{get\_type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_food_type}{Food\+Type}} \& Food\+::get\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the type of the food. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the type of the food. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_food_a80fdb9f516746243fcab4379c23160bf}\label{class_food_a80fdb9f516746243fcab4379c23160bf}} 
+\index{Food@{Food}!get\_type\_name@{get\_type\_name}}
+\index{get\_type\_name@{get\_type\_name}!Food@{Food}}
+\doxysubsubsection{\texorpdfstring{get\_type\_name()}{get\_type\_name()}}
+{\footnotesize\ttfamily string Food\+::get\+\_\+type\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the name of the type of the food. 
+
+\begin{DoxyReturn}{Returns}
+Name of the type of the food. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_food_a67c49122fa68228f713c6a28e012e432}\label{class_food_a67c49122fa68228f713c6a28e012e432}} 
+\index{Food@{Food}!serialize@{serialize}}
+\index{serialize@{serialize}!Food@{Food}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+void Food\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{archive }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_food_a01a747168342a302011f793d0d433af9}\label{class_food_a01a747168342a302011f793d0d433af9}} 
+\index{Food@{Food}!set\_name@{set\_name}}
+\index{set\_name@{set\_name}!Food@{Food}}
+\doxysubsubsection{\texorpdfstring{set\_name()}{set\_name()}}
+{\footnotesize\ttfamily void Food\+::set\+\_\+name (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})}
+
+
+
+Set the name of the food. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the food. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_food_a14288c7453a671c89be0dcd2502ea7be}\label{class_food_a14288c7453a671c89be0dcd2502ea7be}} 
+\index{Food@{Food}!set\_price@{set\_price}}
+\index{set\_price@{set\_price}!Food@{Food}}
+\doxysubsubsection{\texorpdfstring{set\_price()}{set\_price()}}
+{\footnotesize\ttfamily void Food\+::set\+\_\+price (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_price}{Price}}}]{price }\end{DoxyParamCaption})}
+
+
+
+Set the price of the food. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em price} & \mbox{\hyperlink{class_price}{Price}} of the food. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_food_a203a9304f7ffa8bb158b48c089bd9099}\label{class_food_a203a9304f7ffa8bb158b48c089bd9099}} 
+\index{Food@{Food}!set\_type@{set\_type}}
+\index{set\_type@{set\_type}!Food@{Food}}
+\doxysubsubsection{\texorpdfstring{set\_type()}{set\_type()}}
+{\footnotesize\ttfamily void Food\+::set\+\_\+type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_food_type}{Food\+Type}}}]{type }\end{DoxyParamCaption})}
+
+
+
+Set the type of the food. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Type of the food. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_food_ae7243b283b651d828650d5b0895f2499}\label{class_food_ae7243b283b651d828650d5b0895f2499}} 
+\index{Food@{Food}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Food@{Food}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is,  }\item[{\mbox{\hyperlink{class_food}{Food}} \&}]{food }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Overloading operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} \+: \mbox{\hyperlink{struct_food_i_d}{Food\+ID}} , name , \mbox{\hyperlink{struct_food_type}{Food\+Type}} , \mbox{\hyperlink{class_price}{Price}}. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Projects/\+Appetito/libs/restaurant\+\_\+util/include/\mbox{\hyperlink{food_8hpp}{food.\+hpp}}\item 
+C\+:/\+Projects/\+Appetito/libs/restaurant\+\_\+util/src/\mbox{\hyperlink{food_8cpp}{food.\+cpp}}\end{DoxyCompactItemize}

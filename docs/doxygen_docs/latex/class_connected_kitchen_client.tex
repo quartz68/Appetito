@@ -1,0 +1,134 @@
+\hypertarget{class_connected_kitchen_client}{}\doxysection{Connected\+Kitchen\+Client Class Reference}
+\label{class_connected_kitchen_client}\index{ConnectedKitchenClient@{ConnectedKitchenClient}}
+
+
+The kitchen client connected to this server.  
+
+
+
+
+{\ttfamily \#include $<$connected\+\_\+client.\+hpp$>$}
+
+Inheritance diagram for Connected\+Kitchen\+Client\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_connected_kitchen_client}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_connected_kitchen_client_a5a537b288751828efa56d975c6b035c5}{Connected\+Kitchen\+Client}} (asio\+::io\+\_\+context \&io\+\_\+context, asio\+::io\+\_\+context\+::strand \&strand, \mbox{\hyperlink{class_kitchen_redirector}{Kitchen\+Redirector}} \&red\+\_\+zone)
+\begin{DoxyCompactList}\small\item\em Construct a new Connected Kitchen \mbox{\hyperlink{class_client}{Client}} object from io context and \mbox{\hyperlink{class_kitchen_redirector}{Kitchen\+Redirector}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_connected_kitchen_client_ae4595e20a39a6e5181053aa2e6b5c713}{start}} ()
+\begin{DoxyCompactList}\small\item\em Starts the connection, gets the kitchen client ID. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_connected_kitchen_client}{Connected\+Kitchen\+Client}} $>$ \mbox{\hyperlink{class_connected_kitchen_client_ad8ae869a9f13db238a78cb1f67956a8c}{shared\+\_\+from\+\_\+this}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_connected_kitchen_client_ad8ae869a9f13db238a78cb1f67956a8c}{shared\+\_\+from\+\_\+this()}} for subclass \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_connected_kitchen_client_a56a8b0afd2fe096cada41dd13f5c5db8}{id\+\_\+handler}} (const asio\+::error\+\_\+code \&error)
+\begin{DoxyCompactList}\small\item\em Handles kitchen client ID. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_connected_kitchen_client_ab912bb1cf580c232222620b918b79635}{read\+\_\+item\+\_\+handler}} (const asio\+::error\+\_\+code \&error)
+\begin{DoxyCompactList}\small\item\em Handles reading a finished item. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+pair$<$ unsigned int, \mbox{\hyperlink{struct_food_i_d}{Food\+ID}} $>$ \mbox{\hyperlink{class_connected_kitchen_client_afbd6bc8d8d61abb992a7d32064253f24}{read\+\_\+item\+\_\+}}
+\item 
+\mbox{\hyperlink{class_kitchen_redirector}{Kitchen\+Redirector}} \& \mbox{\hyperlink{class_connected_kitchen_client_ad1d63e95904ec50562f3d573b926f01b}{red\+\_\+zone\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The kitchen client connected to this server. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_connected_kitchen_client_a5a537b288751828efa56d975c6b035c5}\label{class_connected_kitchen_client_a5a537b288751828efa56d975c6b035c5}} 
+\index{ConnectedKitchenClient@{ConnectedKitchenClient}!ConnectedKitchenClient@{ConnectedKitchenClient}}
+\index{ConnectedKitchenClient@{ConnectedKitchenClient}!ConnectedKitchenClient@{ConnectedKitchenClient}}
+\doxysubsubsection{\texorpdfstring{ConnectedKitchenClient()}{ConnectedKitchenClient()}}
+{\footnotesize\ttfamily Connected\+Kitchen\+Client\+::\+Connected\+Kitchen\+Client (\begin{DoxyParamCaption}\item[{asio\+::io\+\_\+context \&}]{io\+\_\+context,  }\item[{asio\+::io\+\_\+context\+::strand \&}]{strand,  }\item[{\mbox{\hyperlink{class_kitchen_redirector}{Kitchen\+Redirector}} \&}]{red\+\_\+zone }\end{DoxyParamCaption})}
+
+
+
+Construct a new Connected Kitchen \mbox{\hyperlink{class_client}{Client}} object from io context and \mbox{\hyperlink{class_kitchen_redirector}{Kitchen\+Redirector}}. 
+
+Constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em io\+\_\+context} & \\
+\hline
+{\em strand} & \\
+\hline
+{\em red\+\_\+zone} & \mbox{\hyperlink{class_kitchen_redirector}{Kitchen\+Redirector}}. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_connected_kitchen_client_a56a8b0afd2fe096cada41dd13f5c5db8}\label{class_connected_kitchen_client_a56a8b0afd2fe096cada41dd13f5c5db8}} 
+\index{ConnectedKitchenClient@{ConnectedKitchenClient}!id\_handler@{id\_handler}}
+\index{id\_handler@{id\_handler}!ConnectedKitchenClient@{ConnectedKitchenClient}}
+\doxysubsubsection{\texorpdfstring{id\_handler()}{id\_handler()}}
+{\footnotesize\ttfamily void Connected\+Kitchen\+Client\+::id\+\_\+handler (\begin{DoxyParamCaption}\item[{const asio\+::error\+\_\+code \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Handles kitchen client ID. 
+
+\mbox{\Hypertarget{class_connected_kitchen_client_ab912bb1cf580c232222620b918b79635}\label{class_connected_kitchen_client_ab912bb1cf580c232222620b918b79635}} 
+\index{ConnectedKitchenClient@{ConnectedKitchenClient}!read\_item\_handler@{read\_item\_handler}}
+\index{read\_item\_handler@{read\_item\_handler}!ConnectedKitchenClient@{ConnectedKitchenClient}}
+\doxysubsubsection{\texorpdfstring{read\_item\_handler()}{read\_item\_handler()}}
+{\footnotesize\ttfamily void Connected\+Kitchen\+Client\+::read\+\_\+item\+\_\+handler (\begin{DoxyParamCaption}\item[{const asio\+::error\+\_\+code \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Handles reading a finished item. 
+
+\mbox{\Hypertarget{class_connected_kitchen_client_ad8ae869a9f13db238a78cb1f67956a8c}\label{class_connected_kitchen_client_ad8ae869a9f13db238a78cb1f67956a8c}} 
+\index{ConnectedKitchenClient@{ConnectedKitchenClient}!shared\_from\_this@{shared\_from\_this}}
+\index{shared\_from\_this@{shared\_from\_this}!ConnectedKitchenClient@{ConnectedKitchenClient}}
+\doxysubsubsection{\texorpdfstring{shared\_from\_this()}{shared\_from\_this()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_connected_kitchen_client}{Connected\+Kitchen\+Client}} $>$ Connected\+Kitchen\+Client\+::shared\+\_\+from\+\_\+this (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{class_connected_kitchen_client_ad8ae869a9f13db238a78cb1f67956a8c}{shared\+\_\+from\+\_\+this()}} for subclass 
+
+\begin{DoxyReturn}{Returns}
+Casted shared\+\_\+ptr of \mbox{\hyperlink{class_connected_kitchen_client}{Connected\+Kitchen\+Client}} from Connected\+Client\+::shared\+\_\+from\+\_\+this(). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_connected_kitchen_client_ae4595e20a39a6e5181053aa2e6b5c713}\label{class_connected_kitchen_client_ae4595e20a39a6e5181053aa2e6b5c713}} 
+\index{ConnectedKitchenClient@{ConnectedKitchenClient}!start@{start}}
+\index{start@{start}!ConnectedKitchenClient@{ConnectedKitchenClient}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Connected\+Kitchen\+Client\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Starts the connection, gets the kitchen client ID. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_connected_kitchen_client_afbd6bc8d8d61abb992a7d32064253f24}\label{class_connected_kitchen_client_afbd6bc8d8d61abb992a7d32064253f24}} 
+\index{ConnectedKitchenClient@{ConnectedKitchenClient}!read\_item\_@{read\_item\_}}
+\index{read\_item\_@{read\_item\_}!ConnectedKitchenClient@{ConnectedKitchenClient}}
+\doxysubsubsection{\texorpdfstring{read\_item\_}{read\_item\_}}
+{\footnotesize\ttfamily pair$<$unsigned int, \mbox{\hyperlink{struct_food_i_d}{Food\+ID}}$>$ Connected\+Kitchen\+Client\+::read\+\_\+item\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_connected_kitchen_client_ad1d63e95904ec50562f3d573b926f01b}\label{class_connected_kitchen_client_ad1d63e95904ec50562f3d573b926f01b}} 
+\index{ConnectedKitchenClient@{ConnectedKitchenClient}!red\_zone\_@{red\_zone\_}}
+\index{red\_zone\_@{red\_zone\_}!ConnectedKitchenClient@{ConnectedKitchenClient}}
+\doxysubsubsection{\texorpdfstring{red\_zone\_}{red\_zone\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_kitchen_redirector}{Kitchen\+Redirector}}\& Connected\+Kitchen\+Client\+::red\+\_\+zone\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Projects/\+Appetito/libs/server/include/\mbox{\hyperlink{connected__client_8hpp}{connected\+\_\+client.\+hpp}}\item 
+C\+:/\+Projects/\+Appetito/libs/server/src/\mbox{\hyperlink{connected__client_8cpp}{connected\+\_\+client.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,99 @@
+\hypertarget{struct_table_container}{}\doxysection{Table\+Container Struct Reference}
+\label{struct_table_container}\index{TableContainer@{TableContainer}}
+
+
+Container that holds \mbox{\hyperlink{struct_table_type}{Table\+Type}}, \mbox{\hyperlink{class_table}{Table}} and Location in three maps.  
+
+
+
+
+{\ttfamily \#include $<$table.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_table_container_a7328cb9bcaab7f935a4c75a64e0de539}{Table\+Container}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_table_container_aa43863eda09fe3e5eb0bada52c4c5efc}{Table\+Container}} (ifstream \&file)
+\begin{DoxyCompactList}\small\item\em Construct a \mbox{\hyperlink{struct_table_container}{Table\+Container}} object from a input file stream. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{struct_table_container_afd719fbcb71e7d4ea52cfc99d3c1539e}{serialize}} (Archive \&archive)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+map$<$ unsigned short, \mbox{\hyperlink{struct_table_type}{Table\+Type}} $>$ \mbox{\hyperlink{struct_table_container_a5cf406dbaa9b1a5de2e3bc16bd40dfa1}{types}}
+\item 
+map$<$ \mbox{\hyperlink{struct_table_i_d}{Table\+ID}}, \mbox{\hyperlink{class_table}{Table}} $>$ \mbox{\hyperlink{struct_table_container_a76fbe97c807df77679d21780145fd873}{tables}}
+\item 
+map$<$ \mbox{\hyperlink{struct_table_location}{Table\+Location}}, \mbox{\hyperlink{struct_table_i_d}{Table\+ID}} $>$ \mbox{\hyperlink{struct_table_container_ad053234a3f284a83dfcb07a2c36bb0e0}{locations}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Container that holds \mbox{\hyperlink{struct_table_type}{Table\+Type}}, \mbox{\hyperlink{class_table}{Table}} and Location in three maps. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{struct_table_container_a7328cb9bcaab7f935a4c75a64e0de539}\label{struct_table_container_a7328cb9bcaab7f935a4c75a64e0de539}} 
+\index{TableContainer@{TableContainer}!TableContainer@{TableContainer}}
+\index{TableContainer@{TableContainer}!TableContainer@{TableContainer}}
+\doxysubsubsection{\texorpdfstring{TableContainer()}{TableContainer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Table\+Container\+::\+Table\+Container (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. 
+
+\mbox{\Hypertarget{struct_table_container_aa43863eda09fe3e5eb0bada52c4c5efc}\label{struct_table_container_aa43863eda09fe3e5eb0bada52c4c5efc}} 
+\index{TableContainer@{TableContainer}!TableContainer@{TableContainer}}
+\index{TableContainer@{TableContainer}!TableContainer@{TableContainer}}
+\doxysubsubsection{\texorpdfstring{TableContainer()}{TableContainer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Table\+Container\+::\+Table\+Container (\begin{DoxyParamCaption}\item[{ifstream \&}]{file }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a \mbox{\hyperlink{struct_table_container}{Table\+Container}} object from a input file stream. 
+
+Constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em file} & Input file stream. Format\+: typeid , id , typename , capacity , typeid , location\+\_\+col , location\+\_\+row~\newline
+\\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{struct_table_container_afd719fbcb71e7d4ea52cfc99d3c1539e}\label{struct_table_container_afd719fbcb71e7d4ea52cfc99d3c1539e}} 
+\index{TableContainer@{TableContainer}!serialize@{serialize}}
+\index{serialize@{serialize}!TableContainer@{TableContainer}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+void Table\+Container\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{archive }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_table_container_ad053234a3f284a83dfcb07a2c36bb0e0}\label{struct_table_container_ad053234a3f284a83dfcb07a2c36bb0e0}} 
+\index{TableContainer@{TableContainer}!locations@{locations}}
+\index{locations@{locations}!TableContainer@{TableContainer}}
+\doxysubsubsection{\texorpdfstring{locations}{locations}}
+{\footnotesize\ttfamily map$<$\mbox{\hyperlink{struct_table_location}{Table\+Location}}, \mbox{\hyperlink{struct_table_i_d}{Table\+ID}}$>$ Table\+Container\+::locations}
+
+\mbox{\Hypertarget{struct_table_container_a76fbe97c807df77679d21780145fd873}\label{struct_table_container_a76fbe97c807df77679d21780145fd873}} 
+\index{TableContainer@{TableContainer}!tables@{tables}}
+\index{tables@{tables}!TableContainer@{TableContainer}}
+\doxysubsubsection{\texorpdfstring{tables}{tables}}
+{\footnotesize\ttfamily map$<$\mbox{\hyperlink{struct_table_i_d}{Table\+ID}}, \mbox{\hyperlink{class_table}{Table}}$>$ Table\+Container\+::tables}
+
+\mbox{\Hypertarget{struct_table_container_a5cf406dbaa9b1a5de2e3bc16bd40dfa1}\label{struct_table_container_a5cf406dbaa9b1a5de2e3bc16bd40dfa1}} 
+\index{TableContainer@{TableContainer}!types@{types}}
+\index{types@{types}!TableContainer@{TableContainer}}
+\doxysubsubsection{\texorpdfstring{types}{types}}
+{\footnotesize\ttfamily map$<$unsigned short, \mbox{\hyperlink{struct_table_type}{Table\+Type}}$>$ Table\+Container\+::types}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Projects/\+Appetito/libs/restaurant\+\_\+util/include/\mbox{\hyperlink{table_8hpp}{table.\+hpp}}\end{DoxyCompactItemize}

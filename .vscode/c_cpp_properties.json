@@ -4,7 +4,10 @@
             "name": "Win32",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/libs/asio/include"
+                "${workspaceFolder}/libs/asio/include",
+                "${workspaceFolder}/libs",
+                "${workspaceFolder}/libs",
+                "${workspaceFolder}/libs"
             ],
             "defines": [
                 "_DEBUG",
