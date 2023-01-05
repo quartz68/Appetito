@@ -1,0 +1,210 @@
+\hypertarget{class_customer_server}{}\doxysection{Customer\+Server Class Reference}
+\label{class_customer_server}\index{CustomerServer@{CustomerServer}}
+
+
+{\ttfamily \#include $<$server.\+hpp$>$}
+
+Inheritance diagram for Customer\+Server\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_customer_server}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_customer_server_ab50e29e9d37ccda3961e7a8d9c03186a}{Customer\+Server}} (asio\+::io\+\_\+context \&io\+\_\+context, asio\+::io\+\_\+context\+::strand \&strand, const tcp\+::endpoint \&endpoint, \mbox{\hyperlink{struct_food_container}{Food\+Container}} $\ast$all\+\_\+foods, \mbox{\hyperlink{struct_table_container}{Table\+Container}} $\ast$all\+\_\+tables, unsigned int $\ast$deal\+\_\+counter, \mbox{\hyperlink{struct_customer_to_kitchen_queue}{Customer\+To\+Kitchen\+Queue}} $\ast$ctok\+\_\+queue, \mbox{\hyperlink{struct_kitchen_to_customer_queue}{Kitchen\+To\+Customer\+Queue}} $\ast$ktoc\+\_\+queue, \mbox{\hyperlink{struct_deal_container}{Deal\+Container}} $\ast$deals)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_customer_server_a45776355459b732245eae6a29ad8e791}{run}} ()
+\begin{DoxyCompactList}\small\item\em Run the customer server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_customer_server_ab4881c55321a5a3c22f7dbb00256e989}{prod\+\_\+cons\+\_\+exec}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_customer_server_a216922054dba959cb9f6f679880dfbc8}{on\+\_\+accept}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_connected_customer_client}{Connected\+Customer\+Client}} $>$ new\+\_\+client, const asio\+::error\+\_\+code \&error)
+\begin{DoxyCompactList}\small\item\em Handles accepting the connection of a new customer client. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_customer_server_aefe98e7ad14873daa2ee8242d62de64d}{producer\+\_\+handler}} (const asio\+::error\+\_\+code \&error)
+\item 
+void \mbox{\hyperlink{class_customer_server_a53495b1517b3eb3c7fbe618296ad5a27}{consumer\+\_\+handler}} (const asio\+::error\+\_\+code \&error)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::thread $\ast$ \mbox{\hyperlink{class_customer_server_aa2ccc14a20bd373e260c3ea2532571ee}{prod\+\_\+cons\+\_\+thread\+\_\+}}
+\item 
+std\+::mutex \mbox{\hyperlink{class_customer_server_a1155bc96f98d4c3bf186f565fe122576}{mtx\+\_\+}}
+\item 
+asio\+::io\+\_\+context \mbox{\hyperlink{class_customer_server_acbe90564bbd1be1129dcca79b332a25e}{ioc\+\_\+}}
+\item 
+asio\+::io\+\_\+context\+::strand \mbox{\hyperlink{class_customer_server_ab7aed47889e2cde820edb4adc4784700}{lock\+\_\+}}
+\item 
+asio\+::steady\+\_\+timer \mbox{\hyperlink{class_customer_server_a2c664e86cc57861b1e434adab583c3c9}{producer\+\_\+}}
+\item 
+asio\+::steady\+\_\+timer \mbox{\hyperlink{class_customer_server_a8e679aaa35c30b5826f78f708fea98ee}{consumer\+\_\+}}
+\item 
+std\+::chrono\+::seconds \mbox{\hyperlink{class_customer_server_a92dacafb0e05472688b711c45ad61549}{pi\+\_\+}}
+\item 
+std\+::chrono\+::seconds \mbox{\hyperlink{class_customer_server_ae7ba920736f6964e4df501f33b99b453}{ci\+\_\+}}
+\item 
+\mbox{\hyperlink{class_customer_redirector}{Customer\+Redirector}} \mbox{\hyperlink{class_customer_server_aed6be3e5f4c1a4caefb3ca3de194e1c4}{red\+\_\+zone\+\_\+}}
+\item 
+\mbox{\hyperlink{struct_customer_to_kitchen_queue}{Customer\+To\+Kitchen\+Queue}} $\ast$ \mbox{\hyperlink{class_customer_server_aec1de1113956f630792af4bf489091e9}{ctok\+\_\+queue\+\_\+ptr\+\_\+}}
+\item 
+\mbox{\hyperlink{struct_kitchen_to_customer_queue}{Kitchen\+To\+Customer\+Queue}} $\ast$ \mbox{\hyperlink{class_customer_server_af97e25c9ba831081399efb673ce425d2}{ktoc\+\_\+queue\+\_\+ptr\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_customer_server_ab50e29e9d37ccda3961e7a8d9c03186a}\label{class_customer_server_ab50e29e9d37ccda3961e7a8d9c03186a}} 
+\index{CustomerServer@{CustomerServer}!CustomerServer@{CustomerServer}}
+\index{CustomerServer@{CustomerServer}!CustomerServer@{CustomerServer}}
+\doxysubsubsection{\texorpdfstring{CustomerServer()}{CustomerServer()}}
+{\footnotesize\ttfamily Customer\+Server\+::\+Customer\+Server (\begin{DoxyParamCaption}\item[{asio\+::io\+\_\+context \&}]{io\+\_\+context,  }\item[{asio\+::io\+\_\+context\+::strand \&}]{strand,  }\item[{const tcp\+::endpoint \&}]{endpoint,  }\item[{\mbox{\hyperlink{struct_food_container}{Food\+Container}} $\ast$}]{all\+\_\+foods,  }\item[{\mbox{\hyperlink{struct_table_container}{Table\+Container}} $\ast$}]{all\+\_\+tables,  }\item[{unsigned int $\ast$}]{deal\+\_\+counter,  }\item[{\mbox{\hyperlink{struct_customer_to_kitchen_queue}{Customer\+To\+Kitchen\+Queue}} $\ast$}]{ctok\+\_\+queue,  }\item[{\mbox{\hyperlink{struct_kitchen_to_customer_queue}{Kitchen\+To\+Customer\+Queue}} $\ast$}]{ktoc\+\_\+queue,  }\item[{\mbox{\hyperlink{struct_deal_container}{Deal\+Container}} $\ast$}]{deals }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em io\+\_\+context} & \\
+\hline
+{\em strand} & \\
+\hline
+{\em endpoint} & \\
+\hline
+{\em all\+\_\+foods} & Raw pointer to \mbox{\hyperlink{struct_food_container}{Food\+Container}}. \\
+\hline
+{\em all\+\_\+tables} & Raw pointer to \mbox{\hyperlink{struct_table_container}{Table\+Container}}. \\
+\hline
+{\em deal\+\_\+counter} & Raw pointer to deal counter. \\
+\hline
+{\em ctok\+\_\+queue} & Raw pointer to customer to kitchen queue. \\
+\hline
+{\em ktoc\+\_\+queue} & Raw pointer to kitchen to customer queue. \\
+\hline
+{\em deals} & Raw pointer to map of deals. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_customer_server_a53495b1517b3eb3c7fbe618296ad5a27}\label{class_customer_server_a53495b1517b3eb3c7fbe618296ad5a27}} 
+\index{CustomerServer@{CustomerServer}!consumer\_handler@{consumer\_handler}}
+\index{consumer\_handler@{consumer\_handler}!CustomerServer@{CustomerServer}}
+\doxysubsubsection{\texorpdfstring{consumer\_handler()}{consumer\_handler()}}
+{\footnotesize\ttfamily void Customer\+Server\+::consumer\+\_\+handler (\begin{DoxyParamCaption}\item[{const asio\+::error\+\_\+code \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_customer_server_a216922054dba959cb9f6f679880dfbc8}\label{class_customer_server_a216922054dba959cb9f6f679880dfbc8}} 
+\index{CustomerServer@{CustomerServer}!on\_accept@{on\_accept}}
+\index{on\_accept@{on\_accept}!CustomerServer@{CustomerServer}}
+\doxysubsubsection{\texorpdfstring{on\_accept()}{on\_accept()}}
+{\footnotesize\ttfamily void Customer\+Server\+::on\+\_\+accept (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_connected_customer_client}{Connected\+Customer\+Client}} $>$}]{new\+\_\+client,  }\item[{const asio\+::error\+\_\+code \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Handles accepting the connection of a new customer client. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+client} & New customer client. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_customer_server_ab4881c55321a5a3c22f7dbb00256e989}\label{class_customer_server_ab4881c55321a5a3c22f7dbb00256e989}} 
+\index{CustomerServer@{CustomerServer}!prod\_cons\_exec@{prod\_cons\_exec}}
+\index{prod\_cons\_exec@{prod\_cons\_exec}!CustomerServer@{CustomerServer}}
+\doxysubsubsection{\texorpdfstring{prod\_cons\_exec()}{prod\_cons\_exec()}}
+{\footnotesize\ttfamily void Customer\+Server\+::prod\+\_\+cons\+\_\+exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_customer_server_aefe98e7ad14873daa2ee8242d62de64d}\label{class_customer_server_aefe98e7ad14873daa2ee8242d62de64d}} 
+\index{CustomerServer@{CustomerServer}!producer\_handler@{producer\_handler}}
+\index{producer\_handler@{producer\_handler}!CustomerServer@{CustomerServer}}
+\doxysubsubsection{\texorpdfstring{producer\_handler()}{producer\_handler()}}
+{\footnotesize\ttfamily void Customer\+Server\+::producer\+\_\+handler (\begin{DoxyParamCaption}\item[{const asio\+::error\+\_\+code \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_customer_server_a45776355459b732245eae6a29ad8e791}\label{class_customer_server_a45776355459b732245eae6a29ad8e791}} 
+\index{CustomerServer@{CustomerServer}!run@{run}}
+\index{run@{run}!CustomerServer@{CustomerServer}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Customer\+Server\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Run the customer server. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_customer_server_ae7ba920736f6964e4df501f33b99b453}\label{class_customer_server_ae7ba920736f6964e4df501f33b99b453}} 
+\index{CustomerServer@{CustomerServer}!ci\_@{ci\_}}
+\index{ci\_@{ci\_}!CustomerServer@{CustomerServer}}
+\doxysubsubsection{\texorpdfstring{ci\_}{ci\_}}
+{\footnotesize\ttfamily std\+::chrono\+::seconds Customer\+Server\+::ci\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_customer_server_a8e679aaa35c30b5826f78f708fea98ee}\label{class_customer_server_a8e679aaa35c30b5826f78f708fea98ee}} 
+\index{CustomerServer@{CustomerServer}!consumer\_@{consumer\_}}
+\index{consumer\_@{consumer\_}!CustomerServer@{CustomerServer}}
+\doxysubsubsection{\texorpdfstring{consumer\_}{consumer\_}}
+{\footnotesize\ttfamily asio\+::steady\+\_\+timer Customer\+Server\+::consumer\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_customer_server_aec1de1113956f630792af4bf489091e9}\label{class_customer_server_aec1de1113956f630792af4bf489091e9}} 
+\index{CustomerServer@{CustomerServer}!ctok\_queue\_ptr\_@{ctok\_queue\_ptr\_}}
+\index{ctok\_queue\_ptr\_@{ctok\_queue\_ptr\_}!CustomerServer@{CustomerServer}}
+\doxysubsubsection{\texorpdfstring{ctok\_queue\_ptr\_}{ctok\_queue\_ptr\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_customer_to_kitchen_queue}{Customer\+To\+Kitchen\+Queue}}$\ast$ Customer\+Server\+::ctok\+\_\+queue\+\_\+ptr\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_customer_server_acbe90564bbd1be1129dcca79b332a25e}\label{class_customer_server_acbe90564bbd1be1129dcca79b332a25e}} 
+\index{CustomerServer@{CustomerServer}!ioc\_@{ioc\_}}
+\index{ioc\_@{ioc\_}!CustomerServer@{CustomerServer}}
+\doxysubsubsection{\texorpdfstring{ioc\_}{ioc\_}}
+{\footnotesize\ttfamily asio\+::io\+\_\+context Customer\+Server\+::ioc\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_customer_server_af97e25c9ba831081399efb673ce425d2}\label{class_customer_server_af97e25c9ba831081399efb673ce425d2}} 
+\index{CustomerServer@{CustomerServer}!ktoc\_queue\_ptr\_@{ktoc\_queue\_ptr\_}}
+\index{ktoc\_queue\_ptr\_@{ktoc\_queue\_ptr\_}!CustomerServer@{CustomerServer}}
+\doxysubsubsection{\texorpdfstring{ktoc\_queue\_ptr\_}{ktoc\_queue\_ptr\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_kitchen_to_customer_queue}{Kitchen\+To\+Customer\+Queue}}$\ast$ Customer\+Server\+::ktoc\+\_\+queue\+\_\+ptr\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_customer_server_ab7aed47889e2cde820edb4adc4784700}\label{class_customer_server_ab7aed47889e2cde820edb4adc4784700}} 
+\index{CustomerServer@{CustomerServer}!lock\_@{lock\_}}
+\index{lock\_@{lock\_}!CustomerServer@{CustomerServer}}
+\doxysubsubsection{\texorpdfstring{lock\_}{lock\_}}
+{\footnotesize\ttfamily asio\+::io\+\_\+context\+::strand Customer\+Server\+::lock\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_customer_server_a1155bc96f98d4c3bf186f565fe122576}\label{class_customer_server_a1155bc96f98d4c3bf186f565fe122576}} 
+\index{CustomerServer@{CustomerServer}!mtx\_@{mtx\_}}
+\index{mtx\_@{mtx\_}!CustomerServer@{CustomerServer}}
+\doxysubsubsection{\texorpdfstring{mtx\_}{mtx\_}}
+{\footnotesize\ttfamily std\+::mutex Customer\+Server\+::mtx\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_customer_server_a92dacafb0e05472688b711c45ad61549}\label{class_customer_server_a92dacafb0e05472688b711c45ad61549}} 
+\index{CustomerServer@{CustomerServer}!pi\_@{pi\_}}
+\index{pi\_@{pi\_}!CustomerServer@{CustomerServer}}
+\doxysubsubsection{\texorpdfstring{pi\_}{pi\_}}
+{\footnotesize\ttfamily std\+::chrono\+::seconds Customer\+Server\+::pi\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_customer_server_aa2ccc14a20bd373e260c3ea2532571ee}\label{class_customer_server_aa2ccc14a20bd373e260c3ea2532571ee}} 
+\index{CustomerServer@{CustomerServer}!prod\_cons\_thread\_@{prod\_cons\_thread\_}}
+\index{prod\_cons\_thread\_@{prod\_cons\_thread\_}!CustomerServer@{CustomerServer}}
+\doxysubsubsection{\texorpdfstring{prod\_cons\_thread\_}{prod\_cons\_thread\_}}
+{\footnotesize\ttfamily std\+::thread$\ast$ Customer\+Server\+::prod\+\_\+cons\+\_\+thread\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_customer_server_a2c664e86cc57861b1e434adab583c3c9}\label{class_customer_server_a2c664e86cc57861b1e434adab583c3c9}} 
+\index{CustomerServer@{CustomerServer}!producer\_@{producer\_}}
+\index{producer\_@{producer\_}!CustomerServer@{CustomerServer}}
+\doxysubsubsection{\texorpdfstring{producer\_}{producer\_}}
+{\footnotesize\ttfamily asio\+::steady\+\_\+timer Customer\+Server\+::producer\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_customer_server_aed6be3e5f4c1a4caefb3ca3de194e1c4}\label{class_customer_server_aed6be3e5f4c1a4caefb3ca3de194e1c4}} 
+\index{CustomerServer@{CustomerServer}!red\_zone\_@{red\_zone\_}}
+\index{red\_zone\_@{red\_zone\_}!CustomerServer@{CustomerServer}}
+\doxysubsubsection{\texorpdfstring{red\_zone\_}{red\_zone\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_customer_redirector}{Customer\+Redirector}} Customer\+Server\+::red\+\_\+zone\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Projects/\+Appetito/libs/server/include/\mbox{\hyperlink{server_8hpp}{server.\+hpp}}\item 
+C\+:/\+Projects/\+Appetito/libs/server/src/\mbox{\hyperlink{server_8cpp}{server.\+cpp}}\end{DoxyCompactItemize}

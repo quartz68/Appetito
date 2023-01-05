@@ -1,0 +1,154 @@
+\hypertarget{class_connected_client}{}\doxysection{Connected\+Client Class Reference}
+\label{class_connected_client}\index{ConnectedClient@{ConnectedClient}}
+
+
+The client connected to this server.  
+
+
+
+
+{\ttfamily \#include $<$connected\+\_\+client.\+hpp$>$}
+
+Inheritance diagram for Connected\+Client\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.790698cm]{class_connected_client}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_connected_client_aac30c70d4c13aae55ff07689d5c7b2ef}{Connected\+Client}} (asio\+::io\+\_\+context \&io\+\_\+context, asio\+::io\+\_\+context\+::strand \&strand)
+\begin{DoxyCompactList}\small\item\em Construct a new Connected \mbox{\hyperlink{class_client}{Client}} object from io context. \end{DoxyCompactList}\item 
+tcp\+::socket \& \mbox{\hyperlink{class_connected_client_a0f52c6714d482a16b60621a59ea57d85}{socket}} ()
+\begin{DoxyCompactList}\small\item\em Get the socket. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_connected_client_a93d1deb4a214f8f9b8c7a7fe0544a084}{write}} (T \&object)
+\begin{DoxyCompactList}\small\item\em Write object to client. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_connected_client_ae2dc67c15cfbdc6b113495175bada640}{get\+\_\+id}} ()
+\begin{DoxyCompactList}\small\item\em Get the id of the connected client. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_connected_client_ae5736d568307f63e5f59e9eac556c262}{write\+\_\+completion\+\_\+handler}} (const asio\+::error\+\_\+code \&error)
+\begin{DoxyCompactList}\small\item\em Handles completion of writing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_network_i_o}{Network\+IO}} \mbox{\hyperlink{class_connected_client_aa8032c0be4d3afcb454f9148970f3ba2}{network\+\_\+io\+\_\+}}
+\item 
+std\+::string \mbox{\hyperlink{class_connected_client_a9bffc595f2fc7d21ae1d17720e1843ad}{client\+\_\+id\+\_\+}}
+\item 
+asio\+::io\+\_\+context\+::strand \& \mbox{\hyperlink{class_connected_client_a9ef3075b064c851bcf0da5f81fb4b4e1}{strand\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The client connected to this server. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_connected_client_aac30c70d4c13aae55ff07689d5c7b2ef}\label{class_connected_client_aac30c70d4c13aae55ff07689d5c7b2ef}} 
+\index{ConnectedClient@{ConnectedClient}!ConnectedClient@{ConnectedClient}}
+\index{ConnectedClient@{ConnectedClient}!ConnectedClient@{ConnectedClient}}
+\doxysubsubsection{\texorpdfstring{ConnectedClient()}{ConnectedClient()}}
+{\footnotesize\ttfamily Connected\+Client\+::\+Connected\+Client (\begin{DoxyParamCaption}\item[{asio\+::io\+\_\+context \&}]{io\+\_\+context,  }\item[{asio\+::io\+\_\+context\+::strand \&}]{strand }\end{DoxyParamCaption})}
+
+
+
+Construct a new Connected \mbox{\hyperlink{class_client}{Client}} object from io context. 
+
+Constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em io\+\_\+context} & \\
+\hline
+{\em strand} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_connected_client_ae2dc67c15cfbdc6b113495175bada640}\label{class_connected_client_ae2dc67c15cfbdc6b113495175bada640}} 
+\index{ConnectedClient@{ConnectedClient}!get\_id@{get\_id}}
+\index{get\_id@{get\_id}!ConnectedClient@{ConnectedClient}}
+\doxysubsubsection{\texorpdfstring{get\_id()}{get\_id()}}
+{\footnotesize\ttfamily std\+::string Connected\+Client\+::get\+\_\+id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the id of the connected client. 
+
+\begin{DoxyReturn}{Returns}
+String of client ID. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_connected_client_a0f52c6714d482a16b60621a59ea57d85}\label{class_connected_client_a0f52c6714d482a16b60621a59ea57d85}} 
+\index{ConnectedClient@{ConnectedClient}!socket@{socket}}
+\index{socket@{socket}!ConnectedClient@{ConnectedClient}}
+\doxysubsubsection{\texorpdfstring{socket()}{socket()}}
+{\footnotesize\ttfamily tcp\+::socket \& Connected\+Client\+::socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the socket. 
+
+\begin{DoxyReturn}{Returns}
+TCP socket. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_connected_client_a93d1deb4a214f8f9b8c7a7fe0544a084}\label{class_connected_client_a93d1deb4a214f8f9b8c7a7fe0544a084}} 
+\index{ConnectedClient@{ConnectedClient}!write@{write}}
+\index{write@{write}!ConnectedClient@{ConnectedClient}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Connected\+Client\+::write (\begin{DoxyParamCaption}\item[{T \&}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Write object to client. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Type} & of the object. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em object} & The object to write. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_connected_client_ae5736d568307f63e5f59e9eac556c262}\label{class_connected_client_ae5736d568307f63e5f59e9eac556c262}} 
+\index{ConnectedClient@{ConnectedClient}!write\_completion\_handler@{write\_completion\_handler}}
+\index{write\_completion\_handler@{write\_completion\_handler}!ConnectedClient@{ConnectedClient}}
+\doxysubsubsection{\texorpdfstring{write\_completion\_handler()}{write\_completion\_handler()}}
+{\footnotesize\ttfamily void Connected\+Client\+::write\+\_\+completion\+\_\+handler (\begin{DoxyParamCaption}\item[{const asio\+::error\+\_\+code \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Handles completion of writing. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_connected_client_a9bffc595f2fc7d21ae1d17720e1843ad}\label{class_connected_client_a9bffc595f2fc7d21ae1d17720e1843ad}} 
+\index{ConnectedClient@{ConnectedClient}!client\_id\_@{client\_id\_}}
+\index{client\_id\_@{client\_id\_}!ConnectedClient@{ConnectedClient}}
+\doxysubsubsection{\texorpdfstring{client\_id\_}{client\_id\_}}
+{\footnotesize\ttfamily std\+::string Connected\+Client\+::client\+\_\+id\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_connected_client_aa8032c0be4d3afcb454f9148970f3ba2}\label{class_connected_client_aa8032c0be4d3afcb454f9148970f3ba2}} 
+\index{ConnectedClient@{ConnectedClient}!network\_io\_@{network\_io\_}}
+\index{network\_io\_@{network\_io\_}!ConnectedClient@{ConnectedClient}}
+\doxysubsubsection{\texorpdfstring{network\_io\_}{network\_io\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_network_i_o}{Network\+IO}} Connected\+Client\+::network\+\_\+io\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_connected_client_a9ef3075b064c851bcf0da5f81fb4b4e1}\label{class_connected_client_a9ef3075b064c851bcf0da5f81fb4b4e1}} 
+\index{ConnectedClient@{ConnectedClient}!strand\_@{strand\_}}
+\index{strand\_@{strand\_}!ConnectedClient@{ConnectedClient}}
+\doxysubsubsection{\texorpdfstring{strand\_}{strand\_}}
+{\footnotesize\ttfamily asio\+::io\+\_\+context\+::strand\& Connected\+Client\+::strand\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Projects/\+Appetito/libs/server/include/\mbox{\hyperlink{connected__client_8hpp}{connected\+\_\+client.\+hpp}}\item 
+C\+:/\+Projects/\+Appetito/libs/server/src/\mbox{\hyperlink{connected__client_8cpp}{connected\+\_\+client.\+cpp}}\end{DoxyCompactItemize}

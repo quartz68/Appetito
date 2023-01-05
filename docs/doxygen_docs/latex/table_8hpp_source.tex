@@ -1,0 +1,156 @@
+\hypertarget{table_8hpp_source}{}\doxysection{table.\+hpp}
+\label{table_8hpp_source}\index{C:/Projects/Appetito/libs/restaurant\_util/include/table.hpp@{C:/Projects/Appetito/libs/restaurant\_util/include/table.hpp}}
+\mbox{\hyperlink{table_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef TABLE\_HPP\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define TABLE\_HPP\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <fstream>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <cereal/types/string.hpp>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <cereal/types/map.hpp>}}
+\DoxyCodeLine{17 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{18 }
+\DoxyCodeLine{19 \textcolor{keyword}{class }\mbox{\hyperlink{class_table}{Table}};}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{24 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_table_i_d}{TableID}} \{}
+\DoxyCodeLine{25     \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_table_i_d_ae6837d904f33948a9488bde5fbc36c43}{operator< }}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_table_i_d}{TableID}}\& other)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{26         \textcolor{keywordflow}{if} (\mbox{\hyperlink{struct_table_i_d_a520f8c7e079f3112c7dc5365c956e9eb}{type}} < other.\mbox{\hyperlink{struct_table_i_d_a520f8c7e079f3112c7dc5365c956e9eb}{type}}) \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{27         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{struct_table_i_d_a520f8c7e079f3112c7dc5365c956e9eb}{type}} > other.\mbox{\hyperlink{struct_table_i_d_a520f8c7e079f3112c7dc5365c956e9eb}{type}}) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{28         \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \textcolor{keywordtype}{id} < other.\mbox{\hyperlink{struct_table_i_d_a3bd2ea26b39542dd9b104bfc18698126}{id}};}
+\DoxyCodeLine{29     \}}
+\DoxyCodeLine{33     \textcolor{keyword}{friend} istream\& \mbox{\hyperlink{struct_table_i_d_a9d4818be222812c7a1931db5d3181d2e}{operator>>}}(istream\& is, \mbox{\hyperlink{struct_table_i_d}{TableID}}\& \textcolor{keywordtype}{id}) \{}
+\DoxyCodeLine{34         \textcolor{keywordtype}{string} comma;}
+\DoxyCodeLine{35         is >> \textcolor{keywordtype}{id}.type;}
+\DoxyCodeLine{36         is >> comma;}
+\DoxyCodeLine{37         is >> \textcolor{keywordtype}{id}.id;}
+\DoxyCodeLine{38         \textcolor{keywordflow}{return} is;}
+\DoxyCodeLine{39     \}}
+\DoxyCodeLine{40     \textcolor{keyword}{template}<\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{41     \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_table_i_d_a5d7a8d9c608ee42a069990c424896a59}{serialize}}(Archive\& archive)}
+\DoxyCodeLine{42     \{}
+\DoxyCodeLine{43         archive(\mbox{\hyperlink{struct_table_i_d_a520f8c7e079f3112c7dc5365c956e9eb}{type}},\textcolor{keywordtype}{id});}
+\DoxyCodeLine{44     \}}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     \textcolor{comment}{//}}
+\DoxyCodeLine{47     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{struct_table_i_d_a520f8c7e079f3112c7dc5365c956e9eb}{type}};}
+\DoxyCodeLine{48     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{struct_table_i_d_a3bd2ea26b39542dd9b104bfc18698126}{id}};}
+\DoxyCodeLine{49 \};}
+\DoxyCodeLine{50 }
+\DoxyCodeLine{54 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_table_type}{TableType}} \{}
+\DoxyCodeLine{61     \mbox{\hyperlink{struct_table_type_afb0759e28f1a506fecf41318c4e7afe0}{TableType}}()}
+\DoxyCodeLine{62         :\mbox{\hyperlink{struct_table_type_ae735d6ad21951fbcdb608770c5a6c2a3}{name}}(\textcolor{stringliteral}{"{} "{}}), \mbox{\hyperlink{struct_table_type_ab5198d1ffe488ef6a0a003fc2f87154f}{capacity}}(0), \mbox{\hyperlink{struct_table_type_a43e258fb88af282f05ec31cdf475a143}{id}}(0) \{ \}}
+\DoxyCodeLine{73     \mbox{\hyperlink{struct_table_type_adf67d7f0522173742d4ce10ebead9af8}{TableType}}(\textcolor{keywordtype}{string} \mbox{\hyperlink{struct_table_type_ae735d6ad21951fbcdb608770c5a6c2a3}{name}}, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{struct_table_type_ab5198d1ffe488ef6a0a003fc2f87154f}{capacity}}, \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \textcolor{keywordtype}{id})}
+\DoxyCodeLine{74         :\mbox{\hyperlink{struct_table_type_ae735d6ad21951fbcdb608770c5a6c2a3}{name}}(\mbox{\hyperlink{struct_table_type_ae735d6ad21951fbcdb608770c5a6c2a3}{name}}), \mbox{\hyperlink{struct_table_type_ab5198d1ffe488ef6a0a003fc2f87154f}{capacity}}(\mbox{\hyperlink{struct_table_type_ab5198d1ffe488ef6a0a003fc2f87154f}{capacity}}), \mbox{\hyperlink{struct_table_type_a43e258fb88af282f05ec31cdf475a143}{id}}(\mbox{\hyperlink{struct_table_type_a43e258fb88af282f05ec31cdf475a143}{id}}) \{ \}}
+\DoxyCodeLine{75     }
+\DoxyCodeLine{76     \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_table_type_a8feab4e45210800352f16517fdf0f47a}{operator< }}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_table_type}{TableType}}\& other)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{77         \textcolor{keywordflow}{return} \textcolor{keywordtype}{id} < other.\mbox{\hyperlink{struct_table_type_a43e258fb88af282f05ec31cdf475a143}{id}};}
+\DoxyCodeLine{78     \}}
+\DoxyCodeLine{82     \textcolor{keyword}{friend} istream\& \mbox{\hyperlink{struct_table_type_a7f96e96f918a5761125bf578b9c05647}{operator>>}}(istream\& is, \mbox{\hyperlink{struct_table_type}{TableType}}\& tabletype) \{}
+\DoxyCodeLine{83         \textcolor{keywordtype}{string} comma;}
+\DoxyCodeLine{84         is >> tabletype.\mbox{\hyperlink{struct_table_type_ae735d6ad21951fbcdb608770c5a6c2a3}{name}};}
+\DoxyCodeLine{85         is >> comma;}
+\DoxyCodeLine{86         is >> tabletype.\mbox{\hyperlink{struct_table_type_ab5198d1ffe488ef6a0a003fc2f87154f}{capacity}};}
+\DoxyCodeLine{87         is >> comma;}
+\DoxyCodeLine{88         is >> tabletype.\mbox{\hyperlink{struct_table_type_a43e258fb88af282f05ec31cdf475a143}{id}};}
+\DoxyCodeLine{89         \textcolor{keywordflow}{return} is;}
+\DoxyCodeLine{90     \}}
+\DoxyCodeLine{91     \textcolor{keyword}{template}<\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{92     \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_table_type_af41e532a227aa2988c8d736788b15485}{serialize}}(Archive\& archive)}
+\DoxyCodeLine{93     \{}
+\DoxyCodeLine{94         archive(\mbox{\hyperlink{struct_table_type_ae735d6ad21951fbcdb608770c5a6c2a3}{name}},\mbox{\hyperlink{struct_table_type_ab5198d1ffe488ef6a0a003fc2f87154f}{capacity}},\textcolor{keywordtype}{id});}
+\DoxyCodeLine{95     \}}
+\DoxyCodeLine{96 }
+\DoxyCodeLine{97     \textcolor{comment}{//}}
+\DoxyCodeLine{98     \textcolor{keywordtype}{string} \mbox{\hyperlink{struct_table_type_ae735d6ad21951fbcdb608770c5a6c2a3}{name}};}
+\DoxyCodeLine{99     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{struct_table_type_ab5198d1ffe488ef6a0a003fc2f87154f}{capacity}};}
+\DoxyCodeLine{100     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{struct_table_type_a43e258fb88af282f05ec31cdf475a143}{id}};}
+\DoxyCodeLine{101 \};}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 \textcolor{keyword}{const} \mbox{\hyperlink{struct_table_type}{TableType}} \mbox{\hyperlink{table_8hpp_ad865cd893992cb593f3f01ebbe23b03f}{NULL\_TABLE\_TYPE}};}
+\DoxyCodeLine{104 }
+\DoxyCodeLine{108 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_table_location}{TableLocation}} \{}
+\DoxyCodeLine{109     \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_table_location_a7976d5c1fa884d4513624d039909409d}{operator< }}(\textcolor{keyword}{const} \mbox{\hyperlink{struct_table_location}{TableLocation}}\& other)\textcolor{keyword}{ const }\{}
+\DoxyCodeLine{110         \textcolor{keywordflow}{if} (\mbox{\hyperlink{struct_table_location_a4da497024c6a0e06588b614dd497079c}{col}} < other.\mbox{\hyperlink{struct_table_location_a4da497024c6a0e06588b614dd497079c}{col}}) \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{111         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{struct_table_location_a4da497024c6a0e06588b614dd497079c}{col}} > other.\mbox{\hyperlink{struct_table_location_a4da497024c6a0e06588b614dd497079c}{col}}) \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{112         \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} \mbox{\hyperlink{struct_table_location_abb430b942b7a5006f4c959109e833540}{row}} < other.\mbox{\hyperlink{struct_table_location_abb430b942b7a5006f4c959109e833540}{row}};}
+\DoxyCodeLine{113     \}}
+\DoxyCodeLine{117     \textcolor{keyword}{friend} istream\& \mbox{\hyperlink{struct_table_location_a10c7d3e7a8c00b0efeae3ec8e9ccc506}{operator>>}}(istream\& is, \mbox{\hyperlink{struct_table_location}{TableLocation}}\& location) \{}
+\DoxyCodeLine{118         \textcolor{keywordtype}{char} comma;}
+\DoxyCodeLine{119         is >> location.\mbox{\hyperlink{struct_table_location_a4da497024c6a0e06588b614dd497079c}{col}};}
+\DoxyCodeLine{120         is >> comma;}
+\DoxyCodeLine{121         is >> location.\mbox{\hyperlink{struct_table_location_abb430b942b7a5006f4c959109e833540}{row}};}
+\DoxyCodeLine{122         \textcolor{keywordflow}{return} is;}
+\DoxyCodeLine{123     \}}
+\DoxyCodeLine{124     \textcolor{keyword}{template}<\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{125     \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_table_location_a44780a139dc090af51262498f9cd7cb3}{serialize}}(Archive\& archive)}
+\DoxyCodeLine{126     \{}
+\DoxyCodeLine{127         archive(\mbox{\hyperlink{struct_table_location_a4da497024c6a0e06588b614dd497079c}{col}},\mbox{\hyperlink{struct_table_location_abb430b942b7a5006f4c959109e833540}{row}});}
+\DoxyCodeLine{128     \}}
+\DoxyCodeLine{129     }
+\DoxyCodeLine{130     \textcolor{comment}{//}}
+\DoxyCodeLine{131     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{struct_table_location_a4da497024c6a0e06588b614dd497079c}{col}};}
+\DoxyCodeLine{132     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{struct_table_location_abb430b942b7a5006f4c959109e833540}{row}};}
+\DoxyCodeLine{133 \};}
+\DoxyCodeLine{134 }
+\DoxyCodeLine{138 \textcolor{keyword}{class }\mbox{\hyperlink{class_table}{Table}} \{}
+\DoxyCodeLine{139 \textcolor{keyword}{public}:}
+\DoxyCodeLine{146     \mbox{\hyperlink{class_table_a049f2e06391781ae255c6698869c4ad1}{Table}}()}
+\DoxyCodeLine{147         :type\_(\mbox{\hyperlink{table_8hpp_ad865cd893992cb593f3f01ebbe23b03f}{NULL\_TABLE\_TYPE}}) \{ \}}
+\DoxyCodeLine{156     \mbox{\hyperlink{class_table_a624f243c94d392cadf6c895615d390c8}{Table}}(\mbox{\hyperlink{struct_table_type}{TableType}} type, \mbox{\hyperlink{struct_table_i_d}{TableID}} \textcolor{keywordtype}{id}, \mbox{\hyperlink{struct_table_location}{TableLocation}} location)}
+\DoxyCodeLine{157         :type\_(type), table\_id\_(id), location\_(location) \{ \}}
+\DoxyCodeLine{162     \textcolor{keywordtype}{string} \mbox{\hyperlink{class_table_a71cf85b1c179e5103cff9b6201b417de}{get\_type\_name}}();}
+\DoxyCodeLine{168     \textcolor{keywordtype}{string} \mbox{\hyperlink{class_table_a3ebeadf6dbf09949da7992edf6974c33}{get\_id\_str}}();}
+\DoxyCodeLine{174     \textcolor{keywordtype}{string} \mbox{\hyperlink{class_table_a052d87e22f6547562b244042f5c5a82f}{get\_location\_str}}();}
+\DoxyCodeLine{180     \mbox{\hyperlink{struct_table_i_d}{TableID}} \mbox{\hyperlink{class_table_a0bd34f86148c123734c8e90821c265c0}{get\_id}}() \{ \textcolor{keywordflow}{return} table\_id\_; \}}
+\DoxyCodeLine{186     \mbox{\hyperlink{struct_table_type}{TableType}}\& \mbox{\hyperlink{class_table_a1fa0c733579f9497cdfe7fe4b00ff177}{get\_type}}() \{ \textcolor{keywordflow}{return} type\_; \}}
+\DoxyCodeLine{192     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} \mbox{\hyperlink{class_table_a72f6880b3d3ec0b177767ffef52ff444}{get\_capacity}}();}
+\DoxyCodeLine{198     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_table_ac5eda3657783ac573315904e9e9f951e}{set\_type}}(\mbox{\hyperlink{struct_table_type}{TableType}}\& type\_id);}
+\DoxyCodeLine{204     \mbox{\hyperlink{struct_table_location}{TableLocation}} \mbox{\hyperlink{class_table_a29fa9588d07c79da88527c2a7987d98f}{get\_location}}();}
+\DoxyCodeLine{208     \textcolor{keyword}{friend} istream\& \mbox{\hyperlink{class_table_a22d49b1e52736ad18b4967cad94f58d2}{operator>>}}(istream\& is, \mbox{\hyperlink{class_table}{Table}}\& table) \{}
+\DoxyCodeLine{209         \textcolor{keywordtype}{string} comma;}
+\DoxyCodeLine{210         is >> table.table\_id\_;}
+\DoxyCodeLine{211         is >> comma;}
+\DoxyCodeLine{212         is >> table.type\_;}
+\DoxyCodeLine{213         is >> comma;}
+\DoxyCodeLine{214         is >> table.location\_;}
+\DoxyCodeLine{215         \textcolor{keywordflow}{return} is;}
+\DoxyCodeLine{216     \}}
+\DoxyCodeLine{217     \textcolor{keyword}{template}<\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{218     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_table_a2601478cf1fe95a971e7cba6e5115a98}{serialize}}(Archive\& archive)}
+\DoxyCodeLine{219     \{}
+\DoxyCodeLine{220         archive(type\_,table\_id\_,location\_);}
+\DoxyCodeLine{221     \}}
+\DoxyCodeLine{222 \textcolor{keyword}{private}:}
+\DoxyCodeLine{223     \mbox{\hyperlink{struct_table_i_d}{TableID}} table\_id\_;}
+\DoxyCodeLine{224     \mbox{\hyperlink{struct_table_type}{TableType}} type\_;}
+\DoxyCodeLine{225     \mbox{\hyperlink{struct_table_location}{TableLocation}} location\_;}
+\DoxyCodeLine{226 \};}
+\DoxyCodeLine{227 }
+\DoxyCodeLine{231 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_table_container}{TableContainer}} \{}
+\DoxyCodeLine{235     \mbox{\hyperlink{struct_table_container_a7328cb9bcaab7f935a4c75a64e0de539}{TableContainer}}()}
+\DoxyCodeLine{236         :\mbox{\hyperlink{struct_table_container_a5cf406dbaa9b1a5de2e3bc16bd40dfa1}{types}}(), \mbox{\hyperlink{struct_table_container_a76fbe97c807df77679d21780145fd873}{tables}}(), \mbox{\hyperlink{struct_table_container_ad053234a3f284a83dfcb07a2c36bb0e0}{locations}}() \{ \}}
+\DoxyCodeLine{243     \mbox{\hyperlink{struct_table_container_aa43863eda09fe3e5eb0bada52c4c5efc}{TableContainer}} (ifstream\& file) \{}
+\DoxyCodeLine{244         \mbox{\hyperlink{class_table}{Table}} tmp;}
+\DoxyCodeLine{245         \textcolor{keywordflow}{while} (file >> tmp) \{}
+\DoxyCodeLine{246             \mbox{\hyperlink{struct_table_container_a5cf406dbaa9b1a5de2e3bc16bd40dfa1}{types}}.emplace(tmp.\mbox{\hyperlink{class_table_a1fa0c733579f9497cdfe7fe4b00ff177}{get\_type}}().\mbox{\hyperlink{struct_table_type_a43e258fb88af282f05ec31cdf475a143}{id}}, tmp.\mbox{\hyperlink{class_table_a1fa0c733579f9497cdfe7fe4b00ff177}{get\_type}}());}
+\DoxyCodeLine{247             \mbox{\hyperlink{struct_table_container_a76fbe97c807df77679d21780145fd873}{tables}}.emplace(tmp.\mbox{\hyperlink{class_table_a0bd34f86148c123734c8e90821c265c0}{get\_id}}(),tmp);}
+\DoxyCodeLine{248             \mbox{\hyperlink{struct_table_container_ad053234a3f284a83dfcb07a2c36bb0e0}{locations}}.emplace(tmp.\mbox{\hyperlink{class_table_a29fa9588d07c79da88527c2a7987d98f}{get\_location}}(),tmp.\mbox{\hyperlink{class_table_a0bd34f86148c123734c8e90821c265c0}{get\_id}}());}
+\DoxyCodeLine{249         \}}
+\DoxyCodeLine{250     \}}
+\DoxyCodeLine{251     \textcolor{keyword}{template}<\textcolor{keyword}{class} Archive>}
+\DoxyCodeLine{252     \textcolor{keywordtype}{void} \mbox{\hyperlink{struct_table_container_afd719fbcb71e7d4ea52cfc99d3c1539e}{serialize}}(Archive\& archive)}
+\DoxyCodeLine{253     \{}
+\DoxyCodeLine{254         archive(\mbox{\hyperlink{struct_table_container_a5cf406dbaa9b1a5de2e3bc16bd40dfa1}{types}},\mbox{\hyperlink{struct_table_container_a76fbe97c807df77679d21780145fd873}{tables}},\mbox{\hyperlink{struct_table_container_ad053234a3f284a83dfcb07a2c36bb0e0}{locations}});}
+\DoxyCodeLine{255     \}}
+\DoxyCodeLine{256     map<unsigned short, TableType> \mbox{\hyperlink{struct_table_container_a5cf406dbaa9b1a5de2e3bc16bd40dfa1}{types}};}
+\DoxyCodeLine{257     map<TableID, Table> \mbox{\hyperlink{struct_table_container_a76fbe97c807df77679d21780145fd873}{tables}};}
+\DoxyCodeLine{258     map<TableLocation, TableID> \mbox{\hyperlink{struct_table_container_ad053234a3f284a83dfcb07a2c36bb0e0}{locations}};}
+\DoxyCodeLine{259 \};}
+\DoxyCodeLine{260 }
+\DoxyCodeLine{261 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

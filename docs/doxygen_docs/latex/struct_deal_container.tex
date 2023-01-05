@@ -1,0 +1,49 @@
+\hypertarget{struct_deal_container}{}\doxysection{Deal\+Container Struct Reference}
+\label{struct_deal_container}\index{DealContainer@{DealContainer}}
+
+
+Container of \mbox{\hyperlink{class_deal}{Deal}} and corresponding container of bool.  
+
+
+
+
+{\ttfamily \#include $<$order\+\_\+deal.\+hpp$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+map$<$ unsigned int, \mbox{\hyperlink{class_deal}{Deal}} $>$ \mbox{\hyperlink{struct_deal_container_a5a04ec4b11066397e9e2101a82d88cff}{deals}}
+\item 
+map$<$ unsigned int, vector$<$ pair$<$ bool, unsigned short $>$ $>$ $>$ \mbox{\hyperlink{struct_deal_container_ae251043042d234b9b77b4a35072fdd60}{fulfill}}
+\item 
+std\+::mutex \mbox{\hyperlink{struct_deal_container_a68dc5d422eb63fb6b739e59eb4b019d1}{mtx}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Container of \mbox{\hyperlink{class_deal}{Deal}} and corresponding container of bool. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{struct_deal_container_a5a04ec4b11066397e9e2101a82d88cff}\label{struct_deal_container_a5a04ec4b11066397e9e2101a82d88cff}} 
+\index{DealContainer@{DealContainer}!deals@{deals}}
+\index{deals@{deals}!DealContainer@{DealContainer}}
+\doxysubsubsection{\texorpdfstring{deals}{deals}}
+{\footnotesize\ttfamily map$<$unsigned int, \mbox{\hyperlink{class_deal}{Deal}}$>$ Deal\+Container\+::deals}
+
+\mbox{\Hypertarget{struct_deal_container_ae251043042d234b9b77b4a35072fdd60}\label{struct_deal_container_ae251043042d234b9b77b4a35072fdd60}} 
+\index{DealContainer@{DealContainer}!fulfill@{fulfill}}
+\index{fulfill@{fulfill}!DealContainer@{DealContainer}}
+\doxysubsubsection{\texorpdfstring{fulfill}{fulfill}}
+{\footnotesize\ttfamily map$<$unsigned int, vector$<$pair$<$bool,unsigned short$>$ $>$ $>$ Deal\+Container\+::fulfill}
+
+\mbox{\Hypertarget{struct_deal_container_a68dc5d422eb63fb6b739e59eb4b019d1}\label{struct_deal_container_a68dc5d422eb63fb6b739e59eb4b019d1}} 
+\index{DealContainer@{DealContainer}!mtx@{mtx}}
+\index{mtx@{mtx}!DealContainer@{DealContainer}}
+\doxysubsubsection{\texorpdfstring{mtx}{mtx}}
+{\footnotesize\ttfamily std\+::mutex Deal\+Container\+::mtx}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Projects/\+Appetito/libs/restaurant\+\_\+util/include/\mbox{\hyperlink{order__deal_8hpp}{order\+\_\+deal.\+hpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,49 @@
+\hypertarget{console__menu_8hpp_source}{}\doxysection{console\+\_\+menu.\+hpp}
+\label{console__menu_8hpp_source}\index{C:/Projects/Appetito/libs/userio/include/console\_menu.hpp@{C:/Projects/Appetito/libs/userio/include/console\_menu.hpp}}
+\mbox{\hyperlink{console__menu_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef CONSOLE\_MENU\_HPP\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define CONSOLE\_MENU\_HPP\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <sstream>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <map>}}
+\DoxyCodeLine{16 \textcolor{keyword}{using namespace }std;}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{21 \textcolor{keyword}{class }\mbox{\hyperlink{class_console_menu}{ConsoleMenu}} \{}
+\DoxyCodeLine{22 \textcolor{keyword}{public}:}
+\DoxyCodeLine{23     \mbox{\hyperlink{class_console_menu_a7c3af11540ec842a2e4bdb229359056c}{ConsoleMenu}}(\textcolor{keyword}{const} \textcolor{keywordtype}{string}\& title,}
+\DoxyCodeLine{24         \textcolor{keyword}{const} \textcolor{keywordtype}{string}\& invalid\_choice\_message,}
+\DoxyCodeLine{25         \textcolor{keyword}{const} \textcolor{keywordtype}{string}\& prompt,}
+\DoxyCodeLine{26         \textcolor{keyword}{const} map< \textcolor{keywordtype}{string}, pair<\textcolor{keywordtype}{string},function<\textcolor{keywordtype}{void}()>> >\& commands,}
+\DoxyCodeLine{27         istream \&in = cin,}
+\DoxyCodeLine{28         ostream \&out = cout)}
+\DoxyCodeLine{29         : invalid\_choice\_message\_\{invalid\_choice\_message\},}
+\DoxyCodeLine{30         commands\_\{commands\},}
+\DoxyCodeLine{31         in\{in\}, }
+\DoxyCodeLine{32         out\{out\} }
+\DoxyCodeLine{33         \{}
+\DoxyCodeLine{34             std::stringstream ss;}
+\DoxyCodeLine{35             ss << title;}
+\DoxyCodeLine{36             \textcolor{keywordflow}{for} (\textcolor{keyword}{const} \textcolor{keyword}{auto} \&command : commands) \{}
+\DoxyCodeLine{37             ss << \textcolor{charliteral}{'['} << command.first << \textcolor{stringliteral}{"{}] "{}} << command.second.first << \textcolor{charliteral}{'\(\backslash\)n'};}
+\DoxyCodeLine{38             \}}
+\DoxyCodeLine{39             ss << prompt;}
+\DoxyCodeLine{40             prompt\_ = ss.str();}
+\DoxyCodeLine{41         \}}
+\DoxyCodeLine{42     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_console_menu_a13565c04d9ded696f58c13b8338fc082}{operator()}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{43 \textcolor{keyword}{private}:}
+\DoxyCodeLine{44     \textcolor{keywordtype}{string} invalid\_choice\_message\_;}
+\DoxyCodeLine{45     \textcolor{comment}{// the prompt\_ string contains the message, all choices and prompt}}
+\DoxyCodeLine{46     \textcolor{keywordtype}{string} prompt\_;}
+\DoxyCodeLine{47     map< string, pair<string,function<void()>> > commands\_;}
+\DoxyCodeLine{48     istream \&in;}
+\DoxyCodeLine{49     ostream \&out;}
+\DoxyCodeLine{50 \};}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

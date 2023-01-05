@@ -1,0 +1,191 @@
+\hypertarget{class_customer_redirector}{}\doxysection{Customer\+Redirector Class Reference}
+\label{class_customer_redirector}\index{CustomerRedirector@{CustomerRedirector}}
+
+
+The specialized redirector for customer clients, which redirects objects to diffrent customer clients.  
+
+
+
+
+{\ttfamily \#include $<$redirector.\+hpp$>$}
+
+Inheritance diagram for Customer\+Redirector\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_customer_redirector}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_customer_redirector_a65d7b5e1efcb22dc90bf07c72d098657}{Customer\+Redirector}} (\mbox{\hyperlink{struct_food_container}{Food\+Container}} $\ast$all\+\_\+foods, \mbox{\hyperlink{struct_table_container}{Table\+Container}} $\ast$all\+\_\+tables, unsigned int $\ast$deal\+\_\+counter, \mbox{\hyperlink{struct_customer_to_kitchen_queue}{Customer\+To\+Kitchen\+Queue}} $\ast$ctok\+\_\+queue, \mbox{\hyperlink{struct_kitchen_to_customer_queue}{Kitchen\+To\+Customer\+Queue}} $\ast$ktoc\+\_\+queue, \mbox{\hyperlink{struct_deal_container}{Deal\+Container}} $\ast$deals)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_customer_redirector}{Customer\+Redirector}} object with pointers to \mbox{\hyperlink{struct_food_container}{Food\+Container}}, \mbox{\hyperlink{struct_table_container}{Table\+Container}}, deal counter and queues. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_customer_redirector_a46302133051b2d34ab92205ab4cc06af}{enter}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_connected_customer_client}{Connected\+Customer\+Client}} $>$ entering\+\_\+client, const std\+::string \&client\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Let a \mbox{\hyperlink{class_connected_customer_client}{Connected\+Customer\+Client}} enter the \mbox{\hyperlink{class_customer_redirector}{Customer\+Redirector}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_customer_redirector_aeb0e9c1cd011b4c40ffd4481b469b757}{leave}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_connected_customer_client}{Connected\+Customer\+Client}} $>$ leaving\+\_\+client)
+\begin{DoxyCompactList}\small\item\em Let a \mbox{\hyperlink{class_connected_customer_client}{Connected\+Customer\+Client}} leave the \mbox{\hyperlink{class_customer_redirector}{Customer\+Redirector}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_customer_to_kitchen_queue}{Customer\+To\+Kitchen\+Queue}} $\ast$ \mbox{\hyperlink{class_customer_redirector_ad03b58d4d3cf8429fe3091dd76eb3a5a}{ctok\+\_\+queue\+\_\+ptr}} ()
+\begin{DoxyCompactList}\small\item\em Gets a raw pointer to customer to kitchen queue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_kitchen_to_customer_queue}{Kitchen\+To\+Customer\+Queue}} $\ast$ \mbox{\hyperlink{class_customer_redirector_a17ef0b7c52a2878bf30bcb3715103301}{ktoc\+\_\+queue\+\_\+ptr}} ()
+\begin{DoxyCompactList}\small\item\em Gets a raw pointer to kitchen to customer queue. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_customer_redirector_a5d1bb7c1f4e7a937a7e5c0b03eaa5506}{write\+\_\+to\+\_\+client}} (T \&object)
+\begin{DoxyCompactList}\small\item\em Write object to each customer client in the \mbox{\hyperlink{class_customer_redirector}{Customer\+Redirector}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unordered\+\_\+set$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_connected_customer_client}{Connected\+Customer\+Client}} $>$ $>$ \mbox{\hyperlink{class_customer_redirector_ae72472b1331fa5b28c41d99ee1b7ccbf}{connected\+\_\+clients\+\_\+}}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_connected_customer_client}{Connected\+Customer\+Client}} $>$, std\+::string $>$ \mbox{\hyperlink{class_customer_redirector_a2df85992fa0681b283d045970b78b14a}{id\+\_\+table\+\_\+}}
+\item 
+\mbox{\hyperlink{struct_customer_to_kitchen_queue}{Customer\+To\+Kitchen\+Queue}} $\ast$ \mbox{\hyperlink{class_customer_redirector_a61984c2f35a869006b188530764d1343}{ctok\+\_\+queue\+\_\+ptr\+\_\+}}
+\item 
+\mbox{\hyperlink{struct_kitchen_to_customer_queue}{Kitchen\+To\+Customer\+Queue}} $\ast$ \mbox{\hyperlink{class_customer_redirector_a0c3189df4389d5e7ca75417b47853352}{ktoc\+\_\+queue\+\_\+ptr\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The specialized redirector for customer clients, which redirects objects to diffrent customer clients. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_customer_redirector_a65d7b5e1efcb22dc90bf07c72d098657}\label{class_customer_redirector_a65d7b5e1efcb22dc90bf07c72d098657}} 
+\index{CustomerRedirector@{CustomerRedirector}!CustomerRedirector@{CustomerRedirector}}
+\index{CustomerRedirector@{CustomerRedirector}!CustomerRedirector@{CustomerRedirector}}
+\doxysubsubsection{\texorpdfstring{CustomerRedirector()}{CustomerRedirector()}}
+{\footnotesize\ttfamily Customer\+Redirector\+::\+Customer\+Redirector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_food_container}{Food\+Container}} $\ast$}]{all\+\_\+foods,  }\item[{\mbox{\hyperlink{struct_table_container}{Table\+Container}} $\ast$}]{all\+\_\+tables,  }\item[{unsigned int $\ast$}]{deal\+\_\+counter,  }\item[{\mbox{\hyperlink{struct_customer_to_kitchen_queue}{Customer\+To\+Kitchen\+Queue}} $\ast$}]{ctok\+\_\+queue,  }\item[{\mbox{\hyperlink{struct_kitchen_to_customer_queue}{Kitchen\+To\+Customer\+Queue}} $\ast$}]{ktoc\+\_\+queue,  }\item[{\mbox{\hyperlink{struct_deal_container}{Deal\+Container}} $\ast$}]{deals }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{class_customer_redirector}{Customer\+Redirector}} object with pointers to \mbox{\hyperlink{struct_food_container}{Food\+Container}}, \mbox{\hyperlink{struct_table_container}{Table\+Container}}, deal counter and queues. 
+
+Constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em all\+\_\+foods} & Raw pointer to \mbox{\hyperlink{struct_food_container}{Food\+Container}}. \\
+\hline
+{\em all\+\_\+tables} & Raw pointer to \mbox{\hyperlink{struct_table_container}{Table\+Container}}. \\
+\hline
+{\em deal\+\_\+counter} & Raw pointer to deal counter. \\
+\hline
+{\em ctok\+\_\+queue} & Raw pointer to customer to kitchen queue. \\
+\hline
+{\em ktoc\+\_\+queue} & Raw pointer to kitchen to customer queue. \\
+\hline
+{\em deals} & Raw pointer to map of deals. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_customer_redirector_ad03b58d4d3cf8429fe3091dd76eb3a5a}\label{class_customer_redirector_ad03b58d4d3cf8429fe3091dd76eb3a5a}} 
+\index{CustomerRedirector@{CustomerRedirector}!ctok\_queue\_ptr@{ctok\_queue\_ptr}}
+\index{ctok\_queue\_ptr@{ctok\_queue\_ptr}!CustomerRedirector@{CustomerRedirector}}
+\doxysubsubsection{\texorpdfstring{ctok\_queue\_ptr()}{ctok\_queue\_ptr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_customer_to_kitchen_queue}{Customer\+To\+Kitchen\+Queue}} $\ast$ Customer\+Redirector\+::ctok\+\_\+queue\+\_\+ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets a raw pointer to customer to kitchen queue. 
+
+\begin{DoxyReturn}{Returns}
+Raw pointer to customer to kitchen queue. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_customer_redirector_a46302133051b2d34ab92205ab4cc06af}\label{class_customer_redirector_a46302133051b2d34ab92205ab4cc06af}} 
+\index{CustomerRedirector@{CustomerRedirector}!enter@{enter}}
+\index{enter@{enter}!CustomerRedirector@{CustomerRedirector}}
+\doxysubsubsection{\texorpdfstring{enter()}{enter()}}
+{\footnotesize\ttfamily void Customer\+Redirector\+::enter (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_connected_customer_client}{Connected\+Customer\+Client}} $>$}]{entering\+\_\+client,  }\item[{const std\+::string \&}]{client\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Let a \mbox{\hyperlink{class_connected_customer_client}{Connected\+Customer\+Client}} enter the \mbox{\hyperlink{class_customer_redirector}{Customer\+Redirector}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entering\+\_\+client} & Shared\+\_\+ptr to the entering \mbox{\hyperlink{class_connected_customer_client}{Connected\+Customer\+Client}}. \\
+\hline
+{\em client\+\_\+id} & The string of the customer client ID. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_customer_redirector_a17ef0b7c52a2878bf30bcb3715103301}\label{class_customer_redirector_a17ef0b7c52a2878bf30bcb3715103301}} 
+\index{CustomerRedirector@{CustomerRedirector}!ktoc\_queue\_ptr@{ktoc\_queue\_ptr}}
+\index{ktoc\_queue\_ptr@{ktoc\_queue\_ptr}!CustomerRedirector@{CustomerRedirector}}
+\doxysubsubsection{\texorpdfstring{ktoc\_queue\_ptr()}{ktoc\_queue\_ptr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_kitchen_to_customer_queue}{Kitchen\+To\+Customer\+Queue}} $\ast$ Customer\+Redirector\+::ktoc\+\_\+queue\+\_\+ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets a raw pointer to kitchen to customer queue. 
+
+\begin{DoxyReturn}{Returns}
+Raw pointer to kitchen to customer queue. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_customer_redirector_aeb0e9c1cd011b4c40ffd4481b469b757}\label{class_customer_redirector_aeb0e9c1cd011b4c40ffd4481b469b757}} 
+\index{CustomerRedirector@{CustomerRedirector}!leave@{leave}}
+\index{leave@{leave}!CustomerRedirector@{CustomerRedirector}}
+\doxysubsubsection{\texorpdfstring{leave()}{leave()}}
+{\footnotesize\ttfamily void Customer\+Redirector\+::leave (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_connected_customer_client}{Connected\+Customer\+Client}} $>$}]{leaving\+\_\+client }\end{DoxyParamCaption})}
+
+
+
+Let a \mbox{\hyperlink{class_connected_customer_client}{Connected\+Customer\+Client}} leave the \mbox{\hyperlink{class_customer_redirector}{Customer\+Redirector}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em leaving\+\_\+client} & Shared\+\_\+ptr to the leaving \mbox{\hyperlink{class_connected_customer_client}{Connected\+Customer\+Client}}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_customer_redirector_a5d1bb7c1f4e7a937a7e5c0b03eaa5506}\label{class_customer_redirector_a5d1bb7c1f4e7a937a7e5c0b03eaa5506}} 
+\index{CustomerRedirector@{CustomerRedirector}!write\_to\_client@{write\_to\_client}}
+\index{write\_to\_client@{write\_to\_client}!CustomerRedirector@{CustomerRedirector}}
+\doxysubsubsection{\texorpdfstring{write\_to\_client()}{write\_to\_client()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Customer\+Redirector\+::write\+\_\+to\+\_\+client (\begin{DoxyParamCaption}\item[{T \&}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Write object to each customer client in the \mbox{\hyperlink{class_customer_redirector}{Customer\+Redirector}}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Type} & of the object. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em object} & The object to write. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_customer_redirector_ae72472b1331fa5b28c41d99ee1b7ccbf}\label{class_customer_redirector_ae72472b1331fa5b28c41d99ee1b7ccbf}} 
+\index{CustomerRedirector@{CustomerRedirector}!connected\_clients\_@{connected\_clients\_}}
+\index{connected\_clients\_@{connected\_clients\_}!CustomerRedirector@{CustomerRedirector}}
+\doxysubsubsection{\texorpdfstring{connected\_clients\_}{connected\_clients\_}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+set$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_connected_customer_client}{Connected\+Customer\+Client}}$>$ $>$ Customer\+Redirector\+::connected\+\_\+clients\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_customer_redirector_a61984c2f35a869006b188530764d1343}\label{class_customer_redirector_a61984c2f35a869006b188530764d1343}} 
+\index{CustomerRedirector@{CustomerRedirector}!ctok\_queue\_ptr\_@{ctok\_queue\_ptr\_}}
+\index{ctok\_queue\_ptr\_@{ctok\_queue\_ptr\_}!CustomerRedirector@{CustomerRedirector}}
+\doxysubsubsection{\texorpdfstring{ctok\_queue\_ptr\_}{ctok\_queue\_ptr\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_customer_to_kitchen_queue}{Customer\+To\+Kitchen\+Queue}}$\ast$ Customer\+Redirector\+::ctok\+\_\+queue\+\_\+ptr\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_customer_redirector_a2df85992fa0681b283d045970b78b14a}\label{class_customer_redirector_a2df85992fa0681b283d045970b78b14a}} 
+\index{CustomerRedirector@{CustomerRedirector}!id\_table\_@{id\_table\_}}
+\index{id\_table\_@{id\_table\_}!CustomerRedirector@{CustomerRedirector}}
+\doxysubsubsection{\texorpdfstring{id\_table\_}{id\_table\_}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_connected_customer_client}{Connected\+Customer\+Client}}$>$, std\+::string$>$ Customer\+Redirector\+::id\+\_\+table\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_customer_redirector_a0c3189df4389d5e7ca75417b47853352}\label{class_customer_redirector_a0c3189df4389d5e7ca75417b47853352}} 
+\index{CustomerRedirector@{CustomerRedirector}!ktoc\_queue\_ptr\_@{ktoc\_queue\_ptr\_}}
+\index{ktoc\_queue\_ptr\_@{ktoc\_queue\_ptr\_}!CustomerRedirector@{CustomerRedirector}}
+\doxysubsubsection{\texorpdfstring{ktoc\_queue\_ptr\_}{ktoc\_queue\_ptr\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_kitchen_to_customer_queue}{Kitchen\+To\+Customer\+Queue}}$\ast$ Customer\+Redirector\+::ktoc\+\_\+queue\+\_\+ptr\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Projects/\+Appetito/libs/server/include/\mbox{\hyperlink{redirector_8hpp}{redirector.\+hpp}}\item 
+C\+:/\+Projects/\+Appetito/libs/server/src/\mbox{\hyperlink{redirector_8cpp}{redirector.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,81 @@
+\hypertarget{client__customer_8cpp}{}\doxysection{C\+:/\+Projects/\+Appetito/src/client\+\_\+customer.cpp File Reference}
+\label{client__customer_8cpp}\index{C:/Projects/Appetito/src/client\_customer.cpp@{C:/Projects/Appetito/src/client\_customer.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$map$>$}\newline
+{\ttfamily \#include $<$limits$>$}\newline
+{\ttfamily \#include $<$asio.\+hpp$>$}\newline
+{\ttfamily \#include $<$client.\+hpp$>$}\newline
+{\ttfamily \#include $<$food.\+hpp$>$}\newline
+{\ttfamily \#include $<$table.\+hpp$>$}\newline
+{\ttfamily \#include $<$menu.\+hpp$>$}\newline
+{\ttfamily \#include $<$order\+\_\+deal.\+hpp$>$}\newline
+{\ttfamily \#include $<$console\+\_\+menu.\+hpp$>$}\newline
+{\ttfamily \#include $<$protocol.\+hpp$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{client__customer_8cpp_a76bcd7f78b14f14e90123069aee0d580}{TIMER\+\_\+\+WAIT\+\_\+\+MILLISECONDS}}~200
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{client__customer_8cpp_aa94990143ade2d1e26b89c5b6885a335}{make\+\_\+order}} (\mbox{\hyperlink{class_menu}{Menu}} \&menu, \mbox{\hyperlink{class_customer_client}{Customer\+Client}} $\ast$client)
+\item 
+void \mbox{\hyperlink{client__customer_8cpp_a1c8b2a665b6c51c80641c29bd7bd3e08}{print\+\_\+menu}} (\mbox{\hyperlink{class_customer_client}{Customer\+Client}} $\ast$client)
+\item 
+void \mbox{\hyperlink{client__customer_8cpp_ab9607c301e486255fe889e8f6dd4f2f5}{print\+\_\+current\+\_\+deal}} (\mbox{\hyperlink{class_customer_client}{Customer\+Client}} $\ast$client)
+\item 
+void \mbox{\hyperlink{client__customer_8cpp_a6b3b3dcc329c47d0fe9826a55648dff0}{print\+\_\+past\+\_\+deals}} (\mbox{\hyperlink{class_customer_client}{Customer\+Client}} $\ast$client)
+\item 
+void \mbox{\hyperlink{client__customer_8cpp_a5485c9923a9ef00abc75c6500eb6bb21}{menu\+\_\+exit}} (bool $\ast$is\+\_\+exit)
+\item 
+int \mbox{\hyperlink{client__customer_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{client__customer_8cpp_a76bcd7f78b14f14e90123069aee0d580}\label{client__customer_8cpp_a76bcd7f78b14f14e90123069aee0d580}} 
+\index{client\_customer.cpp@{client\_customer.cpp}!TIMER\_WAIT\_MILLISECONDS@{TIMER\_WAIT\_MILLISECONDS}}
+\index{TIMER\_WAIT\_MILLISECONDS@{TIMER\_WAIT\_MILLISECONDS}!client\_customer.cpp@{client\_customer.cpp}}
+\doxysubsubsection{\texorpdfstring{TIMER\_WAIT\_MILLISECONDS}{TIMER\_WAIT\_MILLISECONDS}}
+{\footnotesize\ttfamily \#define TIMER\+\_\+\+WAIT\+\_\+\+MILLISECONDS~200}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{client__customer_8cpp_a0ddf1224851353fc92bfbff6f499fa97}\label{client__customer_8cpp_a0ddf1224851353fc92bfbff6f499fa97}} 
+\index{client\_customer.cpp@{client\_customer.cpp}!main@{main}}
+\index{main@{main}!client\_customer.cpp@{client\_customer.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{client__customer_8cpp_aa94990143ade2d1e26b89c5b6885a335}\label{client__customer_8cpp_aa94990143ade2d1e26b89c5b6885a335}} 
+\index{client\_customer.cpp@{client\_customer.cpp}!make\_order@{make\_order}}
+\index{make\_order@{make\_order}!client\_customer.cpp@{client\_customer.cpp}}
+\doxysubsubsection{\texorpdfstring{make\_order()}{make\_order()}}
+{\footnotesize\ttfamily void make\+\_\+order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_menu}{Menu}} \&}]{menu,  }\item[{\mbox{\hyperlink{class_customer_client}{Customer\+Client}} $\ast$}]{client }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{client__customer_8cpp_a5485c9923a9ef00abc75c6500eb6bb21}\label{client__customer_8cpp_a5485c9923a9ef00abc75c6500eb6bb21}} 
+\index{client\_customer.cpp@{client\_customer.cpp}!menu\_exit@{menu\_exit}}
+\index{menu\_exit@{menu\_exit}!client\_customer.cpp@{client\_customer.cpp}}
+\doxysubsubsection{\texorpdfstring{menu\_exit()}{menu\_exit()}}
+{\footnotesize\ttfamily void menu\+\_\+exit (\begin{DoxyParamCaption}\item[{bool $\ast$}]{is\+\_\+exit }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{client__customer_8cpp_ab9607c301e486255fe889e8f6dd4f2f5}\label{client__customer_8cpp_ab9607c301e486255fe889e8f6dd4f2f5}} 
+\index{client\_customer.cpp@{client\_customer.cpp}!print\_current\_deal@{print\_current\_deal}}
+\index{print\_current\_deal@{print\_current\_deal}!client\_customer.cpp@{client\_customer.cpp}}
+\doxysubsubsection{\texorpdfstring{print\_current\_deal()}{print\_current\_deal()}}
+{\footnotesize\ttfamily void print\+\_\+current\+\_\+deal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_customer_client}{Customer\+Client}} $\ast$}]{client }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{client__customer_8cpp_a1c8b2a665b6c51c80641c29bd7bd3e08}\label{client__customer_8cpp_a1c8b2a665b6c51c80641c29bd7bd3e08}} 
+\index{client\_customer.cpp@{client\_customer.cpp}!print\_menu@{print\_menu}}
+\index{print\_menu@{print\_menu}!client\_customer.cpp@{client\_customer.cpp}}
+\doxysubsubsection{\texorpdfstring{print\_menu()}{print\_menu()}}
+{\footnotesize\ttfamily void print\+\_\+menu (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_customer_client}{Customer\+Client}} $\ast$}]{client }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{client__customer_8cpp_a6b3b3dcc329c47d0fe9826a55648dff0}\label{client__customer_8cpp_a6b3b3dcc329c47d0fe9826a55648dff0}} 
+\index{client\_customer.cpp@{client\_customer.cpp}!print\_past\_deals@{print\_past\_deals}}
+\index{print\_past\_deals@{print\_past\_deals}!client\_customer.cpp@{client\_customer.cpp}}
+\doxysubsubsection{\texorpdfstring{print\_past\_deals()}{print\_past\_deals()}}
+{\footnotesize\ttfamily void print\+\_\+past\+\_\+deals (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_customer_client}{Customer\+Client}} $\ast$}]{client }\end{DoxyParamCaption})}
+

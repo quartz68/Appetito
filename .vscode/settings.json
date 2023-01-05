@@ -68,6 +68,15 @@
         "variant": "cpp",
         "*.ipp": "cpp",
         "unordered_set": "cpp",
-        "bitset": "cpp"
+        "bitset": "cpp",
+        "complex": "cpp",
+        "forward_list": "cpp",
+        "map": "cpp",
+        "set": "cpp",
+        "regex": "cpp",
+        "fstream": "cpp",
+        "typeindex": "cpp",
+        "valarray": "cpp",
+        "iomanip": "cpp"
     }
 }
