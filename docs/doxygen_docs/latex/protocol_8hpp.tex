@@ -1,0 +1,140 @@
+\hypertarget{protocol_8hpp}{}\doxysection{C\+:/\+Projects/\+Appetito/libs/userio/include/protocol.hpp File Reference}
+\label{protocol_8hpp}\index{C:/Projects/Appetito/libs/userio/include/protocol.hpp@{C:/Projects/Appetito/libs/userio/include/protocol.hpp}}
+
+
+Defines some console output.  
+
+
+{\ttfamily \#include $<$iomanip$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{protocol_8hpp_a65fba7c2f4b0b012bd6177415ec5bc1a}{SMALL\+\_\+\+FIELD\+\_\+\+WIDTH}}~10
+\item 
+\#define \mbox{\hyperlink{protocol_8hpp_a00c5b25c4fe3e342f59c6a17c7b4168c}{LARGE\+\_\+\+FIELD\+\_\+\+WIDTH}}~20
+\item 
+\#define \mbox{\hyperlink{protocol_8hpp_ae420caa0af9cbdf102ed255034e27c5b}{BOTTOM}}~\char`\"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\textbackslash{}n\char`\"{}
+\item 
+\#define \mbox{\hyperlink{protocol_8hpp_a3cfec61a89f6f458fca8ec76b3a6029e}{DIVIDE}}~\char`\"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\char`\"{}
+\item 
+\#define \mbox{\hyperlink{protocol_8hpp_ab6facf4e21a4e801377095dea549e605}{SELECT\+\_\+\+TABLE\+\_\+\+HEADER}}~\char`\"{}\textbackslash{}n-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Select-\/-\/-\/\mbox{\hyperlink{class_table}{Table}}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\char`\"{}
+\item 
+\#define \mbox{\hyperlink{protocol_8hpp_a52e5bfecdf08c5df641b8f04413fd4f3}{SELECT\+\_\+\+FOOD\+\_\+\+HEADER}}~\char`\"{}\textbackslash{}n-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Select-\/-\/-\/\mbox{\hyperlink{class_food}{Food}}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\char`\"{}
+\item 
+\#define \mbox{\hyperlink{protocol_8hpp_afa1c21407c26475a1a260015078e3483}{PREVIEW\+\_\+\+ORDER\+\_\+\+HEADER}}~\char`\"{}\textbackslash{}n-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Preview-\/-\/-\/\mbox{\hyperlink{class_order}{Order}}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\char`\"{}
+\item 
+\#define \mbox{\hyperlink{protocol_8hpp_a20572f37ef710aa2eee7fb42ce735630}{DEAL\+\_\+\+NUMBER\+\_\+\+HEADER}}~\char`\"{}\textbackslash{}n-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\mbox{\hyperlink{class_deal}{Deal}}-\/-\/-\/Number-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\char`\"{}
+\item 
+\#define \mbox{\hyperlink{protocol_8hpp_abaa4ecbf8e5ab70c9a753b112e9a1fe4}{NOTIFICATION\+\_\+\+HEADER}}~\char`\"{}\textbackslash{}n-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/NOTIFICATION-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\char`\"{}
+\item 
+\#define \mbox{\hyperlink{protocol_8hpp_a7f13e8f537ad91c3059eb707196053d7}{DEAL\+\_\+\+HEADER}}~\char`\"{}\textbackslash{}n-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\mbox{\hyperlink{class_deal}{Deal}}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\char`\"{}
+\item 
+\#define \mbox{\hyperlink{protocol_8hpp_a1b72ecad014f91ab6b18fd82a89818b6}{CURRENT\+\_\+\+DEAL\+\_\+\+HEADER}}~\char`\"{}\textbackslash{}n-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Current-\/-\/-\/\mbox{\hyperlink{class_deal}{Deal}}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\char`\"{}
+\item 
+\#define \mbox{\hyperlink{protocol_8hpp_a4ff244db0163a461752374447f7450b4}{NEW\+\_\+\+ITEM\+\_\+\+HEADER}}~\char`\"{}\textbackslash{}n-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/New-\/-\/-\/Item-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{protocol_8hpp_aa563022cd6d3e2abdf7ec1ab99619718}{small\+\_\+field}} (std\+::ostream \&o)
+\item 
+std\+::ostream \& \mbox{\hyperlink{protocol_8hpp_a7b8f3c30e58725a5dd0b167ef51c94ae}{large\+\_\+field}} (std\+::ostream \&o)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines some console output. 
+
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{protocol_8hpp_ae420caa0af9cbdf102ed255034e27c5b}\label{protocol_8hpp_ae420caa0af9cbdf102ed255034e27c5b}} 
+\index{protocol.hpp@{protocol.hpp}!BOTTOM@{BOTTOM}}
+\index{BOTTOM@{BOTTOM}!protocol.hpp@{protocol.hpp}}
+\doxysubsubsection{\texorpdfstring{BOTTOM}{BOTTOM}}
+{\footnotesize\ttfamily \#define BOTTOM~\char`\"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\textbackslash{}n\char`\"{}}
+
+\mbox{\Hypertarget{protocol_8hpp_a1b72ecad014f91ab6b18fd82a89818b6}\label{protocol_8hpp_a1b72ecad014f91ab6b18fd82a89818b6}} 
+\index{protocol.hpp@{protocol.hpp}!CURRENT\_DEAL\_HEADER@{CURRENT\_DEAL\_HEADER}}
+\index{CURRENT\_DEAL\_HEADER@{CURRENT\_DEAL\_HEADER}!protocol.hpp@{protocol.hpp}}
+\doxysubsubsection{\texorpdfstring{CURRENT\_DEAL\_HEADER}{CURRENT\_DEAL\_HEADER}}
+{\footnotesize\ttfamily \#define CURRENT\+\_\+\+DEAL\+\_\+\+HEADER~\char`\"{}\textbackslash{}n-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Current-\/-\/-\/\mbox{\hyperlink{class_deal}{Deal}}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\char`\"{}}
+
+\mbox{\Hypertarget{protocol_8hpp_a7f13e8f537ad91c3059eb707196053d7}\label{protocol_8hpp_a7f13e8f537ad91c3059eb707196053d7}} 
+\index{protocol.hpp@{protocol.hpp}!DEAL\_HEADER@{DEAL\_HEADER}}
+\index{DEAL\_HEADER@{DEAL\_HEADER}!protocol.hpp@{protocol.hpp}}
+\doxysubsubsection{\texorpdfstring{DEAL\_HEADER}{DEAL\_HEADER}}
+{\footnotesize\ttfamily \#define DEAL\+\_\+\+HEADER~\char`\"{}\textbackslash{}n-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\mbox{\hyperlink{class_deal}{Deal}}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\char`\"{}}
+
+\mbox{\Hypertarget{protocol_8hpp_a20572f37ef710aa2eee7fb42ce735630}\label{protocol_8hpp_a20572f37ef710aa2eee7fb42ce735630}} 
+\index{protocol.hpp@{protocol.hpp}!DEAL\_NUMBER\_HEADER@{DEAL\_NUMBER\_HEADER}}
+\index{DEAL\_NUMBER\_HEADER@{DEAL\_NUMBER\_HEADER}!protocol.hpp@{protocol.hpp}}
+\doxysubsubsection{\texorpdfstring{DEAL\_NUMBER\_HEADER}{DEAL\_NUMBER\_HEADER}}
+{\footnotesize\ttfamily \#define DEAL\+\_\+\+NUMBER\+\_\+\+HEADER~\char`\"{}\textbackslash{}n-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\mbox{\hyperlink{class_deal}{Deal}}-\/-\/-\/Number-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\char`\"{}}
+
+\mbox{\Hypertarget{protocol_8hpp_a3cfec61a89f6f458fca8ec76b3a6029e}\label{protocol_8hpp_a3cfec61a89f6f458fca8ec76b3a6029e}} 
+\index{protocol.hpp@{protocol.hpp}!DIVIDE@{DIVIDE}}
+\index{DIVIDE@{DIVIDE}!protocol.hpp@{protocol.hpp}}
+\doxysubsubsection{\texorpdfstring{DIVIDE}{DIVIDE}}
+{\footnotesize\ttfamily \#define DIVIDE~\char`\"{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\char`\"{}}
+
+\mbox{\Hypertarget{protocol_8hpp_a00c5b25c4fe3e342f59c6a17c7b4168c}\label{protocol_8hpp_a00c5b25c4fe3e342f59c6a17c7b4168c}} 
+\index{protocol.hpp@{protocol.hpp}!LARGE\_FIELD\_WIDTH@{LARGE\_FIELD\_WIDTH}}
+\index{LARGE\_FIELD\_WIDTH@{LARGE\_FIELD\_WIDTH}!protocol.hpp@{protocol.hpp}}
+\doxysubsubsection{\texorpdfstring{LARGE\_FIELD\_WIDTH}{LARGE\_FIELD\_WIDTH}}
+{\footnotesize\ttfamily \#define LARGE\+\_\+\+FIELD\+\_\+\+WIDTH~20}
+
+\mbox{\Hypertarget{protocol_8hpp_a4ff244db0163a461752374447f7450b4}\label{protocol_8hpp_a4ff244db0163a461752374447f7450b4}} 
+\index{protocol.hpp@{protocol.hpp}!NEW\_ITEM\_HEADER@{NEW\_ITEM\_HEADER}}
+\index{NEW\_ITEM\_HEADER@{NEW\_ITEM\_HEADER}!protocol.hpp@{protocol.hpp}}
+\doxysubsubsection{\texorpdfstring{NEW\_ITEM\_HEADER}{NEW\_ITEM\_HEADER}}
+{\footnotesize\ttfamily \#define NEW\+\_\+\+ITEM\+\_\+\+HEADER~\char`\"{}\textbackslash{}n-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/New-\/-\/-\/Item-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\char`\"{}}
+
+\mbox{\Hypertarget{protocol_8hpp_abaa4ecbf8e5ab70c9a753b112e9a1fe4}\label{protocol_8hpp_abaa4ecbf8e5ab70c9a753b112e9a1fe4}} 
+\index{protocol.hpp@{protocol.hpp}!NOTIFICATION\_HEADER@{NOTIFICATION\_HEADER}}
+\index{NOTIFICATION\_HEADER@{NOTIFICATION\_HEADER}!protocol.hpp@{protocol.hpp}}
+\doxysubsubsection{\texorpdfstring{NOTIFICATION\_HEADER}{NOTIFICATION\_HEADER}}
+{\footnotesize\ttfamily \#define NOTIFICATION\+\_\+\+HEADER~\char`\"{}\textbackslash{}n-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/NOTIFICATION-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\char`\"{}}
+
+\mbox{\Hypertarget{protocol_8hpp_afa1c21407c26475a1a260015078e3483}\label{protocol_8hpp_afa1c21407c26475a1a260015078e3483}} 
+\index{protocol.hpp@{protocol.hpp}!PREVIEW\_ORDER\_HEADER@{PREVIEW\_ORDER\_HEADER}}
+\index{PREVIEW\_ORDER\_HEADER@{PREVIEW\_ORDER\_HEADER}!protocol.hpp@{protocol.hpp}}
+\doxysubsubsection{\texorpdfstring{PREVIEW\_ORDER\_HEADER}{PREVIEW\_ORDER\_HEADER}}
+{\footnotesize\ttfamily \#define PREVIEW\+\_\+\+ORDER\+\_\+\+HEADER~\char`\"{}\textbackslash{}n-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Preview-\/-\/-\/\mbox{\hyperlink{class_order}{Order}}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\char`\"{}}
+
+\mbox{\Hypertarget{protocol_8hpp_a52e5bfecdf08c5df641b8f04413fd4f3}\label{protocol_8hpp_a52e5bfecdf08c5df641b8f04413fd4f3}} 
+\index{protocol.hpp@{protocol.hpp}!SELECT\_FOOD\_HEADER@{SELECT\_FOOD\_HEADER}}
+\index{SELECT\_FOOD\_HEADER@{SELECT\_FOOD\_HEADER}!protocol.hpp@{protocol.hpp}}
+\doxysubsubsection{\texorpdfstring{SELECT\_FOOD\_HEADER}{SELECT\_FOOD\_HEADER}}
+{\footnotesize\ttfamily \#define SELECT\+\_\+\+FOOD\+\_\+\+HEADER~\char`\"{}\textbackslash{}n-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Select-\/-\/-\/\mbox{\hyperlink{class_food}{Food}}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\char`\"{}}
+
+\mbox{\Hypertarget{protocol_8hpp_ab6facf4e21a4e801377095dea549e605}\label{protocol_8hpp_ab6facf4e21a4e801377095dea549e605}} 
+\index{protocol.hpp@{protocol.hpp}!SELECT\_TABLE\_HEADER@{SELECT\_TABLE\_HEADER}}
+\index{SELECT\_TABLE\_HEADER@{SELECT\_TABLE\_HEADER}!protocol.hpp@{protocol.hpp}}
+\doxysubsubsection{\texorpdfstring{SELECT\_TABLE\_HEADER}{SELECT\_TABLE\_HEADER}}
+{\footnotesize\ttfamily \#define SELECT\+\_\+\+TABLE\+\_\+\+HEADER~\char`\"{}\textbackslash{}n-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Select-\/-\/-\/\mbox{\hyperlink{class_table}{Table}}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\char`\"{}}
+
+\mbox{\Hypertarget{protocol_8hpp_a65fba7c2f4b0b012bd6177415ec5bc1a}\label{protocol_8hpp_a65fba7c2f4b0b012bd6177415ec5bc1a}} 
+\index{protocol.hpp@{protocol.hpp}!SMALL\_FIELD\_WIDTH@{SMALL\_FIELD\_WIDTH}}
+\index{SMALL\_FIELD\_WIDTH@{SMALL\_FIELD\_WIDTH}!protocol.hpp@{protocol.hpp}}
+\doxysubsubsection{\texorpdfstring{SMALL\_FIELD\_WIDTH}{SMALL\_FIELD\_WIDTH}}
+{\footnotesize\ttfamily \#define SMALL\+\_\+\+FIELD\+\_\+\+WIDTH~10}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{protocol_8hpp_a7b8f3c30e58725a5dd0b167ef51c94ae}\label{protocol_8hpp_a7b8f3c30e58725a5dd0b167ef51c94ae}} 
+\index{protocol.hpp@{protocol.hpp}!large\_field@{large\_field}}
+\index{large\_field@{large\_field}!protocol.hpp@{protocol.hpp}}
+\doxysubsubsection{\texorpdfstring{large\_field()}{large\_field()}}
+{\footnotesize\ttfamily std\+::ostream \& large\+\_\+field (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{protocol_8hpp_aa563022cd6d3e2abdf7ec1ab99619718}\label{protocol_8hpp_aa563022cd6d3e2abdf7ec1ab99619718}} 
+\index{protocol.hpp@{protocol.hpp}!small\_field@{small\_field}}
+\index{small\_field@{small\_field}!protocol.hpp@{protocol.hpp}}
+\doxysubsubsection{\texorpdfstring{small\_field()}{small\_field()}}
+{\footnotesize\ttfamily std\+::ostream \& small\+\_\+field (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+

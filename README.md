@@ -15,9 +15,9 @@ This is a student project by three students at Hefei University of Technology.
 
 Basic functionality
 
-- [ ] Simple order placement
-- [ ] Table arrangement
-- [ ] Queueing
+- [x] Simple order placement
+- [x] Table arrangement
+- [x] Queueing
 - [x] Working network communication
 
 Advanced functionality
@@ -33,7 +33,7 @@ Documentation
 
 - [x] README
 - [x] Coding standard
-- [ ] Report for handing in
+- [x] Report for handing in
 
 Impossibility
 
@@ -41,7 +41,5 @@ Impossibility
 - [ ] PWA
 
 ## TO-DO
-
-- [ ] Rewrite input of csv.
 
 ## Under construction 🚫

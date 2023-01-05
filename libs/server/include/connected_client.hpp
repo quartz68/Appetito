@@ -72,8 +72,6 @@ protected:
     NetworkIO network_io_;
     std::string client_id_;
     asio::io_context::strand& strand_;
-    std::deque<std::string> strings_to_write_;
-    std::string read_string_;
 };
 
 /**
@@ -108,10 +106,6 @@ protected:
      * @brief Handles reading customer client ID, writing menu to client.
      */
     void id_handler(const asio::error_code& error);
-    /**
-     * @brief Handles reading a string.
-     */
-    void read_handler(const asio::error_code& error);
     /**
      * @brief Handles reading a Deal, saving Deal to vector deals_, writing deal number to client.
      */

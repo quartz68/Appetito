@@ -1,0 +1,156 @@
+\hypertarget{class_network_i_o}{}\doxysection{Network\+IO Class Reference}
+\label{class_network_i_o}\index{NetworkIO@{NetworkIO}}
+
+
+Handles TCP/\+IP network input/output.  
+
+
+
+
+{\ttfamily \#include $<$networkio.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_network_i_o_abf4f9ab47edc99df9e75654ccfca1739}{Network\+IO}} (asio\+::io\+\_\+context \&io\+\_\+context)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_network_i_o}{Network\+IO}} object from io context. \end{DoxyCompactList}\item 
+asio\+::ip\+::tcp\+::socket \& \mbox{\hyperlink{class_network_i_o_a83fd8b563206906c7a9eb7427d08810f}{socket}} ()
+\begin{DoxyCompactList}\small\item\em Get the underlying socket. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename Handler $>$ }\\void \mbox{\hyperlink{class_network_i_o_a6d9278695e78a7bef96e51ce131191ff}{async\+\_\+write}} (const T \&t, Handler handler)
+\begin{DoxyCompactList}\small\item\em Asynchronously write a data structure to the socket. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename Handler $>$ }\\void \mbox{\hyperlink{class_network_i_o_a0561d5105365d727b08da96496dfe6e0}{async\+\_\+read}} (T \&t, Handler handler)
+\begin{DoxyCompactList}\small\item\em Asynchronously read a data structure from the socket. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename Handler $>$ }\\void \mbox{\hyperlink{class_network_i_o_aef971ed1f890e0550a1a9ad1fb1e7001}{read\+\_\+header\+\_\+handler}} (const asio\+::error\+\_\+code \&e, T \&t, std\+::tuple$<$ Handler $>$ handler)
+\begin{DoxyCompactList}\small\item\em Handle a completed read of a message header. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T , typename Handler $>$ }\\void \mbox{\hyperlink{class_network_i_o_a6fdeca0a7fd3bc07249d117660f65c05}{read\+\_\+data\+\_\+handler}} (const asio\+::error\+\_\+code \&e, T \&t, std\+::tuple$<$ Handler $>$ handler)
+\begin{DoxyCompactList}\small\item\em Handle a completed read of a message data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Handles TCP/\+IP network input/output. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_network_i_o_abf4f9ab47edc99df9e75654ccfca1739}\label{class_network_i_o_abf4f9ab47edc99df9e75654ccfca1739}} 
+\index{NetworkIO@{NetworkIO}!NetworkIO@{NetworkIO}}
+\index{NetworkIO@{NetworkIO}!NetworkIO@{NetworkIO}}
+\doxysubsubsection{\texorpdfstring{NetworkIO()}{NetworkIO()}}
+{\footnotesize\ttfamily Network\+IO\+::\+Network\+IO (\begin{DoxyParamCaption}\item[{asio\+::io\+\_\+context \&}]{io\+\_\+context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{class_network_i_o}{Network\+IO}} object from io context. 
+
+Constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em io\+\_\+context} & \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_network_i_o_a0561d5105365d727b08da96496dfe6e0}\label{class_network_i_o_a0561d5105365d727b08da96496dfe6e0}} 
+\index{NetworkIO@{NetworkIO}!async\_read@{async\_read}}
+\index{async\_read@{async\_read}!NetworkIO@{NetworkIO}}
+\doxysubsubsection{\texorpdfstring{async\_read()}{async\_read()}}
+{\footnotesize\ttfamily template$<$typename T , typename Handler $>$ \\
+void Network\+IO\+::async\+\_\+read (\begin{DoxyParamCaption}\item[{T \&}]{t,  }\item[{Handler}]{handler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Asynchronously read a data structure from the socket. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the data structure. \\
+\hline
+{\em Handler} & The type of the handler. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The data structure. \\
+\hline
+{\em handler} & The handler. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_network_i_o_a6d9278695e78a7bef96e51ce131191ff}\label{class_network_i_o_a6d9278695e78a7bef96e51ce131191ff}} 
+\index{NetworkIO@{NetworkIO}!async\_write@{async\_write}}
+\index{async\_write@{async\_write}!NetworkIO@{NetworkIO}}
+\doxysubsubsection{\texorpdfstring{async\_write()}{async\_write()}}
+{\footnotesize\ttfamily template$<$typename T , typename Handler $>$ \\
+void Network\+IO\+::async\+\_\+write (\begin{DoxyParamCaption}\item[{const T \&}]{t,  }\item[{Handler}]{handler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Asynchronously write a data structure to the socket. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the data structure. \\
+\hline
+{\em Handler} & The type of the handler. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em t} & The data structure. \\
+\hline
+{\em handler} & The handler. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_network_i_o_a6fdeca0a7fd3bc07249d117660f65c05}\label{class_network_i_o_a6fdeca0a7fd3bc07249d117660f65c05}} 
+\index{NetworkIO@{NetworkIO}!read\_data\_handler@{read\_data\_handler}}
+\index{read\_data\_handler@{read\_data\_handler}!NetworkIO@{NetworkIO}}
+\doxysubsubsection{\texorpdfstring{read\_data\_handler()}{read\_data\_handler()}}
+{\footnotesize\ttfamily template$<$typename T , typename Handler $>$ \\
+void Network\+IO\+::read\+\_\+data\+\_\+handler (\begin{DoxyParamCaption}\item[{const asio\+::error\+\_\+code \&}]{e,  }\item[{T \&}]{t,  }\item[{std\+::tuple$<$ Handler $>$}]{handler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Handle a completed read of a message data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & \\
+\hline
+{\em handler} & The handler is passed using a std\+::tuple. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_network_i_o_aef971ed1f890e0550a1a9ad1fb1e7001}\label{class_network_i_o_aef971ed1f890e0550a1a9ad1fb1e7001}} 
+\index{NetworkIO@{NetworkIO}!read\_header\_handler@{read\_header\_handler}}
+\index{read\_header\_handler@{read\_header\_handler}!NetworkIO@{NetworkIO}}
+\doxysubsubsection{\texorpdfstring{read\_header\_handler()}{read\_header\_handler()}}
+{\footnotesize\ttfamily template$<$typename T , typename Handler $>$ \\
+void Network\+IO\+::read\+\_\+header\+\_\+handler (\begin{DoxyParamCaption}\item[{const asio\+::error\+\_\+code \&}]{e,  }\item[{T \&}]{t,  }\item[{std\+::tuple$<$ Handler $>$}]{handler }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Handle a completed read of a message header. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em t} & \\
+\hline
+{\em handler} & The handler is passed using a std\+::tuple. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_network_i_o_a83fd8b563206906c7a9eb7427d08810f}\label{class_network_i_o_a83fd8b563206906c7a9eb7427d08810f}} 
+\index{NetworkIO@{NetworkIO}!socket@{socket}}
+\index{socket@{socket}!NetworkIO@{NetworkIO}}
+\doxysubsubsection{\texorpdfstring{socket()}{socket()}}
+{\footnotesize\ttfamily asio\+::ip\+::tcp\+::socket \& Network\+IO\+::socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the underlying socket. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the TCP socket. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Projects/\+Appetito/libs/network/include/\mbox{\hyperlink{networkio_8hpp}{networkio.\+hpp}}\end{DoxyCompactItemize}

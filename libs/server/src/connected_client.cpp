@@ -65,24 +65,10 @@ void ConnectedCustomerClient::id_handler(const asio::error_code& error)
     //std::cout << "connected client id handler returned" << std::endl;
 }
 
-void ConnectedCustomerClient::read_handler(const asio::error_code& error)
-{
-    //std::cout << "connected client read handler called" << std::endl;
-    if (!error) {
-        std::cout << read_string_ << std::endl;
-        network_io_.async_read(read_string_,
-                         strand_.wrap(std::bind(&ConnectedCustomerClient::read_handler, shared_from_this(), std::placeholders::_1)));
-    } else {
-        std::cout << error.message() << std::endl;
-        red_zone_.leave(shared_from_this());
-    }
-    //std::cout << "connected client read handler returned" << std::endl;
-}
-
 void ConnectedCustomerClient::read_deal_handler(const asio::error_code& error)
 {
     //std::cout << "connected client read deal completion handler called" << std::endl;
-    if (!error) {
+    if (!error || error == asio::error::eof) {
         read_deal_.set_menu_ptr(red_zone_.menu_ptr());
         read_deal_.print();
         // Save the deal

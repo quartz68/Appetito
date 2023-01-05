@@ -1,0 +1,155 @@
+\hypertarget{class_price}{}\doxysection{Price Class Reference}
+\label{class_price}\index{Price@{Price}}
+
+
+\mbox{\hyperlink{class_price}{Price}} of food.  
+
+
+
+
+{\ttfamily \#include $<$food.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_price_a5a6784fa2f4cdf8e443ea0c32a6363bc}{Price}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_price}{Price}} object with abs\+\_\+price\+\_\+ and discount\+\_\+ set to 0. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_price_a4f15daec141b1880ef8b1238622708b0}{Price}} (double price)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_price}{Price}} object from a price. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_price_a92d7740ebf980a30ea786e4244f68527}{get\+\_\+cny}} ()
+\begin{DoxyCompactList}\small\item\em Get the price in CNY. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_price_a5278af2ec25502bcea72eeae7a1b195e}{get\+\_\+usd}} ()
+\begin{DoxyCompactList}\small\item\em Get the price in USD. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_price_a47bb8d243eabc88b47b419a84f2b4d73}{set\+\_\+price}} (double price)
+\begin{DoxyCompactList}\small\item\em Set the price. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_price_a4b030891d8275dbc466b71e492d04f10}{set\+\_\+discount}} (double percentage)
+\begin{DoxyCompactList}\small\item\em Set the discount. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{class_price_a4a35411dddb5c1338ef501d61243b26b}{serialize}} (Archive \&archive)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+istream \& \mbox{\hyperlink{class_price_aae80fe0ca821b3286aa21a4a1b6258b5}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{class_price}{Price}} \&price)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_price}{Price}} of food. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_price_a5a6784fa2f4cdf8e443ea0c32a6363bc}\label{class_price_a5a6784fa2f4cdf8e443ea0c32a6363bc}} 
+\index{Price@{Price}!Price@{Price}}
+\index{Price@{Price}!Price@{Price}}
+\doxysubsubsection{\texorpdfstring{Price()}{Price()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Price\+::\+Price (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{class_price}{Price}} object with abs\+\_\+price\+\_\+ and discount\+\_\+ set to 0. 
+
+Default constructor.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_price_a4f15daec141b1880ef8b1238622708b0}{Price(double price)}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_price_a4f15daec141b1880ef8b1238622708b0}\label{class_price_a4f15daec141b1880ef8b1238622708b0}} 
+\index{Price@{Price}!Price@{Price}}
+\index{Price@{Price}!Price@{Price}}
+\doxysubsubsection{\texorpdfstring{Price()}{Price()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Price\+::\+Price (\begin{DoxyParamCaption}\item[{double}]{price }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{class_price}{Price}} object from a price. 
+
+Constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em price} & The absolute price.\\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_price_a5a6784fa2f4cdf8e443ea0c32a6363bc}{Price()}} 
+\end{DoxySeeAlso}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_price_a92d7740ebf980a30ea786e4244f68527}\label{class_price_a92d7740ebf980a30ea786e4244f68527}} 
+\index{Price@{Price}!get\_cny@{get\_cny}}
+\index{get\_cny@{get\_cny}!Price@{Price}}
+\doxysubsubsection{\texorpdfstring{get\_cny()}{get\_cny()}}
+{\footnotesize\ttfamily double Price\+::get\+\_\+cny (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the price in CNY. 
+
+\begin{DoxyReturn}{Returns}
+The price in CNY. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_price_a5278af2ec25502bcea72eeae7a1b195e}\label{class_price_a5278af2ec25502bcea72eeae7a1b195e}} 
+\index{Price@{Price}!get\_usd@{get\_usd}}
+\index{get\_usd@{get\_usd}!Price@{Price}}
+\doxysubsubsection{\texorpdfstring{get\_usd()}{get\_usd()}}
+{\footnotesize\ttfamily double Price\+::get\+\_\+usd (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the price in USD. 
+
+\begin{DoxyReturn}{Returns}
+The price in USD. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_price_a4a35411dddb5c1338ef501d61243b26b}\label{class_price_a4a35411dddb5c1338ef501d61243b26b}} 
+\index{Price@{Price}!serialize@{serialize}}
+\index{serialize@{serialize}!Price@{Price}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+void Price\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{archive }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_price_a4b030891d8275dbc466b71e492d04f10}\label{class_price_a4b030891d8275dbc466b71e492d04f10}} 
+\index{Price@{Price}!set\_discount@{set\_discount}}
+\index{set\_discount@{set\_discount}!Price@{Price}}
+\doxysubsubsection{\texorpdfstring{set\_discount()}{set\_discount()}}
+{\footnotesize\ttfamily void Price\+::set\+\_\+discount (\begin{DoxyParamCaption}\item[{double}]{percentage }\end{DoxyParamCaption})}
+
+
+
+Set the discount. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em percentage} & The discount (0$\sim$1). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_price_a47bb8d243eabc88b47b419a84f2b4d73}\label{class_price_a47bb8d243eabc88b47b419a84f2b4d73}} 
+\index{Price@{Price}!set\_price@{set\_price}}
+\index{set\_price@{set\_price}!Price@{Price}}
+\doxysubsubsection{\texorpdfstring{set\_price()}{set\_price()}}
+{\footnotesize\ttfamily void Price\+::set\+\_\+price (\begin{DoxyParamCaption}\item[{double}]{price }\end{DoxyParamCaption})}
+
+
+
+Set the price. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em price} & The absolute price to set to. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_price_aae80fe0ca821b3286aa21a4a1b6258b5}\label{class_price_aae80fe0ca821b3286aa21a4a1b6258b5}} 
+\index{Price@{Price}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Price@{Price}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is,  }\item[{\mbox{\hyperlink{class_price}{Price}} \&}]{price }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Projects/\+Appetito/libs/restaurant\+\_\+util/include/\mbox{\hyperlink{food_8hpp}{food.\+hpp}}\item 
+C\+:/\+Projects/\+Appetito/libs/restaurant\+\_\+util/src/\mbox{\hyperlink{food_8cpp}{food.\+cpp}}\end{DoxyCompactItemize}

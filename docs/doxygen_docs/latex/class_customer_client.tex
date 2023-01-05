@@ -1,0 +1,196 @@
+\hypertarget{class_customer_client}{}\doxysection{Customer\+Client Class Reference}
+\label{class_customer_client}\index{CustomerClient@{CustomerClient}}
+
+
+{\ttfamily \#include $<$client.\+hpp$>$}
+
+Inheritance diagram for Customer\+Client\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_customer_client}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_customer_client_a84d61de169a9e9ac5e81273ac4daee3f}{Customer\+Client}} (const std\+::string \&client\+\_\+id, asio\+::io\+\_\+context \&io\+\_\+context, tcp\+::resolver\+::iterator endpoint\+\_\+iterator)
+\begin{DoxyCompactList}\small\item\em Construct a \mbox{\hyperlink{class_customer_client}{Customer\+Client}} object from client ID, io\+\_\+context and TCP endpoint. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_customer_client_a2643cdc2eb5808a8234a9332ed0553fa}{Customer\+Client}} (const \mbox{\hyperlink{class_customer_client}{Customer\+Client}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_customer_client_a884ef65f8aa8e85b99290c1b42d9b576}{save\+\_\+deal}} (\mbox{\hyperlink{class_deal}{Deal}} deal)
+\begin{DoxyCompactList}\small\item\em Save the deal to past\+\_\+deals\+\_\+. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_customer_client_af78e316b1f0197ef312bc36483ac6b2b}{print\+\_\+current\+\_\+deal}} ()
+\begin{DoxyCompactList}\small\item\em Print the current (latest) deal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_customer_client_ac5eac8a1c106ada8d56ab1eab9f34533}{print\+\_\+past\+\_\+deals}} ()
+\begin{DoxyCompactList}\small\item\em Print all past deals made. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_customer_client_a76ec26816c77be84fc6fd496aae7dd4f}{on\+\_\+connect}} (const asio\+::error\+\_\+code \&error)
+\begin{DoxyCompactList}\small\item\em Writes client ID to server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_customer_client_a56ac577d5c00db47ff70421c29507357}{connect\+\_\+handler}} (const asio\+::error\+\_\+code \&error)
+\begin{DoxyCompactList}\small\item\em Reads menu from server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_customer_client_a27312546ab568bd913746d53a1aca8ce}{deal\+\_\+number\+\_\+handler}} (const asio\+::error\+\_\+code \&error)
+\begin{DoxyCompactList}\small\item\em Reads deal number and displays it. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_customer_client_a850f948d5f749622c7311f5336b8911e}{notification\+\_\+handler}} (const asio\+::error\+\_\+code \&error)
+\begin{DoxyCompactList}\small\item\em Reads notification and displays it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \mbox{\hyperlink{class_deal}{Deal}} $>$ \mbox{\hyperlink{class_customer_client_ad6a9ffbb1f0d3e7b40c2bbc61be73d5a}{past\+\_\+deals\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The deals made. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{class_customer_client_aa18ee2dc58902c00d807c2636ef59073}{deal\+\_\+number\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The deal number. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_customer_client_a8395a9fb74a0817958cff2fae21c2e72}{notification\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The notification. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_customer_client_a84d61de169a9e9ac5e81273ac4daee3f}\label{class_customer_client_a84d61de169a9e9ac5e81273ac4daee3f}} 
+\index{CustomerClient@{CustomerClient}!CustomerClient@{CustomerClient}}
+\index{CustomerClient@{CustomerClient}!CustomerClient@{CustomerClient}}
+\doxysubsubsection{\texorpdfstring{CustomerClient()}{CustomerClient()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Customer\+Client\+::\+Customer\+Client (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{client\+\_\+id,  }\item[{asio\+::io\+\_\+context \&}]{io\+\_\+context,  }\item[{tcp\+::resolver\+::iterator}]{endpoint\+\_\+iterator }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a \mbox{\hyperlink{class_customer_client}{Customer\+Client}} object from client ID, io\+\_\+context and TCP endpoint. 
+
+Constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em client\+\_\+id} & The client ID which user designated. \\
+\hline
+{\em io\+\_\+context} & Asio I/O context(service). \\
+\hline
+{\em endpoint\+\_\+iterator} & Iterator of TCP endpoint. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_customer_client_a2643cdc2eb5808a8234a9332ed0553fa}\label{class_customer_client_a2643cdc2eb5808a8234a9332ed0553fa}} 
+\index{CustomerClient@{CustomerClient}!CustomerClient@{CustomerClient}}
+\index{CustomerClient@{CustomerClient}!CustomerClient@{CustomerClient}}
+\doxysubsubsection{\texorpdfstring{CustomerClient()}{CustomerClient()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Customer\+Client\+::\+Customer\+Client (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_customer_client}{Customer\+Client}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy constructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_customer_client_a56ac577d5c00db47ff70421c29507357}\label{class_customer_client_a56ac577d5c00db47ff70421c29507357}} 
+\index{CustomerClient@{CustomerClient}!connect\_handler@{connect\_handler}}
+\index{connect\_handler@{connect\_handler}!CustomerClient@{CustomerClient}}
+\doxysubsubsection{\texorpdfstring{connect\_handler()}{connect\_handler()}}
+{\footnotesize\ttfamily void Customer\+Client\+::connect\+\_\+handler (\begin{DoxyParamCaption}\item[{const asio\+::error\+\_\+code \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Reads menu from server. 
+
+\mbox{\Hypertarget{class_customer_client_a27312546ab568bd913746d53a1aca8ce}\label{class_customer_client_a27312546ab568bd913746d53a1aca8ce}} 
+\index{CustomerClient@{CustomerClient}!deal\_number\_handler@{deal\_number\_handler}}
+\index{deal\_number\_handler@{deal\_number\_handler}!CustomerClient@{CustomerClient}}
+\doxysubsubsection{\texorpdfstring{deal\_number\_handler()}{deal\_number\_handler()}}
+{\footnotesize\ttfamily void Customer\+Client\+::deal\+\_\+number\+\_\+handler (\begin{DoxyParamCaption}\item[{const asio\+::error\+\_\+code \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Reads deal number and displays it. 
+
+\mbox{\Hypertarget{class_customer_client_a850f948d5f749622c7311f5336b8911e}\label{class_customer_client_a850f948d5f749622c7311f5336b8911e}} 
+\index{CustomerClient@{CustomerClient}!notification\_handler@{notification\_handler}}
+\index{notification\_handler@{notification\_handler}!CustomerClient@{CustomerClient}}
+\doxysubsubsection{\texorpdfstring{notification\_handler()}{notification\_handler()}}
+{\footnotesize\ttfamily void Customer\+Client\+::notification\+\_\+handler (\begin{DoxyParamCaption}\item[{const asio\+::error\+\_\+code \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Reads notification and displays it. 
+
+\mbox{\Hypertarget{class_customer_client_a76ec26816c77be84fc6fd496aae7dd4f}\label{class_customer_client_a76ec26816c77be84fc6fd496aae7dd4f}} 
+\index{CustomerClient@{CustomerClient}!on\_connect@{on\_connect}}
+\index{on\_connect@{on\_connect}!CustomerClient@{CustomerClient}}
+\doxysubsubsection{\texorpdfstring{on\_connect()}{on\_connect()}}
+{\footnotesize\ttfamily void Customer\+Client\+::on\+\_\+connect (\begin{DoxyParamCaption}\item[{const asio\+::error\+\_\+code \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Writes client ID to server. 
+
+\mbox{\Hypertarget{class_customer_client_af78e316b1f0197ef312bc36483ac6b2b}\label{class_customer_client_af78e316b1f0197ef312bc36483ac6b2b}} 
+\index{CustomerClient@{CustomerClient}!print\_current\_deal@{print\_current\_deal}}
+\index{print\_current\_deal@{print\_current\_deal}!CustomerClient@{CustomerClient}}
+\doxysubsubsection{\texorpdfstring{print\_current\_deal()}{print\_current\_deal()}}
+{\footnotesize\ttfamily void Customer\+Client\+::print\+\_\+current\+\_\+deal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Print the current (latest) deal. 
+
+\mbox{\Hypertarget{class_customer_client_ac5eac8a1c106ada8d56ab1eab9f34533}\label{class_customer_client_ac5eac8a1c106ada8d56ab1eab9f34533}} 
+\index{CustomerClient@{CustomerClient}!print\_past\_deals@{print\_past\_deals}}
+\index{print\_past\_deals@{print\_past\_deals}!CustomerClient@{CustomerClient}}
+\doxysubsubsection{\texorpdfstring{print\_past\_deals()}{print\_past\_deals()}}
+{\footnotesize\ttfamily void Customer\+Client\+::print\+\_\+past\+\_\+deals (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Print all past deals made. 
+
+\mbox{\Hypertarget{class_customer_client_a884ef65f8aa8e85b99290c1b42d9b576}\label{class_customer_client_a884ef65f8aa8e85b99290c1b42d9b576}} 
+\index{CustomerClient@{CustomerClient}!save\_deal@{save\_deal}}
+\index{save\_deal@{save\_deal}!CustomerClient@{CustomerClient}}
+\doxysubsubsection{\texorpdfstring{save\_deal()}{save\_deal()}}
+{\footnotesize\ttfamily void Customer\+Client\+::save\+\_\+deal (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_deal}{Deal}}}]{deal }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Save the deal to past\+\_\+deals\+\_\+. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em deal} & The deal to save. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_customer_client_aa18ee2dc58902c00d807c2636ef59073}\label{class_customer_client_aa18ee2dc58902c00d807c2636ef59073}} 
+\index{CustomerClient@{CustomerClient}!deal\_number\_@{deal\_number\_}}
+\index{deal\_number\_@{deal\_number\_}!CustomerClient@{CustomerClient}}
+\doxysubsubsection{\texorpdfstring{deal\_number\_}{deal\_number\_}}
+{\footnotesize\ttfamily unsigned int Customer\+Client\+::deal\+\_\+number\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The deal number. 
+
+\mbox{\Hypertarget{class_customer_client_a8395a9fb74a0817958cff2fae21c2e72}\label{class_customer_client_a8395a9fb74a0817958cff2fae21c2e72}} 
+\index{CustomerClient@{CustomerClient}!notification\_@{notification\_}}
+\index{notification\_@{notification\_}!CustomerClient@{CustomerClient}}
+\doxysubsubsection{\texorpdfstring{notification\_}{notification\_}}
+{\footnotesize\ttfamily std\+::string Customer\+Client\+::notification\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The notification. 
+
+\mbox{\Hypertarget{class_customer_client_ad6a9ffbb1f0d3e7b40c2bbc61be73d5a}\label{class_customer_client_ad6a9ffbb1f0d3e7b40c2bbc61be73d5a}} 
+\index{CustomerClient@{CustomerClient}!past\_deals\_@{past\_deals\_}}
+\index{past\_deals\_@{past\_deals\_}!CustomerClient@{CustomerClient}}
+\doxysubsubsection{\texorpdfstring{past\_deals\_}{past\_deals\_}}
+{\footnotesize\ttfamily vector$<$\mbox{\hyperlink{class_deal}{Deal}}$>$ Customer\+Client\+::past\+\_\+deals\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The deals made. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Projects/\+Appetito/libs/client/include/\mbox{\hyperlink{client_8hpp}{client.\+hpp}}\item 
+C\+:/\+Projects/\+Appetito/libs/client/src/\mbox{\hyperlink{client_8cpp}{client.\+cpp}}\end{DoxyCompactItemize}

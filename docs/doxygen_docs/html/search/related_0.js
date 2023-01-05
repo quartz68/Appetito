@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['operator_3e_3e_0',['operator&gt;&gt;',['../struct_food_i_d.html#ada263d4ced4378535d6c7232f16208f0',1,'FoodID::operator&gt;&gt;()'],['../class_price.html#aae80fe0ca821b3286aa21a4a1b6258b5',1,'Price::operator&gt;&gt;()'],['../struct_food_type.html#aa6faf8cfafff8e20f14db0bc672ba40c',1,'FoodType::operator&gt;&gt;()'],['../class_food.html#ae7243b283b651d828650d5b0895f2499',1,'Food::operator&gt;&gt;()'],['../struct_table_i_d.html#a9d4818be222812c7a1931db5d3181d2e',1,'TableID::operator&gt;&gt;()'],['../struct_table_type.html#a7f96e96f918a5761125bf578b9c05647',1,'TableType::operator&gt;&gt;()'],['../struct_table_location.html#a10c7d3e7a8c00b0efeae3ec8e9ccc506',1,'TableLocation::operator&gt;&gt;()'],['../class_table.html#a22d49b1e52736ad18b4967cad94f58d2',1,'Table::operator&gt;&gt;()']]]
+];

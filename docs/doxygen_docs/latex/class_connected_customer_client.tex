@@ -1,0 +1,162 @@
+\hypertarget{class_connected_customer_client}{}\doxysection{Connected\+Customer\+Client Class Reference}
+\label{class_connected_customer_client}\index{ConnectedCustomerClient@{ConnectedCustomerClient}}
+
+
+The customer client connected to this server.  
+
+
+
+
+{\ttfamily \#include $<$connected\+\_\+client.\+hpp$>$}
+
+Inheritance diagram for Connected\+Customer\+Client\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_connected_customer_client}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_connected_customer_client_af89a20d56cf165df04c5832263250c9a}{Connected\+Customer\+Client}} (asio\+::io\+\_\+context \&io\+\_\+context, asio\+::io\+\_\+context\+::strand \&strand, \mbox{\hyperlink{class_customer_redirector}{Customer\+Redirector}} \&red\+\_\+zone)
+\begin{DoxyCompactList}\small\item\em Construct a new Connected Customer \mbox{\hyperlink{class_client}{Client}} object from io context and \mbox{\hyperlink{class_customer_redirector}{Customer\+Redirector}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_connected_customer_client_a325b16e3e112cf354ea63ba4e0d3cf22}{start}} ()
+\begin{DoxyCompactList}\small\item\em Starts the connection, gets the customer client ID. \end{DoxyCompactList}\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_connected_customer_client}{Connected\+Customer\+Client}} $>$ \mbox{\hyperlink{class_connected_customer_client_ab89b322c5c0534db6ca084895a7b6c52}{shared\+\_\+from\+\_\+this}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_connected_customer_client_ab89b322c5c0534db6ca084895a7b6c52}{shared\+\_\+from\+\_\+this()}} for subclass \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_connected_customer_client_a72b040f4edffb95240a4da9198959c82}{id\+\_\+handler}} (const asio\+::error\+\_\+code \&error)
+\begin{DoxyCompactList}\small\item\em Handles reading customer client ID, writing menu to client. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_connected_customer_client_acfa89feb4a509a28f7846a93aa65e7ea}{read\+\_\+deal\+\_\+handler}} (const asio\+::error\+\_\+code \&error)
+\begin{DoxyCompactList}\small\item\em Handles reading a \mbox{\hyperlink{class_deal}{Deal}}, saving \mbox{\hyperlink{class_deal}{Deal}} to vector deals\+\_\+, writing deal number to client. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_connected_customer_client_a9214ca4bb84efb0e696e38af324e3958}{queueing\+\_\+handler}} (const asio\+::error\+\_\+code \&error)
+\begin{DoxyCompactList}\small\item\em Handles . \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_order}{Order}} \mbox{\hyperlink{class_connected_customer_client_a3fb7ccb429560ad13f8a4e6d5d3850b2}{read\+\_\+order\+\_\+}}
+\item 
+\mbox{\hyperlink{class_table}{Table}} \mbox{\hyperlink{class_connected_customer_client_aee8b776d414794c85ab81289bc6506b5}{read\+\_\+table\+\_\+}}
+\item 
+\mbox{\hyperlink{class_deal}{Deal}} \mbox{\hyperlink{class_connected_customer_client_a65e7d86e910428286044e22131405d05}{read\+\_\+deal\+\_\+}}
+\item 
+\mbox{\hyperlink{class_customer_redirector}{Customer\+Redirector}} \& \mbox{\hyperlink{class_connected_customer_client_a85c90a0003b21c747738d17778df152a}{red\+\_\+zone\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The customer client connected to this server. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_connected_customer_client_af89a20d56cf165df04c5832263250c9a}\label{class_connected_customer_client_af89a20d56cf165df04c5832263250c9a}} 
+\index{ConnectedCustomerClient@{ConnectedCustomerClient}!ConnectedCustomerClient@{ConnectedCustomerClient}}
+\index{ConnectedCustomerClient@{ConnectedCustomerClient}!ConnectedCustomerClient@{ConnectedCustomerClient}}
+\doxysubsubsection{\texorpdfstring{ConnectedCustomerClient()}{ConnectedCustomerClient()}}
+{\footnotesize\ttfamily Connected\+Customer\+Client\+::\+Connected\+Customer\+Client (\begin{DoxyParamCaption}\item[{asio\+::io\+\_\+context \&}]{io\+\_\+context,  }\item[{asio\+::io\+\_\+context\+::strand \&}]{strand,  }\item[{\mbox{\hyperlink{class_customer_redirector}{Customer\+Redirector}} \&}]{red\+\_\+zone }\end{DoxyParamCaption})}
+
+
+
+Construct a new Connected Customer \mbox{\hyperlink{class_client}{Client}} object from io context and \mbox{\hyperlink{class_customer_redirector}{Customer\+Redirector}}. 
+
+Constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em io\+\_\+context} & \\
+\hline
+{\em strand} & \\
+\hline
+{\em red\+\_\+zone} & \mbox{\hyperlink{class_customer_redirector}{Customer\+Redirector}}. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_connected_customer_client_a72b040f4edffb95240a4da9198959c82}\label{class_connected_customer_client_a72b040f4edffb95240a4da9198959c82}} 
+\index{ConnectedCustomerClient@{ConnectedCustomerClient}!id\_handler@{id\_handler}}
+\index{id\_handler@{id\_handler}!ConnectedCustomerClient@{ConnectedCustomerClient}}
+\doxysubsubsection{\texorpdfstring{id\_handler()}{id\_handler()}}
+{\footnotesize\ttfamily void Connected\+Customer\+Client\+::id\+\_\+handler (\begin{DoxyParamCaption}\item[{const asio\+::error\+\_\+code \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Handles reading customer client ID, writing menu to client. 
+
+\mbox{\Hypertarget{class_connected_customer_client_a9214ca4bb84efb0e696e38af324e3958}\label{class_connected_customer_client_a9214ca4bb84efb0e696e38af324e3958}} 
+\index{ConnectedCustomerClient@{ConnectedCustomerClient}!queueing\_handler@{queueing\_handler}}
+\index{queueing\_handler@{queueing\_handler}!ConnectedCustomerClient@{ConnectedCustomerClient}}
+\doxysubsubsection{\texorpdfstring{queueing\_handler()}{queueing\_handler()}}
+{\footnotesize\ttfamily void Connected\+Customer\+Client\+::queueing\+\_\+handler (\begin{DoxyParamCaption}\item[{const asio\+::error\+\_\+code \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Handles . 
+
+\mbox{\Hypertarget{class_connected_customer_client_acfa89feb4a509a28f7846a93aa65e7ea}\label{class_connected_customer_client_acfa89feb4a509a28f7846a93aa65e7ea}} 
+\index{ConnectedCustomerClient@{ConnectedCustomerClient}!read\_deal\_handler@{read\_deal\_handler}}
+\index{read\_deal\_handler@{read\_deal\_handler}!ConnectedCustomerClient@{ConnectedCustomerClient}}
+\doxysubsubsection{\texorpdfstring{read\_deal\_handler()}{read\_deal\_handler()}}
+{\footnotesize\ttfamily void Connected\+Customer\+Client\+::read\+\_\+deal\+\_\+handler (\begin{DoxyParamCaption}\item[{const asio\+::error\+\_\+code \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Handles reading a \mbox{\hyperlink{class_deal}{Deal}}, saving \mbox{\hyperlink{class_deal}{Deal}} to vector deals\+\_\+, writing deal number to client. 
+
+\mbox{\Hypertarget{class_connected_customer_client_ab89b322c5c0534db6ca084895a7b6c52}\label{class_connected_customer_client_ab89b322c5c0534db6ca084895a7b6c52}} 
+\index{ConnectedCustomerClient@{ConnectedCustomerClient}!shared\_from\_this@{shared\_from\_this}}
+\index{shared\_from\_this@{shared\_from\_this}!ConnectedCustomerClient@{ConnectedCustomerClient}}
+\doxysubsubsection{\texorpdfstring{shared\_from\_this()}{shared\_from\_this()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_connected_customer_client}{Connected\+Customer\+Client}} $>$ Connected\+Customer\+Client\+::shared\+\_\+from\+\_\+this (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\mbox{\hyperlink{class_connected_customer_client_ab89b322c5c0534db6ca084895a7b6c52}{shared\+\_\+from\+\_\+this()}} for subclass 
+
+\begin{DoxyReturn}{Returns}
+Casted shared\+\_\+ptr of \mbox{\hyperlink{class_connected_customer_client}{Connected\+Customer\+Client}} from Connected\+Client\+::shared\+\_\+from\+\_\+this(). 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_connected_customer_client_a325b16e3e112cf354ea63ba4e0d3cf22}\label{class_connected_customer_client_a325b16e3e112cf354ea63ba4e0d3cf22}} 
+\index{ConnectedCustomerClient@{ConnectedCustomerClient}!start@{start}}
+\index{start@{start}!ConnectedCustomerClient@{ConnectedCustomerClient}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Connected\+Customer\+Client\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Starts the connection, gets the customer client ID. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_connected_customer_client_a65e7d86e910428286044e22131405d05}\label{class_connected_customer_client_a65e7d86e910428286044e22131405d05}} 
+\index{ConnectedCustomerClient@{ConnectedCustomerClient}!read\_deal\_@{read\_deal\_}}
+\index{read\_deal\_@{read\_deal\_}!ConnectedCustomerClient@{ConnectedCustomerClient}}
+\doxysubsubsection{\texorpdfstring{read\_deal\_}{read\_deal\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_deal}{Deal}} Connected\+Customer\+Client\+::read\+\_\+deal\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_connected_customer_client_a3fb7ccb429560ad13f8a4e6d5d3850b2}\label{class_connected_customer_client_a3fb7ccb429560ad13f8a4e6d5d3850b2}} 
+\index{ConnectedCustomerClient@{ConnectedCustomerClient}!read\_order\_@{read\_order\_}}
+\index{read\_order\_@{read\_order\_}!ConnectedCustomerClient@{ConnectedCustomerClient}}
+\doxysubsubsection{\texorpdfstring{read\_order\_}{read\_order\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_order}{Order}} Connected\+Customer\+Client\+::read\+\_\+order\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_connected_customer_client_aee8b776d414794c85ab81289bc6506b5}\label{class_connected_customer_client_aee8b776d414794c85ab81289bc6506b5}} 
+\index{ConnectedCustomerClient@{ConnectedCustomerClient}!read\_table\_@{read\_table\_}}
+\index{read\_table\_@{read\_table\_}!ConnectedCustomerClient@{ConnectedCustomerClient}}
+\doxysubsubsection{\texorpdfstring{read\_table\_}{read\_table\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_table}{Table}} Connected\+Customer\+Client\+::read\+\_\+table\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_connected_customer_client_a85c90a0003b21c747738d17778df152a}\label{class_connected_customer_client_a85c90a0003b21c747738d17778df152a}} 
+\index{ConnectedCustomerClient@{ConnectedCustomerClient}!red\_zone\_@{red\_zone\_}}
+\index{red\_zone\_@{red\_zone\_}!ConnectedCustomerClient@{ConnectedCustomerClient}}
+\doxysubsubsection{\texorpdfstring{red\_zone\_}{red\_zone\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_customer_redirector}{Customer\+Redirector}}\& Connected\+Customer\+Client\+::red\+\_\+zone\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Projects/\+Appetito/libs/server/include/\mbox{\hyperlink{connected__client_8hpp}{connected\+\_\+client.\+hpp}}\item 
+C\+:/\+Projects/\+Appetito/libs/server/src/\mbox{\hyperlink{connected__client_8cpp}{connected\+\_\+client.\+cpp}}\end{DoxyCompactItemize}

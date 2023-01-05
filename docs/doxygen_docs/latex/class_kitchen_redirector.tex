@@ -1,0 +1,191 @@
+\hypertarget{class_kitchen_redirector}{}\doxysection{Kitchen\+Redirector Class Reference}
+\label{class_kitchen_redirector}\index{KitchenRedirector@{KitchenRedirector}}
+
+
+The specialized redirector for kitchen clients, which redirects objects to diffrent kitchen clients.  
+
+
+
+
+{\ttfamily \#include $<$redirector.\+hpp$>$}
+
+Inheritance diagram for Kitchen\+Redirector\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_kitchen_redirector}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_kitchen_redirector_ad4ca7a5f8f30db680d36f6779a0f1816}{Kitchen\+Redirector}} (\mbox{\hyperlink{struct_food_container}{Food\+Container}} $\ast$all\+\_\+foods, \mbox{\hyperlink{struct_table_container}{Table\+Container}} $\ast$all\+\_\+tables, unsigned int $\ast$deal\+\_\+counter, \mbox{\hyperlink{struct_kitchen_to_customer_queue}{Kitchen\+To\+Customer\+Queue}} $\ast$ktoc\+\_\+queue, \mbox{\hyperlink{struct_customer_to_kitchen_queue}{Customer\+To\+Kitchen\+Queue}} $\ast$ctok\+\_\+queue, \mbox{\hyperlink{struct_deal_container}{Deal\+Container}} $\ast$deals)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_customer_redirector}{Customer\+Redirector}} object with pointers to \mbox{\hyperlink{struct_food_container}{Food\+Container}}, \mbox{\hyperlink{struct_table_container}{Table\+Container}}, deal counter and queues. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_kitchen_redirector_a8c597eb86bc211d97eb7b77eaaa00c70}{enter}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_connected_kitchen_client}{Connected\+Kitchen\+Client}} $>$ entering\+\_\+client, const std\+::string \&client\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Let a \mbox{\hyperlink{class_connected_kitchen_client}{Connected\+Kitchen\+Client}} enter the \mbox{\hyperlink{class_customer_redirector}{Customer\+Redirector}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_kitchen_redirector_a79932a87684f98d3220647961e027b35}{leave}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_connected_kitchen_client}{Connected\+Kitchen\+Client}} $>$ leaving\+\_\+client)
+\begin{DoxyCompactList}\small\item\em Let a \mbox{\hyperlink{class_connected_kitchen_client}{Connected\+Kitchen\+Client}} leave the \mbox{\hyperlink{class_kitchen_redirector}{Kitchen\+Redirector}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_customer_to_kitchen_queue}{Customer\+To\+Kitchen\+Queue}} $\ast$ \mbox{\hyperlink{class_kitchen_redirector_afdd7f4b540722120323d7d484856d55d}{ctok\+\_\+queue\+\_\+ptr}} ()
+\begin{DoxyCompactList}\small\item\em Gets a raw pointer to customer to kitchen queue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_kitchen_to_customer_queue}{Kitchen\+To\+Customer\+Queue}} $\ast$ \mbox{\hyperlink{class_kitchen_redirector_a1624afc04f40bc521a58e8caf26dc6f3}{ktoc\+\_\+queue\+\_\+ptr}} ()
+\begin{DoxyCompactList}\small\item\em Gets a raw pointer to kitchen to customer queue. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_kitchen_redirector_af4f01d59c6ce8e3a5cdf17ee30ac1d41}{write\+\_\+to\+\_\+client}} (T \&object)
+\begin{DoxyCompactList}\small\item\em Write object to each customer client in the \mbox{\hyperlink{class_customer_redirector}{Customer\+Redirector}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unordered\+\_\+set$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_connected_kitchen_client}{Connected\+Kitchen\+Client}} $>$ $>$ \mbox{\hyperlink{class_kitchen_redirector_a8bd8da6d7d560906c028cc3e1b38e12d}{connected\+\_\+clients\+\_\+}}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_connected_kitchen_client}{Connected\+Kitchen\+Client}} $>$, std\+::string $>$ \mbox{\hyperlink{class_kitchen_redirector_ad6b8864013bc1c64124dbc3a42c62318}{id\+\_\+table\+\_\+}}
+\item 
+\mbox{\hyperlink{struct_kitchen_to_customer_queue}{Kitchen\+To\+Customer\+Queue}} $\ast$ \mbox{\hyperlink{class_kitchen_redirector_a17b2ff11b375599d3452cec0ea928ef5}{ktoc\+\_\+queue\+\_\+ptr\+\_\+}}
+\item 
+\mbox{\hyperlink{struct_customer_to_kitchen_queue}{Customer\+To\+Kitchen\+Queue}} $\ast$ \mbox{\hyperlink{class_kitchen_redirector_ad1520fc8191a1ef3284d620ff53830fe}{ctok\+\_\+queue\+\_\+ptr\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The specialized redirector for kitchen clients, which redirects objects to diffrent kitchen clients. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_kitchen_redirector_ad4ca7a5f8f30db680d36f6779a0f1816}\label{class_kitchen_redirector_ad4ca7a5f8f30db680d36f6779a0f1816}} 
+\index{KitchenRedirector@{KitchenRedirector}!KitchenRedirector@{KitchenRedirector}}
+\index{KitchenRedirector@{KitchenRedirector}!KitchenRedirector@{KitchenRedirector}}
+\doxysubsubsection{\texorpdfstring{KitchenRedirector()}{KitchenRedirector()}}
+{\footnotesize\ttfamily Kitchen\+Redirector\+::\+Kitchen\+Redirector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_food_container}{Food\+Container}} $\ast$}]{all\+\_\+foods,  }\item[{\mbox{\hyperlink{struct_table_container}{Table\+Container}} $\ast$}]{all\+\_\+tables,  }\item[{unsigned int $\ast$}]{deal\+\_\+counter,  }\item[{\mbox{\hyperlink{struct_kitchen_to_customer_queue}{Kitchen\+To\+Customer\+Queue}} $\ast$}]{ktoc\+\_\+queue,  }\item[{\mbox{\hyperlink{struct_customer_to_kitchen_queue}{Customer\+To\+Kitchen\+Queue}} $\ast$}]{ctok\+\_\+queue,  }\item[{\mbox{\hyperlink{struct_deal_container}{Deal\+Container}} $\ast$}]{deals }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{class_customer_redirector}{Customer\+Redirector}} object with pointers to \mbox{\hyperlink{struct_food_container}{Food\+Container}}, \mbox{\hyperlink{struct_table_container}{Table\+Container}}, deal counter and queues. 
+
+Constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em all\+\_\+foods} & Raw pointer to \mbox{\hyperlink{struct_food_container}{Food\+Container}}. \\
+\hline
+{\em all\+\_\+tables} & Raw pointer to \mbox{\hyperlink{struct_table_container}{Table\+Container}}. \\
+\hline
+{\em deal\+\_\+counter} & Raw pointer to deal counter. \\
+\hline
+{\em ktoc\+\_\+queue} & Raw pointer to kitchen to customer queue. \\
+\hline
+{\em ctok\+\_\+queue} & Raw pointer to customer to kitchen queue. \\
+\hline
+{\em deals} & Raw pointer to map of deals. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_kitchen_redirector_afdd7f4b540722120323d7d484856d55d}\label{class_kitchen_redirector_afdd7f4b540722120323d7d484856d55d}} 
+\index{KitchenRedirector@{KitchenRedirector}!ctok\_queue\_ptr@{ctok\_queue\_ptr}}
+\index{ctok\_queue\_ptr@{ctok\_queue\_ptr}!KitchenRedirector@{KitchenRedirector}}
+\doxysubsubsection{\texorpdfstring{ctok\_queue\_ptr()}{ctok\_queue\_ptr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_customer_to_kitchen_queue}{Customer\+To\+Kitchen\+Queue}} $\ast$ Kitchen\+Redirector\+::ctok\+\_\+queue\+\_\+ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets a raw pointer to customer to kitchen queue. 
+
+\begin{DoxyReturn}{Returns}
+Raw pointer to customer to kitchen queue. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_kitchen_redirector_a8c597eb86bc211d97eb7b77eaaa00c70}\label{class_kitchen_redirector_a8c597eb86bc211d97eb7b77eaaa00c70}} 
+\index{KitchenRedirector@{KitchenRedirector}!enter@{enter}}
+\index{enter@{enter}!KitchenRedirector@{KitchenRedirector}}
+\doxysubsubsection{\texorpdfstring{enter()}{enter()}}
+{\footnotesize\ttfamily void Kitchen\+Redirector\+::enter (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_connected_kitchen_client}{Connected\+Kitchen\+Client}} $>$}]{entering\+\_\+client,  }\item[{const std\+::string \&}]{client\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Let a \mbox{\hyperlink{class_connected_kitchen_client}{Connected\+Kitchen\+Client}} enter the \mbox{\hyperlink{class_customer_redirector}{Customer\+Redirector}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em entering\+\_\+client} & Shared\+\_\+ptr to the entering \mbox{\hyperlink{class_connected_kitchen_client}{Connected\+Kitchen\+Client}}. \\
+\hline
+{\em client\+\_\+id} & The string of the kitchen client ID. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_kitchen_redirector_a1624afc04f40bc521a58e8caf26dc6f3}\label{class_kitchen_redirector_a1624afc04f40bc521a58e8caf26dc6f3}} 
+\index{KitchenRedirector@{KitchenRedirector}!ktoc\_queue\_ptr@{ktoc\_queue\_ptr}}
+\index{ktoc\_queue\_ptr@{ktoc\_queue\_ptr}!KitchenRedirector@{KitchenRedirector}}
+\doxysubsubsection{\texorpdfstring{ktoc\_queue\_ptr()}{ktoc\_queue\_ptr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_kitchen_to_customer_queue}{Kitchen\+To\+Customer\+Queue}} $\ast$ Kitchen\+Redirector\+::ktoc\+\_\+queue\+\_\+ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets a raw pointer to kitchen to customer queue. 
+
+\begin{DoxyReturn}{Returns}
+Raw pointer to kitchen to customer queue. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_kitchen_redirector_a79932a87684f98d3220647961e027b35}\label{class_kitchen_redirector_a79932a87684f98d3220647961e027b35}} 
+\index{KitchenRedirector@{KitchenRedirector}!leave@{leave}}
+\index{leave@{leave}!KitchenRedirector@{KitchenRedirector}}
+\doxysubsubsection{\texorpdfstring{leave()}{leave()}}
+{\footnotesize\ttfamily void Kitchen\+Redirector\+::leave (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_connected_kitchen_client}{Connected\+Kitchen\+Client}} $>$}]{leaving\+\_\+client }\end{DoxyParamCaption})}
+
+
+
+Let a \mbox{\hyperlink{class_connected_kitchen_client}{Connected\+Kitchen\+Client}} leave the \mbox{\hyperlink{class_kitchen_redirector}{Kitchen\+Redirector}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em leaving\+\_\+client} & Shared\+\_\+ptr to the leaving \mbox{\hyperlink{class_connected_kitchen_client}{Connected\+Kitchen\+Client}}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_kitchen_redirector_af4f01d59c6ce8e3a5cdf17ee30ac1d41}\label{class_kitchen_redirector_af4f01d59c6ce8e3a5cdf17ee30ac1d41}} 
+\index{KitchenRedirector@{KitchenRedirector}!write\_to\_client@{write\_to\_client}}
+\index{write\_to\_client@{write\_to\_client}!KitchenRedirector@{KitchenRedirector}}
+\doxysubsubsection{\texorpdfstring{write\_to\_client()}{write\_to\_client()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Kitchen\+Redirector\+::write\+\_\+to\+\_\+client (\begin{DoxyParamCaption}\item[{T \&}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Write object to each customer client in the \mbox{\hyperlink{class_customer_redirector}{Customer\+Redirector}}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Type} & of the object. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em object} & The object to write. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_kitchen_redirector_a8bd8da6d7d560906c028cc3e1b38e12d}\label{class_kitchen_redirector_a8bd8da6d7d560906c028cc3e1b38e12d}} 
+\index{KitchenRedirector@{KitchenRedirector}!connected\_clients\_@{connected\_clients\_}}
+\index{connected\_clients\_@{connected\_clients\_}!KitchenRedirector@{KitchenRedirector}}
+\doxysubsubsection{\texorpdfstring{connected\_clients\_}{connected\_clients\_}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+set$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_connected_kitchen_client}{Connected\+Kitchen\+Client}}$>$ $>$ Kitchen\+Redirector\+::connected\+\_\+clients\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_kitchen_redirector_ad1520fc8191a1ef3284d620ff53830fe}\label{class_kitchen_redirector_ad1520fc8191a1ef3284d620ff53830fe}} 
+\index{KitchenRedirector@{KitchenRedirector}!ctok\_queue\_ptr\_@{ctok\_queue\_ptr\_}}
+\index{ctok\_queue\_ptr\_@{ctok\_queue\_ptr\_}!KitchenRedirector@{KitchenRedirector}}
+\doxysubsubsection{\texorpdfstring{ctok\_queue\_ptr\_}{ctok\_queue\_ptr\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_customer_to_kitchen_queue}{Customer\+To\+Kitchen\+Queue}}$\ast$ Kitchen\+Redirector\+::ctok\+\_\+queue\+\_\+ptr\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_kitchen_redirector_ad6b8864013bc1c64124dbc3a42c62318}\label{class_kitchen_redirector_ad6b8864013bc1c64124dbc3a42c62318}} 
+\index{KitchenRedirector@{KitchenRedirector}!id\_table\_@{id\_table\_}}
+\index{id\_table\_@{id\_table\_}!KitchenRedirector@{KitchenRedirector}}
+\doxysubsubsection{\texorpdfstring{id\_table\_}{id\_table\_}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{class_connected_kitchen_client}{Connected\+Kitchen\+Client}}$>$, std\+::string$>$ Kitchen\+Redirector\+::id\+\_\+table\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_kitchen_redirector_a17b2ff11b375599d3452cec0ea928ef5}\label{class_kitchen_redirector_a17b2ff11b375599d3452cec0ea928ef5}} 
+\index{KitchenRedirector@{KitchenRedirector}!ktoc\_queue\_ptr\_@{ktoc\_queue\_ptr\_}}
+\index{ktoc\_queue\_ptr\_@{ktoc\_queue\_ptr\_}!KitchenRedirector@{KitchenRedirector}}
+\doxysubsubsection{\texorpdfstring{ktoc\_queue\_ptr\_}{ktoc\_queue\_ptr\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_kitchen_to_customer_queue}{Kitchen\+To\+Customer\+Queue}}$\ast$ Kitchen\+Redirector\+::ktoc\+\_\+queue\+\_\+ptr\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Projects/\+Appetito/libs/server/include/\mbox{\hyperlink{redirector_8hpp}{redirector.\+hpp}}\item 
+C\+:/\+Projects/\+Appetito/libs/server/src/\mbox{\hyperlink{redirector_8cpp}{redirector.\+cpp}}\end{DoxyCompactItemize}

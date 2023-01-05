@@ -153,19 +153,7 @@ int main(int argc, char* argv[])
         std::thread t([&io_context](){io_context.run();});
         asio::steady_timer timer(io_context, std::chrono::milliseconds(TIMER_WAIT_MILLISECONDS));
         timer.wait();
-        // Construct menus
-        bool is_exit = false;
-        const std::string title = "Main Menu\n";
-        const std::string invalid_choice_message = "The option you chose does not exist.\n";
-        const std::string prompt = "Enter your choice:\n";
-        const std::map< string, pair<string,function<void()>> > commands = {
-            { "1", {"See menu",std::bind(&print_menu, &client)} },
-            { "2", {"Make order",std::bind(&make_order, client.menu(), &client)} },
-            { "3", {"Current deal",std::bind(&print_current_deal, &client)} },
-            { "4", {"Past deals",std::bind(&print_past_deals, &client)} },
-            { "5", {"Exit",std::bind(&menu_exit, &is_exit)} }
-        };
-        ConsoleMenu main_menu(title, invalid_choice_message, prompt, commands, cin, cout);
+
         // Display menu
         bool is_first_time_opening_menu = true;
         while(true) {
@@ -173,9 +161,35 @@ int main(int argc, char* argv[])
                 system("cls");
                 std::cout << "Customer Client ID: " << client_id << std::endl;
                 is_first_time_opening_menu = false;
+                bool is_exit = false;
+                const std::string title = "Main Menu\n";
+                const std::string invalid_choice_message = "The option you chose does not exist.\n";
+                const std::string prompt = "Enter your choice:\n";
+                const std::map< string, pair<string,function<void()>> > commands = {
+                    { "1", {"See menu",std::bind(&print_menu, &client)} },
+                    { "2", {"Make order",std::bind(&make_order, client.menu(), &client)} },
+                    { "3", {"Current deal",std::bind(&print_current_deal, &client)} },
+                    { "4", {"Past deals",std::bind(&print_past_deals, &client)} },
+                    { "5", {"Exit",std::bind(&menu_exit, &is_exit)} }
+                };
+                ConsoleMenu main_menu(title, invalid_choice_message, prompt, commands, cin, cout);
+                main_menu();
+                if (is_exit == true) break;
+            } else {
+                bool is_exit = false;
+                const std::string title = "Main Menu\n";
+                const std::string invalid_choice_message = "The option you chose does not exist.\n";
+                const std::string prompt = "Enter your choice:\n";
+                const std::map< string, pair<string,function<void()>> > commands = {
+                    { "1", {"See menu",std::bind(&print_menu, &client)} },
+                    { "2", {"Current deal",std::bind(&print_current_deal, &client)} },
+                    { "3", {"Past deals",std::bind(&print_past_deals, &client)} },
+                    { "4", {"Exit",std::bind(&menu_exit, &is_exit)} }
+                };
+                ConsoleMenu main_menu(title, invalid_choice_message, prompt, commands, cin, cout);
+                main_menu();
+                if (is_exit == true) break;
             }
-            main_menu();
-            if (is_exit == true) break;
         }
 
         client.close();

@@ -1,0 +1,214 @@
+\hypertarget{server_8hpp_source}{}\doxysection{server.\+hpp}
+\label{server_8hpp_source}\index{C:/Projects/Appetito/libs/server/include/server.hpp@{C:/Projects/Appetito/libs/server/include/server.hpp}}
+\mbox{\hyperlink{server_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef SERVER\_HPP\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define SERVER\_HPP\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <queue>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <thread>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <mutex>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <chrono>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <unordered\_set>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <unordered\_map>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <asio.hpp>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{protocol_8hpp}{protocol.hpp}}>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{redirector_8hpp}{redirector.hpp}}>}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{food_8hpp}{food.hpp}}>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{table_8hpp}{table.hpp}}>}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{connected__client_8hpp}{connected\_client.hpp}}>}}
+\DoxyCodeLine{24 \textcolor{keyword}{using }asio::ip::tcp;}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_customer_to_kitchen_queue}{CustomerToKitchenQueue}} \{}
+\DoxyCodeLine{27     std::queue<std::pair<unsigned int, FoodID>> \mbox{\hyperlink{struct_customer_to_kitchen_queue_a6751ac3a939a3806ceeeee4976bf48cb}{foodid\_queue}};}
+\DoxyCodeLine{28     std::mutex \mbox{\hyperlink{struct_customer_to_kitchen_queue_a4e57e45133fe33ca3395230a5bf4562d}{mtx}};}
+\DoxyCodeLine{29 \};}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_kitchen_to_customer_queue}{KitchenToCustomerQueue}} \{}
+\DoxyCodeLine{32     std::queue<std::pair<unsigned int, FoodID>> \mbox{\hyperlink{struct_kitchen_to_customer_queue_a8a488fce72e976e9b4df2a4ce5dc34e9}{foodid\_queue}};}
+\DoxyCodeLine{33     std::mutex \mbox{\hyperlink{struct_kitchen_to_customer_queue_a00e44a2065bb1f92ce227f3aa7c86e9f}{mtx}};}
+\DoxyCodeLine{34 \};}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{39 \textcolor{keyword}{class }\mbox{\hyperlink{class_server}{Server}} \{}
+\DoxyCodeLine{40 \textcolor{keyword}{public}:}
+\DoxyCodeLine{52     \mbox{\hyperlink{class_server_a6f2edf96c6cd6e4801f9d704a0b6b83d}{Server}}(asio::io\_context\& io\_context,}
+\DoxyCodeLine{53            asio::io\_context::strand\& strand,}
+\DoxyCodeLine{54            \textcolor{keyword}{const} tcp::endpoint\& endpoint,}
+\DoxyCodeLine{55            \mbox{\hyperlink{struct_food_container}{FoodContainer}}* all\_foods,}
+\DoxyCodeLine{56            \mbox{\hyperlink{struct_table_container}{TableContainer}}* all\_tables,}
+\DoxyCodeLine{57            \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}* deal\_counter,}
+\DoxyCodeLine{58            \mbox{\hyperlink{struct_deal_container}{DealContainer}}* deals)}
+\DoxyCodeLine{59         :\mbox{\hyperlink{class_server_ab60a3c02b3fd55582bd17d5de737d214}{io\_context\_}}(io\_context), \mbox{\hyperlink{class_server_a2ee27a5c500eb8a36497a7b6f009a3a1}{strand\_}}(strand), \mbox{\hyperlink{class_server_a137184fbae6efd40963d76d6f5c8c3c3}{acceptor\_}}(io\_context, endpoint), \mbox{\hyperlink{class_server_a12c9165b8abe8862c4746b99fcd983c2}{all\_foods\_ptr\_}}(all\_foods), \mbox{\hyperlink{class_server_a341be2e6035b89b54e505a2f60cbf34d}{all\_tables\_ptr\_}}(all\_tables), \mbox{\hyperlink{class_server_a1cb5d8a40be7af224c7d707e76a875d7}{deal\_counter\_ptr\_}}(deal\_counter), \mbox{\hyperlink{class_server_a914ce285627184dde9f235ad76a6e833}{deals\_ptr\_}}(deals)}
+\DoxyCodeLine{60         \{ }
+\DoxyCodeLine{61             \textcolor{keywordflow}{if} (all\_foods == \textcolor{keyword}{nullptr} || all\_tables == \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{62                 cerr << \textcolor{stringliteral}{"{}Trying to set nullptr as FoodContainer or TableContainer pointer!"{}} << endl;}
+\DoxyCodeLine{63             \}}
+\DoxyCodeLine{64             \textcolor{keywordflow}{if} (deal\_counter == \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{65                 cerr << \textcolor{stringliteral}{"{}Trying to set nullptr as deal counter pointer!"{}} << endl;}
+\DoxyCodeLine{66             \}}
+\DoxyCodeLine{67             \textcolor{keywordflow}{if} (deals == \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{68                 cerr << \textcolor{stringliteral}{"{}Trying to set nullptr as deals map pointer!"{}} << endl;}
+\DoxyCodeLine{69             \}}
+\DoxyCodeLine{70         \}}
+\DoxyCodeLine{71 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{72     asio::io\_context\& \mbox{\hyperlink{class_server_ab60a3c02b3fd55582bd17d5de737d214}{io\_context\_}};}
+\DoxyCodeLine{73     asio::io\_context::strand\& \mbox{\hyperlink{class_server_a2ee27a5c500eb8a36497a7b6f009a3a1}{strand\_}};}
+\DoxyCodeLine{74     tcp::acceptor \mbox{\hyperlink{class_server_a137184fbae6efd40963d76d6f5c8c3c3}{acceptor\_}};}
+\DoxyCodeLine{75     \mbox{\hyperlink{struct_food_container}{FoodContainer}}* \mbox{\hyperlink{class_server_a12c9165b8abe8862c4746b99fcd983c2}{all\_foods\_ptr\_}};}
+\DoxyCodeLine{76     \mbox{\hyperlink{struct_table_container}{TableContainer}}* \mbox{\hyperlink{class_server_a341be2e6035b89b54e505a2f60cbf34d}{all\_tables\_ptr\_}};}
+\DoxyCodeLine{77     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}* \mbox{\hyperlink{class_server_a1cb5d8a40be7af224c7d707e76a875d7}{deal\_counter\_ptr\_}};}
+\DoxyCodeLine{78     \mbox{\hyperlink{struct_deal_container}{DealContainer}}* \mbox{\hyperlink{class_server_a914ce285627184dde9f235ad76a6e833}{deals\_ptr\_}};}
+\DoxyCodeLine{79 \};}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{keyword}{class }\mbox{\hyperlink{class_customer_server}{CustomerServer}}}
+\DoxyCodeLine{82     : \textcolor{keyword}{public} \mbox{\hyperlink{class_server}{Server}} \{}
+\DoxyCodeLine{83 \textcolor{keyword}{public}:}
+\DoxyCodeLine{97     \mbox{\hyperlink{class_customer_server_ab50e29e9d37ccda3961e7a8d9c03186a}{CustomerServer}}(asio::io\_context\& io\_context,}
+\DoxyCodeLine{98         asio::io\_context::strand\& strand,}
+\DoxyCodeLine{99         \textcolor{keyword}{const} tcp::endpoint\& endpoint,}
+\DoxyCodeLine{100         \mbox{\hyperlink{struct_food_container}{FoodContainer}}* all\_foods,}
+\DoxyCodeLine{101         \mbox{\hyperlink{struct_table_container}{TableContainer}}* all\_tables,}
+\DoxyCodeLine{102         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}* deal\_counter,}
+\DoxyCodeLine{103         \mbox{\hyperlink{struct_customer_to_kitchen_queue}{CustomerToKitchenQueue}}* ctok\_queue,}
+\DoxyCodeLine{104         \mbox{\hyperlink{struct_kitchen_to_customer_queue}{KitchenToCustomerQueue}}* ktoc\_queue,}
+\DoxyCodeLine{105         \mbox{\hyperlink{struct_deal_container}{DealContainer}}* deals)}
+\DoxyCodeLine{106         : \mbox{\hyperlink{class_server}{Server}}\{io\_context, strand, endpoint, all\_foods, all\_tables, deal\_counter, deals\},}
+\DoxyCodeLine{107           \mbox{\hyperlink{class_customer_server_aed6be3e5f4c1a4caefb3ca3de194e1c4}{red\_zone\_}}\{all\_foods,all\_tables,deal\_counter,ctok\_queue,ktoc\_queue,deals\}, }
+\DoxyCodeLine{108           \mbox{\hyperlink{class_customer_server_aec1de1113956f630792af4bf489091e9}{ctok\_queue\_ptr\_}}(ctok\_queue), }
+\DoxyCodeLine{109           \mbox{\hyperlink{class_customer_server_af97e25c9ba831081399efb673ce425d2}{ktoc\_queue\_ptr\_}}(ktoc\_queue),}
+\DoxyCodeLine{110           \mbox{\hyperlink{class_customer_server_ab7aed47889e2cde820edb4adc4784700}{lock\_}}(\mbox{\hyperlink{class_customer_server_acbe90564bbd1be1129dcca79b332a25e}{ioc\_}}),}
+\DoxyCodeLine{111           \mbox{\hyperlink{class_customer_server_a92dacafb0e05472688b711c45ad61549}{pi\_}}(2),}
+\DoxyCodeLine{112           \mbox{\hyperlink{class_customer_server_a2c664e86cc57861b1e434adab583c3c9}{producer\_}}(\mbox{\hyperlink{class_customer_server_acbe90564bbd1be1129dcca79b332a25e}{ioc\_}}, \mbox{\hyperlink{class_customer_server_a92dacafb0e05472688b711c45ad61549}{pi\_}}),}
+\DoxyCodeLine{113           \mbox{\hyperlink{class_customer_server_ae7ba920736f6964e4df501f33b99b453}{ci\_}}(3),}
+\DoxyCodeLine{114           \mbox{\hyperlink{class_customer_server_a8e679aaa35c30b5826f78f708fea98ee}{consumer\_}}(\mbox{\hyperlink{class_customer_server_acbe90564bbd1be1129dcca79b332a25e}{ioc\_}}, \mbox{\hyperlink{class_customer_server_ae7ba920736f6964e4df501f33b99b453}{ci\_}})}
+\DoxyCodeLine{115         \{}
+\DoxyCodeLine{116             \textcolor{keywordflow}{if} (ctok\_queue == \textcolor{keyword}{nullptr} || ktoc\_queue == \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{117                 cerr << \textcolor{stringliteral}{"{}Trying to set nullptr as CustomerToKitchenQueue or KitchenToCustomerQueue pointer!"{}} << endl;}
+\DoxyCodeLine{118             \}}
+\DoxyCodeLine{119             \mbox{\hyperlink{class_customer_server_a45776355459b732245eae6a29ad8e791}{run}}();}
+\DoxyCodeLine{120         \}}
+\DoxyCodeLine{124     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_customer_server_a45776355459b732245eae6a29ad8e791}{run}}();}
+\DoxyCodeLine{125     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_customer_server_ab4881c55321a5a3c22f7dbb00256e989}{prod\_cons\_exec}}();}
+\DoxyCodeLine{126 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{127     }
+\DoxyCodeLine{133     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_customer_server_a216922054dba959cb9f6f679880dfbc8}{on\_accept}}(std::shared\_ptr<ConnectedCustomerClient> new\_client, \textcolor{keyword}{const} asio::error\_code\& error);}
+\DoxyCodeLine{134     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_customer_server_aefe98e7ad14873daa2ee8242d62de64d}{producer\_handler}}(\textcolor{keyword}{const} asio::error\_code\& error);}
+\DoxyCodeLine{135     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_customer_server_a53495b1517b3eb3c7fbe618296ad5a27}{consumer\_handler}}(\textcolor{keyword}{const} asio::error\_code\& error);}
+\DoxyCodeLine{136 }
+\DoxyCodeLine{137     std::thread* \mbox{\hyperlink{class_customer_server_aa2ccc14a20bd373e260c3ea2532571ee}{prod\_cons\_thread\_}};}
+\DoxyCodeLine{138     std::mutex \mbox{\hyperlink{class_customer_server_a1155bc96f98d4c3bf186f565fe122576}{mtx\_}};}
+\DoxyCodeLine{139     asio::io\_context \mbox{\hyperlink{class_customer_server_acbe90564bbd1be1129dcca79b332a25e}{ioc\_}};}
+\DoxyCodeLine{140     asio::io\_context::strand \mbox{\hyperlink{class_customer_server_ab7aed47889e2cde820edb4adc4784700}{lock\_}};}
+\DoxyCodeLine{141     asio::steady\_timer \mbox{\hyperlink{class_customer_server_a2c664e86cc57861b1e434adab583c3c9}{producer\_}};}
+\DoxyCodeLine{142     asio::steady\_timer \mbox{\hyperlink{class_customer_server_a8e679aaa35c30b5826f78f708fea98ee}{consumer\_}};}
+\DoxyCodeLine{143     std::chrono::seconds \mbox{\hyperlink{class_customer_server_a92dacafb0e05472688b711c45ad61549}{pi\_}};}
+\DoxyCodeLine{144     std::chrono::seconds \mbox{\hyperlink{class_customer_server_ae7ba920736f6964e4df501f33b99b453}{ci\_}};}
+\DoxyCodeLine{145 }
+\DoxyCodeLine{146     \mbox{\hyperlink{class_customer_redirector}{CustomerRedirector}} \mbox{\hyperlink{class_customer_server_aed6be3e5f4c1a4caefb3ca3de194e1c4}{red\_zone\_}};}
+\DoxyCodeLine{147     \mbox{\hyperlink{struct_customer_to_kitchen_queue}{CustomerToKitchenQueue}}* \mbox{\hyperlink{class_customer_server_aec1de1113956f630792af4bf489091e9}{ctok\_queue\_ptr\_}};}
+\DoxyCodeLine{148     \mbox{\hyperlink{struct_kitchen_to_customer_queue}{KitchenToCustomerQueue}}* \mbox{\hyperlink{class_customer_server_af97e25c9ba831081399efb673ce425d2}{ktoc\_queue\_ptr\_}};}
+\DoxyCodeLine{149 \};}
+\DoxyCodeLine{150 }
+\DoxyCodeLine{151 \textcolor{keyword}{class }\mbox{\hyperlink{class_kitchen_server}{KitchenServer}}}
+\DoxyCodeLine{152     : \textcolor{keyword}{public} \mbox{\hyperlink{class_server}{Server}} \{}
+\DoxyCodeLine{153 \textcolor{keyword}{public}:}
+\DoxyCodeLine{167     \mbox{\hyperlink{class_kitchen_server_a6c0ae2d08a8c1027258248cac0559842}{KitchenServer}}(asio::io\_context\& io\_context,}
+\DoxyCodeLine{168         asio::io\_context::strand\& strand,}
+\DoxyCodeLine{169         \textcolor{keyword}{const} tcp::endpoint\& endpoint,}
+\DoxyCodeLine{170         \mbox{\hyperlink{struct_food_container}{FoodContainer}}* all\_foods,}
+\DoxyCodeLine{171         \mbox{\hyperlink{struct_table_container}{TableContainer}}* all\_tables,}
+\DoxyCodeLine{172         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}* deal\_counter,}
+\DoxyCodeLine{173         \mbox{\hyperlink{struct_kitchen_to_customer_queue}{KitchenToCustomerQueue}}* ktoc\_queue,}
+\DoxyCodeLine{174         \mbox{\hyperlink{struct_customer_to_kitchen_queue}{CustomerToKitchenQueue}}* ctok\_queue,}
+\DoxyCodeLine{175         \mbox{\hyperlink{struct_deal_container}{DealContainer}}* deals)}
+\DoxyCodeLine{176         : \mbox{\hyperlink{class_server}{Server}}\{io\_context, strand, endpoint, all\_foods, all\_tables, deal\_counter, deals\},}
+\DoxyCodeLine{177           \mbox{\hyperlink{class_kitchen_server_a22e3b486ee6221cba84ad515d526b8aa}{red\_zone\_}}\{all\_foods,all\_tables,deal\_counter,ktoc\_queue,ctok\_queue,deals\},}
+\DoxyCodeLine{178           \mbox{\hyperlink{class_kitchen_server_a97389c5768488133cdbe85227564f4a0}{ctok\_queue\_ptr\_}}(ctok\_queue),}
+\DoxyCodeLine{179           \mbox{\hyperlink{class_kitchen_server_af1c6ea8fa9f55348457b6ad898c15a0d}{ktoc\_queue\_ptr\_}}(ktoc\_queue),}
+\DoxyCodeLine{180           \mbox{\hyperlink{class_kitchen_server_a4cc761db4e226dfdbf54cb07db71617f}{lock\_}}(\mbox{\hyperlink{class_kitchen_server_a810406ac5ea820df04a08dca0781f1cd}{ioc\_}}),}
+\DoxyCodeLine{181           \mbox{\hyperlink{class_kitchen_server_aefc1fae6ce9a55b690d6a862073b91df}{pi\_}}(2),}
+\DoxyCodeLine{182           \mbox{\hyperlink{class_kitchen_server_a3308e3f24b69c5da428332440b5dcfd2}{producer\_}}(\mbox{\hyperlink{class_kitchen_server_a810406ac5ea820df04a08dca0781f1cd}{ioc\_}}, \mbox{\hyperlink{class_kitchen_server_aefc1fae6ce9a55b690d6a862073b91df}{pi\_}}),}
+\DoxyCodeLine{183           \mbox{\hyperlink{class_kitchen_server_aa7a6119f82d163b0afbb25ac1c8d6ef9}{ci\_}}(3),}
+\DoxyCodeLine{184           \mbox{\hyperlink{class_kitchen_server_a4b9280ed6d8312d61835aaeb01a0a718}{consumer\_}}(\mbox{\hyperlink{class_kitchen_server_a810406ac5ea820df04a08dca0781f1cd}{ioc\_}}, \mbox{\hyperlink{class_kitchen_server_aa7a6119f82d163b0afbb25ac1c8d6ef9}{ci\_}})}
+\DoxyCodeLine{185         \{}
+\DoxyCodeLine{186             \textcolor{keywordflow}{if} (ctok\_queue == \textcolor{keyword}{nullptr} || ktoc\_queue == \textcolor{keyword}{nullptr}) \{}
+\DoxyCodeLine{187                 cerr << \textcolor{stringliteral}{"{}Trying to set nullptr as CustomerToKitchenQueue or KitchenToCustomerQueue pointer!"{}} << endl;}
+\DoxyCodeLine{188             \}}
+\DoxyCodeLine{189             \mbox{\hyperlink{class_kitchen_server_af6d936cf02e2d808ba96681084e0fc25}{run}}();}
+\DoxyCodeLine{190         \}}
+\DoxyCodeLine{194     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kitchen_server_af6d936cf02e2d808ba96681084e0fc25}{run}}();}
+\DoxyCodeLine{195     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kitchen_server_af1363b42c91ae995a9176172b909e55e}{prod\_cons\_exec}}();}
+\DoxyCodeLine{196 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{202     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kitchen_server_aa81cb8ae78a96156193d0b8589685268}{on\_accept}}(std::shared\_ptr<ConnectedKitchenClient> new\_client, \textcolor{keyword}{const} asio::error\_code\& error);}
+\DoxyCodeLine{203     }
+\DoxyCodeLine{204     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kitchen_server_abe0d6848ea890f7183535aff19d68982}{read\_item\_handler}}(\textcolor{keyword}{const} asio::error\_code\& error);}
+\DoxyCodeLine{205     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kitchen_server_a10b68b01d9586c6d68920f69b639d903}{producer\_handler}}(\textcolor{keyword}{const} asio::error\_code\& error);}
+\DoxyCodeLine{206     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kitchen_server_a069bafa4917831cad4a936eebac63819}{consumer\_handler}}(\textcolor{keyword}{const} asio::error\_code\& error);}
+\DoxyCodeLine{207 }
+\DoxyCodeLine{208     std::thread* \mbox{\hyperlink{class_kitchen_server_aa6c5e61ca0efff3106bb520a57c01636}{prod\_cons\_thread\_}};}
+\DoxyCodeLine{209     std::mutex \mbox{\hyperlink{class_kitchen_server_a5ef9f23aca3371d43207415d03fc4ae3}{mtx\_}};}
+\DoxyCodeLine{210     asio::io\_context \mbox{\hyperlink{class_kitchen_server_a810406ac5ea820df04a08dca0781f1cd}{ioc\_}};}
+\DoxyCodeLine{211     asio::io\_context::strand \mbox{\hyperlink{class_kitchen_server_a4cc761db4e226dfdbf54cb07db71617f}{lock\_}};}
+\DoxyCodeLine{212     asio::steady\_timer \mbox{\hyperlink{class_kitchen_server_a3308e3f24b69c5da428332440b5dcfd2}{producer\_}};}
+\DoxyCodeLine{213     asio::steady\_timer \mbox{\hyperlink{class_kitchen_server_a4b9280ed6d8312d61835aaeb01a0a718}{consumer\_}};}
+\DoxyCodeLine{214     std::chrono::seconds \mbox{\hyperlink{class_kitchen_server_aefc1fae6ce9a55b690d6a862073b91df}{pi\_}};}
+\DoxyCodeLine{215     std::chrono::seconds \mbox{\hyperlink{class_kitchen_server_aa7a6119f82d163b0afbb25ac1c8d6ef9}{ci\_}};}
+\DoxyCodeLine{216 }
+\DoxyCodeLine{217     \mbox{\hyperlink{class_kitchen_redirector}{KitchenRedirector}} \mbox{\hyperlink{class_kitchen_server_a22e3b486ee6221cba84ad515d526b8aa}{red\_zone\_}};}
+\DoxyCodeLine{218     \mbox{\hyperlink{struct_kitchen_to_customer_queue}{KitchenToCustomerQueue}}* \mbox{\hyperlink{class_kitchen_server_af1c6ea8fa9f55348457b6ad898c15a0d}{ktoc\_queue\_ptr\_}};}
+\DoxyCodeLine{219     \mbox{\hyperlink{struct_customer_to_kitchen_queue}{CustomerToKitchenQueue}}* \mbox{\hyperlink{class_kitchen_server_a97389c5768488133cdbe85227564f4a0}{ctok\_queue\_ptr\_}};}
+\DoxyCodeLine{220 \};}
+\DoxyCodeLine{221 }
+\DoxyCodeLine{225 \textcolor{keyword}{class }\mbox{\hyperlink{class_worker_thread}{WorkerThread}} \{}
+\DoxyCodeLine{226 \textcolor{keyword}{public}:}
+\DoxyCodeLine{232     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_worker_thread_a95da0837f9630ef4b681ed40f4af598d}{run\_ioc}}(std::shared\_ptr<asio::io\_context> io\_context)}
+\DoxyCodeLine{233     \{}
+\DoxyCodeLine{234         \{}
+\DoxyCodeLine{235             std::lock\_guard<std::mutex> lock(mtx);}
+\DoxyCodeLine{236             std::cout << \textcolor{stringliteral}{"{}IO Context Thread "{}} << std::this\_thread::get\_id() << \textcolor{stringliteral}{"{} starts."{}} << std::endl;}
+\DoxyCodeLine{237         \}}
+\DoxyCodeLine{238 }
+\DoxyCodeLine{239         io\_context-\/>run();}
+\DoxyCodeLine{240 }
+\DoxyCodeLine{241         \{}
+\DoxyCodeLine{242             std::lock\_guard<std::mutex> lock(mtx);}
+\DoxyCodeLine{243             std::cout << \textcolor{stringliteral}{"{}IO Context Thread "{}} << std::this\_thread::get\_id() << \textcolor{stringliteral}{"{} ends."{}} << std::endl;}
+\DoxyCodeLine{244         \}}
+\DoxyCodeLine{245     \}}
+\DoxyCodeLine{246     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_worker_thread_a799214c2a197656847b5412c271ff260}{run\_ks}}(std::shared\_ptr<KitchenServer> kitchen\_server)}
+\DoxyCodeLine{247     \{}
+\DoxyCodeLine{248         \{}
+\DoxyCodeLine{249             std::lock\_guard<std::mutex> lock(mtx);}
+\DoxyCodeLine{250             std::cout << \textcolor{stringliteral}{"{}Kitchen Server Thread "{}} << std::this\_thread::get\_id() << \textcolor{stringliteral}{"{} starts."{}} << std::endl;}
+\DoxyCodeLine{251         \}}
+\DoxyCodeLine{252 }
+\DoxyCodeLine{253         kitchen\_server-\/>run();}
+\DoxyCodeLine{254 }
+\DoxyCodeLine{255         \{}
+\DoxyCodeLine{256             std::lock\_guard<std::mutex> lock(mtx);}
+\DoxyCodeLine{257             std::cout << \textcolor{stringliteral}{"{}Kitchen Server Thread "{}} << std::this\_thread::get\_id() << \textcolor{stringliteral}{"{} ends."{}} << std::endl;}
+\DoxyCodeLine{258         \}}
+\DoxyCodeLine{259     \}}
+\DoxyCodeLine{260     \textcolor{keyword}{static} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_worker_thread_ae28c6860b04df0ef275132f26d456002}{run\_cs}}(std::shared\_ptr<CustomerServer> customer\_server)}
+\DoxyCodeLine{261     \{}
+\DoxyCodeLine{262         \{}
+\DoxyCodeLine{263             std::lock\_guard<std::mutex> lock(mtx);}
+\DoxyCodeLine{264             std::cout << \textcolor{stringliteral}{"{}Customer Server Thread "{}} << std::this\_thread::get\_id() << \textcolor{stringliteral}{"{} starts."{}} << std::endl;}
+\DoxyCodeLine{265         \}}
+\DoxyCodeLine{266 }
+\DoxyCodeLine{267         customer\_server-\/>run();}
+\DoxyCodeLine{268 }
+\DoxyCodeLine{269         \{}
+\DoxyCodeLine{270             std::lock\_guard<std::mutex> lock(mtx);}
+\DoxyCodeLine{271             std::cout << \textcolor{stringliteral}{"{}Customer Server Thread "{}} << std::this\_thread::get\_id() << \textcolor{stringliteral}{"{} ends."{}} << std::endl;}
+\DoxyCodeLine{272         \}}
+\DoxyCodeLine{273     \}}
+\DoxyCodeLine{274 \textcolor{keyword}{private}:}
+\DoxyCodeLine{275     \textcolor{keyword}{static} std::mutex mtx;}
+\DoxyCodeLine{276 \};}
+\DoxyCodeLine{277 }
+\DoxyCodeLine{278 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

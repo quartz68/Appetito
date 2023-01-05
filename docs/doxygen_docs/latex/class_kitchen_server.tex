@@ -1,0 +1,218 @@
+\hypertarget{class_kitchen_server}{}\doxysection{Kitchen\+Server Class Reference}
+\label{class_kitchen_server}\index{KitchenServer@{KitchenServer}}
+
+
+{\ttfamily \#include $<$server.\+hpp$>$}
+
+Inheritance diagram for Kitchen\+Server\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_kitchen_server}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_kitchen_server_a6c0ae2d08a8c1027258248cac0559842}{Kitchen\+Server}} (asio\+::io\+\_\+context \&io\+\_\+context, asio\+::io\+\_\+context\+::strand \&strand, const tcp\+::endpoint \&endpoint, \mbox{\hyperlink{struct_food_container}{Food\+Container}} $\ast$all\+\_\+foods, \mbox{\hyperlink{struct_table_container}{Table\+Container}} $\ast$all\+\_\+tables, unsigned int $\ast$deal\+\_\+counter, \mbox{\hyperlink{struct_kitchen_to_customer_queue}{Kitchen\+To\+Customer\+Queue}} $\ast$ktoc\+\_\+queue, \mbox{\hyperlink{struct_customer_to_kitchen_queue}{Customer\+To\+Kitchen\+Queue}} $\ast$ctok\+\_\+queue, \mbox{\hyperlink{struct_deal_container}{Deal\+Container}} $\ast$deals)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_kitchen_server_af6d936cf02e2d808ba96681084e0fc25}{run}} ()
+\begin{DoxyCompactList}\small\item\em Run the kitchen server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_kitchen_server_af1363b42c91ae995a9176172b909e55e}{prod\+\_\+cons\+\_\+exec}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_kitchen_server_aa81cb8ae78a96156193d0b8589685268}{on\+\_\+accept}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_connected_kitchen_client}{Connected\+Kitchen\+Client}} $>$ new\+\_\+client, const asio\+::error\+\_\+code \&error)
+\begin{DoxyCompactList}\small\item\em Handles accepting the connection of a new kitchen client. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_kitchen_server_abe0d6848ea890f7183535aff19d68982}{read\+\_\+item\+\_\+handler}} (const asio\+::error\+\_\+code \&error)
+\item 
+void \mbox{\hyperlink{class_kitchen_server_a10b68b01d9586c6d68920f69b639d903}{producer\+\_\+handler}} (const asio\+::error\+\_\+code \&error)
+\item 
+void \mbox{\hyperlink{class_kitchen_server_a069bafa4917831cad4a936eebac63819}{consumer\+\_\+handler}} (const asio\+::error\+\_\+code \&error)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::thread $\ast$ \mbox{\hyperlink{class_kitchen_server_aa6c5e61ca0efff3106bb520a57c01636}{prod\+\_\+cons\+\_\+thread\+\_\+}}
+\item 
+std\+::mutex \mbox{\hyperlink{class_kitchen_server_a5ef9f23aca3371d43207415d03fc4ae3}{mtx\+\_\+}}
+\item 
+asio\+::io\+\_\+context \mbox{\hyperlink{class_kitchen_server_a810406ac5ea820df04a08dca0781f1cd}{ioc\+\_\+}}
+\item 
+asio\+::io\+\_\+context\+::strand \mbox{\hyperlink{class_kitchen_server_a4cc761db4e226dfdbf54cb07db71617f}{lock\+\_\+}}
+\item 
+asio\+::steady\+\_\+timer \mbox{\hyperlink{class_kitchen_server_a3308e3f24b69c5da428332440b5dcfd2}{producer\+\_\+}}
+\item 
+asio\+::steady\+\_\+timer \mbox{\hyperlink{class_kitchen_server_a4b9280ed6d8312d61835aaeb01a0a718}{consumer\+\_\+}}
+\item 
+std\+::chrono\+::seconds \mbox{\hyperlink{class_kitchen_server_aefc1fae6ce9a55b690d6a862073b91df}{pi\+\_\+}}
+\item 
+std\+::chrono\+::seconds \mbox{\hyperlink{class_kitchen_server_aa7a6119f82d163b0afbb25ac1c8d6ef9}{ci\+\_\+}}
+\item 
+\mbox{\hyperlink{class_kitchen_redirector}{Kitchen\+Redirector}} \mbox{\hyperlink{class_kitchen_server_a22e3b486ee6221cba84ad515d526b8aa}{red\+\_\+zone\+\_\+}}
+\item 
+\mbox{\hyperlink{struct_kitchen_to_customer_queue}{Kitchen\+To\+Customer\+Queue}} $\ast$ \mbox{\hyperlink{class_kitchen_server_af1c6ea8fa9f55348457b6ad898c15a0d}{ktoc\+\_\+queue\+\_\+ptr\+\_\+}}
+\item 
+\mbox{\hyperlink{struct_customer_to_kitchen_queue}{Customer\+To\+Kitchen\+Queue}} $\ast$ \mbox{\hyperlink{class_kitchen_server_a97389c5768488133cdbe85227564f4a0}{ctok\+\_\+queue\+\_\+ptr\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_kitchen_server_a6c0ae2d08a8c1027258248cac0559842}\label{class_kitchen_server_a6c0ae2d08a8c1027258248cac0559842}} 
+\index{KitchenServer@{KitchenServer}!KitchenServer@{KitchenServer}}
+\index{KitchenServer@{KitchenServer}!KitchenServer@{KitchenServer}}
+\doxysubsubsection{\texorpdfstring{KitchenServer()}{KitchenServer()}}
+{\footnotesize\ttfamily Kitchen\+Server\+::\+Kitchen\+Server (\begin{DoxyParamCaption}\item[{asio\+::io\+\_\+context \&}]{io\+\_\+context,  }\item[{asio\+::io\+\_\+context\+::strand \&}]{strand,  }\item[{const tcp\+::endpoint \&}]{endpoint,  }\item[{\mbox{\hyperlink{struct_food_container}{Food\+Container}} $\ast$}]{all\+\_\+foods,  }\item[{\mbox{\hyperlink{struct_table_container}{Table\+Container}} $\ast$}]{all\+\_\+tables,  }\item[{unsigned int $\ast$}]{deal\+\_\+counter,  }\item[{\mbox{\hyperlink{struct_kitchen_to_customer_queue}{Kitchen\+To\+Customer\+Queue}} $\ast$}]{ktoc\+\_\+queue,  }\item[{\mbox{\hyperlink{struct_customer_to_kitchen_queue}{Customer\+To\+Kitchen\+Queue}} $\ast$}]{ctok\+\_\+queue,  }\item[{\mbox{\hyperlink{struct_deal_container}{Deal\+Container}} $\ast$}]{deals }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em io\+\_\+context} & \\
+\hline
+{\em strand} & \\
+\hline
+{\em endpoint} & \\
+\hline
+{\em all\+\_\+foods} & Raw pointer to \mbox{\hyperlink{struct_food_container}{Food\+Container}}. \\
+\hline
+{\em all\+\_\+tables} & Raw pointer to \mbox{\hyperlink{struct_table_container}{Table\+Container}}. \\
+\hline
+{\em deal\+\_\+counter} & Raw pointer to deal counter. \\
+\hline
+{\em ktoc\+\_\+queue} & Raw pointer to kitchen to customer queue. \\
+\hline
+{\em ctok\+\_\+queue} & Raw pointer to customer to kitchen queue. \\
+\hline
+{\em deals} & Raw pointer to \mbox{\hyperlink{struct_deal_container}{Deal\+Container}}. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_kitchen_server_a069bafa4917831cad4a936eebac63819}\label{class_kitchen_server_a069bafa4917831cad4a936eebac63819}} 
+\index{KitchenServer@{KitchenServer}!consumer\_handler@{consumer\_handler}}
+\index{consumer\_handler@{consumer\_handler}!KitchenServer@{KitchenServer}}
+\doxysubsubsection{\texorpdfstring{consumer\_handler()}{consumer\_handler()}}
+{\footnotesize\ttfamily void Kitchen\+Server\+::consumer\+\_\+handler (\begin{DoxyParamCaption}\item[{const asio\+::error\+\_\+code \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_kitchen_server_aa81cb8ae78a96156193d0b8589685268}\label{class_kitchen_server_aa81cb8ae78a96156193d0b8589685268}} 
+\index{KitchenServer@{KitchenServer}!on\_accept@{on\_accept}}
+\index{on\_accept@{on\_accept}!KitchenServer@{KitchenServer}}
+\doxysubsubsection{\texorpdfstring{on\_accept()}{on\_accept()}}
+{\footnotesize\ttfamily void Kitchen\+Server\+::on\+\_\+accept (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_connected_kitchen_client}{Connected\+Kitchen\+Client}} $>$}]{new\+\_\+client,  }\item[{const asio\+::error\+\_\+code \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Handles accepting the connection of a new kitchen client. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+\_\+client} & New kitchen client. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_kitchen_server_af1363b42c91ae995a9176172b909e55e}\label{class_kitchen_server_af1363b42c91ae995a9176172b909e55e}} 
+\index{KitchenServer@{KitchenServer}!prod\_cons\_exec@{prod\_cons\_exec}}
+\index{prod\_cons\_exec@{prod\_cons\_exec}!KitchenServer@{KitchenServer}}
+\doxysubsubsection{\texorpdfstring{prod\_cons\_exec()}{prod\_cons\_exec()}}
+{\footnotesize\ttfamily void Kitchen\+Server\+::prod\+\_\+cons\+\_\+exec (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_kitchen_server_a10b68b01d9586c6d68920f69b639d903}\label{class_kitchen_server_a10b68b01d9586c6d68920f69b639d903}} 
+\index{KitchenServer@{KitchenServer}!producer\_handler@{producer\_handler}}
+\index{producer\_handler@{producer\_handler}!KitchenServer@{KitchenServer}}
+\doxysubsubsection{\texorpdfstring{producer\_handler()}{producer\_handler()}}
+{\footnotesize\ttfamily void Kitchen\+Server\+::producer\+\_\+handler (\begin{DoxyParamCaption}\item[{const asio\+::error\+\_\+code \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_kitchen_server_abe0d6848ea890f7183535aff19d68982}\label{class_kitchen_server_abe0d6848ea890f7183535aff19d68982}} 
+\index{KitchenServer@{KitchenServer}!read\_item\_handler@{read\_item\_handler}}
+\index{read\_item\_handler@{read\_item\_handler}!KitchenServer@{KitchenServer}}
+\doxysubsubsection{\texorpdfstring{read\_item\_handler()}{read\_item\_handler()}}
+{\footnotesize\ttfamily void Kitchen\+Server\+::read\+\_\+item\+\_\+handler (\begin{DoxyParamCaption}\item[{const asio\+::error\+\_\+code \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_kitchen_server_af6d936cf02e2d808ba96681084e0fc25}\label{class_kitchen_server_af6d936cf02e2d808ba96681084e0fc25}} 
+\index{KitchenServer@{KitchenServer}!run@{run}}
+\index{run@{run}!KitchenServer@{KitchenServer}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Kitchen\+Server\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Run the kitchen server. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_kitchen_server_aa7a6119f82d163b0afbb25ac1c8d6ef9}\label{class_kitchen_server_aa7a6119f82d163b0afbb25ac1c8d6ef9}} 
+\index{KitchenServer@{KitchenServer}!ci\_@{ci\_}}
+\index{ci\_@{ci\_}!KitchenServer@{KitchenServer}}
+\doxysubsubsection{\texorpdfstring{ci\_}{ci\_}}
+{\footnotesize\ttfamily std\+::chrono\+::seconds Kitchen\+Server\+::ci\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_kitchen_server_a4b9280ed6d8312d61835aaeb01a0a718}\label{class_kitchen_server_a4b9280ed6d8312d61835aaeb01a0a718}} 
+\index{KitchenServer@{KitchenServer}!consumer\_@{consumer\_}}
+\index{consumer\_@{consumer\_}!KitchenServer@{KitchenServer}}
+\doxysubsubsection{\texorpdfstring{consumer\_}{consumer\_}}
+{\footnotesize\ttfamily asio\+::steady\+\_\+timer Kitchen\+Server\+::consumer\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_kitchen_server_a97389c5768488133cdbe85227564f4a0}\label{class_kitchen_server_a97389c5768488133cdbe85227564f4a0}} 
+\index{KitchenServer@{KitchenServer}!ctok\_queue\_ptr\_@{ctok\_queue\_ptr\_}}
+\index{ctok\_queue\_ptr\_@{ctok\_queue\_ptr\_}!KitchenServer@{KitchenServer}}
+\doxysubsubsection{\texorpdfstring{ctok\_queue\_ptr\_}{ctok\_queue\_ptr\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_customer_to_kitchen_queue}{Customer\+To\+Kitchen\+Queue}}$\ast$ Kitchen\+Server\+::ctok\+\_\+queue\+\_\+ptr\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_kitchen_server_a810406ac5ea820df04a08dca0781f1cd}\label{class_kitchen_server_a810406ac5ea820df04a08dca0781f1cd}} 
+\index{KitchenServer@{KitchenServer}!ioc\_@{ioc\_}}
+\index{ioc\_@{ioc\_}!KitchenServer@{KitchenServer}}
+\doxysubsubsection{\texorpdfstring{ioc\_}{ioc\_}}
+{\footnotesize\ttfamily asio\+::io\+\_\+context Kitchen\+Server\+::ioc\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_kitchen_server_af1c6ea8fa9f55348457b6ad898c15a0d}\label{class_kitchen_server_af1c6ea8fa9f55348457b6ad898c15a0d}} 
+\index{KitchenServer@{KitchenServer}!ktoc\_queue\_ptr\_@{ktoc\_queue\_ptr\_}}
+\index{ktoc\_queue\_ptr\_@{ktoc\_queue\_ptr\_}!KitchenServer@{KitchenServer}}
+\doxysubsubsection{\texorpdfstring{ktoc\_queue\_ptr\_}{ktoc\_queue\_ptr\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_kitchen_to_customer_queue}{Kitchen\+To\+Customer\+Queue}}$\ast$ Kitchen\+Server\+::ktoc\+\_\+queue\+\_\+ptr\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_kitchen_server_a4cc761db4e226dfdbf54cb07db71617f}\label{class_kitchen_server_a4cc761db4e226dfdbf54cb07db71617f}} 
+\index{KitchenServer@{KitchenServer}!lock\_@{lock\_}}
+\index{lock\_@{lock\_}!KitchenServer@{KitchenServer}}
+\doxysubsubsection{\texorpdfstring{lock\_}{lock\_}}
+{\footnotesize\ttfamily asio\+::io\+\_\+context\+::strand Kitchen\+Server\+::lock\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_kitchen_server_a5ef9f23aca3371d43207415d03fc4ae3}\label{class_kitchen_server_a5ef9f23aca3371d43207415d03fc4ae3}} 
+\index{KitchenServer@{KitchenServer}!mtx\_@{mtx\_}}
+\index{mtx\_@{mtx\_}!KitchenServer@{KitchenServer}}
+\doxysubsubsection{\texorpdfstring{mtx\_}{mtx\_}}
+{\footnotesize\ttfamily std\+::mutex Kitchen\+Server\+::mtx\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_kitchen_server_aefc1fae6ce9a55b690d6a862073b91df}\label{class_kitchen_server_aefc1fae6ce9a55b690d6a862073b91df}} 
+\index{KitchenServer@{KitchenServer}!pi\_@{pi\_}}
+\index{pi\_@{pi\_}!KitchenServer@{KitchenServer}}
+\doxysubsubsection{\texorpdfstring{pi\_}{pi\_}}
+{\footnotesize\ttfamily std\+::chrono\+::seconds Kitchen\+Server\+::pi\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_kitchen_server_aa6c5e61ca0efff3106bb520a57c01636}\label{class_kitchen_server_aa6c5e61ca0efff3106bb520a57c01636}} 
+\index{KitchenServer@{KitchenServer}!prod\_cons\_thread\_@{prod\_cons\_thread\_}}
+\index{prod\_cons\_thread\_@{prod\_cons\_thread\_}!KitchenServer@{KitchenServer}}
+\doxysubsubsection{\texorpdfstring{prod\_cons\_thread\_}{prod\_cons\_thread\_}}
+{\footnotesize\ttfamily std\+::thread$\ast$ Kitchen\+Server\+::prod\+\_\+cons\+\_\+thread\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_kitchen_server_a3308e3f24b69c5da428332440b5dcfd2}\label{class_kitchen_server_a3308e3f24b69c5da428332440b5dcfd2}} 
+\index{KitchenServer@{KitchenServer}!producer\_@{producer\_}}
+\index{producer\_@{producer\_}!KitchenServer@{KitchenServer}}
+\doxysubsubsection{\texorpdfstring{producer\_}{producer\_}}
+{\footnotesize\ttfamily asio\+::steady\+\_\+timer Kitchen\+Server\+::producer\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_kitchen_server_a22e3b486ee6221cba84ad515d526b8aa}\label{class_kitchen_server_a22e3b486ee6221cba84ad515d526b8aa}} 
+\index{KitchenServer@{KitchenServer}!red\_zone\_@{red\_zone\_}}
+\index{red\_zone\_@{red\_zone\_}!KitchenServer@{KitchenServer}}
+\doxysubsubsection{\texorpdfstring{red\_zone\_}{red\_zone\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_kitchen_redirector}{Kitchen\+Redirector}} Kitchen\+Server\+::red\+\_\+zone\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Projects/\+Appetito/libs/server/include/\mbox{\hyperlink{server_8hpp}{server.\+hpp}}\item 
+C\+:/\+Projects/\+Appetito/libs/server/src/\mbox{\hyperlink{server_8cpp}{server.\+cpp}}\end{DoxyCompactItemize}

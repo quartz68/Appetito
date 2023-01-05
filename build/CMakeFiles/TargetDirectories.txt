@@ -2,8 +2,6 @@ C:/Projects/Appetito/build/CMakeFiles/food_lib.dir
 C:/Projects/Appetito/build/CMakeFiles/table_lib.dir
 C:/Projects/Appetito/build/CMakeFiles/menu_lib.dir
 C:/Projects/Appetito/build/CMakeFiles/order_deal_lib.dir
-C:/Projects/Appetito/build/CMakeFiles/notif_lib.dir
-C:/Projects/Appetito/build/CMakeFiles/kitchen_request_lib.dir
 C:/Projects/Appetito/build/CMakeFiles/networkio_lib.dir
 C:/Projects/Appetito/build/CMakeFiles/client_lib.dir
 C:/Projects/Appetito/build/CMakeFiles/red_lib.dir

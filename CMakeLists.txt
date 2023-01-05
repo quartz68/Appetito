@@ -26,8 +26,6 @@ add_library(food_lib STATIC libs/restaurant_util/include/food.hpp libs/restauran
 add_library(table_lib STATIC libs/restaurant_util/include/table.hpp libs/restaurant_util/src/table.cpp)
 add_library(menu_lib STATIC libs/restaurant_util/include/menu.hpp libs/restaurant_util/src/menu.cpp)
 add_library(order_deal_lib STATIC libs/restaurant_util/include/order_deal.hpp libs/restaurant_util/src/order_deal.cpp)
-add_library(notif_lib STATIC libs/restaurant_util/include/notif.hpp libs/restaurant_util/src/notif.cpp)
-add_library(kitchen_request_lib STATIC libs/restaurant_util/include/kitchen_request.hpp libs/restaurant_util/src/kitchen_request.cpp)
 target_link_libraries(order_deal_lib food_lib)
 target_link_libraries(order_deal_lib table_lib)
 target_link_libraries(menu_lib food_lib)

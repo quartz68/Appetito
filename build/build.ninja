@@ -173,72 +173,6 @@ build liborder_deal_lib.a: CXX_STATIC_LIBRARY_LINKER__order_deal_lib_Debug CMake
   TARGET_PDB = order_deal_lib.a.dbg
 
 # =============================================================================
-# Object build statements for STATIC_LIBRARY target notif_lib
-
-
-#############################################
-# Order-only phony target for notif_lib
-
-build cmake_object_order_depends_target_notif_lib: phony || CMakeFiles/notif_lib.dir
-
-build CMakeFiles/notif_lib.dir/libs/restaurant_util/src/notif.cpp.obj: CXX_COMPILER__notif_lib_Debug C$:/Projects/Appetito/libs/restaurant_util/src/notif.cpp || cmake_object_order_depends_target_notif_lib
-  DEFINES = -DASIO_STANDALONE
-  DEP_FILE = CMakeFiles\notif_lib.dir\libs\restaurant_util\src\notif.cpp.obj.d
-  FLAGS = -g
-  INCLUDES = -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/libraries/asio/include -IC:/Projects/libraries/cereal -IC:/Projects/libraries -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
-  OBJECT_DIR = CMakeFiles\notif_lib.dir
-  OBJECT_FILE_DIR = CMakeFiles\notif_lib.dir\libs\restaurant_util\src
-
-
-# =============================================================================
-# Link build statements for STATIC_LIBRARY target notif_lib
-
-
-#############################################
-# Link the static library libnotif_lib.a
-
-build libnotif_lib.a: CXX_STATIC_LIBRARY_LINKER__notif_lib_Debug CMakeFiles/notif_lib.dir/libs/restaurant_util/src/notif.cpp.obj
-  LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = CMakeFiles\notif_lib.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = libnotif_lib.a
-  TARGET_PDB = notif_lib.a.dbg
-
-# =============================================================================
-# Object build statements for STATIC_LIBRARY target kitchen_request_lib
-
-
-#############################################
-# Order-only phony target for kitchen_request_lib
-
-build cmake_object_order_depends_target_kitchen_request_lib: phony || CMakeFiles/kitchen_request_lib.dir
-
-build CMakeFiles/kitchen_request_lib.dir/libs/restaurant_util/src/kitchen_request.cpp.obj: CXX_COMPILER__kitchen_request_lib_Debug C$:/Projects/Appetito/libs/restaurant_util/src/kitchen_request.cpp || cmake_object_order_depends_target_kitchen_request_lib
-  DEFINES = -DASIO_STANDALONE
-  DEP_FILE = CMakeFiles\kitchen_request_lib.dir\libs\restaurant_util\src\kitchen_request.cpp.obj.d
-  FLAGS = -g
-  INCLUDES = -IC:/Projects/Appetito/./libs -IC:/Projects/Appetito/./libs/asio/include -IC:/Projects/Appetito/./libs/cereal -IC:/Projects/libraries/asio/include -IC:/Projects/libraries/cereal -IC:/Projects/libraries -IC:/Projects/Appetito/./libs/client/include -IC:/Projects/Appetito/./libs/server/include -IC:/Projects/Appetito/./libs/network/include -IC:/Projects/Appetito/./libs/restaurant_util/include -IC:/Projects/Appetito/./libs/userio/include
-  OBJECT_DIR = CMakeFiles\kitchen_request_lib.dir
-  OBJECT_FILE_DIR = CMakeFiles\kitchen_request_lib.dir\libs\restaurant_util\src
-
-
-# =============================================================================
-# Link build statements for STATIC_LIBRARY target kitchen_request_lib
-
-
-#############################################
-# Link the static library libkitchen_request_lib.a
-
-build libkitchen_request_lib.a: CXX_STATIC_LIBRARY_LINKER__kitchen_request_lib_Debug CMakeFiles/kitchen_request_lib.dir/libs/restaurant_util/src/kitchen_request.cpp.obj
-  LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = CMakeFiles\kitchen_request_lib.dir
-  POST_BUILD = cd .
-  PRE_LINK = cd .
-  TARGET_FILE = libkitchen_request_lib.a
-  TARGET_PDB = kitchen_request_lib.a.dbg
-
-# =============================================================================
 # Object build statements for STATIC_LIBRARY target networkio_lib
 
 
@@ -584,13 +518,9 @@ build console_menu_lib: phony libconsole_menu_lib.a
 
 build food_lib: phony libfood_lib.a
 
-build kitchen_request_lib: phony libkitchen_request_lib.a
-
 build menu_lib: phony libmenu_lib.a
 
 build networkio_lib: phony libnetworkio_lib.a
-
-build notif_lib: phony libnotif_lib.a
 
 build order_deal_lib: phony liborder_deal_lib.a
 
@@ -612,7 +542,7 @@ build table_lib: phony libtable_lib.a
 #############################################
 # Folder: C:/Projects/Appetito/build
 
-build all: phony libfood_lib.a libtable_lib.a libmenu_lib.a liborder_deal_lib.a libnotif_lib.a libkitchen_request_lib.a libnetworkio_lib.a libclient_lib.a libred_lib.a libconcli_lib.a libserver_lib.a libconsole_menu_lib.a bin/client_customer.exe bin/client_kitchen.exe bin/server.exe
+build all: phony libfood_lib.a libtable_lib.a libmenu_lib.a liborder_deal_lib.a libnetworkio_lib.a libclient_lib.a libred_lib.a libconcli_lib.a libserver_lib.a libconsole_menu_lib.a bin/client_customer.exe bin/client_kitchen.exe bin/server.exe
 
 # =============================================================================
 # Built-in targets

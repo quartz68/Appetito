@@ -91,26 +91,12 @@ void CustomerClient::notification_handler(const asio::error_code& error)
             std::cout << notification_ << std::endl;
             std::cout << BOTTOM << std::endl;
         }
-        network_io_.async_read(notification_,
-                         std::bind(&CustomerClient::notification_handler, this, std::placeholders::_1));
+        network_io_.async_read(deal_number_,
+                         std::bind(&CustomerClient::deal_number_handler, this, std::placeholders::_1));
     } else {
         std::cout << error.message() << std::endl;
         close_implementation();
     }
-}
-
-void CustomerClient::read_handler(const asio::error_code& error)
-{
-    //std::cout << "client read handler called" << std::endl;
-    if (!error) {
-        std::cout << read_string_ << std::endl;
-        network_io_.async_read(read_string_,
-                         std::bind(&CustomerClient::read_handler, this, std::placeholders::_1));
-    } else {
-        std::cout << error.message() << std::endl;
-        close_implementation();
-    }
-    //std::cout << "client read handler returned" << std::endl;
 }
 
 void CustomerClient::print_current_deal() {

@@ -1,0 +1,197 @@
+\hypertarget{class_client}{}\doxysection{Client Class Reference}
+\label{class_client}\index{Client@{Client}}
+
+
+Network client.  
+
+
+
+
+{\ttfamily \#include $<$client.\+hpp$>$}
+
+Inheritance diagram for Client\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_client}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_client_aff384cdcb7f93b755c2a909d23be7c03}{Client}} (const std\+::string \&client\+\_\+id, asio\+::io\+\_\+context \&io\+\_\+context, tcp\+::resolver\+::iterator endpoint\+\_\+iterator)
+\begin{DoxyCompactList}\small\item\em Construct a \mbox{\hyperlink{class_client}{Client}} object from client ID, io\+\_\+context and TCP endpoint. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_client_a4d8e3b9fdfa24b7586bcf24537b89b67}{Client}} (const \mbox{\hyperlink{class_client}{Client}} \&other)
+\item 
+\mbox{\hyperlink{class_menu}{Menu}} \& \mbox{\hyperlink{class_client_a6342031513d78c15335597f53b2b6783}{menu}} ()
+\begin{DoxyCompactList}\small\item\em Get menu. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \mbox{\hyperlink{class_client_a7f63ba90de237bc667294dac30e7f951}{write}} (T \&object)
+\begin{DoxyCompactList}\small\item\em Write an object to the server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_client_a2ac4838875e743af25125d8b5c8eba09}{close}} ()
+\begin{DoxyCompactList}\small\item\em Close the client. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_client_a68160e11d62388970ef323781b5a7a79}{write\+\_\+completion\+\_\+handler}} (const asio\+::error\+\_\+code \&error)
+\begin{DoxyCompactList}\small\item\em Handles completion of write. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_client_ad02063b8272297ac4631db4640b3a7f6}{close\+\_\+implementation}} ()
+\begin{DoxyCompactList}\small\item\em Implementation of closing the client. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+asio\+::io\+\_\+context \& \mbox{\hyperlink{class_client_a962708dae618e769139655dfa3680fd4}{io\+\_\+context\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The io\+\_\+context. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{class_client_a59a39bd0095a9fd0f2c77d7935820260}{client\+\_\+id\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The client id. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_menu}{Menu}} \mbox{\hyperlink{class_client_a0f58780e5c896c125b4c58b915e65dc4}{menu\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The read menu. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_network_i_o}{Network\+IO}} \mbox{\hyperlink{class_client_ae771057d9635010ac71a271448e0549c}{network\+\_\+io\+\_\+}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{class_network_i_o}{Network\+IO}} module. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Network client. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_client_aff384cdcb7f93b755c2a909d23be7c03}\label{class_client_aff384cdcb7f93b755c2a909d23be7c03}} 
+\index{Client@{Client}!Client@{Client}}
+\index{Client@{Client}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{Client()}{Client()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Client\+::\+Client (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{client\+\_\+id,  }\item[{asio\+::io\+\_\+context \&}]{io\+\_\+context,  }\item[{tcp\+::resolver\+::iterator}]{endpoint\+\_\+iterator }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a \mbox{\hyperlink{class_client}{Client}} object from client ID, io\+\_\+context and TCP endpoint. 
+
+Constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em client\+\_\+id} & The client ID which user designated. \\
+\hline
+{\em io\+\_\+context} & Asio I/O context(service). \\
+\hline
+{\em endpoint\+\_\+iterator} & Iterator of TCP endpoint. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_client_a4d8e3b9fdfa24b7586bcf24537b89b67}\label{class_client_a4d8e3b9fdfa24b7586bcf24537b89b67}} 
+\index{Client@{Client}!Client@{Client}}
+\index{Client@{Client}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{Client()}{Client()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Client\+::\+Client (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_client}{Client}} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_client_a2ac4838875e743af25125d8b5c8eba09}\label{class_client_a2ac4838875e743af25125d8b5c8eba09}} 
+\index{Client@{Client}!close@{close}}
+\index{close@{close}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily void Client\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Close the client. 
+
+\mbox{\Hypertarget{class_client_ad02063b8272297ac4631db4640b3a7f6}\label{class_client_ad02063b8272297ac4631db4640b3a7f6}} 
+\index{Client@{Client}!close\_implementation@{close\_implementation}}
+\index{close\_implementation@{close\_implementation}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{close\_implementation()}{close\_implementation()}}
+{\footnotesize\ttfamily void Client\+::close\+\_\+implementation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Implementation of closing the client. 
+
+\mbox{\Hypertarget{class_client_a6342031513d78c15335597f53b2b6783}\label{class_client_a6342031513d78c15335597f53b2b6783}} 
+\index{Client@{Client}!menu@{menu}}
+\index{menu@{menu}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{menu()}{menu()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_menu}{Menu}} \& Client\+::menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get menu. 
+
+\begin{DoxyReturn}{Returns}
+Reference to menu. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_client_a7f63ba90de237bc667294dac30e7f951}\label{class_client_a7f63ba90de237bc667294dac30e7f951}} 
+\index{Client@{Client}!write@{write}}
+\index{write@{write}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void Client\+::write (\begin{DoxyParamCaption}\item[{T \&}]{object }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Write an object to the server. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of the object. \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em object} & The object to write. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_client_a68160e11d62388970ef323781b5a7a79}\label{class_client_a68160e11d62388970ef323781b5a7a79}} 
+\index{Client@{Client}!write\_completion\_handler@{write\_completion\_handler}}
+\index{write\_completion\_handler@{write\_completion\_handler}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{write\_completion\_handler()}{write\_completion\_handler()}}
+{\footnotesize\ttfamily void Client\+::write\+\_\+completion\+\_\+handler (\begin{DoxyParamCaption}\item[{const asio\+::error\+\_\+code \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Handles completion of write. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_client_a59a39bd0095a9fd0f2c77d7935820260}\label{class_client_a59a39bd0095a9fd0f2c77d7935820260}} 
+\index{Client@{Client}!client\_id\_@{client\_id\_}}
+\index{client\_id\_@{client\_id\_}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{client\_id\_}{client\_id\_}}
+{\footnotesize\ttfamily std\+::string Client\+::client\+\_\+id\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The client id. 
+
+\mbox{\Hypertarget{class_client_a962708dae618e769139655dfa3680fd4}\label{class_client_a962708dae618e769139655dfa3680fd4}} 
+\index{Client@{Client}!io\_context\_@{io\_context\_}}
+\index{io\_context\_@{io\_context\_}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{io\_context\_}{io\_context\_}}
+{\footnotesize\ttfamily asio\+::io\+\_\+context\& Client\+::io\+\_\+context\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The io\+\_\+context. 
+
+\mbox{\Hypertarget{class_client_a0f58780e5c896c125b4c58b915e65dc4}\label{class_client_a0f58780e5c896c125b4c58b915e65dc4}} 
+\index{Client@{Client}!menu\_@{menu\_}}
+\index{menu\_@{menu\_}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{menu\_}{menu\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_menu}{Menu}} Client\+::menu\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The read menu. 
+
+\mbox{\Hypertarget{class_client_ae771057d9635010ac71a271448e0549c}\label{class_client_ae771057d9635010ac71a271448e0549c}} 
+\index{Client@{Client}!network\_io\_@{network\_io\_}}
+\index{network\_io\_@{network\_io\_}!Client@{Client}}
+\doxysubsubsection{\texorpdfstring{network\_io\_}{network\_io\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_network_i_o}{Network\+IO}} Client\+::network\+\_\+io\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The \mbox{\hyperlink{class_network_i_o}{Network\+IO}} module. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Projects/\+Appetito/libs/client/include/\mbox{\hyperlink{client_8hpp}{client.\+hpp}}\item 
+C\+:/\+Projects/\+Appetito/libs/client/src/\mbox{\hyperlink{client_8cpp}{client.\+cpp}}\end{DoxyCompactItemize}
