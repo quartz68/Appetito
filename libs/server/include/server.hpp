@@ -108,9 +108,9 @@ public:
           ctok_queue_ptr_(ctok_queue), 
           ktoc_queue_ptr_(ktoc_queue),
           lock_(ioc_),
-          pi_(2),
+          pi_(1),
           producer_(ioc_, pi_),
-          ci_(3),
+          ci_(1),
           consumer_(ioc_, ci_)
         {
             if (ctok_queue == nullptr || ktoc_queue == nullptr) {
@@ -178,9 +178,9 @@ public:
           ctok_queue_ptr_(ctok_queue),
           ktoc_queue_ptr_(ktoc_queue),
           lock_(ioc_),
-          pi_(2),
+          pi_(1),
           producer_(ioc_, pi_),
-          ci_(3),
+          ci_(1),
           consumer_(ioc_, ci_)
         {
             if (ctok_queue == nullptr || ktoc_queue == nullptr) {
