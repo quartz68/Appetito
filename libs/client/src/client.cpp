@@ -20,7 +20,7 @@ void Client::write_completion_handler(const asio::error_code& error)
 {
     //std::cout << "client write handler called" << std::endl;
     if (!error) {
-        std::cout << "Write completed!" << std::endl;
+        //std::cout << "Write completed!" << std::endl;
     } else {
             std::cout << error.message() << std::endl;
             close_implementation();
@@ -69,11 +69,30 @@ void CustomerClient::connect_handler(const asio::error_code& error)
 void CustomerClient::deal_number_handler(const asio::error_code& error)
 {
     if (!error) {
+        system("cls");
         std::cout << DEAL_NUMBER_HEADER << std::endl;
         std::cout << "Your deal number is: " << deal_number_ << std::endl;
         std::cout << DIVIDE << std::endl;
-        std::cout << "Please stay tuned for notification,or\nwait for the waiter to call your number." << std::endl;
+        std::cout << "Please stay tuned for notification, or\nwait for the waiter to call your number." << std::endl;
         std::cout << BOTTOM << std::endl;
+        network_io_.async_read(notification_,
+                         std::bind(&CustomerClient::notification_handler, this, std::placeholders::_1));
+    } else {
+        std::cout << error.message() << std::endl;
+        close_implementation();
+    }
+}
+
+void CustomerClient::notification_handler(const asio::error_code& error)
+{
+    if (!error) {
+        if (!notification_.empty()) {
+            std::cout << NOTIFICATION_HEADER << std::endl;
+            std::cout << notification_ << std::endl;
+            std::cout << BOTTOM << std::endl;
+        }
+        network_io_.async_read(notification_,
+                         std::bind(&CustomerClient::notification_handler, this, std::placeholders::_1));
     } else {
         std::cout << error.message() << std::endl;
         close_implementation();
@@ -92,6 +111,37 @@ void CustomerClient::read_handler(const asio::error_code& error)
         close_implementation();
     }
     //std::cout << "client read handler returned" << std::endl;
+}
+
+void CustomerClient::print_current_deal() {
+    if (past_deals_.empty()) {
+        std::cout << "\nThere hasn't been any deals yet.\n" << std::endl;
+    } else {
+        system("cls");
+        auto current_deal = past_deals_.back();
+        std::cout << CURRENT_DEAL_HEADER << std::endl;
+        current_deal.print();
+        std::cout << BOTTOM << std::endl;
+        std::cout << DEAL_NUMBER_HEADER << std::endl;
+        std::cout << "Your deal number is: " << deal_number_ << std::endl;
+        std::cout << DIVIDE << std::endl;
+        std::cout << "Please stay tuned for notification, or\nwait for the waiter to call your number." << std::endl;
+        std::cout << BOTTOM << std::endl;
+    }
+    
+}
+
+void CustomerClient::print_past_deals() {
+    if (past_deals_.empty()) {
+        std::cout << "\nThere hasn't been any deals yet.\n" << std::endl;
+    } else {
+        system("cls");
+        for (auto deal : past_deals_){
+            std::cout << DEAL_HEADER << std::endl;
+            deal.print();
+            std::cout << BOTTOM << std::endl;
+        }
+    }
 }
 
 // KitchenClient
@@ -134,10 +184,13 @@ void KitchenClient::read_handler(const asio::error_code& error)
 {
     if (!error) {
         {
-            std::lock_guard<std::mutex> lock(foodid_queue_->mtx);
-            foodid_queue_->queue.push(read_foodid_);
+            std::lock_guard<std::mutex> lock(foodid_vector_->mtx);
+            foodid_vector_->vector.push_back(read_foodid_);
         }
-        std::cout << read_foodid_.first << ' ' << menu_.foods_[read_foodid_.second].get_name() << std::endl;
+        std::cout << NEW_ITEM_HEADER << std::endl;
+        std::string id = to_string(read_foodid_.first) + '-' + to_string(read_foodid_.second.type) +  '-' + to_string(read_foodid_.second.id);
+        std::cout << small_field << id << large_field << menu_.foods_[read_foodid_.second].get_name() << std::endl;
+        std::cout << BOTTOM << std::endl;
         network_io_.async_read(read_foodid_,
                          std::bind(&KitchenClient::read_handler, this, std::placeholders::_1));
     } else {

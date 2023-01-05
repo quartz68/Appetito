@@ -17,5 +17,5 @@ void ConsoleMenu::operator()() const {
             ((result = commands_.find(user_choice)) == bad))) {
         out << '\n' << invalid_choice_message_;
     }
-    result->second();
+    result->second.second();
 }

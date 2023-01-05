@@ -39,7 +39,7 @@ public:
      * @param deal_counter Raw pointer to deal counter.
      * @param deals Raw pointer to map of deals.
      */
-    Redirector(FoodContainer* all_foods, TableContainer* all_tables, unsigned int* deal_counter, map<unsigned int, Deal>* deals)
+    Redirector(FoodContainer* all_foods, TableContainer* all_tables, unsigned int* deal_counter, DealContainer* deals)
         :all_foods_ptr_(all_foods), all_tables_ptr_(all_tables), menu_{all_foods,all_tables}, deal_counter_ptr_(deal_counter), deals_ptr_(deals)
         { 
             if (all_foods == nullptr || all_tables == nullptr) {
@@ -69,13 +69,13 @@ public:
      * 
      * @return Raw pointer to deals map.
      */
-    map<unsigned int, Deal>* deals_ptr() { return deals_ptr_; }
+    DealContainer* deals_ptr() { return deals_ptr_; }
 protected:
     Menu menu_;
     FoodContainer* all_foods_ptr_;
     TableContainer* all_tables_ptr_;
     unsigned int* deal_counter_ptr_;
-    map<unsigned int, Deal>* deals_ptr_;
+    DealContainer* deals_ptr_;
 };
 
 /**
@@ -100,7 +100,7 @@ public:
                        unsigned int* deal_counter,
                        CustomerToKitchenQueue* ctok_queue,
                        KitchenToCustomerQueue* ktoc_queue,
-                       map<unsigned int, Deal>* deals)
+                       DealContainer* deals)
         :Redirector{all_foods, all_tables, deal_counter, deals}, ctok_queue_ptr_(ctok_queue), ktoc_queue_ptr_(ktoc_queue)
         {
             if (ctok_queue == nullptr || ktoc_queue == nullptr) {
@@ -142,8 +142,9 @@ public:
     void write_to_client(T& object)
     {
         //std::cout << "redirector write to client called" << std::endl;
-        std::for_each(connected_clients_.begin(), connected_clients_.end(),
-                        std::bind(&ConnectedClient::write, std::placeholders::_1, std::ref(object)));
+        for (auto connected_client : connected_clients_) {
+            connected_client->write(object);
+        }
         //std::cout << "redirector write to client returned" << std::endl;
     }
 protected:
@@ -175,7 +176,7 @@ public:
                        unsigned int* deal_counter,
                        KitchenToCustomerQueue* ktoc_queue,
                        CustomerToKitchenQueue* ctok_queue,
-                       map<unsigned int, Deal>* deals)
+                       DealContainer* deals)
         :Redirector{all_foods, all_tables, deal_counter, deals}, ctok_queue_ptr_(ctok_queue), ktoc_queue_ptr_(ktoc_queue)
         {
             if (ctok_queue == nullptr || ktoc_queue == nullptr) {

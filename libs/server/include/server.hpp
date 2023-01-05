@@ -47,7 +47,7 @@ public:
      * @param all_foods Raw pointer to FoodContainer.
      * @param all_tables Raw pointer to TableContainer.
      * @param deal_counter Raw pointer to deal counter.
-     * @param deals Raw pointer to map of deals.
+     * @param deals Raw pointer to DealContainer.
      */
     Server(asio::io_context& io_context,
            asio::io_context::strand& strand,
@@ -55,7 +55,7 @@ public:
            FoodContainer* all_foods,
            TableContainer* all_tables,
            unsigned int* deal_counter,
-           map<unsigned int, Deal>* deals)
+           DealContainer* deals)
         :io_context_(io_context), strand_(strand), acceptor_(io_context, endpoint), all_foods_ptr_(all_foods), all_tables_ptr_(all_tables), deal_counter_ptr_(deal_counter), deals_ptr_(deals)
         { 
             if (all_foods == nullptr || all_tables == nullptr) {
@@ -75,7 +75,7 @@ protected:
     FoodContainer* all_foods_ptr_;
     TableContainer* all_tables_ptr_;
     unsigned int* deal_counter_ptr_;
-    map<unsigned int, Deal>* deals_ptr_;
+    DealContainer* deals_ptr_;
 };
 
 class CustomerServer
@@ -102,8 +102,16 @@ public:
         unsigned int* deal_counter,
         CustomerToKitchenQueue* ctok_queue,
         KitchenToCustomerQueue* ktoc_queue,
-        map<unsigned int, Deal>* deals)
-        :Server{io_context, strand, endpoint, all_foods, all_tables, deal_counter, deals}, red_zone_{all_foods,all_tables,deal_counter,ctok_queue,ktoc_queue,deals}, ctok_queue_ptr_(ctok_queue), ktoc_queue_ptr_(ktoc_queue) 
+        DealContainer* deals)
+        : Server{io_context, strand, endpoint, all_foods, all_tables, deal_counter, deals},
+          red_zone_{all_foods,all_tables,deal_counter,ctok_queue,ktoc_queue,deals}, 
+          ctok_queue_ptr_(ctok_queue), 
+          ktoc_queue_ptr_(ktoc_queue),
+          lock_(ioc_),
+          pi_(2),
+          producer_(ioc_, pi_),
+          ci_(3),
+          consumer_(ioc_, ci_)
         {
             if (ctok_queue == nullptr || ktoc_queue == nullptr) {
                 cerr << "Trying to set nullptr as CustomerToKitchenQueue or KitchenToCustomerQueue pointer!" << endl;
@@ -114,6 +122,7 @@ public:
      * @brief Run the customer server.
      */
     void run();
+    void prod_cons_exec();
 protected:
     
     /**
@@ -122,6 +131,18 @@ protected:
      * @param new_client New customer client.
      */
     void on_accept(std::shared_ptr<ConnectedCustomerClient> new_client, const asio::error_code& error);
+    void producer_handler(const asio::error_code& error);
+    void consumer_handler(const asio::error_code& error);
+
+    std::thread* prod_cons_thread_;
+    std::mutex mtx_;
+    asio::io_context ioc_;
+    asio::io_context::strand lock_;
+    asio::steady_timer producer_;
+    asio::steady_timer consumer_;
+    std::chrono::seconds pi_;
+    std::chrono::seconds ci_;
+
     CustomerRedirector red_zone_;
     CustomerToKitchenQueue* ctok_queue_ptr_;
     KitchenToCustomerQueue* ktoc_queue_ptr_;
@@ -141,7 +162,7 @@ public:
      * @param deal_counter Raw pointer to deal counter.
      * @param ktoc_queue Raw pointer to kitchen to customer queue.
      * @param ctok_queue Raw pointer to customer to kitchen queue.
-     * @param deals Raw pointer to map of deals.
+     * @param deals Raw pointer to DealContainer.
      */
     KitchenServer(asio::io_context& io_context,
         asio::io_context::strand& strand,
@@ -151,7 +172,7 @@ public:
         unsigned int* deal_counter,
         KitchenToCustomerQueue* ktoc_queue,
         CustomerToKitchenQueue* ctok_queue,
-        map<unsigned int, Deal>* deals)
+        DealContainer* deals)
         : Server{io_context, strand, endpoint, all_foods, all_tables, deal_counter, deals},
           red_zone_{all_foods,all_tables,deal_counter,ktoc_queue,ctok_queue,deals},
           ctok_queue_ptr_(ctok_queue),

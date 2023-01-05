@@ -9,7 +9,7 @@
 #define CLIENT_HPP_
 
 #include <iostream>
-#include <array>
+#include <vector>
 #include <queue>
 #include <networkio.hpp>
 #include <asio.hpp>
@@ -24,8 +24,8 @@
 #include <order_deal.hpp>
 using asio::ip::tcp;
 
-struct FoodIDQueue{
-    std::queue<std::pair<unsigned int, FoodID>> queue;
+struct FoodIDVector{
+    std::vector<std::pair<unsigned int, FoodID>> vector;
     std::mutex mtx;
 };
 
@@ -97,12 +97,18 @@ public:
         }
     CustomerClient(const CustomerClient& other)
         :Client{other} { }
+    void save_deal(Deal deal) { past_deals_.push_back(deal); }
+    void print_current_deal();
+    void print_past_deals();
 protected:
     void on_connect(const asio::error_code& error);
     void connect_handler(const asio::error_code& error);
     void deal_number_handler(const asio::error_code& error);
     void read_handler(const asio::error_code& error);
+    void notification_handler(const asio::error_code& error);
+    vector<Deal> past_deals_;
     unsigned int deal_number_;
+    std::string notification_;
 };
 
 class KitchenClient
@@ -111,8 +117,8 @@ public:
     KitchenClient(const std::string& client_id,
             asio::io_context& io_context,
             tcp::resolver::iterator endpoint_iterator,
-            FoodIDQueue* foodid_queue)
-        :Client{client_id, io_context, endpoint_iterator}, foodid_queue_(foodid_queue)
+            FoodIDVector* foodid_vector)
+        :Client{client_id, io_context, endpoint_iterator}, foodid_vector_(foodid_vector)
         {
             asio::async_connect(network_io_.socket(), endpoint_iterator, std::bind(&KitchenClient::on_connect, this, std::placeholders::_1)); // Connect to server
         }
@@ -122,7 +128,7 @@ protected:
     void connect_handler_step2(const asio::error_code& error);
     void read_handler(const asio::error_code& error);
     std::pair<unsigned int, FoodID> read_foodid_;
-    FoodIDQueue* foodid_queue_;
+    FoodIDVector* foodid_vector_;
 };
 
 #endif

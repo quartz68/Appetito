@@ -31,5 +31,10 @@ inline std::ostream& large_field(std::ostream& o)
 #define SELECT_FOOD_HEADER   "\n------------Select---Food---------------"
 #define PREVIEW_ORDER_HEADER "\n------------Preview---Order-------------"
 #define DEAL_NUMBER_HEADER   "\n-------------Deal---Number--------------"
+#define NOTIFICATION_HEADER  "\n-------------NOTIFICATION---------------"
+#define DEAL_HEADER          "\n-----------------Deal-------------------"
+#define CURRENT_DEAL_HEADER  "\n------------Current---Deal--------------"
+// Kitchen Client Formatting
+#define NEW_ITEM_HEADER      "\n--------------New---Item----------------"
 
 #endif

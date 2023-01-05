@@ -10,9 +10,12 @@
 #include <console_menu.hpp>
 #include <protocol.hpp>
 
-void make_order(Menu& menu, Client* client){
+#define TIMER_WAIT_MILLISECONDS 200
+
+void make_order(Menu& menu, CustomerClient* client){
     Order order(menu);
     // Select table
+    system("cls");
     std::cout << SELECT_TABLE_HEADER << std::endl;
     menu.print_tables();
     std::cout << BOTTOM << std::endl;
@@ -42,10 +45,11 @@ void make_order(Menu& menu, Client* client){
         }
     }
     // Select food
+    system("cls");
     std::cout << SELECT_FOOD_HEADER << std::endl;
     menu.print_foods();
     std::cout << BOTTOM << std::endl;
-    std::cout << "Add item by entering 1 ID quantity,\ndelete item by entering 2 ID quantity,\npreview order by entering 3,\nfinish ordering by entering 4 " << std::endl;
+    std::cout << "Add item : \t\t1 ID quantity\nDelete item : \t\t2 ID quantity\nPreview order : \t3\nFinish ordering : \t4\n" << std::endl;
     unsigned short choice;
     while(std::cin >> choice){
         char dash;
@@ -93,6 +97,7 @@ void make_order(Menu& menu, Client* client){
             case 4: // Send order
             {
                 Deal deal(order,table);
+                client->save_deal(deal);
                 client->write(deal);
                 break;
             }
@@ -102,8 +107,31 @@ void make_order(Menu& menu, Client* client){
                 break;
             }
         }
-        if(choice == 4) break;
+        if(choice == 4) {
+            cin.ignore();
+            asio::io_context ioc;
+            asio::steady_timer timer(ioc, std::chrono::milliseconds(TIMER_WAIT_MILLISECONDS));
+            timer.wait();
+            break;
+        }
     }
+}
+
+void print_menu(CustomerClient* client) {
+    system("cls");
+    client->menu().print();
+}
+
+void print_current_deal(CustomerClient* client) {
+    client->print_current_deal();
+}
+
+void print_past_deals(CustomerClient* client) {
+    client->print_past_deals();
+}
+
+void menu_exit(bool* is_exit) {
+    *is_exit = true;
 }
 
 int main(int argc, char* argv[])
@@ -120,33 +148,34 @@ int main(int argc, char* argv[])
         tcp::resolver::iterator iterator = resolver.resolve(query);
         // Get client ID
         std::string client_id(argv[1]);
-        std::cout << "Customer Client ID: " << client_id << std::endl;
         // Start network client
         CustomerClient client(client_id, io_context, iterator);
         std::thread t([&io_context](){io_context.run();});
-        asio::steady_timer timer(io_context, asio::chrono::milliseconds(200));
+        asio::steady_timer timer(io_context, std::chrono::milliseconds(TIMER_WAIT_MILLISECONDS));
         timer.wait();
         // Construct menus
+        bool is_exit = false;
         const std::string title = "Main Menu\n";
         const std::string invalid_choice_message = "The option you chose does not exist.\n";
         const std::string prompt = "Enter your choice:\n";
-        const std::map<string, std::function<void()>> commands = {
-            {"See menu",std::bind(&Menu::print,std::bind(&Client::menu, client))},
-            {"Make order",std::bind(&make_order, client.menu(), &client)},
-            {"Exit",std::bind(&Client::close, client)}
+        const std::map< string, pair<string,function<void()>> > commands = {
+            { "1", {"See menu",std::bind(&print_menu, &client)} },
+            { "2", {"Make order",std::bind(&make_order, client.menu(), &client)} },
+            { "3", {"Current deal",std::bind(&print_current_deal, &client)} },
+            { "4", {"Past deals",std::bind(&print_past_deals, &client)} },
+            { "5", {"Exit",std::bind(&menu_exit, &is_exit)} }
         };
         ConsoleMenu main_menu(title, invalid_choice_message, prompt, commands, cin, cout);
         // Display menu
-        main_menu();
-        /* Menu menutmp = client.menu();
-        make_order(menutmp,client); */
-        // Take input
-        std::string pack;
-
-        while(true)
-        {
-            cin >> pack;
-            client.write(pack);
+        bool is_first_time_opening_menu = true;
+        while(true) {
+            if (is_first_time_opening_menu) {
+                system("cls");
+                std::cout << "Customer Client ID: " << client_id << std::endl;
+                is_first_time_opening_menu = false;
+            }
+            main_menu();
+            if (is_exit == true) break;
         }
 
         client.close();

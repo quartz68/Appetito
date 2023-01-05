@@ -31,12 +31,12 @@ void Menu::print_tables()
         table_types.insert(table.second.get_type());
     }
     cout << "Tables:" << endl;
-    cout << small_field << "ID" << small_field << "Price(CNY)" << small_field << "Location" << endl;
+    cout << small_field << "ID" << large_field << "Price(CNY)" << small_field << "Location" << endl;
     for (auto type : table_types) {
         cout << type.name  << endl;
         for (auto table : tables_) {
             if (table.second.get_type().id == type.id)
-                cout << small_field << table.second.get_id_str() << small_field << table.second.get_capacity() << small_field << table.second.get_location_str() << endl;
+                cout << small_field << table.second.get_id_str() << large_field << table.second.get_capacity() << small_field << table.second.get_location_str() << endl;
         }
     }
 }

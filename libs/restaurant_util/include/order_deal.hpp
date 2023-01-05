@@ -9,6 +9,7 @@
 #define CUSTOMER_ORDER_DEAL_HPP_
 
 #include <vector>
+#include <mutex>
 #include <food.hpp>
 #include <table.hpp>
 #include <menu.hpp>
@@ -141,6 +142,15 @@ private:
     Order order_;
     TableID tableid_;
     double bill_;
+};
+
+/**
+ * @brief Container of Deal and corresponding container of bool.
+ */
+struct DealContainer {
+    map<unsigned int, Deal> deals;
+    map<unsigned int, vector<pair<bool,unsigned short>>> fulfill;
+    std::mutex mtx;
 };
 
 #endif

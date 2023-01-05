@@ -9,6 +9,8 @@
 #include <redirector.hpp>
 #include <server.hpp>
 
+#define TIMER_WAIT_MILLISECONDS 200
+
 // ConnectedClient
 
 ConnectedClient::ConnectedClient(asio::io_context& io_context,
@@ -30,7 +32,7 @@ void ConnectedClient::write_completion_handler(const asio::error_code& error)
 {
     //std::cout << "connected client write handler called" << std::endl;
     if (!error) {
-        std::cout << "Write completed!" << std::endl;
+        //std::cout << "Write completed!" << std::endl;
     } else {
         std::cout << error.message() << std::endl;
     }
@@ -84,7 +86,13 @@ void ConnectedCustomerClient::read_deal_handler(const asio::error_code& error)
         read_deal_.set_menu_ptr(red_zone_.menu_ptr());
         read_deal_.print();
         // Save the deal
-        red_zone_.deals_ptr()->emplace(*(red_zone_.deal_counter_ptr()), read_deal_);
+        red_zone_.deals_ptr()->deals.emplace(*(red_zone_.deal_counter_ptr()), read_deal_);
+        vector<pair<bool,unsigned short>> tmp;
+        vector<pair<FoodID, unsigned short>> food_list = read_deal_.get_food_list();
+        for (auto food : food_list) {
+            tmp.emplace_back(0,food.second);
+        }
+        red_zone_.deals_ptr()->fulfill.emplace(*(red_zone_.deal_counter_ptr()), tmp);
         // Push the FoodID items to customer to kitchen queue
         {
             std::lock_guard<std::mutex> lock(red_zone_.ctok_queue_ptr()->mtx);
@@ -96,10 +104,12 @@ void ConnectedCustomerClient::read_deal_handler(const asio::error_code& error)
         }
         std::cout << "Deal " << *(red_zone_.deal_counter_ptr()) << " saved and sent to kitchen client." << std::endl;
         // Write the deal number to the customer client
-        network_io_.async_write(*(red_zone_.deal_counter_ptr()),
-                    strand_.wrap(std::bind(&ConnectedCustomerClient::queueing_handler, shared_from_this(), std::placeholders::_1)));
+        write(*(red_zone_.deal_counter_ptr()));
         // Increment the deal counter
         ++*(red_zone_.deal_counter_ptr());
+        // Read the next deal
+        network_io_.async_read(read_deal_,
+                    strand_.wrap(std::bind(&ConnectedCustomerClient::read_deal_handler, shared_from_this(), std::placeholders::_1)));
     } else {
         std::cout << error.message() << std::endl;
         red_zone_.leave(shared_from_this());
@@ -108,12 +118,15 @@ void ConnectedCustomerClient::read_deal_handler(const asio::error_code& error)
 }
 
 void ConnectedCustomerClient::queueing_handler(const asio::error_code& error) {
+    //std::cout << "connected client queueing handler called" << std::endl;
     if (!error) {
-        
+        /* network_io_.async_read(read_deal_,
+                    strand_.wrap(std::bind(&ConnectedCustomerClient::read_deal_handler, shared_from_this(), std::placeholders::_1))); */
     } else {
         std::cout << error.message() << std::endl;
         red_zone_.leave(shared_from_this());
     }
+    //std::cout << "connected client queueing handler returned" << std::endl;
 }
 
 // ConnectedKitchenClient

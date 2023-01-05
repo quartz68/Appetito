@@ -33,7 +33,7 @@ int main(int argc, char* argv[])
 
         // Deal counter and queues
         unsigned int deal_counter = 1;
-        map<unsigned int, Deal> deals;
+        DealContainer deals;
         CustomerToKitchenQueue ctok_queue;
         KitchenToCustomerQueue ktoc_queue;
 

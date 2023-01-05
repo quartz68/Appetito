@@ -23,7 +23,7 @@ public:
     ConsoleMenu(const string& title,
         const string& invalid_choice_message,
         const string& prompt,
-        const map<string, function<void()>>& commands,
+        const map< string, pair<string,function<void()>> >& commands,
         istream &in = cin,
         ostream &out = cout)
         : invalid_choice_message_{invalid_choice_message},
@@ -34,7 +34,7 @@ public:
             std::stringstream ss;
             ss << title;
             for (const auto &command : commands) {
-            ss << '[' << command.first << ']' << '\n';
+            ss << '[' << command.first << "] " << command.second.first << '\n';
             }
             ss << prompt;
             prompt_ = ss.str();
@@ -44,7 +44,7 @@ private:
     string invalid_choice_message_;
     // the prompt_ string contains the message, all choices and prompt
     string prompt_;
-    map<std::string, std::function<void()>> commands_;
+    map< string, pair<string,function<void()>> > commands_;
     istream &in;
     ostream &out;
 };
