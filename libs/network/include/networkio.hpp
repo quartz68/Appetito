@@ -1,3 +1,10 @@
+/**
+ * @file networkio.hpp
+ * @brief Header of NetworkIO class.
+ * @details
+ * @version
+ */
+
 #ifndef NETWORKIO_HPP_
 #define NETWORKIO_HPP_
 
@@ -6,24 +13,41 @@
 #include <vector>
 #include <tuple>
 #include <asio.hpp>
-#include <protocol.hpp>
 #include <cereal/cereal.hpp>
 #include <cereal/archives/binary.hpp>
 #include <cereal/types/string.hpp>
 
+/**
+ * @brief Handles TCP/IP network input/output.
+ */
 class NetworkIO
 {
 public:
+    /**
+     * Construct a new NetworkIO object from io context.
+     * @brief Constructor.
+     * 
+     * @param io_context 
+     */
     NetworkIO(asio::io_context& io_context)
         : io_context_(io_context), socket_(io_context) { }
-
-    // Get the underlying socket
+    /**
+     * @brief Get the underlying socket.
+     * 
+     * @return Reference to the TCP socket.
+     */
     asio::ip::tcp::socket& socket()
     {
         return socket_;
     }
-
-    // Asynchronously write a data structure to the socket
+    /**
+     * @brief Asynchronously write a data structure to the socket.
+     * 
+     * @tparam T The type of the data structure.
+     * @tparam Handler The type of the handler.
+     * @param t The data structure.
+     * @param handler The handler.
+     */
     template <typename T, typename Handler>
     void async_write(const T& t, Handler handler)
     {
@@ -45,15 +69,20 @@ public:
         }
         outbound_header_ = header_stream.str();
 
-        // Write the serialized data to the socket. We use "gather-write" to send
-        // both the header and the data in a single write operation.
+        // Write the serialized data to the socket, both the header and the data.
         std::vector<asio::const_buffer> buffers;
         buffers.push_back(asio::buffer(outbound_header_));
         buffers.push_back(asio::buffer(outbound_data_));
         asio::async_write(socket_, buffers, handler);
     }
-
-    /// Asynchronously read a data structure from the socket.
+    /**
+     * @brief Asynchronously read a data structure from the socket.
+     * 
+     * @tparam T The type of the data structure.
+     * @tparam Handler The type of the handler.
+     * @param t The data structure.
+     * @param handler The handler.
+     */
     template <typename T, typename Handler>
     void async_read(T& t, Handler handler)
     {
@@ -67,9 +96,12 @@ public:
             this, std::placeholders::_1, std::ref(t),
             std::make_tuple(handler)));
     }
-
-    /// Handle a completed read of a message header. The handler is passed using
-    /// a tuple.
+    /**
+     * @brief Handle a completed read of a message header. 
+     * 
+     * @param t 
+     * @param handler The handler is passed using a std::tuple.
+    */
     template <typename T, typename Handler>
     void read_header_handler(const asio::error_code& e,
         T& t, std::tuple<Handler> handler)
@@ -100,8 +132,12 @@ public:
                 std::placeholders::_1, std::ref(t), handler));
         }
     }
-
-    /// Handle a completed read of message data.
+    /**
+     * @brief Handle a completed read of a message data. 
+     * 
+     * @param t 
+     * @param handler The handler is passed using a std::tuple.
+    */
     template <typename T, typename Handler>
     void read_data_handler(const asio::error_code& e,
         T& t, std::tuple<Handler> handler)
@@ -131,26 +167,14 @@ public:
         }
     }
 
-    private:
-    /// The underlying socket.
-    asio::ip::tcp::socket socket_;
-
-    asio::io_context& io_context_;
-
-    /// The size of a fixed length header.
-    enum { HEADER_SIZE = 8 };
-
-    /// Holds an outbound header.
-    std::string outbound_header_;
-
-    /// Holds the outbound data.
-    std::string outbound_data_;
-
-    /// Holds an inbound header.
-    char inbound_header_[HEADER_SIZE];
-
-    /// Holds the inbound data.
-    std::vector<char> inbound_data_;
+private:
+    asio::ip::tcp::socket socket_; /**< The underlying socket. */
+    asio::io_context& io_context_; /**< The io_context. */
+    enum { HEADER_SIZE = 8 }; /**< The size of a fixed length header. */
+    std::string outbound_header_; /**< Holds an outbound header. */
+    std::string outbound_data_; /**< Holds the outbound data. */
+    char inbound_header_[HEADER_SIZE]; /**< Holds an inbound header. */
+    std::vector<char> inbound_data_; /**< Holds the inbound data. */
 };
 
 #endif

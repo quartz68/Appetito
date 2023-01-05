@@ -82,7 +82,9 @@
 			"regex": "cpp",
 			"typeindex": "cpp",
 			"valarray": "cpp",
-			"*.ipp": "cpp"
+			"*.ipp": "cpp",
+			"queue": "cpp",
+			"csetjmp": "cpp"
 		}
 	}
 }

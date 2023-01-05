@@ -1,0 +1,122 @@
+\hypertarget{class_server}{}\doxysection{Server Class Reference}
+\label{class_server}\index{Server@{Server}}
+
+
+\mbox{\hyperlink{class_server}{Server}}.  
+
+
+
+
+{\ttfamily \#include $<$server.\+hpp$>$}
+
+Inheritance diagram for Server\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_server}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_server_a6f2edf96c6cd6e4801f9d704a0b6b83d}{Server}} (asio\+::io\+\_\+context \&io\+\_\+context, asio\+::io\+\_\+context\+::strand \&strand, const tcp\+::endpoint \&endpoint, \mbox{\hyperlink{struct_food_container}{Food\+Container}} $\ast$all\+\_\+foods, \mbox{\hyperlink{struct_table_container}{Table\+Container}} $\ast$all\+\_\+tables, unsigned int $\ast$deal\+\_\+counter, \mbox{\hyperlink{struct_deal_container}{Deal\+Container}} $\ast$deals)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+asio\+::io\+\_\+context \& \mbox{\hyperlink{class_server_ab60a3c02b3fd55582bd17d5de737d214}{io\+\_\+context\+\_\+}}
+\item 
+asio\+::io\+\_\+context\+::strand \& \mbox{\hyperlink{class_server_a2ee27a5c500eb8a36497a7b6f009a3a1}{strand\+\_\+}}
+\item 
+tcp\+::acceptor \mbox{\hyperlink{class_server_a137184fbae6efd40963d76d6f5c8c3c3}{acceptor\+\_\+}}
+\item 
+\mbox{\hyperlink{struct_food_container}{Food\+Container}} $\ast$ \mbox{\hyperlink{class_server_a12c9165b8abe8862c4746b99fcd983c2}{all\+\_\+foods\+\_\+ptr\+\_\+}}
+\item 
+\mbox{\hyperlink{struct_table_container}{Table\+Container}} $\ast$ \mbox{\hyperlink{class_server_a341be2e6035b89b54e505a2f60cbf34d}{all\+\_\+tables\+\_\+ptr\+\_\+}}
+\item 
+unsigned int $\ast$ \mbox{\hyperlink{class_server_a1cb5d8a40be7af224c7d707e76a875d7}{deal\+\_\+counter\+\_\+ptr\+\_\+}}
+\item 
+\mbox{\hyperlink{struct_deal_container}{Deal\+Container}} $\ast$ \mbox{\hyperlink{class_server_a914ce285627184dde9f235ad76a6e833}{deals\+\_\+ptr\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_server}{Server}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_server_a6f2edf96c6cd6e4801f9d704a0b6b83d}\label{class_server_a6f2edf96c6cd6e4801f9d704a0b6b83d}} 
+\index{Server@{Server}!Server@{Server}}
+\index{Server@{Server}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{Server()}{Server()}}
+{\footnotesize\ttfamily Server\+::\+Server (\begin{DoxyParamCaption}\item[{asio\+::io\+\_\+context \&}]{io\+\_\+context,  }\item[{asio\+::io\+\_\+context\+::strand \&}]{strand,  }\item[{const tcp\+::endpoint \&}]{endpoint,  }\item[{\mbox{\hyperlink{struct_food_container}{Food\+Container}} $\ast$}]{all\+\_\+foods,  }\item[{\mbox{\hyperlink{struct_table_container}{Table\+Container}} $\ast$}]{all\+\_\+tables,  }\item[{unsigned int $\ast$}]{deal\+\_\+counter,  }\item[{\mbox{\hyperlink{struct_deal_container}{Deal\+Container}} $\ast$}]{deals }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em io\+\_\+context} & \\
+\hline
+{\em strand} & \\
+\hline
+{\em endpoint} & \\
+\hline
+{\em all\+\_\+foods} & Raw pointer to \mbox{\hyperlink{struct_food_container}{Food\+Container}}. \\
+\hline
+{\em all\+\_\+tables} & Raw pointer to \mbox{\hyperlink{struct_table_container}{Table\+Container}}. \\
+\hline
+{\em deal\+\_\+counter} & Raw pointer to deal counter. \\
+\hline
+{\em deals} & Raw pointer to \mbox{\hyperlink{struct_deal_container}{Deal\+Container}}. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_server_a137184fbae6efd40963d76d6f5c8c3c3}\label{class_server_a137184fbae6efd40963d76d6f5c8c3c3}} 
+\index{Server@{Server}!acceptor\_@{acceptor\_}}
+\index{acceptor\_@{acceptor\_}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{acceptor\_}{acceptor\_}}
+{\footnotesize\ttfamily tcp\+::acceptor Server\+::acceptor\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_server_a12c9165b8abe8862c4746b99fcd983c2}\label{class_server_a12c9165b8abe8862c4746b99fcd983c2}} 
+\index{Server@{Server}!all\_foods\_ptr\_@{all\_foods\_ptr\_}}
+\index{all\_foods\_ptr\_@{all\_foods\_ptr\_}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{all\_foods\_ptr\_}{all\_foods\_ptr\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_food_container}{Food\+Container}}$\ast$ Server\+::all\+\_\+foods\+\_\+ptr\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_server_a341be2e6035b89b54e505a2f60cbf34d}\label{class_server_a341be2e6035b89b54e505a2f60cbf34d}} 
+\index{Server@{Server}!all\_tables\_ptr\_@{all\_tables\_ptr\_}}
+\index{all\_tables\_ptr\_@{all\_tables\_ptr\_}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{all\_tables\_ptr\_}{all\_tables\_ptr\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_table_container}{Table\+Container}}$\ast$ Server\+::all\+\_\+tables\+\_\+ptr\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_server_a1cb5d8a40be7af224c7d707e76a875d7}\label{class_server_a1cb5d8a40be7af224c7d707e76a875d7}} 
+\index{Server@{Server}!deal\_counter\_ptr\_@{deal\_counter\_ptr\_}}
+\index{deal\_counter\_ptr\_@{deal\_counter\_ptr\_}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{deal\_counter\_ptr\_}{deal\_counter\_ptr\_}}
+{\footnotesize\ttfamily unsigned int$\ast$ Server\+::deal\+\_\+counter\+\_\+ptr\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_server_a914ce285627184dde9f235ad76a6e833}\label{class_server_a914ce285627184dde9f235ad76a6e833}} 
+\index{Server@{Server}!deals\_ptr\_@{deals\_ptr\_}}
+\index{deals\_ptr\_@{deals\_ptr\_}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{deals\_ptr\_}{deals\_ptr\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_deal_container}{Deal\+Container}}$\ast$ Server\+::deals\+\_\+ptr\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_server_ab60a3c02b3fd55582bd17d5de737d214}\label{class_server_ab60a3c02b3fd55582bd17d5de737d214}} 
+\index{Server@{Server}!io\_context\_@{io\_context\_}}
+\index{io\_context\_@{io\_context\_}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{io\_context\_}{io\_context\_}}
+{\footnotesize\ttfamily asio\+::io\+\_\+context\& Server\+::io\+\_\+context\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_server_a2ee27a5c500eb8a36497a7b6f009a3a1}\label{class_server_a2ee27a5c500eb8a36497a7b6f009a3a1}} 
+\index{Server@{Server}!strand\_@{strand\_}}
+\index{strand\_@{strand\_}!Server@{Server}}
+\doxysubsubsection{\texorpdfstring{strand\_}{strand\_}}
+{\footnotesize\ttfamily asio\+::io\+\_\+context\+::strand\& Server\+::strand\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Projects/\+Appetito/libs/server/include/\mbox{\hyperlink{server_8hpp}{server.\+hpp}}\end{DoxyCompactItemize}

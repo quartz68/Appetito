@@ -1,0 +1,133 @@
+\hypertarget{class_kitchen_client}{}\doxysection{Kitchen\+Client Class Reference}
+\label{class_kitchen_client}\index{KitchenClient@{KitchenClient}}
+
+
+{\ttfamily \#include $<$client.\+hpp$>$}
+
+Inheritance diagram for Kitchen\+Client\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_kitchen_client}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_kitchen_client_a2e4ccdf4e8aea99f1b37d7d1f91afe37}{Kitchen\+Client}} (const std\+::string \&client\+\_\+id, asio\+::io\+\_\+context \&io\+\_\+context, tcp\+::resolver\+::iterator endpoint\+\_\+iterator, \mbox{\hyperlink{struct_food_i_d_vector}{Food\+IDVector}} $\ast$foodid\+\_\+vector)
+\begin{DoxyCompactList}\small\item\em Construct a \mbox{\hyperlink{class_kitchen_client}{Kitchen\+Client}} object from client ID, io\+\_\+context, TCP endpoint and vector of items. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_kitchen_client_acb07a309dd0e83a3d8a5bcc8509e2303}{on\+\_\+connect}} (const asio\+::error\+\_\+code \&error)
+\begin{DoxyCompactList}\small\item\em Writes client ID to server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_kitchen_client_a6bf5059d0b4742a688241188cda605cd}{connect\+\_\+handler}} (const asio\+::error\+\_\+code \&error)
+\begin{DoxyCompactList}\small\item\em Reads menu from server. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_kitchen_client_a9b1997f8e983bf53d3e4bc382babe651}{connect\+\_\+handler\+\_\+step2}} (const asio\+::error\+\_\+code \&error)
+\begin{DoxyCompactList}\small\item\em Prints menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_kitchen_client_a8d1d51bb744076d30a3dbdd4bb18375d}{read\+\_\+handler}} (const asio\+::error\+\_\+code \&error)
+\begin{DoxyCompactList}\small\item\em Reads item and displays it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::pair$<$ unsigned int, \mbox{\hyperlink{struct_food_i_d}{Food\+ID}} $>$ \mbox{\hyperlink{class_kitchen_client_a26b7a675877c6a7f8eab7857680c42ce}{read\+\_\+foodid\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Read item. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_food_i_d_vector}{Food\+IDVector}} $\ast$ \mbox{\hyperlink{class_kitchen_client_aaecbf30a818e6ecc37a7c9793d27812a}{foodid\+\_\+vector\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Vector of items. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_kitchen_client_a2e4ccdf4e8aea99f1b37d7d1f91afe37}\label{class_kitchen_client_a2e4ccdf4e8aea99f1b37d7d1f91afe37}} 
+\index{KitchenClient@{KitchenClient}!KitchenClient@{KitchenClient}}
+\index{KitchenClient@{KitchenClient}!KitchenClient@{KitchenClient}}
+\doxysubsubsection{\texorpdfstring{KitchenClient()}{KitchenClient()}}
+{\footnotesize\ttfamily Kitchen\+Client\+::\+Kitchen\+Client (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{client\+\_\+id,  }\item[{asio\+::io\+\_\+context \&}]{io\+\_\+context,  }\item[{tcp\+::resolver\+::iterator}]{endpoint\+\_\+iterator,  }\item[{\mbox{\hyperlink{struct_food_i_d_vector}{Food\+IDVector}} $\ast$}]{foodid\+\_\+vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a \mbox{\hyperlink{class_kitchen_client}{Kitchen\+Client}} object from client ID, io\+\_\+context, TCP endpoint and vector of items. 
+
+Constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em client\+\_\+id} & The client ID which user designated. \\
+\hline
+{\em io\+\_\+context} & Asio I/O context(service). \\
+\hline
+{\em endpoint\+\_\+iterator} & Iterator of TCP endpoint. \\
+\hline
+{\em foodid\+\_\+vector} & Vector of items. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_kitchen_client_a6bf5059d0b4742a688241188cda605cd}\label{class_kitchen_client_a6bf5059d0b4742a688241188cda605cd}} 
+\index{KitchenClient@{KitchenClient}!connect\_handler@{connect\_handler}}
+\index{connect\_handler@{connect\_handler}!KitchenClient@{KitchenClient}}
+\doxysubsubsection{\texorpdfstring{connect\_handler()}{connect\_handler()}}
+{\footnotesize\ttfamily void Kitchen\+Client\+::connect\+\_\+handler (\begin{DoxyParamCaption}\item[{const asio\+::error\+\_\+code \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Reads menu from server. 
+
+\mbox{\Hypertarget{class_kitchen_client_a9b1997f8e983bf53d3e4bc382babe651}\label{class_kitchen_client_a9b1997f8e983bf53d3e4bc382babe651}} 
+\index{KitchenClient@{KitchenClient}!connect\_handler\_step2@{connect\_handler\_step2}}
+\index{connect\_handler\_step2@{connect\_handler\_step2}!KitchenClient@{KitchenClient}}
+\doxysubsubsection{\texorpdfstring{connect\_handler\_step2()}{connect\_handler\_step2()}}
+{\footnotesize\ttfamily void Kitchen\+Client\+::connect\+\_\+handler\+\_\+step2 (\begin{DoxyParamCaption}\item[{const asio\+::error\+\_\+code \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Prints menu. 
+
+\mbox{\Hypertarget{class_kitchen_client_acb07a309dd0e83a3d8a5bcc8509e2303}\label{class_kitchen_client_acb07a309dd0e83a3d8a5bcc8509e2303}} 
+\index{KitchenClient@{KitchenClient}!on\_connect@{on\_connect}}
+\index{on\_connect@{on\_connect}!KitchenClient@{KitchenClient}}
+\doxysubsubsection{\texorpdfstring{on\_connect()}{on\_connect()}}
+{\footnotesize\ttfamily void Kitchen\+Client\+::on\+\_\+connect (\begin{DoxyParamCaption}\item[{const asio\+::error\+\_\+code \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Writes client ID to server. 
+
+\mbox{\Hypertarget{class_kitchen_client_a8d1d51bb744076d30a3dbdd4bb18375d}\label{class_kitchen_client_a8d1d51bb744076d30a3dbdd4bb18375d}} 
+\index{KitchenClient@{KitchenClient}!read\_handler@{read\_handler}}
+\index{read\_handler@{read\_handler}!KitchenClient@{KitchenClient}}
+\doxysubsubsection{\texorpdfstring{read\_handler()}{read\_handler()}}
+{\footnotesize\ttfamily void Kitchen\+Client\+::read\+\_\+handler (\begin{DoxyParamCaption}\item[{const asio\+::error\+\_\+code \&}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Reads item and displays it. 
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_kitchen_client_aaecbf30a818e6ecc37a7c9793d27812a}\label{class_kitchen_client_aaecbf30a818e6ecc37a7c9793d27812a}} 
+\index{KitchenClient@{KitchenClient}!foodid\_vector\_@{foodid\_vector\_}}
+\index{foodid\_vector\_@{foodid\_vector\_}!KitchenClient@{KitchenClient}}
+\doxysubsubsection{\texorpdfstring{foodid\_vector\_}{foodid\_vector\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_food_i_d_vector}{Food\+IDVector}}$\ast$ Kitchen\+Client\+::foodid\+\_\+vector\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Vector of items. 
+
+\mbox{\Hypertarget{class_kitchen_client_a26b7a675877c6a7f8eab7857680c42ce}\label{class_kitchen_client_a26b7a675877c6a7f8eab7857680c42ce}} 
+\index{KitchenClient@{KitchenClient}!read\_foodid\_@{read\_foodid\_}}
+\index{read\_foodid\_@{read\_foodid\_}!KitchenClient@{KitchenClient}}
+\doxysubsubsection{\texorpdfstring{read\_foodid\_}{read\_foodid\_}}
+{\footnotesize\ttfamily std\+::pair$<$unsigned int, \mbox{\hyperlink{struct_food_i_d}{Food\+ID}}$>$ Kitchen\+Client\+::read\+\_\+foodid\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Read item. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Projects/\+Appetito/libs/client/include/\mbox{\hyperlink{client_8hpp}{client.\+hpp}}\item 
+C\+:/\+Projects/\+Appetito/libs/client/src/\mbox{\hyperlink{client_8cpp}{client.\+cpp}}\end{DoxyCompactItemize}

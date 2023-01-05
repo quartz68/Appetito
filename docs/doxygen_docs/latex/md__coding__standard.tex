@@ -1,0 +1,53 @@
+\hypertarget{md__coding__standard_autotoc_md1}{}\doxysection{Introduction}\label{md__coding__standard_autotoc_md1}
+这个代码规范是从 Bjarne Stroustrup 领导制定的 C++ Core Guidelines 中挑选的一些规则。 目标是通过规范进行更高效、有条理并且更安全的开发。\hypertarget{md__coding__standard_autotoc_md2}{}\doxysection{观念}\label{md__coding__standard_autotoc_md2}
+\hypertarget{md__coding__standard_autotoc_md3}{}\doxysubsection{P.\+1 能在代码里表现的思想不要靠注释来表现}\label{md__coding__standard_autotoc_md3}
+代码应该逻辑清晰有条理，而且用类（class Table）而不是散的基本数据类型（int table\+Number）可以提高可读性。
+
++能用 const 的地方（可以是常量的量、不修改对象的成员函数）最好用 const 。 +不要使用类型转换。\hypertarget{md__coding__standard_autotoc_md4}{}\doxysubsection{P.\+2 编译时能解决的错误不留到运行时，剩下的错误尽量在运行时都$\ast$$\ast$尽早$\ast$$\ast$捉到}\label{md__coding__standard_autotoc_md4}
+编译时解决比运行时解决简单、副作用小，尽早解决比晚解决简单、副作用小。\hypertarget{md__coding__standard_autotoc_md5}{}\doxysubsection{P.\+3 防止资源泄露}\label{md__coding__standard_autotoc_md5}
+RAII\+: Resource Acquisition Is Initialization 用好构造函数和析构函数，new和delete，fopen和fclose等。\hypertarget{md__coding__standard_autotoc_md6}{}\doxysubsection{P.\+4 尽量少浪费时间和空间}\label{md__coding__standard_autotoc_md6}
+\hypertarget{md__coding__standard_autotoc_md7}{}\doxysubsection{P.\+5 封装贴近底层的、不直白的代码，并提供直白易用的接口}\label{md__coding__standard_autotoc_md7}
+\hypertarget{md__coding__standard_autotoc_md8}{}\doxysection{接口}\label{md__coding__standard_autotoc_md8}
+\hypertarget{md__coding__standard_autotoc_md9}{}\doxysubsection{I.\+1 接口应该直白，不应该有隐藏的条件，如果有条件应该明确写出}\label{md__coding__standard_autotoc_md9}
+尝试使用 Expects() 来表示函数需要的东西的范围， Ensures() 来表示函数返回的东西的范围。\hypertarget{md__coding__standard_autotoc_md10}{}\doxysubsection{I.\+2 尽量避免使用全局变量，尤其是非 const 的全局变量}\label{md__coding__standard_autotoc_md10}
+\hypertarget{md__coding__standard_autotoc_md11}{}\doxysubsection{I.\+3 接口的类型应该明确清晰}\label{md__coding__standard_autotoc_md11}
+另外，应该使用适当的类型，比如只有真、假两个值时就不要用 int 而应该用 bool 了。\hypertarget{md__coding__standard_autotoc_md12}{}\doxysubsection{I.\+4 当程序发现无法完成某项任务时，应该抛出异常}\label{md__coding__standard_autotoc_md12}
+\hypertarget{md__coding__standard_autotoc_md13}{}\doxysubsection{I.\+5 不要用指针作为函数的返回值}\label{md__coding__standard_autotoc_md13}
+把 new 的对象的控制权转移出去后，很难确保它被正确、及时地 delete 。\hypertarget{md__coding__standard_autotoc_md14}{}\doxysubsection{I.\+6 不要用一个单独的指针传递数组，同时用一个单独的 n 把数组大小传进函数也不行}\label{md__coding__standard_autotoc_md14}
+可以尽量少传递指针，也可以在把它们放在一个类里并尽量确保这个数组大小 n 永远是正确的。\hypertarget{md__coding__standard_autotoc_md15}{}\doxysubsection{I.\+7 尽量减少函数的参数个数}\label{md__coding__standard_autotoc_md15}
+如果发现函数需要很多个参数，通常是少了一层抽象。（构造函数可以除外）\hypertarget{md__coding__standard_autotoc_md16}{}\doxysection{函数}\label{md__coding__standard_autotoc_md16}
+\hypertarget{md__coding__standard_autotoc_md17}{}\doxysubsection{F.\+1 尽量把重复的、有意义的操作“打包”成一个函数}\label{md__coding__standard_autotoc_md17}
+比如一个二维数组的输出，就应该“打包”成一个函数。\hypertarget{md__coding__standard_autotoc_md18}{}\doxysubsection{F.\+2 一个函数应该只进行$\ast$$\ast$一个$\ast$$\ast$有意义的操作}\label{md__coding__standard_autotoc_md18}
+比如不要把输入输出两个操作放在一个函数里，而应该分成两个函数。\hypertarget{md__coding__standard_autotoc_md19}{}\doxysubsection{F.\+3 一个函数应该比较短、比较简单}\label{md__coding__standard_autotoc_md19}
+\hypertarget{md__coding__standard_autotoc_md20}{}\doxysection{类}\label{md__coding__standard_autotoc_md20}
+\hypertarget{md__coding__standard_autotoc_md21}{}\doxysubsection{C.\+1 当类有一个不变的规则时用 class ， 当类的每一个成员都可以单独改变的时候用 struct}\label{md__coding__standard_autotoc_md21}
+比如表示日期用 class ， 而只是表示一对数据用 struct 。\hypertarget{md__coding__standard_autotoc_md22}{}\doxysubsection{C.\+2 接口用 public ， 实现用 private}\label{md__coding__standard_autotoc_md22}
+\hypertarget{md__coding__standard_autotoc_md23}{}\doxysubsection{C.\+3 尽量少使用类的继承结构}\label{md__coding__standard_autotoc_md23}
+\hypertarget{md__coding__standard_autotoc_md24}{}\doxysubsection{C.\+4 一定定义构造函数}\label{md__coding__standard_autotoc_md24}
+除非是抽象用的类。\hypertarget{md__coding__standard_autotoc_md25}{}\doxysubsection{C.\+5 如果有一个指针成员，一定定义析构函数}\label{md__coding__standard_autotoc_md25}
+\hypertarget{md__coding__standard_autotoc_md26}{}\doxysection{资源}\label{md__coding__standard_autotoc_md26}
+\hypertarget{md__coding__standard_autotoc_md27}{}\doxysubsection{R.\+1 RAII}\label{md__coding__standard_autotoc_md27}
+RAII\+: Resource Acquisition Is Initialization\hypertarget{md__coding__standard_autotoc_md28}{}\doxysubsection{R.\+2 尽量使用有作用域的对象，少使用动态内存分配}\label{md__coding__standard_autotoc_md28}
+\hypertarget{md__coding__standard_autotoc_md29}{}\doxysubsection{R.\+3 动态内存分配，用 new 和 delete 而不是 malloc 和 free}\label{md__coding__standard_autotoc_md29}
+\hypertarget{md__coding__standard_autotoc_md30}{}\doxysubsection{R.\+4 推荐：使用 span 来保存数组的大小}\label{md__coding__standard_autotoc_md30}
+\hypertarget{md__coding__standard_autotoc_md31}{}\doxysection{表达式和语句}\label{md__coding__standard_autotoc_md31}
+\hypertarget{md__coding__standard_autotoc_md32}{}\doxysubsection{ES.\+1 优先使用标准库，然后是第三方库，最后才是自己实现}\label{md__coding__standard_autotoc_md32}
+\hypertarget{md__coding__standard_autotoc_md33}{}\doxysubsection{ES.\+2 合适地进行抽象}\label{md__coding__standard_autotoc_md33}
+\hypertarget{md__coding__standard_autotoc_md34}{}\doxysubsection{ES.\+3 减少重复冗余的代码}\label{md__coding__standard_autotoc_md34}
+上面 F.\+1 。\hypertarget{md__coding__standard_autotoc_md35}{}\doxysubsection{ES.\+4 一些命名建议}\label{md__coding__standard_autotoc_md35}
+
+\begin{DoxyItemize}
+\item 命名应该尽量明显、完整、有意义
+\item 本地变量命名应该短些，非本地变量命名应该长些
+\item 避免容易弄混的命名
+\end{DoxyItemize}\hypertarget{md__coding__standard_autotoc_md36}{}\doxysubsection{ES.\+5 一次声明只声明一个变量名}\label{md__coding__standard_autotoc_md36}
+不要 int i,j,k;\hypertarget{md__coding__standard_autotoc_md37}{}\doxysubsection{ES.\+6 一定记得初始化对象，最好在声明时就初始化}\label{md__coding__standard_autotoc_md37}
+\hypertarget{md__coding__standard_autotoc_md38}{}\doxysubsection{ES.\+7 避免“魔法常量”}\label{md__coding__standard_autotoc_md38}
+for (int m = 1; m \texorpdfstring{$<$}{<}= 12; ++m) 不如 for (int m = first\+\_\+month; m \texorpdfstring{$<$}{<}= last\+\_\+month; ++m)\hypertarget{md__coding__standard_autotoc_md39}{}\doxysubsection{ES.\+8 避免变量类型转换，特别是窄化的类型转换}\label{md__coding__standard_autotoc_md39}
+\hypertarget{md__coding__standard_autotoc_md40}{}\doxysubsection{ES.\+9 空指针应该用 nullptr ， 不要用 0 或者 NULL}\label{md__coding__standard_autotoc_md40}
+\hypertarget{md__coding__standard_autotoc_md41}{}\doxysubsection{ES.\+10 避免使用 do while 等 do 语句}\label{md__coding__standard_autotoc_md41}
+\hypertarget{md__coding__standard_autotoc_md42}{}\doxysubsection{ES.\+11 尽量减少循环中 break 和 continue 的使用}\label{md__coding__standard_autotoc_md42}
+\hypertarget{md__coding__standard_autotoc_md43}{}\doxysection{附加}\label{md__coding__standard_autotoc_md43}
+\hypertarget{md__coding__standard_autotoc_md44}{}\doxysubsection{A.\+1 声明指针时，星号跟着类型名，而不是挨着变量名： int$\ast$ p}\label{md__coding__standard_autotoc_md44}
+\hypertarget{md__coding__standard_autotoc_md45}{}\doxysubsection{A.\+2 每个函数前面应该用注释注明它的基本信息}\label{md__coding__standard_autotoc_md45}
+使用 Doxygen 格式。 

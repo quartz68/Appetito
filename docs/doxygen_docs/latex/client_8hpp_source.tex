@@ -1,0 +1,108 @@
+\hypertarget{client_8hpp_source}{}\doxysection{client.\+hpp}
+\label{client_8hpp_source}\index{C:/Projects/Appetito/libs/client/include/client.hpp@{C:/Projects/Appetito/libs/client/include/client.hpp}}
+\mbox{\hyperlink{client_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef CLIENT\_HPP\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define CLIENT\_HPP\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{12 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#include <queue>}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#include <thread>}}
+\DoxyCodeLine{15 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{networkio_8hpp}{networkio.hpp}}>}}
+\DoxyCodeLine{16 \textcolor{preprocessor}{\#include <asio.hpp>}}
+\DoxyCodeLine{17 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{protocol_8hpp}{protocol.hpp}}>}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#include <cereal.hpp>}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#include <cereal/archives/binary.hpp>}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <cereal/types/string.hpp>}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <cereal/types/array.hpp>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{menu_8hpp}{menu.hpp}}>}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{food_8hpp}{food.hpp}}>}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{table_8hpp}{table.hpp}}>}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <\mbox{\hyperlink{order__deal_8hpp}{order\_deal.hpp}}>}}
+\DoxyCodeLine{26 \textcolor{keyword}{using }asio::ip::tcp;}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_food_i_d_vector}{FoodIDVector}}\{}
+\DoxyCodeLine{29     std::vector<std::pair<unsigned int, FoodID>> \mbox{\hyperlink{struct_food_i_d_vector_a7f6f1ff6a009dd129a1240969abd9eff}{vector}};}
+\DoxyCodeLine{30     std::mutex \mbox{\hyperlink{struct_food_i_d_vector_a58688b954ed2deb490155a6c8d1ab287}{mtx}};}
+\DoxyCodeLine{31 \};}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{36 \textcolor{keyword}{class }\mbox{\hyperlink{class_client}{Client}} \{}
+\DoxyCodeLine{37 \textcolor{keyword}{public}:}
+\DoxyCodeLine{46     \mbox{\hyperlink{class_client_aff384cdcb7f93b755c2a909d23be7c03}{Client}}(\textcolor{keyword}{const} std::string\& client\_id,}
+\DoxyCodeLine{47             asio::io\_context\& io\_context,}
+\DoxyCodeLine{48             tcp::resolver::iterator endpoint\_iterator)}
+\DoxyCodeLine{49         :\mbox{\hyperlink{class_client_a962708dae618e769139655dfa3680fd4}{io\_context\_}}(io\_context), \mbox{\hyperlink{class_client_ae771057d9635010ac71a271448e0549c}{network\_io\_}}(io\_context), \mbox{\hyperlink{class_client_a59a39bd0095a9fd0f2c77d7935820260}{client\_id\_}}(client\_id)}
+\DoxyCodeLine{50         \{}
+\DoxyCodeLine{51             }
+\DoxyCodeLine{52         \}}
+\DoxyCodeLine{53     \mbox{\hyperlink{class_client_a4d8e3b9fdfa24b7586bcf24537b89b67}{Client}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_client}{Client}}\& other)}
+\DoxyCodeLine{54         :\mbox{\hyperlink{class_client_a962708dae618e769139655dfa3680fd4}{io\_context\_}}(other.\mbox{\hyperlink{class_client_a962708dae618e769139655dfa3680fd4}{io\_context\_}}), \mbox{\hyperlink{class_client_ae771057d9635010ac71a271448e0549c}{network\_io\_}}(other.\mbox{\hyperlink{class_client_a962708dae618e769139655dfa3680fd4}{io\_context\_}}), \mbox{\hyperlink{class_client_a59a39bd0095a9fd0f2c77d7935820260}{client\_id\_}}(other.\mbox{\hyperlink{class_client_a59a39bd0095a9fd0f2c77d7935820260}{client\_id\_}}), \mbox{\hyperlink{class_client_a0f58780e5c896c125b4c58b915e65dc4}{menu\_}}(other.\mbox{\hyperlink{class_client_a0f58780e5c896c125b4c58b915e65dc4}{menu\_}}) \{ \}}
+\DoxyCodeLine{60     \mbox{\hyperlink{class_menu}{Menu}}\& \mbox{\hyperlink{class_client_a6342031513d78c15335597f53b2b6783}{menu}}() \{ \textcolor{keywordflow}{return} \mbox{\hyperlink{class_client_a0f58780e5c896c125b4c58b915e65dc4}{menu\_}}; \}}
+\DoxyCodeLine{67     \textcolor{keyword}{template}<\textcolor{keyword}{typename} T>}
+\DoxyCodeLine{68     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_client_a7f63ba90de237bc667294dac30e7f951}{write}}(T\& \textcolor{keywordtype}{object})}
+\DoxyCodeLine{69     \{}
+\DoxyCodeLine{70         \textcolor{comment}{//std::cout << "{}client write called"{} << std::endl;}}
+\DoxyCodeLine{71         \mbox{\hyperlink{class_client_ae771057d9635010ac71a271448e0549c}{network\_io\_}}.\mbox{\hyperlink{class_network_i_o_a6d9278695e78a7bef96e51ce131191ff}{async\_write}}( \textcolor{keywordtype}{object},}
+\DoxyCodeLine{72                                 std::bind(\&\mbox{\hyperlink{class_client_a68160e11d62388970ef323781b5a7a79}{Client::write\_completion\_handler}}, \textcolor{keyword}{this}, std::placeholders::\_1));}
+\DoxyCodeLine{73         \textcolor{comment}{//std::cout << "{}client write returned"{} << std::endl;}}
+\DoxyCodeLine{74     \}}
+\DoxyCodeLine{78     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_client_a2ac4838875e743af25125d8b5c8eba09}{close}}();}
+\DoxyCodeLine{79 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{83     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_client_a68160e11d62388970ef323781b5a7a79}{write\_completion\_handler}}(\textcolor{keyword}{const} asio::error\_code\& error);}
+\DoxyCodeLine{87     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_client_ad02063b8272297ac4631db4640b3a7f6}{close\_implementation}}();}
+\DoxyCodeLine{88     asio::io\_context\& \mbox{\hyperlink{class_client_a962708dae618e769139655dfa3680fd4}{io\_context\_}}; }
+\DoxyCodeLine{89     std::string \mbox{\hyperlink{class_client_a59a39bd0095a9fd0f2c77d7935820260}{client\_id\_}}; }
+\DoxyCodeLine{90     \mbox{\hyperlink{class_menu}{Menu}} \mbox{\hyperlink{class_client_a0f58780e5c896c125b4c58b915e65dc4}{menu\_}}; }
+\DoxyCodeLine{91     \mbox{\hyperlink{class_network_i_o}{NetworkIO}} \mbox{\hyperlink{class_client_ae771057d9635010ac71a271448e0549c}{network\_io\_}}; }
+\DoxyCodeLine{92 \};}
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{keyword}{class }\mbox{\hyperlink{class_customer_client}{CustomerClient}}}
+\DoxyCodeLine{95     : \textcolor{keyword}{public} \mbox{\hyperlink{class_client}{Client}} \{}
+\DoxyCodeLine{96 \textcolor{keyword}{public}:}
+\DoxyCodeLine{105     \mbox{\hyperlink{class_customer_client_a84d61de169a9e9ac5e81273ac4daee3f}{CustomerClient}}(\textcolor{keyword}{const} std::string\& client\_id,}
+\DoxyCodeLine{106             asio::io\_context\& io\_context,}
+\DoxyCodeLine{107             tcp::resolver::iterator endpoint\_iterator)}
+\DoxyCodeLine{108         :\mbox{\hyperlink{class_client}{Client}}\{client\_id, io\_context, endpoint\_iterator\} }
+\DoxyCodeLine{109         \{}
+\DoxyCodeLine{110             asio::async\_connect(\mbox{\hyperlink{class_client_ae771057d9635010ac71a271448e0549c}{network\_io\_}}.\mbox{\hyperlink{class_network_i_o_a83fd8b563206906c7a9eb7427d08810f}{socket}}(), endpoint\_iterator, std::bind(\&\mbox{\hyperlink{class_customer_client_a76ec26816c77be84fc6fd496aae7dd4f}{CustomerClient::on\_connect}}, \textcolor{keyword}{this}, std::placeholders::\_1)); \textcolor{comment}{// Connect to server}}
+\DoxyCodeLine{111         \}}
+\DoxyCodeLine{115     \mbox{\hyperlink{class_customer_client_a2643cdc2eb5808a8234a9332ed0553fa}{CustomerClient}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_customer_client}{CustomerClient}}\& other)}
+\DoxyCodeLine{116         :\mbox{\hyperlink{class_client}{Client}}\{other\} \{ \}}
+\DoxyCodeLine{122     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_customer_client_a884ef65f8aa8e85b99290c1b42d9b576}{save\_deal}}(\mbox{\hyperlink{class_deal}{Deal}} deal) \{ \mbox{\hyperlink{class_customer_client_ad6a9ffbb1f0d3e7b40c2bbc61be73d5a}{past\_deals\_}}.push\_back(deal); \}}
+\DoxyCodeLine{126     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_customer_client_af78e316b1f0197ef312bc36483ac6b2b}{print\_current\_deal}}();}
+\DoxyCodeLine{130     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_customer_client_ac5eac8a1c106ada8d56ab1eab9f34533}{print\_past\_deals}}();}
+\DoxyCodeLine{131 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{135     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_customer_client_a76ec26816c77be84fc6fd496aae7dd4f}{on\_connect}}(\textcolor{keyword}{const} asio::error\_code\& error);}
+\DoxyCodeLine{139     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_customer_client_a56ac577d5c00db47ff70421c29507357}{connect\_handler}}(\textcolor{keyword}{const} asio::error\_code\& error);}
+\DoxyCodeLine{143     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_customer_client_a27312546ab568bd913746d53a1aca8ce}{deal\_number\_handler}}(\textcolor{keyword}{const} asio::error\_code\& error);}
+\DoxyCodeLine{147     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_customer_client_a850f948d5f749622c7311f5336b8911e}{notification\_handler}}(\textcolor{keyword}{const} asio::error\_code\& error);}
+\DoxyCodeLine{148     vector<Deal> \mbox{\hyperlink{class_customer_client_ad6a9ffbb1f0d3e7b40c2bbc61be73d5a}{past\_deals\_}}; }
+\DoxyCodeLine{149     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_customer_client_aa18ee2dc58902c00d807c2636ef59073}{deal\_number\_}}; }
+\DoxyCodeLine{150     std::string \mbox{\hyperlink{class_customer_client_a8395a9fb74a0817958cff2fae21c2e72}{notification\_}}; }
+\DoxyCodeLine{151 \};}
+\DoxyCodeLine{152 }
+\DoxyCodeLine{153 \textcolor{keyword}{class }\mbox{\hyperlink{class_kitchen_client}{KitchenClient}}}
+\DoxyCodeLine{154     : \textcolor{keyword}{public} \mbox{\hyperlink{class_client}{Client}} \{}
+\DoxyCodeLine{155 \textcolor{keyword}{public}:}
+\DoxyCodeLine{165     \mbox{\hyperlink{class_kitchen_client_a2e4ccdf4e8aea99f1b37d7d1f91afe37}{KitchenClient}}(\textcolor{keyword}{const} std::string\& client\_id,}
+\DoxyCodeLine{166             asio::io\_context\& io\_context,}
+\DoxyCodeLine{167             tcp::resolver::iterator endpoint\_iterator,}
+\DoxyCodeLine{168             \mbox{\hyperlink{struct_food_i_d_vector}{FoodIDVector}}* foodid\_vector)}
+\DoxyCodeLine{169         :\mbox{\hyperlink{class_client}{Client}}\{client\_id, io\_context, endpoint\_iterator\}, \mbox{\hyperlink{class_kitchen_client_aaecbf30a818e6ecc37a7c9793d27812a}{foodid\_vector\_}}(foodid\_vector)}
+\DoxyCodeLine{170         \{}
+\DoxyCodeLine{171             asio::async\_connect(\mbox{\hyperlink{class_client_ae771057d9635010ac71a271448e0549c}{network\_io\_}}.\mbox{\hyperlink{class_network_i_o_a83fd8b563206906c7a9eb7427d08810f}{socket}}(), endpoint\_iterator, std::bind(\&\mbox{\hyperlink{class_kitchen_client_acb07a309dd0e83a3d8a5bcc8509e2303}{KitchenClient::on\_connect}}, \textcolor{keyword}{this}, std::placeholders::\_1)); \textcolor{comment}{// Connect to server}}
+\DoxyCodeLine{172         \}}
+\DoxyCodeLine{173 \textcolor{keyword}{protected}:}
+\DoxyCodeLine{177     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kitchen_client_acb07a309dd0e83a3d8a5bcc8509e2303}{on\_connect}}(\textcolor{keyword}{const} asio::error\_code\& error);}
+\DoxyCodeLine{181     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kitchen_client_a6bf5059d0b4742a688241188cda605cd}{connect\_handler}}(\textcolor{keyword}{const} asio::error\_code\& error);}
+\DoxyCodeLine{185     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kitchen_client_a9b1997f8e983bf53d3e4bc382babe651}{connect\_handler\_step2}}(\textcolor{keyword}{const} asio::error\_code\& error);}
+\DoxyCodeLine{189     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_kitchen_client_a8d1d51bb744076d30a3dbdd4bb18375d}{read\_handler}}(\textcolor{keyword}{const} asio::error\_code\& error);}
+\DoxyCodeLine{190     std::pair<unsigned int, FoodID> \mbox{\hyperlink{class_kitchen_client_a26b7a675877c6a7f8eab7857680c42ce}{read\_foodid\_}}; }
+\DoxyCodeLine{191     \mbox{\hyperlink{struct_food_i_d_vector}{FoodIDVector}}* \mbox{\hyperlink{class_kitchen_client_aaecbf30a818e6ecc37a7c9793d27812a}{foodid\_vector\_}}; }
+\DoxyCodeLine{192 \};}
+\DoxyCodeLine{193 }
+\DoxyCodeLine{194 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

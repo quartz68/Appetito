@@ -16,15 +16,11 @@ using asio::ip::tcp;
 int main(int argc, char* argv[])
 {
     try {
-        if (argc < 2) {
-            std::cerr << "Usage: server <port> <port> ..." << std::endl;
-            return 1;
-        }
-
         std::shared_ptr<asio::io_context> io_context(new asio::io_context);
         std::shared_ptr<asio::io_context::work> work(new asio::io_context::work(*io_context));
         std::shared_ptr<asio::io_context::strand> strand(new asio::io_context::strand(*io_context));
 
+        // FoodContainer and TableContainer
         ifstream food_file;
         food_file.open("food_file.csv");
         if(!food_file) return -1;
@@ -34,26 +30,37 @@ int main(int argc, char* argv[])
         FoodContainer all_foods(food_file);
         TableContainer all_tables(table_file);
         std::cout << "Server " << std::this_thread::get_id() << " starts." << std::endl;
-        
-        std::list<std::shared_ptr<Server>> servers;
-        for (int i = 1; i < argc; ++i)
-        {
-            tcp::endpoint endpoint(tcp::v4(), std::atoi(argv[i]));
-            std::shared_ptr<Server> aserver(new Server(*io_context, *strand, endpoint, &all_foods, &all_tables));
-            servers.push_back(aserver);
-        }
-        /* tcp::endpoint endpoint(tcp::v4(), std::atoi("9000"));
-        std::shared_ptr<Server> aserver(new Server(*io_context, *strand, endpoint, &all_foods, &all_tables));
-        servers.push_back(aserver); */
 
+        // Deal counter and queues
+        unsigned int deal_counter = 1;
+        DealContainer deals;
+        CustomerToKitchenQueue ctok_queue;
+        KitchenToCustomerQueue ktoc_queue;
+
+        // Servers
+        std::list<std::shared_ptr<CustomerServer>> customer_servers;
+        std::list<std::shared_ptr<KitchenServer>> kitchen_servers;
+
+        // Start customer server
+        tcp::endpoint endpoint_customer(tcp::v4(), std::atoi("9000"));
+        std::shared_ptr<CustomerServer> acserver(new CustomerServer(*io_context, *strand, endpoint_customer, &all_foods, &all_tables, &deal_counter, &ctok_queue, &ktoc_queue, &deals));
+        customer_servers.push_back(acserver);
+
+        // Start kitchen server
+        tcp::endpoint endpoint_kitchen(tcp::v4(), std::atoi("9001"));
+        std::shared_ptr<KitchenServer> akserver(new KitchenServer(*io_context, *strand, endpoint_kitchen, &all_foods, &all_tables, &deal_counter, &ktoc_queue, &ctok_queue, &deals));
+        kitchen_servers.push_back(akserver);
+
+        // Worker threads
         std::vector<std::thread*> workers; // Thread group
-        for (int i = 0; i < argc - 1; ++i) {
-            std::thread* t = new std::thread{ std::bind(WorkerThread::run, io_context) };
+        for (int i = 0; i < 2; ++i) {
+            std::thread* t = new std::thread{ std::bind(WorkerThread::run_ioc, io_context) };
             workers.push_back(t);
         }
 
-        for (auto i : workers) {
-            i->join();
+        // Join threads
+        for (auto thread : workers) {
+            thread->join();
         }
     } catch (std::exception& e) {
         std::cerr << e.what() << std::endl;

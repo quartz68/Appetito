@@ -1,3 +1,10 @@
+/**
+ * @file table.hpp
+ * @brief Header of Table, TableID, TableType, TableLocation and TableContainer classes.
+ * @details
+ * @version
+ */
+
 #ifndef TABLE_HPP_
 #define TABLE_HPP_
 
@@ -156,9 +163,15 @@ public:
     /**
      * @brief Get the ID in string.
      * 
-     * @return ID (typeid-id)
+     * @return ID "typeid-id"
      */
     string get_id_str();
+    /**
+     * @brief Get the location in string.
+     * 
+     * @return Location "(column,row)"
+     */
+    string get_location_str();
     /**
      * @brief Get the ID of the table.
      * 

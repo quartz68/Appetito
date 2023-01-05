@@ -1,3 +1,10 @@
+/**
+ * @file food.hpp
+ * @brief Header of Food, FoodID, FoodType, Price and FoodContainer classes.
+ * @details
+ * @version
+ */
+
 #ifndef FOOD_HPP_
 #define FOOD_HPP_
 

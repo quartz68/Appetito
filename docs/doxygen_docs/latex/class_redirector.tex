@@ -1,0 +1,150 @@
+\hypertarget{class_redirector}{}\doxysection{Redirector Class Reference}
+\label{class_redirector}\index{Redirector@{Redirector}}
+
+
+The redirector of objects to diffrent clients of the same kind.  
+
+
+
+
+{\ttfamily \#include $<$redirector.\+hpp$>$}
+
+Inheritance diagram for Redirector\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_redirector}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_redirector_a8eaff5cada5d11676c9cd2ff4f530d17}{Redirector}} (\mbox{\hyperlink{struct_food_container}{Food\+Container}} $\ast$all\+\_\+foods, \mbox{\hyperlink{struct_table_container}{Table\+Container}} $\ast$all\+\_\+tables, unsigned int $\ast$deal\+\_\+counter, \mbox{\hyperlink{struct_deal_container}{Deal\+Container}} $\ast$deals)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_redirector}{Redirector}} object with pointers to \mbox{\hyperlink{struct_food_container}{Food\+Container}} and \mbox{\hyperlink{struct_table_container}{Table\+Container}}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_menu}{Menu}} $\ast$ \mbox{\hyperlink{class_redirector_a53784b001a93ffd3058351799231da8f}{menu\+\_\+ptr}} ()
+\begin{DoxyCompactList}\small\item\em Gets a raw pointer to menu. \end{DoxyCompactList}\item 
+unsigned int $\ast$ \mbox{\hyperlink{class_redirector_ab08a57b35af50f8300fa14366b83c51d}{deal\+\_\+counter\+\_\+ptr}} ()
+\begin{DoxyCompactList}\small\item\em Gets a raw pointer to deal counter. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_deal_container}{Deal\+Container}} $\ast$ \mbox{\hyperlink{class_redirector_a4a88a186ef1e9d24c6ad4c7a26846f1a}{deals\+\_\+ptr}} ()
+\begin{DoxyCompactList}\small\item\em Gets a raw pointer to deals map. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_menu}{Menu}} \mbox{\hyperlink{class_redirector_aff8d21dbda77ddb668edcba9171eef8d}{menu\+\_\+}}
+\item 
+\mbox{\hyperlink{struct_food_container}{Food\+Container}} $\ast$ \mbox{\hyperlink{class_redirector_a0943cbbe20fcc497e9996730609d3a82}{all\+\_\+foods\+\_\+ptr\+\_\+}}
+\item 
+\mbox{\hyperlink{struct_table_container}{Table\+Container}} $\ast$ \mbox{\hyperlink{class_redirector_ae4105a714de744a3c2beca97c51e5b8e}{all\+\_\+tables\+\_\+ptr\+\_\+}}
+\item 
+unsigned int $\ast$ \mbox{\hyperlink{class_redirector_a507954524dac247469520acdf2e03b18}{deal\+\_\+counter\+\_\+ptr\+\_\+}}
+\item 
+\mbox{\hyperlink{struct_deal_container}{Deal\+Container}} $\ast$ \mbox{\hyperlink{class_redirector_aa0979f515a8c04b31de3020b267c5625}{deals\+\_\+ptr\+\_\+}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The redirector of objects to diffrent clients of the same kind. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_redirector_a8eaff5cada5d11676c9cd2ff4f530d17}\label{class_redirector_a8eaff5cada5d11676c9cd2ff4f530d17}} 
+\index{Redirector@{Redirector}!Redirector@{Redirector}}
+\index{Redirector@{Redirector}!Redirector@{Redirector}}
+\doxysubsubsection{\texorpdfstring{Redirector()}{Redirector()}}
+{\footnotesize\ttfamily Redirector\+::\+Redirector (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_food_container}{Food\+Container}} $\ast$}]{all\+\_\+foods,  }\item[{\mbox{\hyperlink{struct_table_container}{Table\+Container}} $\ast$}]{all\+\_\+tables,  }\item[{unsigned int $\ast$}]{deal\+\_\+counter,  }\item[{\mbox{\hyperlink{struct_deal_container}{Deal\+Container}} $\ast$}]{deals }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{class_redirector}{Redirector}} object with pointers to \mbox{\hyperlink{struct_food_container}{Food\+Container}} and \mbox{\hyperlink{struct_table_container}{Table\+Container}}. 
+
+Constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em all\+\_\+foods} & Raw pointer to \mbox{\hyperlink{struct_food_container}{Food\+Container}}. \\
+\hline
+{\em all\+\_\+tables} & Raw pointer to \mbox{\hyperlink{struct_table_container}{Table\+Container}}. \\
+\hline
+{\em deal\+\_\+counter} & Raw pointer to deal counter. \\
+\hline
+{\em deals} & Raw pointer to map of deals. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_redirector_ab08a57b35af50f8300fa14366b83c51d}\label{class_redirector_ab08a57b35af50f8300fa14366b83c51d}} 
+\index{Redirector@{Redirector}!deal\_counter\_ptr@{deal\_counter\_ptr}}
+\index{deal\_counter\_ptr@{deal\_counter\_ptr}!Redirector@{Redirector}}
+\doxysubsubsection{\texorpdfstring{deal\_counter\_ptr()}{deal\_counter\_ptr()}}
+{\footnotesize\ttfamily unsigned int $\ast$ Redirector\+::deal\+\_\+counter\+\_\+ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets a raw pointer to deal counter. 
+
+\begin{DoxyReturn}{Returns}
+Raw pointer to deal counter. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_redirector_a4a88a186ef1e9d24c6ad4c7a26846f1a}\label{class_redirector_a4a88a186ef1e9d24c6ad4c7a26846f1a}} 
+\index{Redirector@{Redirector}!deals\_ptr@{deals\_ptr}}
+\index{deals\_ptr@{deals\_ptr}!Redirector@{Redirector}}
+\doxysubsubsection{\texorpdfstring{deals\_ptr()}{deals\_ptr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_deal_container}{Deal\+Container}} $\ast$ Redirector\+::deals\+\_\+ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets a raw pointer to deals map. 
+
+\begin{DoxyReturn}{Returns}
+Raw pointer to deals map. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_redirector_a53784b001a93ffd3058351799231da8f}\label{class_redirector_a53784b001a93ffd3058351799231da8f}} 
+\index{Redirector@{Redirector}!menu\_ptr@{menu\_ptr}}
+\index{menu\_ptr@{menu\_ptr}!Redirector@{Redirector}}
+\doxysubsubsection{\texorpdfstring{menu\_ptr()}{menu\_ptr()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_menu}{Menu}} $\ast$ Redirector\+::menu\+\_\+ptr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets a raw pointer to menu. 
+
+\begin{DoxyReturn}{Returns}
+Raw pointer to menu. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_redirector_a0943cbbe20fcc497e9996730609d3a82}\label{class_redirector_a0943cbbe20fcc497e9996730609d3a82}} 
+\index{Redirector@{Redirector}!all\_foods\_ptr\_@{all\_foods\_ptr\_}}
+\index{all\_foods\_ptr\_@{all\_foods\_ptr\_}!Redirector@{Redirector}}
+\doxysubsubsection{\texorpdfstring{all\_foods\_ptr\_}{all\_foods\_ptr\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_food_container}{Food\+Container}}$\ast$ Redirector\+::all\+\_\+foods\+\_\+ptr\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_redirector_ae4105a714de744a3c2beca97c51e5b8e}\label{class_redirector_ae4105a714de744a3c2beca97c51e5b8e}} 
+\index{Redirector@{Redirector}!all\_tables\_ptr\_@{all\_tables\_ptr\_}}
+\index{all\_tables\_ptr\_@{all\_tables\_ptr\_}!Redirector@{Redirector}}
+\doxysubsubsection{\texorpdfstring{all\_tables\_ptr\_}{all\_tables\_ptr\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_table_container}{Table\+Container}}$\ast$ Redirector\+::all\+\_\+tables\+\_\+ptr\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_redirector_a507954524dac247469520acdf2e03b18}\label{class_redirector_a507954524dac247469520acdf2e03b18}} 
+\index{Redirector@{Redirector}!deal\_counter\_ptr\_@{deal\_counter\_ptr\_}}
+\index{deal\_counter\_ptr\_@{deal\_counter\_ptr\_}!Redirector@{Redirector}}
+\doxysubsubsection{\texorpdfstring{deal\_counter\_ptr\_}{deal\_counter\_ptr\_}}
+{\footnotesize\ttfamily unsigned int$\ast$ Redirector\+::deal\+\_\+counter\+\_\+ptr\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_redirector_aa0979f515a8c04b31de3020b267c5625}\label{class_redirector_aa0979f515a8c04b31de3020b267c5625}} 
+\index{Redirector@{Redirector}!deals\_ptr\_@{deals\_ptr\_}}
+\index{deals\_ptr\_@{deals\_ptr\_}!Redirector@{Redirector}}
+\doxysubsubsection{\texorpdfstring{deals\_ptr\_}{deals\_ptr\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_deal_container}{Deal\+Container}}$\ast$ Redirector\+::deals\+\_\+ptr\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{class_redirector_aff8d21dbda77ddb668edcba9171eef8d}\label{class_redirector_aff8d21dbda77ddb668edcba9171eef8d}} 
+\index{Redirector@{Redirector}!menu\_@{menu\_}}
+\index{menu\_@{menu\_}!Redirector@{Redirector}}
+\doxysubsubsection{\texorpdfstring{menu\_}{menu\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_menu}{Menu}} Redirector\+::menu\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Projects/\+Appetito/libs/server/include/\mbox{\hyperlink{redirector_8hpp}{redirector.\+hpp}}\end{DoxyCompactItemize}

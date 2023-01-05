@@ -1,116 +1,168 @@
+/**
+ * @file connectedclient.cpp
+ * @brief Implementation of ConnectedClient classes.
+ * @details
+ * @version
+ */
+
 #include <connected_client.hpp>
 #include <redirector.hpp>
+#include <server.hpp>
+
+#define TIMER_WAIT_MILLISECONDS 200
+
+// ConnectedClient
+
+ConnectedClient::ConnectedClient(asio::io_context& io_context,
+                    asio::io_context::strand& strand)
+                    :network_io_(io_context), strand_(strand) { }
 
 tcp::socket& ConnectedClient::socket() 
 {
     return network_io_.socket();
 }
 
-/*
-    FOR: Starts the connection, gets the client ID.
-    TAKES nothing,
-    RETURNS nothing.
-*/
-void ConnectedClient::start()
-{
-    //std::cout << "connected client start called" << std::endl;
-    network_io_.async_read(client_id_,
-                     strand_.wrap(std::bind(&ConnectedClient::id_handler, shared_from_this(), std::placeholders::_1)));
-    //std::cout << "connected client start returned" << std::endl;
-}
-
-/*
-    FOR: Writes a pack to the client.
-    TAKES a pack to write,
-    RETURNS nothing.
-*/
-/* void ConnectedClient::write(std::string& object) {
-    //std::cout << "connected client write called" << std::endl;
-    strings_to_write_.push_back(object);
-    if (!strings_to_write_.empty()) {
-        network_io_.async_write(strings_to_write_.front(),
-                            strand_.wrap(std::bind(&ConnectedClient::write_handler, shared_from_this(), std::placeholders::_1)));
-    }
-    //std::cout << "connected client write returned" << std::endl;
-}
-
-void ConnectedClient::write(Menu menu) {
-    network_io_.async_write( menu,
-                             strand_.wrap(std::bind(&ConnectedClient::write_handler, shared_from_this(), std::placeholders::_1)));
-} */
-
-/*
-    FOR: Handles ID, client enters redirector, starts to read packs.
-    TAKES an error code,
-    RETURNS nothing.
-*/
-void ConnectedClient::id_handler(const asio::error_code& error)
-{
-    std::cout << "connected client id handler called" << std::endl;
-    red_zone_.enter(shared_from_this(), client_id_);
-    write(red_zone_.menu());
-    std::cout << client_id_ << " entered!" << std::endl;
-    network_io_.async_read(read_string_,
-                    strand_.wrap(std::bind(&ConnectedClient::read_handler, shared_from_this(), std::placeholders::_1)));
-    std::cout << "connected client id handler returned" << std::endl;
-}
-
-
-/*
-    FOR: Handles reading from socket.
-    TAKES an error code,
-    RETURNS nothing.
-*/
-void ConnectedClient::read_handler(const asio::error_code& error)
-{
-    std::cout << "connected client read handler called" << std::endl;
-    if (!error) {
-        /* std::cout << read_pack_.data() << std::endl;
-        red_zone_.write_to_client(read_pack_, shared_from_this());
-        asio::async_read(network_io_.socket_,
-                         asio::buffer(read_pack_, read_pack_.size()),
-                         strand_.wrap(std::bind(&ConnectedClient::read_handler, shared_from_this(), std::placeholders::_1))); */
-        /* {
-            std::istringstream in_archive_stream;
-            strcpy(in_archive_stream.str().data(),network_io_.inbound_data_.data());
-            cereal::BinaryInputArchive in_archive(in_archive_stream);
-            in_archive >> pack;
-            std::cout << pack << std::endl;
-        } */
-        network_io_.async_read(read_string_,
-                         strand_.wrap(std::bind(&ConnectedClient::read_handler, shared_from_this(), std::placeholders::_1)));
-    } else {
-        std::cout << error.message() << std::endl;
-        red_zone_.leave(shared_from_this());
-    }
-    std::cout << "connected client read handler returned" << std::endl;
-}
-
-/*
-    FOR: Handles writing packs waiting to be written.
-    TAKES an error code,
-    RETURNS nothing.
-*/
-void ConnectedClient::write_handler(const asio::error_code& error)
-{
-    std::cout << "connected client write handler called" << std::endl;
-    if (!error) {
-        if (!strings_to_write_.empty()) {
-            network_io_.async_write(strings_to_write_.front(),
-                                strand_.wrap(std::bind(&ConnectedClient::read_handler, shared_from_this(), std::placeholders::_1)));
-        }
-    } else {
-        std::cout << error.message() << std::endl;
-        red_zone_.leave(shared_from_this());
-    }
-    std::cout << "connected client write handler returned" << std::endl;
-}
-
-/*
-    RETURNS client id.
-*/
 std::string ConnectedClient::get_id()
 {
     //std::cout << "connected client get id called" << std::endl;
     return client_id_;
+}
+
+void ConnectedClient::write_completion_handler(const asio::error_code& error)
+{
+    //std::cout << "connected client write handler called" << std::endl;
+    if (!error) {
+        //std::cout << "Write completed!" << std::endl;
+    } else {
+        std::cout << error.message() << std::endl;
+    }
+    //std::cout << "connected client write handler returned" << std::endl;
+}
+
+// ConnectedCustomerClient
+
+ConnectedCustomerClient::ConnectedCustomerClient(asio::io_context& io_context,
+                    asio::io_context::strand& strand,
+                    CustomerRedirector& red_zone)
+                    :ConnectedClient{io_context, strand}, red_zone_(red_zone), read_order_(*(red_zone_.menu_ptr())), read_deal_(read_order_,read_table_) { }
+
+void ConnectedCustomerClient::start()
+{
+    //std::cout << "connected client start called" << std::endl;
+    network_io_.async_read(client_id_,
+                     strand_.wrap(std::bind(&ConnectedCustomerClient::id_handler, shared_from_this(), std::placeholders::_1)));
+    //std::cout << "connected client start returned" << std::endl;
+}
+
+void ConnectedCustomerClient::id_handler(const asio::error_code& error)
+{
+    //std::cout << "connected client id handler called" << std::endl;
+    red_zone_.enter(shared_from_this(), client_id_);
+    write(*(red_zone_.menu_ptr()));
+    std::cout << "Customer " << client_id_ << " entered!" << std::endl;
+    network_io_.async_read(read_deal_,
+                    strand_.wrap(std::bind(&ConnectedCustomerClient::read_deal_handler, shared_from_this(), std::placeholders::_1)));
+    //std::cout << "connected client id handler returned" << std::endl;
+}
+
+void ConnectedCustomerClient::read_deal_handler(const asio::error_code& error)
+{
+    //std::cout << "connected client read deal completion handler called" << std::endl;
+    if (!error || error == asio::error::eof) {
+        read_deal_.set_menu_ptr(red_zone_.menu_ptr());
+        read_deal_.print();
+        // Save the deal
+        red_zone_.deals_ptr()->deals.emplace(*(red_zone_.deal_counter_ptr()), read_deal_);
+        vector<pair<bool,unsigned short>> tmp;
+        vector<pair<FoodID, unsigned short>> food_list = read_deal_.get_food_list();
+        for (auto food : food_list) {
+            tmp.emplace_back(0,food.second);
+        }
+        red_zone_.deals_ptr()->fulfill.emplace(*(red_zone_.deal_counter_ptr()), tmp);
+        // Push the FoodID items to customer to kitchen queue
+        {
+            std::lock_guard<std::mutex> lock(red_zone_.ctok_queue_ptr()->mtx);
+            for (auto foodid : read_deal_.get_food_list()) {
+                for (int i = 0; i < foodid.second; ++i) {
+                    red_zone_.ctok_queue_ptr()->foodid_queue.emplace(*(red_zone_.deal_counter_ptr()), foodid.first);
+                }
+            }
+        }
+        std::cout << "Deal " << *(red_zone_.deal_counter_ptr()) << " saved and sent to kitchen client." << std::endl;
+        // Write the deal number to the customer client
+        write(*(red_zone_.deal_counter_ptr()));
+        // Increment the deal counter
+        ++*(red_zone_.deal_counter_ptr());
+        // Read the next deal
+        network_io_.async_read(read_deal_,
+                    strand_.wrap(std::bind(&ConnectedCustomerClient::read_deal_handler, shared_from_this(), std::placeholders::_1)));
+    } else {
+        std::cout << error.message() << std::endl;
+        red_zone_.leave(shared_from_this());
+    }
+    //std::cout << "connected client read deal completion handler returned" << std::endl;
+}
+
+void ConnectedCustomerClient::queueing_handler(const asio::error_code& error) {
+    //std::cout << "connected client queueing handler called" << std::endl;
+    if (!error) {
+        /* network_io_.async_read(read_deal_,
+                    strand_.wrap(std::bind(&ConnectedCustomerClient::read_deal_handler, shared_from_this(), std::placeholders::_1))); */
+    } else {
+        std::cout << error.message() << std::endl;
+        red_zone_.leave(shared_from_this());
+    }
+    //std::cout << "connected client queueing handler returned" << std::endl;
+}
+
+// ConnectedKitchenClient
+
+ConnectedKitchenClient::ConnectedKitchenClient(asio::io_context& io_context,
+                    asio::io_context::strand& strand,
+                    KitchenRedirector& red_zone)
+                    : ConnectedClient{io_context, strand},
+                      red_zone_(red_zone) { }
+
+void ConnectedKitchenClient::start()
+{
+    //std::cout << "connected client start called" << std::endl;
+    network_io_.async_read(client_id_,
+                     strand_.wrap(std::bind(&ConnectedKitchenClient::id_handler, shared_from_this(), std::placeholders::_1)));
+    //std::cout << "connected client start returned" << std::endl;
+}
+
+void ConnectedKitchenClient::id_handler(const asio::error_code& error)
+{
+    //std::cout << "connected client id handler called" << std::endl;
+    red_zone_.enter(shared_from_this(), client_id_);
+    write(*(red_zone_.menu_ptr()));
+    std::cout << "Kitchen " << client_id_ << " entered!" << std::endl;
+    /* while(true) {
+       if(!(red_zone_.ctok_queue_ptr()->foodid_queue.empty())) {
+            {
+                std::lock_guard<std::mutex> lock(red_zone_.ctok_queue_ptr()->mtx);
+                while (!(red_zone_.ctok_queue_ptr()->foodid_queue.empty())) {
+                    std::pair<unsigned int, FoodID> tmp = red_zone_.ctok_queue_ptr()->foodid_queue.front();
+                    red_zone_.ctok_queue_ptr()->foodid_queue.pop();
+                    write(tmp);
+                }
+            }
+            break;
+        }
+    } */
+    network_io_.async_read(read_item_,
+                    strand_.wrap(std::bind(&ConnectedKitchenClient::read_item_handler, shared_from_this(), std::placeholders::_1)));
+    //std::cout << "connected client id handler returned" << std::endl;
+}
+
+void ConnectedKitchenClient::read_item_handler(const asio::error_code& error)
+{
+    if (!error) {
+        red_zone_.ktoc_queue_ptr()->foodid_queue.push(read_item_);
+        network_io_.async_read(read_item_,
+                        strand_.wrap(std::bind(&ConnectedKitchenClient::read_item_handler, shared_from_this(), std::placeholders::_1)));
+    } else {
+        std::cout << error.message() << std::endl;
+        red_zone_.leave(shared_from_this());
+    }
 }

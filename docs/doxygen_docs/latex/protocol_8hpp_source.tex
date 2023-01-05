@@ -1,0 +1,40 @@
+\hypertarget{protocol_8hpp_source}{}\doxysection{protocol.\+hpp}
+\label{protocol_8hpp_source}\index{C:/Projects/Appetito/libs/userio/include/protocol.hpp@{C:/Projects/Appetito/libs/userio/include/protocol.hpp}}
+\mbox{\hyperlink{protocol_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#ifndef PROTOCOL\_HPP\_}}
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#define PROTOCOL\_HPP\_}}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{preprocessor}{\#include <iomanip>}}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{preprocessor}{\#define SMALL\_FIELD\_WIDTH 10}}
+\DoxyCodeLine{14 \textcolor{preprocessor}{\#define LARGE\_FIELD\_WIDTH 20}}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{inline} std::ostream\& \mbox{\hyperlink{protocol_8hpp_aa563022cd6d3e2abdf7ec1ab99619718}{small\_field}}(std::ostream\& o)}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18     \textcolor{keywordflow}{return} o << std::setw(\mbox{\hyperlink{protocol_8hpp_a65fba7c2f4b0b012bd6177415ec5bc1a}{SMALL\_FIELD\_WIDTH}}) << std::left;}
+\DoxyCodeLine{19 \}}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{inline} std::ostream\& \mbox{\hyperlink{protocol_8hpp_a7b8f3c30e58725a5dd0b167ef51c94ae}{large\_field}}(std::ostream\& o)}
+\DoxyCodeLine{22 \{}
+\DoxyCodeLine{23     \textcolor{keywordflow}{return} o << std::setw(\mbox{\hyperlink{protocol_8hpp_a00c5b25c4fe3e342f59c6a17c7b4168c}{LARGE\_FIELD\_WIDTH}}) << std::left;}
+\DoxyCodeLine{24 \}}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{comment}{// General Formatting}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#define BOTTOM               "{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)n"{}}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define DIVIDE               "{}-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{29 \textcolor{comment}{// Customer Client Formatting}}
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#define SELECT\_TABLE\_HEADER  "{}\(\backslash\)n-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Select-\/-\/-\/Table-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#define SELECT\_FOOD\_HEADER   "{}\(\backslash\)n-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Select-\/-\/-\/Food-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#define PREVIEW\_ORDER\_HEADER "{}\(\backslash\)n-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Preview-\/-\/-\/Order-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{33 \textcolor{preprocessor}{\#define DEAL\_NUMBER\_HEADER   "{}\(\backslash\)n-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Deal-\/-\/-\/Number-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{34 \textcolor{preprocessor}{\#define NOTIFICATION\_HEADER  "{}\(\backslash\)n-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/NOTIFICATION-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{35 \textcolor{preprocessor}{\#define DEAL\_HEADER          "{}\(\backslash\)n-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Deal-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{36 \textcolor{preprocessor}{\#define CURRENT\_DEAL\_HEADER  "{}\(\backslash\)n-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/Current-\/-\/-\/Deal-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{37 \textcolor{comment}{// Kitchen Client Formatting}}
+\DoxyCodeLine{38 \textcolor{preprocessor}{\#define NEW\_ITEM\_HEADER      "{}\(\backslash\)n-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/New-\/-\/-\/Item-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/"{}}}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

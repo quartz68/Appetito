@@ -1,0 +1,218 @@
+\hypertarget{class_table}{}\doxysection{Table Class Reference}
+\label{class_table}\index{Table@{Table}}
+
+
+\mbox{\hyperlink{class_table}{Table}}.  
+
+
+
+
+{\ttfamily \#include $<$table.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_table_a049f2e06391781ae255c6698869c4ad1}{Table}} ()
+\begin{DoxyCompactList}\small\item\em Construct a \mbox{\hyperlink{class_table}{Table}} object of NULL\+\_\+\+TABLE\+\_\+\+TYPE. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_table_a624f243c94d392cadf6c895615d390c8}{Table}} (\mbox{\hyperlink{struct_table_type}{Table\+Type}} type, \mbox{\hyperlink{struct_table_i_d}{Table\+ID}} id, \mbox{\hyperlink{struct_table_location}{Table\+Location}} location)
+\begin{DoxyCompactList}\small\item\em Construct a \mbox{\hyperlink{class_table}{Table}} object from type, id and location. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_table_a71cf85b1c179e5103cff9b6201b417de}{get\+\_\+type\+\_\+name}} ()
+\begin{DoxyCompactList}\small\item\em Get the name of the type of the table. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_table_a3ebeadf6dbf09949da7992edf6974c33}{get\+\_\+id\+\_\+str}} ()
+\begin{DoxyCompactList}\small\item\em Get the ID in string. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_table_a052d87e22f6547562b244042f5c5a82f}{get\+\_\+location\+\_\+str}} ()
+\begin{DoxyCompactList}\small\item\em Get the location in string. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_table_i_d}{Table\+ID}} \mbox{\hyperlink{class_table_a0bd34f86148c123734c8e90821c265c0}{get\+\_\+id}} ()
+\begin{DoxyCompactList}\small\item\em Get the ID of the table. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_table_type}{Table\+Type}} \& \mbox{\hyperlink{class_table_a1fa0c733579f9497cdfe7fe4b00ff177}{get\+\_\+type}} ()
+\begin{DoxyCompactList}\small\item\em Get the type of the table. \end{DoxyCompactList}\item 
+unsigned short \mbox{\hyperlink{class_table_a72f6880b3d3ec0b177767ffef52ff444}{get\+\_\+capacity}} ()
+\begin{DoxyCompactList}\small\item\em Get the capacity of the table. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_table_ac5eda3657783ac573315904e9e9f951e}{set\+\_\+type}} (\mbox{\hyperlink{struct_table_type}{Table\+Type}} \&type\+\_\+id)
+\begin{DoxyCompactList}\small\item\em Set the type of the table. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_table_location}{Table\+Location}} \mbox{\hyperlink{class_table_a29fa9588d07c79da88527c2a7987d98f}{get\+\_\+location}} ()
+\begin{DoxyCompactList}\small\item\em Get the location of the table. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{class_table_a2601478cf1fe95a971e7cba6e5115a98}{serialize}} (Archive \&archive)
+\end{DoxyCompactItemize}
+\doxysubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+istream \& \mbox{\hyperlink{class_table_a22d49b1e52736ad18b4967cad94f58d2}{operator$>$$>$}} (istream \&is, \mbox{\hyperlink{class_table}{Table}} \&table)
+\begin{DoxyCompactList}\small\item\em Overloading operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} \+: \mbox{\hyperlink{struct_table_i_d}{Table\+ID}} , \mbox{\hyperlink{struct_table_type}{Table\+Type}} , \mbox{\hyperlink{struct_table_location}{Table\+Location}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_table}{Table}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_table_a049f2e06391781ae255c6698869c4ad1}\label{class_table_a049f2e06391781ae255c6698869c4ad1}} 
+\index{Table@{Table}!Table@{Table}}
+\index{Table@{Table}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{Table()}{Table()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Table\+::\+Table (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a \mbox{\hyperlink{class_table}{Table}} object of NULL\+\_\+\+TABLE\+\_\+\+TYPE. 
+
+Default constructor.
+
+\begin{DoxySeeAlso}{See also}
+\mbox{\hyperlink{class_table_a624f243c94d392cadf6c895615d390c8}{Table(\+Table\+Type type, Table\+ID id, Table\+Location location)}} 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_table_a624f243c94d392cadf6c895615d390c8}\label{class_table_a624f243c94d392cadf6c895615d390c8}} 
+\index{Table@{Table}!Table@{Table}}
+\index{Table@{Table}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{Table()}{Table()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Table\+::\+Table (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_table_type}{Table\+Type}}}]{type,  }\item[{\mbox{\hyperlink{struct_table_i_d}{Table\+ID}}}]{id,  }\item[{\mbox{\hyperlink{struct_table_location}{Table\+Location}}}]{location }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a \mbox{\hyperlink{class_table}{Table}} object from type, id and location. 
+
+Constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Type of the table. \\
+\hline
+{\em id} & ID of the table. \\
+\hline
+{\em location} & Location of the table. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_table_a72f6880b3d3ec0b177767ffef52ff444}\label{class_table_a72f6880b3d3ec0b177767ffef52ff444}} 
+\index{Table@{Table}!get\_capacity@{get\_capacity}}
+\index{get\_capacity@{get\_capacity}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{get\_capacity()}{get\_capacity()}}
+{\footnotesize\ttfamily unsigned short Table\+::get\+\_\+capacity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the capacity of the table. 
+
+\begin{DoxyReturn}{Returns}
+Capacity of the table. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_table_a0bd34f86148c123734c8e90821c265c0}\label{class_table_a0bd34f86148c123734c8e90821c265c0}} 
+\index{Table@{Table}!get\_id@{get\_id}}
+\index{get\_id@{get\_id}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{get\_id()}{get\_id()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_table_i_d}{Table\+ID}} Table\+::get\+\_\+id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the ID of the table. 
+
+\begin{DoxyReturn}{Returns}
+ID of the table. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_table_a3ebeadf6dbf09949da7992edf6974c33}\label{class_table_a3ebeadf6dbf09949da7992edf6974c33}} 
+\index{Table@{Table}!get\_id\_str@{get\_id\_str}}
+\index{get\_id\_str@{get\_id\_str}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{get\_id\_str()}{get\_id\_str()}}
+{\footnotesize\ttfamily string Table\+::get\+\_\+id\+\_\+str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the ID in string. 
+
+\begin{DoxyReturn}{Returns}
+ID \char`\"{}typeid-\/id\char`\"{} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_table_a29fa9588d07c79da88527c2a7987d98f}\label{class_table_a29fa9588d07c79da88527c2a7987d98f}} 
+\index{Table@{Table}!get\_location@{get\_location}}
+\index{get\_location@{get\_location}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{get\_location()}{get\_location()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_table_location}{Table\+Location}} Table\+::get\+\_\+location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the location of the table. 
+
+\begin{DoxyReturn}{Returns}
+Location of the table. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_table_a052d87e22f6547562b244042f5c5a82f}\label{class_table_a052d87e22f6547562b244042f5c5a82f}} 
+\index{Table@{Table}!get\_location\_str@{get\_location\_str}}
+\index{get\_location\_str@{get\_location\_str}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{get\_location\_str()}{get\_location\_str()}}
+{\footnotesize\ttfamily string Table\+::get\+\_\+location\+\_\+str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the location in string. 
+
+\begin{DoxyReturn}{Returns}
+Location \char`\"{}(column,row)\char`\"{} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_table_a1fa0c733579f9497cdfe7fe4b00ff177}\label{class_table_a1fa0c733579f9497cdfe7fe4b00ff177}} 
+\index{Table@{Table}!get\_type@{get\_type}}
+\index{get\_type@{get\_type}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{get\_type()}{get\_type()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_table_type}{Table\+Type}} \& Table\+::get\+\_\+type (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the type of the table. 
+
+\begin{DoxyReturn}{Returns}
+Reference to the type of the table. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_table_a71cf85b1c179e5103cff9b6201b417de}\label{class_table_a71cf85b1c179e5103cff9b6201b417de}} 
+\index{Table@{Table}!get\_type\_name@{get\_type\_name}}
+\index{get\_type\_name@{get\_type\_name}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{get\_type\_name()}{get\_type\_name()}}
+{\footnotesize\ttfamily string Table\+::get\+\_\+type\+\_\+name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Get the name of the type of the table. 
+
+\begin{DoxyReturn}{Returns}
+The name of the type of the table. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_table_a2601478cf1fe95a971e7cba6e5115a98}\label{class_table_a2601478cf1fe95a971e7cba6e5115a98}} 
+\index{Table@{Table}!serialize@{serialize}}
+\index{serialize@{serialize}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+void Table\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{archive }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_table_ac5eda3657783ac573315904e9e9f951e}\label{class_table_ac5eda3657783ac573315904e9e9f951e}} 
+\index{Table@{Table}!set\_type@{set\_type}}
+\index{set\_type@{set\_type}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{set\_type()}{set\_type()}}
+{\footnotesize\ttfamily void Table\+::set\+\_\+type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_table_type}{Table\+Type}} \&}]{type\+\_\+id }\end{DoxyParamCaption})}
+
+
+
+Set the type of the table. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & Type of the table. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_table_a22d49b1e52736ad18b4967cad94f58d2}\label{class_table_a22d49b1e52736ad18b4967cad94f58d2}} 
+\index{Table@{Table}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Table@{Table}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{istream \&}]{is,  }\item[{\mbox{\hyperlink{class_table}{Table}} \&}]{table }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Overloading operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} \+: \mbox{\hyperlink{struct_table_i_d}{Table\+ID}} , \mbox{\hyperlink{struct_table_type}{Table\+Type}} , \mbox{\hyperlink{struct_table_location}{Table\+Location}}. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Projects/\+Appetito/libs/restaurant\+\_\+util/include/\mbox{\hyperlink{table_8hpp}{table.\+hpp}}\item 
+C\+:/\+Projects/\+Appetito/libs/restaurant\+\_\+util/src/\mbox{\hyperlink{table_8cpp}{table.\+cpp}}\end{DoxyCompactItemize}

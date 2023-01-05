@@ -1,0 +1,178 @@
+\hypertarget{class_order}{}\doxysection{Order Class Reference}
+\label{class_order}\index{Order@{Order}}
+
+
+\mbox{\hyperlink{class_order}{Order}}.  
+
+
+
+
+{\ttfamily \#include $<$order\+\_\+deal.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_order_adb557ccac2a9261f0b5927a8bc9468cf}{Order}} (\mbox{\hyperlink{class_menu}{Menu}} \&menu)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{class_order}{Order}} object from menu. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_order_ab4a4201f14f288e0ab875fe618fdc0a4}{Order}} (const \mbox{\hyperlink{class_order}{Order}} \&order)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_order_a613ee1d20552448b1d702d974661ceb7}{operator=}} (const \mbox{\hyperlink{class_order}{Order}} \&order)
+\item 
+void \mbox{\hyperlink{class_order_a9a42627a6ad169896c87f8de8dd6ca58}{add\+\_\+item}} (\mbox{\hyperlink{class_food}{Food}} item, unsigned short quantity)
+\begin{DoxyCompactList}\small\item\em Add items of \mbox{\hyperlink{class_food}{Food}} to the order. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_order_aa92675d245d05e75ac7b9a99a676318b}{delete\+\_\+item}} (\mbox{\hyperlink{class_food}{Food}} item, unsigned short quantity)
+\begin{DoxyCompactList}\small\item\em Delete items of \mbox{\hyperlink{class_food}{Food}} to the order. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_order_a9172b1b3feeace9384e0561ff80ff0d4}{get\+\_\+bill}} ()
+\begin{DoxyCompactList}\small\item\em Calculate the bill and return the total price. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_order_a56f13d3cce881d11f7a3114be282fe15}{get\+\_\+price\+\_\+str}} (\mbox{\hyperlink{struct_food_i_d}{Food\+ID}} foodid, unsigned short quantity)
+\begin{DoxyCompactList}\small\item\em Get the string of price for output. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_order_a428881a0459bd6868716a6e0bbe2b170}{set\+\_\+menu\+\_\+ptr}} (\mbox{\hyperlink{class_menu}{Menu}} $\ast$menu\+\_\+ptr)
+\begin{DoxyCompactList}\small\item\em Set the menu. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_order_adf058dc273a7638a685ad3051f10b676}{print}} ()
+\begin{DoxyCompactList}\small\item\em Print the order. \end{DoxyCompactList}\item 
+vector$<$ pair$<$ \mbox{\hyperlink{struct_food_i_d}{Food\+ID}}, unsigned short $>$ $>$ \mbox{\hyperlink{class_order_af189ba4b9776308a48a1bfa6ff57d268}{get\+\_\+food\+\_\+list}} ()
+\item 
+{\footnotesize template$<$class Archive $>$ }\\void \mbox{\hyperlink{class_order_adabb6fbd5a38b05ce78e9d1ac2885488}{serialize}} (Archive \&archive)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{\hyperlink{class_order}{Order}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_order_adb557ccac2a9261f0b5927a8bc9468cf}\label{class_order_adb557ccac2a9261f0b5927a8bc9468cf}} 
+\index{Order@{Order}!Order@{Order}}
+\index{Order@{Order}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{Order()}{Order()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Order\+::\+Order (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_menu}{Menu}} \&}]{menu }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{class_order}{Order}} object from menu. 
+
+Constructor.
+
+
+\begin{DoxyParams}{Parameters}
+{\em menu} & \mbox{\hyperlink{class_menu}{Menu}}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_order_ab4a4201f14f288e0ab875fe618fdc0a4}\label{class_order_ab4a4201f14f288e0ab875fe618fdc0a4}} 
+\index{Order@{Order}!Order@{Order}}
+\index{Order@{Order}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{Order()}{Order()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Order\+::\+Order (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_order}{Order}} \&}]{order }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy constructor. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_order_a9a42627a6ad169896c87f8de8dd6ca58}\label{class_order_a9a42627a6ad169896c87f8de8dd6ca58}} 
+\index{Order@{Order}!add\_item@{add\_item}}
+\index{add\_item@{add\_item}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{add\_item()}{add\_item()}}
+{\footnotesize\ttfamily void Order\+::add\+\_\+item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_food}{Food}}}]{item,  }\item[{unsigned short}]{quantity }\end{DoxyParamCaption})}
+
+
+
+Add items of \mbox{\hyperlink{class_food}{Food}} to the order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & Item of \mbox{\hyperlink{class_food}{Food}}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_order_aa92675d245d05e75ac7b9a99a676318b}\label{class_order_aa92675d245d05e75ac7b9a99a676318b}} 
+\index{Order@{Order}!delete\_item@{delete\_item}}
+\index{delete\_item@{delete\_item}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{delete\_item()}{delete\_item()}}
+{\footnotesize\ttfamily void Order\+::delete\+\_\+item (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_food}{Food}}}]{item,  }\item[{unsigned short}]{quantity }\end{DoxyParamCaption})}
+
+
+
+Delete items of \mbox{\hyperlink{class_food}{Food}} to the order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & Item of \mbox{\hyperlink{class_food}{Food}}. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_order_a9172b1b3feeace9384e0561ff80ff0d4}\label{class_order_a9172b1b3feeace9384e0561ff80ff0d4}} 
+\index{Order@{Order}!get\_bill@{get\_bill}}
+\index{get\_bill@{get\_bill}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{get\_bill()}{get\_bill()}}
+{\footnotesize\ttfamily double Order\+::get\+\_\+bill (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calculate the bill and return the total price. 
+
+\begin{DoxyReturn}{Returns}
+Total price. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_order_af189ba4b9776308a48a1bfa6ff57d268}\label{class_order_af189ba4b9776308a48a1bfa6ff57d268}} 
+\index{Order@{Order}!get\_food\_list@{get\_food\_list}}
+\index{get\_food\_list@{get\_food\_list}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{get\_food\_list()}{get\_food\_list()}}
+{\footnotesize\ttfamily vector$<$ pair$<$ \mbox{\hyperlink{struct_food_i_d}{Food\+ID}}, unsigned short $>$ $>$ Order\+::get\+\_\+food\+\_\+list (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_order_a56f13d3cce881d11f7a3114be282fe15}\label{class_order_a56f13d3cce881d11f7a3114be282fe15}} 
+\index{Order@{Order}!get\_price\_str@{get\_price\_str}}
+\index{get\_price\_str@{get\_price\_str}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{get\_price\_str()}{get\_price\_str()}}
+{\footnotesize\ttfamily string Order\+::get\+\_\+price\+\_\+str (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_food_i_d}{Food\+ID}}}]{foodid,  }\item[{unsigned short}]{quantity }\end{DoxyParamCaption})}
+
+
+
+Get the string of price for output. 
+
+\begin{DoxyReturn}{Returns}
+String of price \char`\"{}price $\ast$ quantity = totalprice\char`\"{} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_order_a613ee1d20552448b1d702d974661ceb7}\label{class_order_a613ee1d20552448b1d702d974661ceb7}} 
+\index{Order@{Order}!operator=@{operator=}}
+\index{operator=@{operator=}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily void Order\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_order}{Order}} \&}]{order }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_order_adf058dc273a7638a685ad3051f10b676}\label{class_order_adf058dc273a7638a685ad3051f10b676}} 
+\index{Order@{Order}!print@{print}}
+\index{print@{print}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{print()}{print()}}
+{\footnotesize\ttfamily void Order\+::print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Print the order. 
+
+\mbox{\Hypertarget{class_order_adabb6fbd5a38b05ce78e9d1ac2885488}\label{class_order_adabb6fbd5a38b05ce78e9d1ac2885488}} 
+\index{Order@{Order}!serialize@{serialize}}
+\index{serialize@{serialize}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{serialize()}{serialize()}}
+{\footnotesize\ttfamily template$<$class Archive $>$ \\
+void Order\+::serialize (\begin{DoxyParamCaption}\item[{Archive \&}]{archive }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_order_a428881a0459bd6868716a6e0bbe2b170}\label{class_order_a428881a0459bd6868716a6e0bbe2b170}} 
+\index{Order@{Order}!set\_menu\_ptr@{set\_menu\_ptr}}
+\index{set\_menu\_ptr@{set\_menu\_ptr}!Order@{Order}}
+\doxysubsubsection{\texorpdfstring{set\_menu\_ptr()}{set\_menu\_ptr()}}
+{\footnotesize\ttfamily void Order\+::set\+\_\+menu\+\_\+ptr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_menu}{Menu}} $\ast$}]{menu\+\_\+ptr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the menu. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em menu\+\_\+ptr} & Raw pointer to menu. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Projects/\+Appetito/libs/restaurant\+\_\+util/include/\mbox{\hyperlink{order__deal_8hpp}{order\+\_\+deal.\+hpp}}\item 
+C\+:/\+Projects/\+Appetito/libs/restaurant\+\_\+util/src/\mbox{\hyperlink{order__deal_8cpp}{order\+\_\+deal.\+cpp}}\end{DoxyCompactItemize}

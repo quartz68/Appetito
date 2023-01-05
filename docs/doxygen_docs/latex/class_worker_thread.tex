@@ -1,0 +1,59 @@
+\hypertarget{class_worker_thread}{}\doxysection{Worker\+Thread Class Reference}
+\label{class_worker_thread}\index{WorkerThread@{WorkerThread}}
+
+
+Worker thread with mutex.  
+
+
+
+
+{\ttfamily \#include $<$server.\+hpp$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_worker_thread_a95da0837f9630ef4b681ed40f4af598d}{run\+\_\+ioc}} (std\+::shared\+\_\+ptr$<$ asio\+::io\+\_\+context $>$ io\+\_\+context)
+\begin{DoxyCompactList}\small\item\em Run the io\+\_\+context in a thread and use lock\+\_\+guard to achieve RAII for mutex. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_worker_thread_a799214c2a197656847b5412c271ff260}{run\+\_\+ks}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_kitchen_server}{Kitchen\+Server}} $>$ kitchen\+\_\+server)
+\item 
+static void \mbox{\hyperlink{class_worker_thread_ae28c6860b04df0ef275132f26d456002}{run\+\_\+cs}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_customer_server}{Customer\+Server}} $>$ customer\+\_\+server)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Worker thread with mutex. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_worker_thread_ae28c6860b04df0ef275132f26d456002}\label{class_worker_thread_ae28c6860b04df0ef275132f26d456002}} 
+\index{WorkerThread@{WorkerThread}!run\_cs@{run\_cs}}
+\index{run\_cs@{run\_cs}!WorkerThread@{WorkerThread}}
+\doxysubsubsection{\texorpdfstring{run\_cs()}{run\_cs()}}
+{\footnotesize\ttfamily static void Worker\+Thread\+::run\+\_\+cs (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_customer_server}{Customer\+Server}} $>$}]{customer\+\_\+server }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{class_worker_thread_a95da0837f9630ef4b681ed40f4af598d}\label{class_worker_thread_a95da0837f9630ef4b681ed40f4af598d}} 
+\index{WorkerThread@{WorkerThread}!run\_ioc@{run\_ioc}}
+\index{run\_ioc@{run\_ioc}!WorkerThread@{WorkerThread}}
+\doxysubsubsection{\texorpdfstring{run\_ioc()}{run\_ioc()}}
+{\footnotesize\ttfamily static void Worker\+Thread\+::run\+\_\+ioc (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ asio\+::io\+\_\+context $>$}]{io\+\_\+context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Run the io\+\_\+context in a thread and use lock\+\_\+guard to achieve RAII for mutex. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em io\+\_\+context} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_worker_thread_a799214c2a197656847b5412c271ff260}\label{class_worker_thread_a799214c2a197656847b5412c271ff260}} 
+\index{WorkerThread@{WorkerThread}!run\_ks@{run\_ks}}
+\index{run\_ks@{run\_ks}!WorkerThread@{WorkerThread}}
+\doxysubsubsection{\texorpdfstring{run\_ks()}{run\_ks()}}
+{\footnotesize\ttfamily static void Worker\+Thread\+::run\+\_\+ks (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_kitchen_server}{Kitchen\+Server}} $>$}]{kitchen\+\_\+server }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Projects/\+Appetito/libs/server/include/\mbox{\hyperlink{server_8hpp}{server.\+hpp}}\item 
+C\+:/\+Projects/\+Appetito/libs/server/src/\mbox{\hyperlink{server_8cpp}{server.\+cpp}}\end{DoxyCompactItemize}

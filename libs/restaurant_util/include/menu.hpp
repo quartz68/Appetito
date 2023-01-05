@@ -1,3 +1,10 @@
+/**
+ * @file menu.hpp
+ * @brief Header of Menu class.
+ * @details
+ * @version
+ */
+
 #ifndef CUSTOMER_MENU_HPP_
 #define CUSTOMER_MENU_HPP_
 
@@ -18,13 +25,21 @@ public:
     Menu() { }
     Menu(FoodContainer* all_foods, TableContainer* all_tables) //构造函数，遍历FoodContainer和TableContainer，分别将Food和Table存入二维vector types_foods和types_tables
     {
-        for (auto food : (*all_foods).foods) {
-            foods_.emplace(food.first,food.second);
-        }
-        for (auto table : (*all_tables).tables) {
-            tables_.emplace(table.first,table.second);
+        if (all_foods != nullptr && all_tables != nullptr) {
+            for (auto food : (*all_foods).foods) {
+                foods_.emplace(food.first,food.second);
+            }
+            for (auto table : (*all_tables).tables) {
+                tables_.emplace(table.first,table.second);
+            }
+        } else {
+            cerr << "Trying to set nullptr as FoodContainer or TableContainer pointer!" << endl;
         }
     }
+    Menu(const Menu& other)
+        :foods_(other.foods_), tables_(other.tables_) { }
+    void print_foods();
+    void print_tables();
     void print(); //从二维vector types_foods和types_tables打印菜单
     void refresh(); //刷新菜单，操作基本上和构造函数相同，向服务器请求的部分我后面来加
     template<class Archive>
