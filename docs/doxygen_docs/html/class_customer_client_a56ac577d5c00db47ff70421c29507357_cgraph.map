@@ -1,0 +1,8 @@
+<map id="CustomerClient::connect_handler" name="CustomerClient::connect_handler">
+<area shape="rect" id="node1" title="Reads menu from server." alt="" coords="5,55,171,95"/>
+<area shape="rect" id="node2" href="$class_network_i_o.html#a0561d5105365d727b08da96496dfe6e0" title="Asynchronously read a data structure from the socket." alt="" coords="655,5,812,31"/>
+<area shape="rect" id="node3" href="$class_client.html#ad02063b8272297ac4631db4640b3a7f6" title="Implementation of closing the client." alt="" coords="639,120,828,145"/>
+<area shape="rect" id="node5" href="$class_customer_client.html#a27312546ab568bd913746d53a1aca8ce" title="Reads deal number and displays it." alt="" coords="219,55,361,95"/>
+<area shape="rect" id="node4" href="$class_network_i_o.html#a83fd8b563206906c7a9eb7427d08810f" title="Get the underlying socket." alt="" coords="876,120,1005,145"/>
+<area shape="rect" id="node6" href="$class_customer_client.html#a850f948d5f749622c7311f5336b8911e" title="Reads notification and displays it." alt="" coords="409,55,591,95"/>
+</map>

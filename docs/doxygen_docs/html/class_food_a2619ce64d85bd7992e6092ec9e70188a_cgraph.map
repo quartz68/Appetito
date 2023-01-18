@@ -1,0 +1,4 @@
+<map id="Food::get_price_usd" name="Food::get_price_usd">
+<area shape="rect" id="node1" title="Get the price in USD." alt="" coords="5,5,145,31"/>
+<area shape="rect" id="node2" href="$class_price.html#a5278af2ec25502bcea72eeae7a1b195e" title="Get the price in USD." alt="" coords="193,5,300,31"/>
+</map>

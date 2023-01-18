@@ -1,0 +1,19 @@
+<map id="C:/Projects/Appetito/libs/restaurant_util/include/food.hpp" name="C:/Projects/Appetito/libs/restaurant_util/include/food.hpp">
+<area shape="rect" id="node1" title="Header of Food, FoodID, FoodType, Price and FoodContainer classes." alt="" coords="712,5,851,60"/>
+<area shape="rect" id="node2" href="$client_8hpp.html" title="Header of Client classes." alt="" coords="99,313,237,368"/>
+<area shape="rect" id="node4" href="$client__customer_8cpp.html" title=" " alt="" coords="192,423,357,463"/>
+<area shape="rect" id="node5" href="$client__kitchen_8cpp.html" title=" " alt="" coords="461,423,614,463"/>
+<area shape="rect" id="node6" href="$menu_8hpp.html" title="Header of Menu class." alt="" coords="583,108,721,163"/>
+<area shape="rect" id="node7" href="$order__deal_8hpp.html" title="Header of Order and Deal classes." alt="" coords="298,211,454,265"/>
+<area shape="rect" id="node10" href="$redirector_8hpp.html" title="Header of Redirector classes." alt="" coords="789,416,928,471"/>
+<area shape="rect" id="node11" href="$server_8hpp.html" title="Header of Server classes." alt="" coords="795,519,933,573"/>
+<area shape="rect" id="node17" href="$food_8cpp.html" title="Implementation of Food, FoodID, FoodType, Price and FoodContainer classes." alt="" coords="1003,108,1141,163"/>
+<area shape="rect" id="node3" href="$client_8cpp.html" title="Implementation of Client classes." alt="" coords="5,423,168,463"/>
+<area shape="rect" id="node9" href="$connected__client_8hpp.html" title=" " alt="" coords="677,313,827,368"/>
+<area shape="rect" id="node16" href="$menu_8cpp.html" title="Implementation of Menu class." alt="" coords="529,211,668,265"/>
+<area shape="rect" id="node8" href="$order__deal_8cpp.html" title="Implementation of Order and Deal classes." alt="" coords="312,313,451,368"/>
+<area shape="rect" id="node12" href="$connected__client_8cpp.html" title=" " alt="" coords="597,621,768,676"/>
+<area shape="rect" id="node13" href="$redirector_8cpp.html" title="Implementation of Redirector classes." alt="" coords="1153,629,1343,669"/>
+<area shape="rect" id="node14" href="$server_8cpp.html" title="Implementation of Server classes." alt="" coords="959,629,1129,669"/>
+<area shape="rect" id="node15" href="$server__main_8cpp.html" title=" " alt="" coords="793,629,935,669"/>
+</map>

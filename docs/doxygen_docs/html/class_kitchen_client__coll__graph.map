@@ -1,0 +1,7 @@
+<map id="KitchenClient" name="KitchenClient">
+<area shape="rect" id="node1" title=" " alt="" coords="81,181,179,207"/>
+<area shape="rect" id="node2" href="$class_client.html" title="Network client." alt="" coords="52,93,107,119"/>
+<area shape="rect" id="node3" href="$class_menu.html" title=" " alt="" coords="5,5,60,31"/>
+<area shape="rect" id="node4" href="$class_network_i_o.html" title="Handles TCP/IP network input/output." alt="" coords="85,5,167,31"/>
+<area shape="rect" id="node5" href="$struct_food_i_d_vector.html" title=" " alt="" coords="131,93,233,119"/>
+</map>

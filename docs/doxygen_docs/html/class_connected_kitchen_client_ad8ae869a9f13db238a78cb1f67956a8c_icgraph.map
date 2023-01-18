@@ -1,0 +1,6 @@
+<map id="ConnectedKitchenClient::shared_from_this" name="ConnectedKitchenClient::shared_from_this">
+<area shape="rect" id="node1" title="shared_from_this() for subclass" alt="" coords="633,52,795,92"/>
+<area shape="rect" id="node2" href="$class_connected_kitchen_client.html#a56a8b0afd2fe096cada41dd13f5c5db8" title="Handles kitchen client ID." alt="" coords="215,52,376,92"/>
+<area shape="rect" id="node3" href="$class_connected_kitchen_client.html#ae4595e20a39a6e5181053aa2e6b5c713" title="Starts the connection, gets the kitchen client ID." alt="" coords="5,82,167,122"/>
+<area shape="rect" id="node4" href="$class_connected_kitchen_client.html#ab912bb1cf580c232222620b918b79635" title="Handles reading a finished item." alt="" coords="424,52,585,92"/>
+</map>

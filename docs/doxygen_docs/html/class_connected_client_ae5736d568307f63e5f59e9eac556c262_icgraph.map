@@ -1,0 +1,9 @@
+<map id="ConnectedClient::write_completion_handler" name="ConnectedClient::write_completion_handler">
+<area shape="rect" id="node1" title="Handles completion of writing." alt="" coords="869,51,1021,91"/>
+<area shape="rect" id="node2" href="$class_connected_client.html#a93d1deb4a214f8f9b8c7a7fe0544a084" title="Write object to client." alt="" coords="669,59,821,84"/>
+<area shape="rect" id="node3" href="$class_connected_customer_client.html#a72b040f4edffb95240a4da9198959c82" title="Handles reading customer client ID, writing menu to client." alt="" coords="227,11,400,51"/>
+<area shape="rect" id="node5" href="$class_connected_kitchen_client.html#a56a8b0afd2fe096cada41dd13f5c5db8" title="Handles kitchen client ID." alt="" coords="454,115,615,155"/>
+<area shape="rect" id="node7" href="$class_connected_customer_client.html#acfa89feb4a509a28f7846a93aa65e7ea" title="Handles reading a Deal, saving Deal to vector deals_, writing deal number to client." alt="" coords="448,51,621,91"/>
+<area shape="rect" id="node4" href="$class_connected_customer_client.html#a325b16e3e112cf354ea63ba4e0d3cf22" title="Starts the connection, gets the customer client ID." alt="" coords="5,11,179,51"/>
+<area shape="rect" id="node6" href="$class_connected_kitchen_client.html#ae4595e20a39a6e5181053aa2e6b5c713" title="Starts the connection, gets the kitchen client ID." alt="" coords="233,115,394,155"/>
+</map>

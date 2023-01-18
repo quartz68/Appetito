@@ -1,0 +1,6 @@
+<map id="KitchenRedirector::leave" name="KitchenRedirector::leave">
+<area shape="rect" id="node1" title="Let a ConnectedKitchenClient leave the KitchenRedirector." alt="" coords="633,29,767,69"/>
+<area shape="rect" id="node2" href="$class_connected_kitchen_client.html#ab912bb1cf580c232222620b918b79635" title="Handles reading a finished item." alt="" coords="424,29,585,69"/>
+<area shape="rect" id="node3" href="$class_connected_kitchen_client.html#a56a8b0afd2fe096cada41dd13f5c5db8" title="Handles kitchen client ID." alt="" coords="215,29,376,69"/>
+<area shape="rect" id="node4" href="$class_connected_kitchen_client.html#ae4595e20a39a6e5181053aa2e6b5c713" title="Starts the connection, gets the kitchen client ID." alt="" coords="5,29,167,69"/>
+</map>

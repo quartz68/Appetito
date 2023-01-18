@@ -1,0 +1,5 @@
+<map id="KitchenServer::on_accept" name="KitchenServer::on_accept">
+<area shape="rect" id="node1" title="Handles accepting the connection of a new kitchen client." alt="" coords="420,5,591,31"/>
+<area shape="rect" id="node2" href="$class_kitchen_server.html#af6d936cf02e2d808ba96681084e0fc25" title="Run the kitchen server." alt="" coords="244,5,372,31"/>
+<area shape="rect" id="node3" href="$class_kitchen_server.html#a6c0ae2d08a8c1027258248cac0559842" title="Constructor." alt="" coords="5,5,196,31"/>
+</map>

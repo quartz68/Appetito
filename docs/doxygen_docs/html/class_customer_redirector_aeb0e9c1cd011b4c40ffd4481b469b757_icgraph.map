@@ -1,0 +1,7 @@
+<map id="CustomerRedirector::leave" name="CustomerRedirector::leave">
+<area shape="rect" id="node1" title="Let a ConnectedCustomerClient leave the CustomerRedirector." alt="" coords="669,49,807,89"/>
+<area shape="rect" id="node2" href="$class_connected_customer_client.html#a9214ca4bb84efb0e696e38af324e3958" title="Handles ." alt="" coords="448,5,621,45"/>
+<area shape="rect" id="node3" href="$class_connected_customer_client.html#acfa89feb4a509a28f7846a93aa65e7ea" title="Handles reading a Deal, saving Deal to vector deals_, writing deal number to client." alt="" coords="448,93,621,133"/>
+<area shape="rect" id="node4" href="$class_connected_customer_client.html#a72b040f4edffb95240a4da9198959c82" title="Handles reading customer client ID, writing menu to client." alt="" coords="227,93,400,133"/>
+<area shape="rect" id="node5" href="$class_connected_customer_client.html#a325b16e3e112cf354ea63ba4e0d3cf22" title="Starts the connection, gets the customer client ID." alt="" coords="5,93,179,133"/>
+</map>

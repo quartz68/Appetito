@@ -1,0 +1,17 @@
+<map id="ConnectedCustomerClient" name="ConnectedCustomerClient">
+<area shape="rect" id="node1" title="The customer client connected to this server." alt="" coords="860,139,1033,165"/>
+<area shape="rect" id="node2" href="$class_connected_client.html" title="The client connected to this server." alt="" coords="611,41,729,66"/>
+<area shape="rect" id="node3" title=" " alt="" coords="251,5,452,45"/>
+<area shape="rect" id="node4" href="$class_network_i_o.html" title="Handles TCP/IP network input/output." alt="" coords="310,70,393,95"/>
+<area shape="rect" id="node5" href="$class_order.html" title="Order." alt="" coords="643,90,697,115"/>
+<area shape="rect" id="node6" href="$class_table.html" title="Table." alt="" coords="643,139,697,165"/>
+<area shape="rect" id="node7" href="$class_deal.html" title="Deal." alt="" coords="646,189,694,214"/>
+<area shape="rect" id="node8" href="$class_customer_redirector.html" title="The specialized redirector for customer clients, which redirects objects to diffrent customer clients..." alt="" coords="601,238,739,263"/>
+<area shape="rect" id="node9" href="$class_redirector.html" title="The redirector of objects to diffrent clients of the same kind." alt="" coords="311,189,392,214"/>
+<area shape="rect" id="node10" href="$class_menu.html" title=" " alt="" coords="32,114,87,139"/>
+<area shape="rect" id="node11" href="$struct_food_container.html" title="Container that holds FoodType and Food in two maps." alt="" coords="6,163,113,189"/>
+<area shape="rect" id="node12" href="$struct_table_container.html" title="Container that holds TableType, Table and Location in three maps." alt="" coords="5,213,113,238"/>
+<area shape="rect" id="node13" href="$struct_deal_container.html" title="Container of Deal and corresponding container of bool." alt="" coords="8,262,111,287"/>
+<area shape="rect" id="node14" href="$struct_customer_to_kitchen_queue.html" title=" " alt="" coords="264,238,439,263"/>
+<area shape="rect" id="node15" href="$struct_kitchen_to_customer_queue.html" title=" " alt="" coords="264,287,439,313"/>
+</map>

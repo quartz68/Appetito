@@ -1,0 +1,4 @@
+<map id="Food::get_price_cny" name="Food::get_price_cny">
+<area shape="rect" id="node1" title="Get the price in CNY." alt="" coords="5,5,145,31"/>
+<area shape="rect" id="node2" href="$class_price.html#a92d7740ebf980a30ea786e4244f68527" title="Get the price in CNY." alt="" coords="193,5,300,31"/>
+</map>

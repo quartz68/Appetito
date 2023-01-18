@@ -1,0 +1,5 @@
+<map id="FoodContainer::FoodContainer" name="FoodContainer::FoodContainer">
+<area shape="rect" id="node1" title="Construct a FoodContainer object from a input file stream." alt="" coords="5,31,204,56"/>
+<area shape="rect" id="node2" href="$class_food.html#a2f4dcdcd9269bb0b0c4da6937c2c3dbd" title="Get the ID of the food." alt="" coords="259,5,354,31"/>
+<area shape="rect" id="node3" href="$class_food.html#a9172ce49bd4736e40f78464271c69973" title="Get the type of the food." alt="" coords="252,55,361,80"/>
+</map>

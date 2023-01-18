@@ -1,0 +1,5 @@
+<map id="Client::write_completion_handler" name="Client::write_completion_handler">
+<area shape="rect" id="node1" title="Handles completion of write." alt="" coords="5,5,165,45"/>
+<area shape="rect" id="node2" href="$class_client.html#ad02063b8272297ac4631db4640b3a7f6" title="Implementation of closing the client." alt="" coords="213,13,403,38"/>
+<area shape="rect" id="node3" href="$class_network_i_o.html#a83fd8b563206906c7a9eb7427d08810f" title="Get the underlying socket." alt="" coords="451,13,580,38"/>
+</map>

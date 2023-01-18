@@ -1,0 +1,4 @@
+<map id="ConnectedClient::socket" name="ConnectedClient::socket">
+<area shape="rect" id="node1" title="Get the socket." alt="" coords="5,5,169,31"/>
+<area shape="rect" id="node2" href="$class_network_i_o.html#a83fd8b563206906c7a9eb7427d08810f" title="Get the underlying socket." alt="" coords="217,5,347,31"/>
+</map>

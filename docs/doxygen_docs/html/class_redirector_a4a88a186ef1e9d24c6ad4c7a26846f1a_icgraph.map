@@ -1,0 +1,6 @@
+<map id="Redirector::deals_ptr" name="Redirector::deals_ptr">
+<area shape="rect" id="node1" title="Gets a raw pointer to deals map." alt="" coords="669,37,812,62"/>
+<area shape="rect" id="node2" href="$class_connected_customer_client.html#acfa89feb4a509a28f7846a93aa65e7ea" title="Handles reading a Deal, saving Deal to vector deals_, writing deal number to client." alt="" coords="448,29,621,69"/>
+<area shape="rect" id="node3" href="$class_connected_customer_client.html#a72b040f4edffb95240a4da9198959c82" title="Handles reading customer client ID, writing menu to client." alt="" coords="227,29,400,69"/>
+<area shape="rect" id="node4" href="$class_connected_customer_client.html#a325b16e3e112cf354ea63ba4e0d3cf22" title="Starts the connection, gets the customer client ID." alt="" coords="5,29,179,69"/>
+</map>

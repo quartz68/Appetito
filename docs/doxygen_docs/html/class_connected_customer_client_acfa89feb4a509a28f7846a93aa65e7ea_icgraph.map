@@ -1,0 +1,5 @@
+<map id="ConnectedCustomerClient::read_deal_handler" name="ConnectedCustomerClient::read_deal_handler">
+<area shape="rect" id="node1" title="Handles reading a Deal, saving Deal to vector deals_, writing deal number to client." alt="" coords="448,29,621,69"/>
+<area shape="rect" id="node2" href="$class_connected_customer_client.html#a72b040f4edffb95240a4da9198959c82" title="Handles reading customer client ID, writing menu to client." alt="" coords="227,29,400,69"/>
+<area shape="rect" id="node3" href="$class_connected_customer_client.html#a325b16e3e112cf354ea63ba4e0d3cf22" title="Starts the connection, gets the customer client ID." alt="" coords="5,29,179,69"/>
+</map>

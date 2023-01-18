@@ -1,0 +1,8 @@
+<map id="Food::get_id" name="Food::get_id">
+<area shape="rect" id="node1" title="Get the ID of the food." alt="" coords="489,55,584,80"/>
+<area shape="rect" id="node2" href="$class_order.html#a9a42627a6ad169896c87f8de8dd6ca58" title="Add items of Food to the order." alt="" coords="285,5,399,31"/>
+<area shape="rect" id="node5" href="$class_order.html#aa92675d245d05e75ac7b9a99a676318b" title="Delete items of Food to the order." alt="" coords="277,55,407,80"/>
+<area shape="rect" id="node6" href="$struct_food_container.html#a563a5e54d196fcde61c6f7bf1af3f5fa" title="Construct a FoodContainer object from a input file stream." alt="" coords="243,104,441,129"/>
+<area shape="rect" id="node3" href="$client__customer_8cpp.html#aa94990143ade2d1e26b89c5b6885a335" title=" " alt="" coords="104,31,195,56"/>
+<area shape="rect" id="node4" href="$client__customer_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="5,31,56,56"/>
+</map>

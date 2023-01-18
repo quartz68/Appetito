@@ -1,0 +1,4 @@
+<map id="Order::add_item" name="Order::add_item">
+<area shape="rect" id="node1" title="Add items of Food to the order." alt="" coords="5,5,120,31"/>
+<area shape="rect" id="node2" href="$class_food.html#a2f4dcdcd9269bb0b0c4da6937c2c3dbd" title="Get the ID of the food." alt="" coords="168,5,263,31"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="KitchenServer::prod_cons_exec" name="KitchenServer::prod_cons_exec">
+<area shape="rect" id="node1" title=" " alt="" coords="5,29,140,69"/>
+<area shape="rect" id="node2" href="$class_kitchen_server.html#a069bafa4917831cad4a936eebac63819" title=" " alt="" coords="188,29,355,69"/>
+<area shape="rect" id="node3" href="$class_kitchen_redirector.html#af4f01d59c6ce8e3a5cdf17ee30ac1d41" title="Write object to each customer client in the CustomerRedirector." alt="" coords="403,29,536,69"/>
+</map>

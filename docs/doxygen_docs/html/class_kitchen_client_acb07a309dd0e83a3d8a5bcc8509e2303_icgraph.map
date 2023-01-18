@@ -1,0 +1,4 @@
+<map id="KitchenClient::on_connect" name="KitchenClient::on_connect">
+<area shape="rect" id="node1" title="Writes client ID to server." alt="" coords="237,5,412,31"/>
+<area shape="rect" id="node2" href="$class_kitchen_client.html#a2e4ccdf4e8aea99f1b37d7d1f91afe37" title="Construct a KitchenClient object from client ID, io_context, TCP endpoint and vector of items." alt="" coords="5,5,189,31"/>
+</map>

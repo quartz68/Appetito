@@ -1,0 +1,6 @@
+<map id="Order::print" name="Order::print">
+<area shape="rect" id="node1" title="Print the order." alt="" coords="5,55,92,80"/>
+<area shape="rect" id="node2" href="$class_order.html#a56f13d3cce881d11f7a3114be282fe15" title="Get the string of price for output." alt="" coords="140,5,277,31"/>
+<area shape="rect" id="node3" href="$protocol_8hpp.html#a7b8f3c30e58725a5dd0b167ef51c94ae" title=" " alt="" coords="169,55,249,80"/>
+<area shape="rect" id="node4" href="$protocol_8hpp.html#aa563022cd6d3e2abdf7ec1ab99619718" title=" " alt="" coords="167,104,250,129"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="CustomerServer::run" name="CustomerServer::run">
+<area shape="rect" id="node1" title="Run the customer server." alt="" coords="232,77,372,102"/>
+<area shape="rect" id="node2" href="$class_customer_server.html#ab50e29e9d37ccda3961e7a8d9c03186a" title="Constructor." alt="" coords="5,5,184,45"/>
+<area shape="rect" id="node3" href="$class_customer_server.html#a216922054dba959cb9f6f679880dfbc8" title="Handles accepting the connection of a new customer client." alt="" coords="27,69,163,109"/>
+</map>

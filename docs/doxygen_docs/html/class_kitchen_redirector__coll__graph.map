@@ -1,0 +1,10 @@
+<map id="KitchenRedirector" name="KitchenRedirector">
+<area shape="rect" id="node1" title="The specialized redirector for kitchen clients, which redirects objects to diffrent kitchen clients." alt="" coords="293,181,418,207"/>
+<area shape="rect" id="node2" href="$class_redirector.html" title="The redirector of objects to diffrent clients of the same kind." alt="" coords="163,93,244,119"/>
+<area shape="rect" id="node3" href="$class_menu.html" title=" " alt="" coords="5,5,60,31"/>
+<area shape="rect" id="node4" href="$struct_food_container.html" title="Container that holds FoodType and Food in two maps." alt="" coords="85,5,191,31"/>
+<area shape="rect" id="node5" href="$struct_table_container.html" title="Container that holds TableType, Table and Location in three maps." alt="" coords="216,5,324,31"/>
+<area shape="rect" id="node6" href="$struct_deal_container.html" title="Container of Deal and corresponding container of bool." alt="" coords="348,5,451,31"/>
+<area shape="rect" id="node7" href="$struct_kitchen_to_customer_queue.html" title=" " alt="" coords="268,93,443,119"/>
+<area shape="rect" id="node8" href="$struct_customer_to_kitchen_queue.html" title=" " alt="" coords="467,93,641,119"/>
+</map>

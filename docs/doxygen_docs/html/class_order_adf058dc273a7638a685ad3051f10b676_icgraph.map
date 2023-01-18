@@ -1,0 +1,9 @@
+<map id="Order::print" name="Order::print">
+<area shape="rect" id="node1" title="Print the order." alt="" coords="799,47,885,72"/>
+<area shape="rect" id="node2" href="$class_deal.html#a95afdeebb28d890702a5f598dc590aa6" title="Print the deal." alt="" coords="669,47,751,72"/>
+<area shape="rect" id="node3" href="$client__customer_8cpp.html#aa94990143ade2d1e26b89c5b6885a335" title=" " alt="" coords="489,5,580,31"/>
+<area shape="rect" id="node5" href="$class_connected_customer_client.html#acfa89feb4a509a28f7846a93aa65e7ea" title="Handles reading a Deal, saving Deal to vector deals_, writing deal number to client." alt="" coords="448,79,621,119"/>
+<area shape="rect" id="node4" href="$client__customer_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="288,5,339,31"/>
+<area shape="rect" id="node6" href="$class_connected_customer_client.html#a72b040f4edffb95240a4da9198959c82" title="Handles reading customer client ID, writing menu to client." alt="" coords="227,79,400,119"/>
+<area shape="rect" id="node7" href="$class_connected_customer_client.html#a325b16e3e112cf354ea63ba4e0d3cf22" title="Starts the connection, gets the customer client ID." alt="" coords="5,79,179,119"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Redirector" name="Redirector">
+<area shape="rect" id="node1" title="The redirector of objects to diffrent clients of the same kind." alt="" coords="111,5,192,31"/>
+<area shape="rect" id="node2" href="$class_customer_redirector.html" title="The specialized redirector for customer clients, which redirects objects to diffrent customer clients..." alt="" coords="5,79,143,104"/>
+<area shape="rect" id="node3" href="$class_kitchen_redirector.html" title="The specialized redirector for kitchen clients, which redirects objects to diffrent kitchen clients." alt="" coords="167,79,293,104"/>
+</map>

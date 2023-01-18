@@ -1,0 +1,5 @@
+<map id="ConnectedCustomerClient::queueing_handler" name="ConnectedCustomerClient::queueing_handler">
+<area shape="rect" id="node1" title="Handles ." alt="" coords="5,37,179,77"/>
+<area shape="rect" id="node2" href="$class_customer_redirector.html#aeb0e9c1cd011b4c40ffd4481b469b757" title="Let a ConnectedCustomerClient leave the CustomerRedirector." alt="" coords="245,5,382,45"/>
+<area shape="rect" id="node3" href="$class_connected_customer_client.html#ab89b322c5c0534db6ca084895a7b6c52" title="shared_from_this() for subclass" alt="" coords="227,69,400,109"/>
+</map>

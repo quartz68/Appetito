@@ -1,0 +1,6 @@
+<map id="ConnectedClient" name="ConnectedClient">
+<area shape="rect" id="node1" title="The client connected to this server." alt="" coords="129,93,247,119"/>
+<area shape="rect" id="node3" href="$class_connected_customer_client.html" title="The customer client connected to this server." alt="" coords="5,167,179,192"/>
+<area shape="rect" id="node4" href="$class_connected_kitchen_client.html" title="The kitchen client connected to this server." alt="" coords="203,167,365,192"/>
+<area shape="rect" id="node2" title=" " alt="" coords="87,5,289,45"/>
+</map>

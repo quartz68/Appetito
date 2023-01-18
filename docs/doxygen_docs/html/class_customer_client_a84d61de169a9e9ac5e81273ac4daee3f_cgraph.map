@@ -1,0 +1,11 @@
+<map id="CustomerClient::CustomerClient" name="CustomerClient::CustomerClient">
+<area shape="rect" id="node1" title="Construct a CustomerClient object from client ID, io_context and TCP endpoint." alt="" coords="5,237,180,277"/>
+<area shape="rect" id="node2" href="$class_customer_client.html#a76ec26816c77be84fc6fd496aae7dd4f" title="Writes client ID to server." alt="" coords="228,186,361,226"/>
+<area shape="rect" id="node5" href="$class_network_i_o.html#a83fd8b563206906c7a9eb7427d08810f" title="Get the underlying socket." alt="" coords="1280,221,1409,247"/>
+<area shape="rect" id="node3" href="$class_network_i_o.html#a6d9278695e78a7bef96e51ce131191ff" title="Asynchronously write a data structure to the socket." alt="" coords="413,171,571,196"/>
+<area shape="rect" id="node4" href="$class_client.html#ad02063b8272297ac4631db4640b3a7f6" title="Implementation of closing the client." alt="" coords="1043,171,1232,196"/>
+<area shape="rect" id="node6" href="$class_customer_client.html#a56ac577d5c00db47ff70421c29507357" title="Reads menu from server." alt="" coords="409,81,575,121"/>
+<area shape="rect" id="node7" href="$class_network_i_o.html#a0561d5105365d727b08da96496dfe6e0" title="Asynchronously read a data structure from the socket." alt="" coords="1059,5,1216,31"/>
+<area shape="rect" id="node8" href="$class_customer_client.html#a27312546ab568bd913746d53a1aca8ce" title="Reads deal number and displays it." alt="" coords="623,55,765,95"/>
+<area shape="rect" id="node9" href="$class_customer_client.html#a850f948d5f749622c7311f5336b8911e" title="Reads notification and displays it." alt="" coords="813,55,995,95"/>
+</map>

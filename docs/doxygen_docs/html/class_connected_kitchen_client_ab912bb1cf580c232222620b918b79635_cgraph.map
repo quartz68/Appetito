@@ -1,0 +1,7 @@
+<map id="ConnectedKitchenClient::read_item_handler" name="ConnectedKitchenClient::read_item_handler">
+<area shape="rect" id="node1" title="Handles reading a finished item." alt="" coords="5,87,167,127"/>
+<area shape="rect" id="node2" href="$class_network_i_o.html#a0561d5105365d727b08da96496dfe6e0" title="Asynchronously read a data structure from the socket." alt="" coords="217,5,374,31"/>
+<area shape="rect" id="node3" href="$class_kitchen_redirector.html#a1624afc04f40bc521a58e8caf26dc6f3" title="Gets a raw pointer to kitchen to customer queue." alt="" coords="229,55,362,95"/>
+<area shape="rect" id="node4" href="$class_kitchen_redirector.html#a79932a87684f98d3220647961e027b35" title="Let a ConnectedKitchenClient leave the KitchenRedirector." alt="" coords="229,119,362,159"/>
+<area shape="rect" id="node5" href="$class_connected_kitchen_client.html#ad8ae869a9f13db238a78cb1f67956a8c" title="shared_from_this() for subclass" alt="" coords="215,183,376,223"/>
+</map>

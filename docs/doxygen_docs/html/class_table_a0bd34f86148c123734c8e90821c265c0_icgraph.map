@@ -1,0 +1,5 @@
+<map id="Table::get_id" name="Table::get_id">
+<area shape="rect" id="node1" title="Get the ID of the table." alt="" coords="256,31,352,56"/>
+<area shape="rect" id="node2" href="$class_deal.html#afe885bdfa5e086695a169fb03ad81ccb" title="Set the table." alt="" coords="52,5,161,31"/>
+<area shape="rect" id="node3" href="$struct_table_container.html#aa43863eda09fe3e5eb0bada52c4c5efc" title="Construct a TableContainer object from a input file stream." alt="" coords="5,55,208,80"/>
+</map>

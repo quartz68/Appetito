@@ -1,0 +1,8 @@
+<map id="KitchenServer::KitchenServer" name="KitchenServer::KitchenServer">
+<area shape="rect" id="node1" title="Constructor." alt="" coords="5,5,196,31"/>
+<area shape="rect" id="node2" href="$class_kitchen_server.html#af6d936cf02e2d808ba96681084e0fc25" title="Run the kitchen server." alt="" coords="244,5,372,31"/>
+<area shape="rect" id="node3" href="$class_kitchen_server.html#aa81cb8ae78a96156193d0b8589685268" title="Handles accepting the connection of a new kitchen client." alt="" coords="420,5,591,31"/>
+<area shape="rect" id="node4" href="$class_kitchen_server.html#af1363b42c91ae995a9176172b909e55e" title=" " alt="" coords="438,55,573,95"/>
+<area shape="rect" id="node5" href="$class_kitchen_server.html#a069bafa4917831cad4a936eebac63819" title=" " alt="" coords="639,55,805,95"/>
+<area shape="rect" id="node6" href="$class_kitchen_redirector.html#af4f01d59c6ce8e3a5cdf17ee30ac1d41" title="Write object to each customer client in the CustomerRedirector." alt="" coords="853,55,987,95"/>
+</map>

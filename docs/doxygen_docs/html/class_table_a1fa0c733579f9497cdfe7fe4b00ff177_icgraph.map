@@ -1,0 +1,4 @@
+<map id="Table::get_type" name="Table::get_type">
+<area shape="rect" id="node1" title="Get the type of the table." alt="" coords="256,5,367,31"/>
+<area shape="rect" id="node2" href="$struct_table_container.html#aa43863eda09fe3e5eb0bada52c4c5efc" title="Construct a TableContainer object from a input file stream." alt="" coords="5,5,208,31"/>
+</map>

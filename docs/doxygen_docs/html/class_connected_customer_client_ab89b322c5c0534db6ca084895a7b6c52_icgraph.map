@@ -1,0 +1,7 @@
+<map id="ConnectedCustomerClient::shared_from_this" name="ConnectedCustomerClient::shared_from_this">
+<area shape="rect" id="node1" title="shared_from_this() for subclass" alt="" coords="669,56,843,96"/>
+<area shape="rect" id="node2" href="$class_connected_customer_client.html#a72b040f4edffb95240a4da9198959c82" title="Handles reading customer client ID, writing menu to client." alt="" coords="227,33,400,73"/>
+<area shape="rect" id="node3" href="$class_connected_customer_client.html#a325b16e3e112cf354ea63ba4e0d3cf22" title="Starts the connection, gets the customer client ID." alt="" coords="5,5,179,45"/>
+<area shape="rect" id="node4" href="$class_connected_customer_client.html#a9214ca4bb84efb0e696e38af324e3958" title="Handles ." alt="" coords="448,84,621,124"/>
+<area shape="rect" id="node5" href="$class_connected_customer_client.html#acfa89feb4a509a28f7846a93aa65e7ea" title="Handles reading a Deal, saving Deal to vector deals_, writing deal number to client." alt="" coords="448,172,621,212"/>
+</map>

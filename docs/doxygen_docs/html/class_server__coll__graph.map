@@ -1,0 +1,6 @@
+<map id="Server" name="Server">
+<area shape="rect" id="node1" title="Server." alt="" coords="161,93,220,119"/>
+<area shape="rect" id="node2" href="$struct_food_container.html" title="Container that holds FoodType and Food in two maps." alt="" coords="5,5,112,31"/>
+<area shape="rect" id="node3" href="$struct_table_container.html" title="Container that holds TableType, Table and Location in three maps." alt="" coords="137,5,245,31"/>
+<area shape="rect" id="node4" href="$struct_deal_container.html" title="Container of Deal and corresponding container of bool." alt="" coords="269,5,371,31"/>
+</map>

@@ -108,13 +108,24 @@ $(document).ready(function(){initNavTree('class_connected_client.html',''); init
 <div class="dynheader">
 Inheritance diagram for ConnectedClient:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_connected_client.png" usemap="#ConnectedClient_map" alt=""/>
-  <map id="ConnectedClient_map" name="ConnectedClient_map">
-<area href="class_connected_customer_client.html" title="The customer client connected to this server." alt="ConnectedCustomerClient" shape="rect" coords="0,112,293,136"/>
-<area href="class_connected_kitchen_client.html" title="The kitchen client connected to this server." alt="ConnectedKitchenClient" shape="rect" coords="303,112,596,136"/>
-  </map>
-</div></div>
+<div class="center"><img src="class_connected_client__inherit__graph.png" border="0" usemap="#a_connected_client_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_connected_client_inherit__map" id="a_connected_client_inherit__map">
+<area shape="rect" title="The client connected to this server." alt="" coords="129,93,247,119"/>
+<area shape="rect" href="class_connected_customer_client.html" title="The customer client connected to this server." alt="" coords="5,167,179,192"/>
+<area shape="rect" href="class_connected_kitchen_client.html" title="The kitchen client connected to this server." alt="" coords="203,167,365,192"/>
+<area shape="rect" title=" " alt="" coords="87,5,289,45"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for ConnectedClient:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_connected_client__coll__graph.png" border="0" usemap="#a_connected_client_coll__map" alt="Collaboration graph"/></div>
+<map name="a_connected_client_coll__map" id="a_connected_client_coll__map">
+<area shape="rect" title="The client connected to this server." alt="" coords="130,108,247,133"/>
+<area shape="rect" title=" " alt="" coords="5,5,207,45"/>
+<area shape="rect" href="class_network_i_o.html" title="Handles TCP/IP network input/output." alt="" coords="231,13,314,38"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -226,6 +237,15 @@ Protected Attributes</h2></td></tr>
 
 <p>Get the socket. </p>
 <dl class="section return"><dt>Returns</dt><dd>TCP socket. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_connected_client_a0f52c6714d482a16b60621a59ea57d85_cgraph.png" border="0" usemap="#aclass_connected_client_a0f52c6714d482a16b60621a59ea57d85_cgraph" alt=""/></div>
+<map name="aclass_connected_client_a0f52c6714d482a16b60621a59ea57d85_cgraph" id="aclass_connected_client_a0f52c6714d482a16b60621a59ea57d85_cgraph">
+<area shape="rect" title="Get the socket." alt="" coords="5,5,169,31"/>
+<area shape="rect" href="class_network_i_o.html#a83fd8b563206906c7a9eb7427d08810f" title="Get the underlying socket." alt="" coords="217,5,347,31"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -268,6 +288,29 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_connected_client_a93d1deb4a214f8f9b8c7a7fe0544a084_cgraph.png" border="0" usemap="#aclass_connected_client_a93d1deb4a214f8f9b8c7a7fe0544a084_cgraph" alt=""/></div>
+<map name="aclass_connected_client_a93d1deb4a214f8f9b8c7a7fe0544a084_cgraph" id="aclass_connected_client_a93d1deb4a214f8f9b8c7a7fe0544a084_cgraph">
+<area shape="rect" title="Write object to client." alt="" coords="5,35,157,60"/>
+<area shape="rect" href="class_network_i_o.html#a6d9278695e78a7bef96e51ce131191ff" title="Asynchronously write a data structure to the socket." alt="" coords="205,5,364,31"/>
+<area shape="rect" href="class_connected_client.html#ae5736d568307f63e5f59e9eac556c262" title="Handles completion of writing." alt="" coords="209,55,361,95"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_connected_client_a93d1deb4a214f8f9b8c7a7fe0544a084_icgraph.png" border="0" usemap="#aclass_connected_client_a93d1deb4a214f8f9b8c7a7fe0544a084_icgraph" alt=""/></div>
+<map name="aclass_connected_client_a93d1deb4a214f8f9b8c7a7fe0544a084_icgraph" id="aclass_connected_client_a93d1deb4a214f8f9b8c7a7fe0544a084_icgraph">
+<area shape="rect" title="Write object to client." alt="" coords="669,59,821,84"/>
+<area shape="rect" href="class_connected_customer_client.html#a72b040f4edffb95240a4da9198959c82" title="Handles reading customer client ID, writing menu to client." alt="" coords="227,11,400,51"/>
+<area shape="rect" href="class_connected_kitchen_client.html#a56a8b0afd2fe096cada41dd13f5c5db8" title="Handles kitchen client ID." alt="" coords="454,115,615,155"/>
+<area shape="rect" href="class_connected_customer_client.html#acfa89feb4a509a28f7846a93aa65e7ea" title="Handles reading a Deal, saving Deal to vector deals_, writing deal number to client." alt="" coords="448,51,621,91"/>
+<area shape="rect" href="class_connected_customer_client.html#a325b16e3e112cf354ea63ba4e0d3cf22" title="Starts the connection, gets the customer client ID." alt="" coords="5,11,179,51"/>
+<area shape="rect" href="class_connected_kitchen_client.html#ae4595e20a39a6e5181053aa2e6b5c713" title="Starts the connection, gets the kitchen client ID." alt="" coords="233,115,394,155"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -296,6 +339,20 @@ template&lt;typename T &gt; </div>
 </div><div class="memdoc">
 
 <p>Handles completion of writing. </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_connected_client_ae5736d568307f63e5f59e9eac556c262_icgraph.png" border="0" usemap="#aclass_connected_client_ae5736d568307f63e5f59e9eac556c262_icgraph" alt=""/></div>
+<map name="aclass_connected_client_ae5736d568307f63e5f59e9eac556c262_icgraph" id="aclass_connected_client_ae5736d568307f63e5f59e9eac556c262_icgraph">
+<area shape="rect" title="Handles completion of writing." alt="" coords="869,51,1021,91"/>
+<area shape="rect" href="class_connected_client.html#a93d1deb4a214f8f9b8c7a7fe0544a084" title="Write object to client." alt="" coords="669,59,821,84"/>
+<area shape="rect" href="class_connected_customer_client.html#a72b040f4edffb95240a4da9198959c82" title="Handles reading customer client ID, writing menu to client." alt="" coords="227,11,400,51"/>
+<area shape="rect" href="class_connected_kitchen_client.html#a56a8b0afd2fe096cada41dd13f5c5db8" title="Handles kitchen client ID." alt="" coords="454,115,615,155"/>
+<area shape="rect" href="class_connected_customer_client.html#acfa89feb4a509a28f7846a93aa65e7ea" title="Handles reading a Deal, saving Deal to vector deals_, writing deal number to client." alt="" coords="448,51,621,91"/>
+<area shape="rect" href="class_connected_customer_client.html#a325b16e3e112cf354ea63ba4e0d3cf22" title="Starts the connection, gets the customer client ID." alt="" coords="5,11,179,51"/>
+<area shape="rect" href="class_connected_kitchen_client.html#ae4595e20a39a6e5181053aa2e6b5c713" title="Starts the connection, gets the kitchen client ID." alt="" coords="233,115,394,155"/>
+</map>
+</div>
 
 </div>
 </div>

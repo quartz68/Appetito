@@ -1,0 +1,5 @@
+<map id="CustomerServer::on_accept" name="CustomerServer::on_accept">
+<area shape="rect" id="node1" title="Handles accepting the connection of a new customer client." alt="" coords="420,5,556,45"/>
+<area shape="rect" id="node2" href="$class_customer_server.html#a45776355459b732245eae6a29ad8e791" title="Run the customer server." alt="" coords="232,13,372,38"/>
+<area shape="rect" id="node3" href="$class_customer_server.html#ab50e29e9d37ccda3961e7a8d9c03186a" title="Constructor." alt="" coords="5,5,184,45"/>
+</map>

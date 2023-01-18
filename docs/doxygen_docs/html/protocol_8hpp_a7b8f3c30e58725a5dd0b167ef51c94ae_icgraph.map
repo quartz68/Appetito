@@ -1,0 +1,19 @@
+<map id="large_field" name="large_field">
+<area shape="rect" id="node1" title=" " alt="" coords="1063,146,1143,171"/>
+<area shape="rect" id="node2" href="$class_order.html#adf058dc273a7638a685ad3051f10b676" title="Print the order." alt="" coords="905,57,992,82"/>
+<area shape="rect" id="node9" href="$class_menu.html#a15ae4218d7e25f13a463cb3792586fb3" title=" " alt="" coords="886,170,1011,195"/>
+<area shape="rect" id="node16" href="$class_menu.html#a268b096d81c99080f73b84c68733c20c" title=" " alt="" coords="884,121,1013,146"/>
+<area shape="rect" id="node17" href="$class_kitchen_client.html#a8d1d51bb744076d30a3dbdd4bb18375d" title="Reads item and displays it." alt="" coords="883,244,1015,284"/>
+<area shape="rect" id="node3" href="$class_deal.html#a95afdeebb28d890702a5f598dc590aa6" title="Print the deal." alt="" coords="717,42,799,67"/>
+<area shape="rect" id="node4" href="$client__customer_8cpp.html#aa94990143ade2d1e26b89c5b6885a335" title=" " alt="" coords="501,94,592,119"/>
+<area shape="rect" id="node6" href="$class_connected_customer_client.html#acfa89feb4a509a28f7846a93aa65e7ea" title="Handles reading a Deal, saving Deal to vector deals_, writing deal number to client." alt="" coords="460,29,633,69"/>
+<area shape="rect" id="node5" href="$client__customer_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="299,119,350,145"/>
+<area shape="rect" id="node7" href="$class_connected_customer_client.html#a72b040f4edffb95240a4da9198959c82" title="Handles reading customer client ID, writing menu to client." alt="" coords="238,29,411,69"/>
+<area shape="rect" id="node8" href="$class_connected_customer_client.html#a325b16e3e112cf354ea63ba4e0d3cf22" title="Starts the connection, gets the customer client ID." alt="" coords="11,29,184,69"/>
+<area shape="rect" id="node10" href="$class_kitchen_client.html#a9b1997f8e983bf53d3e4bc382babe651" title="Prints menu." alt="" coords="681,244,835,284"/>
+<area shape="rect" id="node14" href="$class_menu.html#aa6ff784314cc009478562d9ab7a0af34" title=" " alt="" coords="715,143,801,169"/>
+<area shape="rect" id="node11" href="$class_kitchen_client.html#a6bf5059d0b4742a688241188cda605cd" title="Reads menu from server." alt="" coords="470,244,623,284"/>
+<area shape="rect" id="node12" href="$class_kitchen_client.html#acb07a309dd0e83a3d8a5bcc8509e2303" title="Writes client ID to server." alt="" coords="237,251,412,277"/>
+<area shape="rect" id="node13" href="$class_kitchen_client.html#a2e4ccdf4e8aea99f1b37d7d1f91afe37" title="Construct a KitchenClient object from client ID, io_context, TCP endpoint and vector of items." alt="" coords="5,251,189,277"/>
+<area shape="rect" id="node15" href="$client__customer_8cpp.html#a1c8b2a665b6c51c80641c29bd7bd3e08" title=" " alt="" coords="503,143,590,169"/>
+</map>

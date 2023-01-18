@@ -1,0 +1,8 @@
+<map id="CustomerRedirector::write_to_client" name="CustomerRedirector::write_to_client">
+<area shape="rect" id="node1" title="Write object to each customer client in the CustomerRedirector." alt="" coords="841,69,979,109"/>
+<area shape="rect" id="node2" href="$class_customer_server.html#a53495b1517b3eb3c7fbe618296ad5a27" title=" " alt="" coords="615,69,793,109"/>
+<area shape="rect" id="node3" href="$class_customer_server.html#ab4881c55321a5a3c22f7dbb00256e989" title=" " alt="" coords="420,69,567,109"/>
+<area shape="rect" id="node4" href="$class_customer_server.html#a45776355459b732245eae6a29ad8e791" title="Run the customer server." alt="" coords="232,77,372,102"/>
+<area shape="rect" id="node5" href="$class_customer_server.html#ab50e29e9d37ccda3961e7a8d9c03186a" title="Constructor." alt="" coords="5,5,184,45"/>
+<area shape="rect" id="node6" href="$class_customer_server.html#a216922054dba959cb9f6f679880dfbc8" title="Handles accepting the connection of a new customer client." alt="" coords="27,69,163,109"/>
+</map>

@@ -1,0 +1,19 @@
+<map id="Client::close_implementation" name="Client::close_implementation">
+<area shape="rect" id="node1" title="Implementation of closing the client." alt="" coords="1099,257,1288,283"/>
+<area shape="rect" id="node2" href="$class_client.html#a2ac4838875e743af25125d8b5c8eba09" title="Close the client." alt="" coords="923,5,1018,31"/>
+<area shape="rect" id="node4" href="$class_customer_client.html#a56ac577d5c00db47ff70421c29507357" title="Reads menu from server." alt="" coords="669,194,835,234"/>
+<area shape="rect" id="node5" href="$class_customer_client.html#a76ec26816c77be84fc6fd496aae7dd4f" title="Writes client ID to server." alt="" coords="470,175,603,215"/>
+<area shape="rect" id="node7" href="$class_kitchen_client.html#a6bf5059d0b4742a688241188cda605cd" title="Reads menu from server." alt="" coords="460,386,613,426"/>
+<area shape="rect" id="node8" href="$class_kitchen_client.html#acb07a309dd0e83a3d8a5bcc8509e2303" title="Writes client ID to server." alt="" coords="237,364,412,389"/>
+<area shape="rect" id="node10" href="$class_kitchen_client.html#a9b1997f8e983bf53d3e4bc382babe651" title="Prints menu." alt="" coords="675,437,829,477"/>
+<area shape="rect" id="node11" href="$class_customer_client.html#a27312546ab568bd913746d53a1aca8ce" title="Reads deal number and displays it." alt="" coords="899,221,1042,261"/>
+<area shape="rect" id="node12" href="$class_customer_client.html#a850f948d5f749622c7311f5336b8911e" title="Reads notification and displays it." alt="" coords="661,258,843,298"/>
+<area shape="rect" id="node13" href="$class_kitchen_client.html#a8d1d51bb744076d30a3dbdd4bb18375d" title="Reads item and displays it." alt="" coords="905,511,1037,551"/>
+<area shape="rect" id="node14" href="$class_client.html#a68160e11d62388970ef323781b5a7a79" title="Handles completion of write." alt="" coords="891,55,1051,95"/>
+<area shape="rect" id="node3" href="$client__customer_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="299,31,350,56"/>
+<area shape="rect" id="node6" href="$class_customer_client.html#a84d61de169a9e9ac5e81273ac4daee3f" title="Construct a CustomerClient object from client ID, io_context and TCP endpoint." alt="" coords="237,175,412,215"/>
+<area shape="rect" id="node9" href="$class_kitchen_client.html#a2e4ccdf4e8aea99f1b37d7d1f91afe37" title="Construct a KitchenClient object from client ID, io_context, TCP endpoint and vector of items." alt="" coords="5,364,189,389"/>
+<area shape="rect" id="node15" href="$class_client.html#a7f63ba90de237bc667294dac30e7f951" title="Write an object to the server." alt="" coords="707,63,797,88"/>
+<area shape="rect" id="node16" href="$client__kitchen_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="511,105,562,131"/>
+<area shape="rect" id="node17" href="$client__customer_8cpp.html#aa94990143ade2d1e26b89c5b6885a335" title=" " alt="" coords="491,56,582,81"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="CustomerClient::connect_handler" name="CustomerClient::connect_handler">
+<area shape="rect" id="node1" title="Reads menu from server." alt="" coords="409,29,575,69"/>
+<area shape="rect" id="node2" href="$class_customer_client.html#a76ec26816c77be84fc6fd496aae7dd4f" title="Writes client ID to server." alt="" coords="228,29,361,69"/>
+<area shape="rect" id="node3" href="$class_customer_client.html#a84d61de169a9e9ac5e81273ac4daee3f" title="Construct a CustomerClient object from client ID, io_context and TCP endpoint." alt="" coords="5,29,180,69"/>
+</map>

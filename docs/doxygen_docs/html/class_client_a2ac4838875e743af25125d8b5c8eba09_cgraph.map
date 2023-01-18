@@ -1,0 +1,5 @@
+<map id="Client::close" name="Client::close">
+<area shape="rect" id="node1" title="Close the client." alt="" coords="5,5,100,31"/>
+<area shape="rect" id="node2" href="$class_client.html#ad02063b8272297ac4631db4640b3a7f6" title="Implementation of closing the client." alt="" coords="148,5,337,31"/>
+<area shape="rect" id="node3" href="$class_network_i_o.html#a83fd8b563206906c7a9eb7427d08810f" title="Get the underlying socket." alt="" coords="385,5,515,31"/>
+</map>

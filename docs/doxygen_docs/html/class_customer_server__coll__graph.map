@@ -1,0 +1,12 @@
+<map id="CustomerServer" name="CustomerServer">
+<area shape="rect" id="node1" title=" " alt="" coords="265,269,380,295"/>
+<area shape="rect" id="node2" href="$class_server.html" title="Server." alt="" coords="95,93,153,119"/>
+<area shape="rect" id="node3" href="$struct_food_container.html" title="Container that holds FoodType and Food in two maps." alt="" coords="39,5,145,31"/>
+<area shape="rect" id="node7" href="$class_redirector.html" title="The redirector of objects to diffrent clients of the same kind." alt="" coords="377,93,458,119"/>
+<area shape="rect" id="node4" href="$struct_table_container.html" title="Container that holds TableType, Table and Location in three maps." alt="" coords="275,5,383,31"/>
+<area shape="rect" id="node5" href="$struct_deal_container.html" title="Container of Deal and corresponding container of bool." alt="" coords="459,5,562,31"/>
+<area shape="rect" id="node6" href="$class_customer_redirector.html" title="The specialized redirector for customer clients, which redirects objects to diffrent customer clients..." alt="" coords="351,181,489,207"/>
+<area shape="rect" id="node8" href="$class_menu.html" title=" " alt="" coords="645,5,699,31"/>
+<area shape="rect" id="node9" href="$struct_customer_to_kitchen_queue.html" title=" " alt="" coords="178,93,353,119"/>
+<area shape="rect" id="node10" href="$struct_kitchen_to_customer_queue.html" title=" " alt="" coords="485,93,659,119"/>
+</map>

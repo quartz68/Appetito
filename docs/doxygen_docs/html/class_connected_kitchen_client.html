@@ -108,12 +108,32 @@ $(document).ready(function(){initNavTree('class_connected_kitchen_client.html','
 <div class="dynheader">
 Inheritance diagram for ConnectedKitchenClient:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_connected_kitchen_client.png" usemap="#ConnectedKitchenClient_map" alt=""/>
-  <map id="ConnectedKitchenClient_map" name="ConnectedKitchenClient_map">
-<area href="class_connected_client.html" title="The client connected to this server." alt="ConnectedClient" shape="rect" coords="0,56,293,80"/>
-  </map>
-</div></div>
+<div class="center"><img src="class_connected_kitchen_client__inherit__graph.png" border="0" usemap="#a_connected_kitchen_client_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_connected_kitchen_client_inherit__map" id="a_connected_kitchen_client_inherit__map">
+<area shape="rect" title="The kitchen client connected to this server." alt="" coords="25,167,187,192"/>
+<area shape="rect" href="class_connected_client.html" title="The client connected to this server." alt="" coords="47,93,165,119"/>
+<area shape="rect" title=" " alt="" coords="5,5,207,45"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for ConnectedKitchenClient:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_connected_kitchen_client__coll__graph.png" border="0" usemap="#a_connected_kitchen_client_coll__map" alt="Collaboration graph"/></div>
+<map name="a_connected_kitchen_client_coll__map" id="a_connected_kitchen_client_coll__map">
+<area shape="rect" title="The kitchen client connected to this server." alt="" coords="840,119,1001,145"/>
+<area shape="rect" href="class_connected_client.html" title="The client connected to this server." alt="" coords="605,70,723,95"/>
+<area shape="rect" title=" " alt="" coords="251,5,452,45"/>
+<area shape="rect" href="class_network_i_o.html" title="Handles TCP/IP network input/output." alt="" coords="310,70,393,95"/>
+<area shape="rect" href="class_kitchen_redirector.html" title="The specialized redirector for kitchen clients, which redirects objects to diffrent kitchen clients." alt="" coords="601,143,727,169"/>
+<area shape="rect" href="class_redirector.html" title="The redirector of objects to diffrent clients of the same kind." alt="" coords="311,119,392,145"/>
+<area shape="rect" href="class_menu.html" title=" " alt="" coords="32,45,87,70"/>
+<area shape="rect" href="struct_food_container.html" title="Container that holds FoodType and Food in two maps." alt="" coords="6,94,113,119"/>
+<area shape="rect" href="struct_table_container.html" title="Container that holds TableType, Table and Location in three maps." alt="" coords="5,143,113,169"/>
+<area shape="rect" href="struct_deal_container.html" title="Container of Deal and corresponding container of bool." alt="" coords="8,193,111,218"/>
+<area shape="rect" href="struct_kitchen_to_customer_queue.html" title=" " alt="" coords="264,169,439,194"/>
+<area shape="rect" href="struct_customer_to_kitchen_queue.html" title=" " alt="" coords="264,218,439,243"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -242,6 +262,33 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Handles kitchen client ID. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_connected_kitchen_client_a56a8b0afd2fe096cada41dd13f5c5db8_cgraph.png" border="0" usemap="#aclass_connected_kitchen_client_a56a8b0afd2fe096cada41dd13f5c5db8_cgraph" alt=""/></div>
+<map name="aclass_connected_kitchen_client_a56a8b0afd2fe096cada41dd13f5c5db8_cgraph" id="aclass_connected_kitchen_client_a56a8b0afd2fe096cada41dd13f5c5db8_cgraph">
+<area shape="rect" title="Handles kitchen client ID." alt="" coords="5,136,167,176"/>
+<area shape="rect" href="class_network_i_o.html#a0561d5105365d727b08da96496dfe6e0" title="Asynchronously read a data structure from the socket." alt="" coords="426,22,583,48"/>
+<area shape="rect" href="class_kitchen_redirector.html#a8c597eb86bc211d97eb7b77eaaa00c70" title="Let a ConnectedKitchenClient enter the CustomerRedirector." alt="" coords="229,38,362,78"/>
+<area shape="rect" href="class_redirector.html#a53784b001a93ffd3058351799231da8f" title="Gets a raw pointer to menu." alt="" coords="224,102,367,128"/>
+<area shape="rect" href="class_connected_kitchen_client.html#ab912bb1cf580c232222620b918b79635" title="Handles reading a finished item." alt="" coords="215,176,376,216"/>
+<area shape="rect" href="class_connected_kitchen_client.html#ad8ae869a9f13db238a78cb1f67956a8c" title="shared_from_this() for subclass" alt="" coords="424,234,585,274"/>
+<area shape="rect" href="class_connected_client.html#a93d1deb4a214f8f9b8c7a7fe0544a084" title="Write object to client." alt="" coords="219,298,371,324"/>
+<area shape="rect" href="class_kitchen_redirector.html#a1624afc04f40bc521a58e8caf26dc6f3" title="Gets a raw pointer to kitchen to customer queue." alt="" coords="438,106,571,146"/>
+<area shape="rect" href="class_kitchen_redirector.html#a79932a87684f98d3220647961e027b35" title="Let a ConnectedKitchenClient leave the KitchenRedirector." alt="" coords="438,170,571,210"/>
+<area shape="rect" href="class_network_i_o.html#a6d9278695e78a7bef96e51ce131191ff" title="Asynchronously write a data structure to the socket." alt="" coords="425,298,584,324"/>
+<area shape="rect" href="class_connected_client.html#ae5736d568307f63e5f59e9eac556c262" title="Handles completion of writing." alt="" coords="429,348,581,388"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_connected_kitchen_client_a56a8b0afd2fe096cada41dd13f5c5db8_icgraph.png" border="0" usemap="#aclass_connected_kitchen_client_a56a8b0afd2fe096cada41dd13f5c5db8_icgraph" alt=""/></div>
+<map name="aclass_connected_kitchen_client_a56a8b0afd2fe096cada41dd13f5c5db8_icgraph" id="aclass_connected_kitchen_client_a56a8b0afd2fe096cada41dd13f5c5db8_icgraph">
+<area shape="rect" title="Handles kitchen client ID." alt="" coords="215,5,376,45"/>
+<area shape="rect" href="class_connected_kitchen_client.html#ae4595e20a39a6e5181053aa2e6b5c713" title="Starts the connection, gets the kitchen client ID." alt="" coords="5,5,167,45"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -270,6 +317,28 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Handles reading a finished item. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_connected_kitchen_client_ab912bb1cf580c232222620b918b79635_cgraph.png" border="0" usemap="#aclass_connected_kitchen_client_ab912bb1cf580c232222620b918b79635_cgraph" alt=""/></div>
+<map name="aclass_connected_kitchen_client_ab912bb1cf580c232222620b918b79635_cgraph" id="aclass_connected_kitchen_client_ab912bb1cf580c232222620b918b79635_cgraph">
+<area shape="rect" title="Handles reading a finished item." alt="" coords="5,87,167,127"/>
+<area shape="rect" href="class_network_i_o.html#a0561d5105365d727b08da96496dfe6e0" title="Asynchronously read a data structure from the socket." alt="" coords="217,5,374,31"/>
+<area shape="rect" href="class_kitchen_redirector.html#a1624afc04f40bc521a58e8caf26dc6f3" title="Gets a raw pointer to kitchen to customer queue." alt="" coords="229,55,362,95"/>
+<area shape="rect" href="class_kitchen_redirector.html#a79932a87684f98d3220647961e027b35" title="Let a ConnectedKitchenClient leave the KitchenRedirector." alt="" coords="229,119,362,159"/>
+<area shape="rect" href="class_connected_kitchen_client.html#ad8ae869a9f13db238a78cb1f67956a8c" title="shared_from_this() for subclass" alt="" coords="215,183,376,223"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_connected_kitchen_client_ab912bb1cf580c232222620b918b79635_icgraph.png" border="0" usemap="#aclass_connected_kitchen_client_ab912bb1cf580c232222620b918b79635_icgraph" alt=""/></div>
+<map name="aclass_connected_kitchen_client_ab912bb1cf580c232222620b918b79635_icgraph" id="aclass_connected_kitchen_client_ab912bb1cf580c232222620b918b79635_icgraph">
+<area shape="rect" title="Handles reading a finished item." alt="" coords="424,29,585,69"/>
+<area shape="rect" href="class_connected_kitchen_client.html#a56a8b0afd2fe096cada41dd13f5c5db8" title="Handles kitchen client ID." alt="" coords="215,29,376,69"/>
+<area shape="rect" href="class_connected_kitchen_client.html#ae4595e20a39a6e5181053aa2e6b5c713" title="Starts the connection, gets the kitchen client ID." alt="" coords="5,29,167,69"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -298,6 +367,17 @@ Protected Attributes</h2></td></tr>
 
 <p><a class="el" href="class_connected_kitchen_client.html#ad8ae869a9f13db238a78cb1f67956a8c" title="shared_from_this() for subclass">shared_from_this()</a> for subclass </p>
 <dl class="section return"><dt>Returns</dt><dd>Casted shared_ptr of <a class="el" href="class_connected_kitchen_client.html" title="The kitchen client connected to this server.">ConnectedKitchenClient</a> from ConnectedClient::shared_from_this(). </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_connected_kitchen_client_ad8ae869a9f13db238a78cb1f67956a8c_icgraph.png" border="0" usemap="#aclass_connected_kitchen_client_ad8ae869a9f13db238a78cb1f67956a8c_icgraph" alt=""/></div>
+<map name="aclass_connected_kitchen_client_ad8ae869a9f13db238a78cb1f67956a8c_icgraph" id="aclass_connected_kitchen_client_ad8ae869a9f13db238a78cb1f67956a8c_icgraph">
+<area shape="rect" title="shared_from_this() for subclass" alt="" coords="633,52,795,92"/>
+<area shape="rect" href="class_connected_kitchen_client.html#a56a8b0afd2fe096cada41dd13f5c5db8" title="Handles kitchen client ID." alt="" coords="215,52,376,92"/>
+<area shape="rect" href="class_connected_kitchen_client.html#ae4595e20a39a6e5181053aa2e6b5c713" title="Starts the connection, gets the kitchen client ID." alt="" coords="5,82,167,122"/>
+<area shape="rect" href="class_connected_kitchen_client.html#ab912bb1cf580c232222620b918b79635" title="Handles reading a finished item." alt="" coords="424,52,585,92"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -317,6 +397,25 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Starts the connection, gets the kitchen client ID. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_connected_kitchen_client_ae4595e20a39a6e5181053aa2e6b5c713_cgraph.png" border="0" usemap="#aclass_connected_kitchen_client_ae4595e20a39a6e5181053aa2e6b5c713_cgraph" alt=""/></div>
+<map name="aclass_connected_kitchen_client_ae4595e20a39a6e5181053aa2e6b5c713_cgraph" id="aclass_connected_kitchen_client_ae4595e20a39a6e5181053aa2e6b5c713_cgraph">
+<area shape="rect" title="Starts the connection, gets the kitchen client ID." alt="" coords="5,183,167,223"/>
+<area shape="rect" href="class_network_i_o.html#a0561d5105365d727b08da96496dfe6e0" title="Asynchronously read a data structure from the socket." alt="" coords="635,15,793,41"/>
+<area shape="rect" href="class_connected_kitchen_client.html#a56a8b0afd2fe096cada41dd13f5c5db8" title="Handles kitchen client ID." alt="" coords="215,183,376,223"/>
+<area shape="rect" href="class_connected_kitchen_client.html#ad8ae869a9f13db238a78cb1f67956a8c" title="shared_from_this() for subclass" alt="" coords="633,261,795,301"/>
+<area shape="rect" href="class_kitchen_redirector.html#a8c597eb86bc211d97eb7b77eaaa00c70" title="Let a ConnectedKitchenClient enter the CustomerRedirector." alt="" coords="438,153,571,193"/>
+<area shape="rect" href="class_redirector.html#a53784b001a93ffd3058351799231da8f" title="Gets a raw pointer to menu." alt="" coords="433,218,576,243"/>
+<area shape="rect" href="class_connected_kitchen_client.html#ab912bb1cf580c232222620b918b79635" title="Handles reading a finished item." alt="" coords="424,89,585,129"/>
+<area shape="rect" href="class_connected_client.html#a93d1deb4a214f8f9b8c7a7fe0544a084" title="Write object to client." alt="" coords="429,370,581,395"/>
+<area shape="rect" href="class_kitchen_redirector.html#a1624afc04f40bc521a58e8caf26dc6f3" title="Gets a raw pointer to kitchen to customer queue." alt="" coords="647,77,781,117"/>
+<area shape="rect" href="class_kitchen_redirector.html#a79932a87684f98d3220647961e027b35" title="Let a ConnectedKitchenClient leave the KitchenRedirector." alt="" coords="647,141,781,181"/>
+<area shape="rect" href="class_network_i_o.html#a6d9278695e78a7bef96e51ce131191ff" title="Asynchronously write a data structure to the socket." alt="" coords="635,347,793,373"/>
+<area shape="rect" href="class_connected_client.html#ae5736d568307f63e5f59e9eac556c262" title="Handles completion of writing." alt="" coords="638,397,790,437"/>
+</map>
+</div>
 
 </div>
 </div>

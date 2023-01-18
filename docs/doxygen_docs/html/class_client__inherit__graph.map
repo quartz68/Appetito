@@ -1,0 +1,5 @@
+<map id="Client" name="Client">
+<area shape="rect" id="node1" title="Network client." alt="" coords="97,5,152,31"/>
+<area shape="rect" id="node2" href="$class_customer_client.html" title=" " alt="" coords="5,79,116,104"/>
+<area shape="rect" id="node3" href="$class_kitchen_client.html" title=" " alt="" coords="141,79,239,104"/>
+</map>

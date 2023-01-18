@@ -1,0 +1,4 @@
+<map id="ConnectedKitchenClient::id_handler" name="ConnectedKitchenClient::id_handler">
+<area shape="rect" id="node1" title="Handles kitchen client ID." alt="" coords="215,5,376,45"/>
+<area shape="rect" id="node2" href="$class_connected_kitchen_client.html#ae4595e20a39a6e5181053aa2e6b5c713" title="Starts the connection, gets the kitchen client ID." alt="" coords="5,5,167,45"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="KitchenServer::prod_cons_exec" name="KitchenServer::prod_cons_exec">
+<area shape="rect" id="node1" title=" " alt="" coords="420,47,555,87"/>
+<area shape="rect" id="node2" href="$class_kitchen_server.html#af6d936cf02e2d808ba96681084e0fc25" title="Run the kitchen server." alt="" coords="244,55,372,80"/>
+<area shape="rect" id="node3" href="$class_kitchen_server.html#a6c0ae2d08a8c1027258248cac0559842" title="Constructor." alt="" coords="5,5,196,31"/>
+<area shape="rect" id="node4" href="$class_kitchen_server.html#aa81cb8ae78a96156193d0b8589685268" title="Handles accepting the connection of a new kitchen client." alt="" coords="15,55,186,80"/>
+</map>

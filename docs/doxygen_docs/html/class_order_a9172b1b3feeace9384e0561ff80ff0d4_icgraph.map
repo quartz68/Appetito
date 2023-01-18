@@ -1,0 +1,4 @@
+<map id="Order::get_bill" name="Order::get_bill">
+<area shape="rect" id="node1" title="Calculate the bill and return the total price." alt="" coords="151,5,253,31"/>
+<area shape="rect" id="node2" href="$class_deal.html#aca111bf38efd03b9aafcb303201271cd" title="Calculate the bill and return the total price." alt="" coords="5,5,103,31"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="Order::delete_item" name="Order::delete_item">
+<area shape="rect" id="node1" title="Delete items of Food to the order." alt="" coords="5,5,135,31"/>
+<area shape="rect" id="node2" href="$class_food.html#a2f4dcdcd9269bb0b0c4da6937c2c3dbd" title="Get the ID of the food." alt="" coords="183,5,277,31"/>
+</map>

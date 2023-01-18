@@ -1,0 +1,10 @@
+<map id="CustomerClient::on_connect" name="CustomerClient::on_connect">
+<area shape="rect" id="node1" title="Writes client ID to server." alt="" coords="5,49,139,89"/>
+<area shape="rect" id="node2" href="$class_network_i_o.html#a6d9278695e78a7bef96e51ce131191ff" title="Asynchronously write a data structure to the socket." alt="" coords="190,5,349,31"/>
+<area shape="rect" id="node3" href="$class_client.html#ad02063b8272297ac4631db4640b3a7f6" title="Implementation of closing the client." alt="" coords="820,132,1009,157"/>
+<area shape="rect" id="node5" href="$class_customer_client.html#a56ac577d5c00db47ff70421c29507357" title="Reads menu from server." alt="" coords="187,169,352,209"/>
+<area shape="rect" id="node4" href="$class_network_i_o.html#a83fd8b563206906c7a9eb7427d08810f" title="Get the underlying socket." alt="" coords="1057,132,1187,157"/>
+<area shape="rect" id="node6" href="$class_network_i_o.html#a0561d5105365d727b08da96496dfe6e0" title="Asynchronously read a data structure from the socket." alt="" coords="836,272,993,297"/>
+<area shape="rect" id="node7" href="$class_customer_client.html#a27312546ab568bd913746d53a1aca8ce" title="Reads deal number and displays it." alt="" coords="400,207,543,247"/>
+<area shape="rect" id="node8" href="$class_customer_client.html#a850f948d5f749622c7311f5336b8911e" title="Reads notification and displays it." alt="" coords="591,207,772,247"/>
+</map>

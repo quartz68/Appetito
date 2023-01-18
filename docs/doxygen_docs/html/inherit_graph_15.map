@@ -1,0 +1,5 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_redirector.html" title="The redirector of objects to diffrent clients of the same kind." alt="" coords="5,31,87,56"/>
+<area shape="rect" id="node2" href="$class_customer_redirector.html" title="The specialized redirector for customer clients, which redirects objects to diffrent customer clients..." alt="" coords="135,5,272,31"/>
+<area shape="rect" id="node3" href="$class_kitchen_redirector.html" title="The specialized redirector for kitchen clients, which redirects objects to diffrent kitchen clients." alt="" coords="141,55,266,80"/>
+</map>

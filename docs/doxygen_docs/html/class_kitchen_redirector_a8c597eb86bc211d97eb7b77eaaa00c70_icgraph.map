@@ -1,0 +1,5 @@
+<map id="KitchenRedirector::enter" name="KitchenRedirector::enter">
+<area shape="rect" id="node1" title="Let a ConnectedKitchenClient enter the CustomerRedirector." alt="" coords="424,5,557,45"/>
+<area shape="rect" id="node2" href="$class_connected_kitchen_client.html#a56a8b0afd2fe096cada41dd13f5c5db8" title="Handles kitchen client ID." alt="" coords="215,5,376,45"/>
+<area shape="rect" id="node3" href="$class_connected_kitchen_client.html#ae4595e20a39a6e5181053aa2e6b5c713" title="Starts the connection, gets the kitchen client ID." alt="" coords="5,5,167,45"/>
+</map>

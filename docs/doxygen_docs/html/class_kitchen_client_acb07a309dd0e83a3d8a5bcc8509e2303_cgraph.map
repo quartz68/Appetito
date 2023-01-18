@@ -1,0 +1,13 @@
+<map id="KitchenClient::on_connect" name="KitchenClient::on_connect">
+<area shape="rect" id="node1" title="Writes client ID to server." alt="" coords="5,56,180,81"/>
+<area shape="rect" id="node2" href="$class_network_i_o.html#a6d9278695e78a7bef96e51ce131191ff" title="Asynchronously write a data structure to the socket." alt="" coords="228,5,387,31"/>
+<area shape="rect" id="node3" href="$class_client.html#ad02063b8272297ac4631db4640b3a7f6" title="Implementation of closing the client." alt="" coords="816,132,1005,157"/>
+<area shape="rect" id="node5" href="$class_kitchen_client.html#a6bf5059d0b4742a688241188cda605cd" title="Reads menu from server." alt="" coords="231,153,384,193"/>
+<area shape="rect" id="node4" href="$class_network_i_o.html#a83fd8b563206906c7a9eb7427d08810f" title="Get the underlying socket." alt="" coords="1053,132,1183,157"/>
+<area shape="rect" id="node6" href="$class_network_i_o.html#a0561d5105365d727b08da96496dfe6e0" title="Asynchronously read a data structure from the socket." alt="" coords="832,347,989,372"/>
+<area shape="rect" id="node7" href="$class_kitchen_client.html#a9b1997f8e983bf53d3e4bc382babe651" title="Prints menu." alt="" coords="435,201,588,241"/>
+<area shape="rect" id="node8" href="$class_menu.html#a15ae4218d7e25f13a463cb3792586fb3" title=" " alt="" coords="639,208,765,233"/>
+<area shape="rect" id="node11" href="$class_kitchen_client.html#a8d1d51bb744076d30a3dbdd4bb18375d" title="Reads item and displays it." alt="" coords="636,282,768,322"/>
+<area shape="rect" id="node9" href="$protocol_8hpp.html#a7b8f3c30e58725a5dd0b167ef51c94ae" title=" " alt="" coords="871,281,951,307"/>
+<area shape="rect" id="node10" href="$protocol_8hpp.html#aa563022cd6d3e2abdf7ec1ab99619718" title=" " alt="" coords="869,224,952,249"/>
+</map>

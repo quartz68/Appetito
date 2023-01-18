@@ -1,0 +1,6 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" title=" " alt="" coords="5,23,137,63"/>
+<area shape="rect" id="node2" href="$class_connected_client.html" title="The client connected to this server." alt="" coords="185,31,303,56"/>
+<area shape="rect" id="node3" href="$class_connected_customer_client.html" title="The customer client connected to this server." alt="" coords="351,5,524,31"/>
+<area shape="rect" id="node4" href="$class_connected_kitchen_client.html" title="The kitchen client connected to this server." alt="" coords="357,55,518,80"/>
+</map>

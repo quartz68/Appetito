@@ -1,0 +1,11 @@
+<map id="Menu::print_foods" name="Menu::print_foods">
+<area shape="rect" id="node1" title=" " alt="" coords="863,70,988,95"/>
+<area shape="rect" id="node2" href="$class_kitchen_client.html#a9b1997f8e983bf53d3e4bc382babe651" title="Prints menu." alt="" coords="661,5,815,45"/>
+<area shape="rect" id="node6" href="$client__customer_8cpp.html#aa94990143ade2d1e26b89c5b6885a335" title=" " alt="" coords="491,70,582,95"/>
+<area shape="rect" id="node8" href="$class_menu.html#aa6ff784314cc009478562d9ab7a0af34" title=" " alt="" coords="695,121,781,146"/>
+<area shape="rect" id="node3" href="$class_kitchen_client.html#a6bf5059d0b4742a688241188cda605cd" title="Reads menu from server." alt="" coords="460,5,613,45"/>
+<area shape="rect" id="node4" href="$class_kitchen_client.html#acb07a309dd0e83a3d8a5bcc8509e2303" title="Writes client ID to server." alt="" coords="237,13,412,38"/>
+<area shape="rect" id="node5" href="$class_kitchen_client.html#a2e4ccdf4e8aea99f1b37d7d1f91afe37" title="Construct a KitchenClient object from client ID, io_context, TCP endpoint and vector of items." alt="" coords="5,13,189,38"/>
+<area shape="rect" id="node7" href="$client__customer_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97" title=" " alt="" coords="299,94,350,119"/>
+<area shape="rect" id="node9" href="$client__customer_8cpp.html#a1c8b2a665b6c51c80641c29bd7bd3e08" title=" " alt="" coords="493,119,580,145"/>
+</map>

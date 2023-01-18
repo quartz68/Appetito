@@ -1,0 +1,4 @@
+<map id="Food::get_type" name="Food::get_type">
+<area shape="rect" id="node1" title="Get the type of the food." alt="" coords="252,5,361,31"/>
+<area shape="rect" id="node2" href="$struct_food_container.html#a563a5e54d196fcde61c6f7bf1af3f5fa" title="Construct a FoodContainer object from a input file stream." alt="" coords="5,5,204,31"/>
+</map>

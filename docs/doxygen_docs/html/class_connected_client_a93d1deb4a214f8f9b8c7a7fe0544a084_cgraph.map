@@ -1,0 +1,5 @@
+<map id="ConnectedClient::write" name="ConnectedClient::write">
+<area shape="rect" id="node1" title="Write object to client." alt="" coords="5,35,157,60"/>
+<area shape="rect" id="node2" href="$class_network_i_o.html#a6d9278695e78a7bef96e51ce131191ff" title="Asynchronously write a data structure to the socket." alt="" coords="205,5,364,31"/>
+<area shape="rect" id="node3" href="$class_connected_client.html#ae5736d568307f63e5f59e9eac556c262" title="Handles completion of writing." alt="" coords="209,55,361,95"/>
+</map>

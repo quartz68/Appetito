@@ -1,0 +1,5 @@
+<map id="CustomerRedirector::enter" name="CustomerRedirector::enter">
+<area shape="rect" id="node1" title="Let a ConnectedCustomerClient enter the CustomerRedirector." alt="" coords="448,5,585,45"/>
+<area shape="rect" id="node2" href="$class_connected_customer_client.html#a72b040f4edffb95240a4da9198959c82" title="Handles reading customer client ID, writing menu to client." alt="" coords="227,5,400,45"/>
+<area shape="rect" id="node3" href="$class_connected_customer_client.html#a325b16e3e112cf354ea63ba4e0d3cf22" title="Starts the connection, gets the customer client ID." alt="" coords="5,5,179,45"/>
+</map>

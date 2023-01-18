@@ -1,0 +1,11 @@
+<map id="KitchenClient::connect_handler" name="KitchenClient::connect_handler">
+<area shape="rect" id="node1" title="Reads menu from server." alt="" coords="5,109,159,149"/>
+<area shape="rect" id="node2" href="$class_network_i_o.html#a0561d5105365d727b08da96496dfe6e0" title="Asynchronously read a data structure from the socket." alt="" coords="604,5,761,31"/>
+<area shape="rect" id="node3" href="$class_client.html#ad02063b8272297ac4631db4640b3a7f6" title="Implementation of closing the client." alt="" coords="588,195,777,220"/>
+<area shape="rect" id="node5" href="$class_kitchen_client.html#a9b1997f8e983bf53d3e4bc382babe651" title="Prints menu." alt="" coords="207,109,360,149"/>
+<area shape="rect" id="node4" href="$class_network_i_o.html#a83fd8b563206906c7a9eb7427d08810f" title="Get the underlying socket." alt="" coords="825,195,955,220"/>
+<area shape="rect" id="node6" href="$class_menu.html#a15ae4218d7e25f13a463cb3792586fb3" title=" " alt="" coords="411,144,537,169"/>
+<area shape="rect" id="node9" href="$class_kitchen_client.html#a8d1d51bb744076d30a3dbdd4bb18375d" title="Reads item and displays it." alt="" coords="408,79,540,119"/>
+<area shape="rect" id="node7" href="$protocol_8hpp.html#a7b8f3c30e58725a5dd0b167ef51c94ae" title=" " alt="" coords="643,91,723,116"/>
+<area shape="rect" id="node8" href="$protocol_8hpp.html#aa563022cd6d3e2abdf7ec1ab99619718" title=" " alt="" coords="641,143,724,168"/>
+</map>

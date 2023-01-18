@@ -108,12 +108,35 @@ $(document).ready(function(){initNavTree('class_connected_customer_client.html',
 <div class="dynheader">
 Inheritance diagram for ConnectedCustomerClient:</div>
 <div class="dyncontent">
- <div class="center">
-  <img src="class_connected_customer_client.png" usemap="#ConnectedCustomerClient_map" alt=""/>
-  <map id="ConnectedCustomerClient_map" name="ConnectedCustomerClient_map">
-<area href="class_connected_client.html" title="The client connected to this server." alt="ConnectedClient" shape="rect" coords="0,56,293,80"/>
-  </map>
-</div></div>
+<div class="center"><img src="class_connected_customer_client__inherit__graph.png" border="0" usemap="#a_connected_customer_client_inherit__map" alt="Inheritance graph"/></div>
+<map name="a_connected_customer_client_inherit__map" id="a_connected_customer_client_inherit__map">
+<area shape="rect" title="The customer client connected to this server." alt="" coords="19,167,193,192"/>
+<area shape="rect" href="class_connected_client.html" title="The client connected to this server." alt="" coords="47,93,165,119"/>
+<area shape="rect" title=" " alt="" coords="5,5,207,45"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for ConnectedCustomerClient:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_connected_customer_client__coll__graph.png" border="0" usemap="#a_connected_customer_client_coll__map" alt="Collaboration graph"/></div>
+<map name="a_connected_customer_client_coll__map" id="a_connected_customer_client_coll__map">
+<area shape="rect" title="The customer client connected to this server." alt="" coords="860,139,1033,165"/>
+<area shape="rect" href="class_connected_client.html" title="The client connected to this server." alt="" coords="611,41,729,66"/>
+<area shape="rect" title=" " alt="" coords="251,5,452,45"/>
+<area shape="rect" href="class_network_i_o.html" title="Handles TCP/IP network input/output." alt="" coords="310,70,393,95"/>
+<area shape="rect" href="class_order.html" title="Order." alt="" coords="643,90,697,115"/>
+<area shape="rect" href="class_table.html" title="Table." alt="" coords="643,139,697,165"/>
+<area shape="rect" href="class_deal.html" title="Deal." alt="" coords="646,189,694,214"/>
+<area shape="rect" href="class_customer_redirector.html" title="The specialized redirector for customer clients, which redirects objects to diffrent customer clients..." alt="" coords="601,238,739,263"/>
+<area shape="rect" href="class_redirector.html" title="The redirector of objects to diffrent clients of the same kind." alt="" coords="311,189,392,214"/>
+<area shape="rect" href="class_menu.html" title=" " alt="" coords="32,114,87,139"/>
+<area shape="rect" href="struct_food_container.html" title="Container that holds FoodType and Food in two maps." alt="" coords="6,163,113,189"/>
+<area shape="rect" href="struct_table_container.html" title="Container that holds TableType, Table and Location in three maps." alt="" coords="5,213,113,238"/>
+<area shape="rect" href="struct_deal_container.html" title="Container of Deal and corresponding container of bool." alt="" coords="8,262,111,287"/>
+<area shape="rect" href="struct_customer_to_kitchen_queue.html" title=" " alt="" coords="264,238,439,263"/>
+<area shape="rect" href="struct_kitchen_to_customer_queue.html" title=" " alt="" coords="264,287,439,313"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -249,6 +272,44 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Handles reading customer client ID, writing menu to client. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_connected_customer_client_a72b040f4edffb95240a4da9198959c82_cgraph.png" border="0" usemap="#aclass_connected_customer_client_a72b040f4edffb95240a4da9198959c82_cgraph" alt=""/></div>
+<map name="aclass_connected_customer_client_a72b040f4edffb95240a4da9198959c82_cgraph" id="aclass_connected_customer_client_a72b040f4edffb95240a4da9198959c82_cgraph">
+<area shape="rect" title="Handles reading customer client ID, writing menu to client." alt="" coords="5,290,179,330"/>
+<area shape="rect" href="class_network_i_o.html#a0561d5105365d727b08da96496dfe6e0" title="Asynchronously read a data structure from the socket." alt="" coords="462,5,619,31"/>
+<area shape="rect" href="class_customer_redirector.html#a46302133051b2d34ab92205ab4cc06af" title="Let a ConnectedCustomerClient enter the CustomerRedirector." alt="" coords="245,426,382,466"/>
+<area shape="rect" href="class_redirector.html#a53784b001a93ffd3058351799231da8f" title="Gets a raw pointer to menu." alt="" coords="469,55,612,80"/>
+<area shape="rect" href="class_connected_customer_client.html#acfa89feb4a509a28f7846a93aa65e7ea" title="Handles reading a Deal, saving Deal to vector deals_, writing deal number to client." alt="" coords="227,261,400,301"/>
+<area shape="rect" href="class_connected_customer_client.html#ab89b322c5c0534db6ca084895a7b6c52" title="shared_from_this() for subclass" alt="" coords="454,482,627,522"/>
+<area shape="rect" href="class_connected_client.html#a93d1deb4a214f8f9b8c7a7fe0544a084" title="Write object to client." alt="" coords="465,547,617,572"/>
+<area shape="rect" href="class_customer_redirector.html#ad03b58d4d3cf8429fe3091dd76eb3a5a" title="Gets a raw pointer to customer to kitchen queue." alt="" coords="472,367,609,407"/>
+<area shape="rect" href="class_redirector.html#ab08a57b35af50f8300fa14366b83c51d" title="Gets a raw pointer to deal counter." alt="" coords="448,432,633,457"/>
+<area shape="rect" href="class_redirector.html#a4a88a186ef1e9d24c6ad4c7a26846f1a" title="Gets a raw pointer to deals map." alt="" coords="469,104,612,129"/>
+<area shape="rect" href="class_deal.html#a59c6c98167b303739433ac4e041f7f5d" title=" " alt="" coords="476,153,605,179"/>
+<area shape="rect" href="class_customer_redirector.html#aeb0e9c1cd011b4c40ffd4481b469b757" title="Let a ConnectedCustomerClient leave the CustomerRedirector." alt="" coords="472,203,609,243"/>
+<area shape="rect" href="class_deal.html#a95afdeebb28d890702a5f598dc590aa6" title="Print the deal." alt="" coords="500,268,581,293"/>
+<area shape="rect" href="class_deal.html#a37c8f449d406f1c4f5a98ee117f5a09c" title="Set the menu." alt="" coords="473,317,608,343"/>
+<area shape="rect" href="class_order.html#af189ba4b9776308a48a1bfa6ff57d268" title=" " alt="" coords="693,153,828,179"/>
+<area shape="rect" href="class_order.html#adf058dc273a7638a685ad3051f10b676" title="Print the order." alt="" coords="717,268,804,293"/>
+<area shape="rect" href="class_order.html#a56f13d3cce881d11f7a3114be282fe15" title="Get the string of price for output." alt="" coords="888,219,1025,244"/>
+<area shape="rect" href="protocol_8hpp.html#a7b8f3c30e58725a5dd0b167ef51c94ae" title=" " alt="" coords="917,268,997,293"/>
+<area shape="rect" href="protocol_8hpp.html#aa563022cd6d3e2abdf7ec1ab99619718" title=" " alt="" coords="915,317,998,343"/>
+<area shape="rect" href="class_order.html#a428881a0459bd6868716a6e0bbe2b170" title="Set the menu." alt="" coords="690,317,831,343"/>
+<area shape="rect" href="class_network_i_o.html#a6d9278695e78a7bef96e51ce131191ff" title="Asynchronously write a data structure to the socket." alt="" coords="681,575,840,600"/>
+<area shape="rect" href="class_connected_client.html#ae5736d568307f63e5f59e9eac556c262" title="Handles completion of writing." alt="" coords="685,510,837,550"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_connected_customer_client_a72b040f4edffb95240a4da9198959c82_icgraph.png" border="0" usemap="#aclass_connected_customer_client_a72b040f4edffb95240a4da9198959c82_icgraph" alt=""/></div>
+<map name="aclass_connected_customer_client_a72b040f4edffb95240a4da9198959c82_icgraph" id="aclass_connected_customer_client_a72b040f4edffb95240a4da9198959c82_icgraph">
+<area shape="rect" title="Handles reading customer client ID, writing menu to client." alt="" coords="227,5,400,45"/>
+<area shape="rect" href="class_connected_customer_client.html#a325b16e3e112cf354ea63ba4e0d3cf22" title="Starts the connection, gets the customer client ID." alt="" coords="5,5,179,45"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -277,6 +338,16 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Handles . </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_connected_customer_client_a9214ca4bb84efb0e696e38af324e3958_cgraph.png" border="0" usemap="#aclass_connected_customer_client_a9214ca4bb84efb0e696e38af324e3958_cgraph" alt=""/></div>
+<map name="aclass_connected_customer_client_a9214ca4bb84efb0e696e38af324e3958_cgraph" id="aclass_connected_customer_client_a9214ca4bb84efb0e696e38af324e3958_cgraph">
+<area shape="rect" title="Handles ." alt="" coords="5,37,179,77"/>
+<area shape="rect" href="class_customer_redirector.html#aeb0e9c1cd011b4c40ffd4481b469b757" title="Let a ConnectedCustomerClient leave the CustomerRedirector." alt="" coords="245,5,382,45"/>
+<area shape="rect" href="class_connected_customer_client.html#ab89b322c5c0534db6ca084895a7b6c52" title="shared_from_this() for subclass" alt="" coords="227,69,400,109"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -305,6 +376,43 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Handles reading a <a class="el" href="class_deal.html" title="Deal.">Deal</a>, saving <a class="el" href="class_deal.html" title="Deal.">Deal</a> to vector deals_, writing deal number to client. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_connected_customer_client_acfa89feb4a509a28f7846a93aa65e7ea_cgraph.png" border="0" usemap="#aclass_connected_customer_client_acfa89feb4a509a28f7846a93aa65e7ea_cgraph" alt=""/></div>
+<map name="aclass_connected_customer_client_acfa89feb4a509a28f7846a93aa65e7ea_cgraph" id="aclass_connected_customer_client_acfa89feb4a509a28f7846a93aa65e7ea_cgraph">
+<area shape="rect" title="Handles reading a Deal, saving Deal to vector deals_, writing deal number to client." alt="" coords="5,269,179,309"/>
+<area shape="rect" href="class_network_i_o.html#a0561d5105365d727b08da96496dfe6e0" title="Asynchronously read a data structure from the socket." alt="" coords="241,5,398,31"/>
+<area shape="rect" href="class_customer_redirector.html#ad03b58d4d3cf8429fe3091dd76eb3a5a" title="Gets a raw pointer to customer to kitchen queue." alt="" coords="251,55,388,95"/>
+<area shape="rect" href="class_redirector.html#ab08a57b35af50f8300fa14366b83c51d" title="Gets a raw pointer to deal counter." alt="" coords="227,120,412,145"/>
+<area shape="rect" href="class_redirector.html#a4a88a186ef1e9d24c6ad4c7a26846f1a" title="Gets a raw pointer to deals map." alt="" coords="248,169,391,195"/>
+<area shape="rect" href="class_deal.html#a59c6c98167b303739433ac4e041f7f5d" title=" " alt="" coords="255,219,384,244"/>
+<area shape="rect" href="class_customer_redirector.html#aeb0e9c1cd011b4c40ffd4481b469b757" title="Let a ConnectedCustomerClient leave the CustomerRedirector." alt="" coords="251,269,388,309"/>
+<area shape="rect" href="class_redirector.html#a53784b001a93ffd3058351799231da8f" title="Gets a raw pointer to menu." alt="" coords="248,333,391,359"/>
+<area shape="rect" href="class_deal.html#a95afdeebb28d890702a5f598dc590aa6" title="Print the deal." alt="" coords="279,383,360,408"/>
+<area shape="rect" href="class_deal.html#a37c8f449d406f1c4f5a98ee117f5a09c" title="Set the menu." alt="" coords="252,432,387,457"/>
+<area shape="rect" href="class_connected_customer_client.html#ab89b322c5c0534db6ca084895a7b6c52" title="shared_from_this() for subclass" alt="" coords="233,482,406,522"/>
+<area shape="rect" href="class_connected_client.html#a93d1deb4a214f8f9b8c7a7fe0544a084" title="Write object to client." alt="" coords="243,547,395,572"/>
+<area shape="rect" href="class_order.html#af189ba4b9776308a48a1bfa6ff57d268" title=" " alt="" coords="472,219,607,244"/>
+<area shape="rect" href="class_order.html#adf058dc273a7638a685ad3051f10b676" title="Print the order." alt="" coords="496,383,583,408"/>
+<area shape="rect" href="class_order.html#a56f13d3cce881d11f7a3114be282fe15" title="Get the string of price for output." alt="" coords="667,333,804,359"/>
+<area shape="rect" href="protocol_8hpp.html#a7b8f3c30e58725a5dd0b167ef51c94ae" title=" " alt="" coords="695,383,775,408"/>
+<area shape="rect" href="protocol_8hpp.html#aa563022cd6d3e2abdf7ec1ab99619718" title=" " alt="" coords="694,432,777,457"/>
+<area shape="rect" href="class_order.html#a428881a0459bd6868716a6e0bbe2b170" title="Set the menu." alt="" coords="469,432,610,457"/>
+<area shape="rect" href="class_network_i_o.html#a6d9278695e78a7bef96e51ce131191ff" title="Asynchronously write a data structure to the socket." alt="" coords="460,517,619,543"/>
+<area shape="rect" href="class_connected_client.html#ae5736d568307f63e5f59e9eac556c262" title="Handles completion of writing." alt="" coords="463,567,615,607"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_connected_customer_client_acfa89feb4a509a28f7846a93aa65e7ea_icgraph.png" border="0" usemap="#aclass_connected_customer_client_acfa89feb4a509a28f7846a93aa65e7ea_icgraph" alt=""/></div>
+<map name="aclass_connected_customer_client_acfa89feb4a509a28f7846a93aa65e7ea_icgraph" id="aclass_connected_customer_client_acfa89feb4a509a28f7846a93aa65e7ea_icgraph">
+<area shape="rect" title="Handles reading a Deal, saving Deal to vector deals_, writing deal number to client." alt="" coords="448,29,621,69"/>
+<area shape="rect" href="class_connected_customer_client.html#a72b040f4edffb95240a4da9198959c82" title="Handles reading customer client ID, writing menu to client." alt="" coords="227,29,400,69"/>
+<area shape="rect" href="class_connected_customer_client.html#a325b16e3e112cf354ea63ba4e0d3cf22" title="Starts the connection, gets the customer client ID." alt="" coords="5,29,179,69"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -333,6 +441,18 @@ Protected Attributes</h2></td></tr>
 
 <p><a class="el" href="class_connected_customer_client.html#ab89b322c5c0534db6ca084895a7b6c52" title="shared_from_this() for subclass">shared_from_this()</a> for subclass </p>
 <dl class="section return"><dt>Returns</dt><dd>Casted shared_ptr of <a class="el" href="class_connected_customer_client.html" title="The customer client connected to this server.">ConnectedCustomerClient</a> from ConnectedClient::shared_from_this(). </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_connected_customer_client_ab89b322c5c0534db6ca084895a7b6c52_icgraph.png" border="0" usemap="#aclass_connected_customer_client_ab89b322c5c0534db6ca084895a7b6c52_icgraph" alt=""/></div>
+<map name="aclass_connected_customer_client_ab89b322c5c0534db6ca084895a7b6c52_icgraph" id="aclass_connected_customer_client_ab89b322c5c0534db6ca084895a7b6c52_icgraph">
+<area shape="rect" title="shared_from_this() for subclass" alt="" coords="669,56,843,96"/>
+<area shape="rect" href="class_connected_customer_client.html#a72b040f4edffb95240a4da9198959c82" title="Handles reading customer client ID, writing menu to client." alt="" coords="227,33,400,73"/>
+<area shape="rect" href="class_connected_customer_client.html#a325b16e3e112cf354ea63ba4e0d3cf22" title="Starts the connection, gets the customer client ID." alt="" coords="5,5,179,45"/>
+<area shape="rect" href="class_connected_customer_client.html#a9214ca4bb84efb0e696e38af324e3958" title="Handles ." alt="" coords="448,84,621,124"/>
+<area shape="rect" href="class_connected_customer_client.html#acfa89feb4a509a28f7846a93aa65e7ea" title="Handles reading a Deal, saving Deal to vector deals_, writing deal number to client." alt="" coords="448,172,621,212"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -352,6 +472,36 @@ Protected Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Starts the connection, gets the customer client ID. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_connected_customer_client_a325b16e3e112cf354ea63ba4e0d3cf22_cgraph.png" border="0" usemap="#aclass_connected_customer_client_a325b16e3e112cf354ea63ba4e0d3cf22_cgraph" alt=""/></div>
+<map name="aclass_connected_customer_client_a325b16e3e112cf354ea63ba4e0d3cf22_cgraph" id="aclass_connected_customer_client_a325b16e3e112cf354ea63ba4e0d3cf22_cgraph">
+<area shape="rect" title="Starts the connection, gets the customer client ID." alt="" coords="5,290,179,330"/>
+<area shape="rect" href="class_network_i_o.html#a0561d5105365d727b08da96496dfe6e0" title="Asynchronously read a data structure from the socket." alt="" coords="683,5,841,31"/>
+<area shape="rect" href="class_connected_customer_client.html#a72b040f4edffb95240a4da9198959c82" title="Handles reading customer client ID, writing menu to client." alt="" coords="227,290,400,330"/>
+<area shape="rect" href="class_connected_customer_client.html#ab89b322c5c0534db6ca084895a7b6c52" title="shared_from_this() for subclass" alt="" coords="675,531,849,571"/>
+<area shape="rect" href="class_customer_redirector.html#a46302133051b2d34ab92205ab4cc06af" title="Let a ConnectedCustomerClient enter the CustomerRedirector." alt="" coords="466,426,603,466"/>
+<area shape="rect" href="class_redirector.html#a53784b001a93ffd3058351799231da8f" title="Gets a raw pointer to menu." alt="" coords="691,55,833,80"/>
+<area shape="rect" href="class_connected_customer_client.html#acfa89feb4a509a28f7846a93aa65e7ea" title="Handles reading a Deal, saving Deal to vector deals_, writing deal number to client." alt="" coords="448,261,621,301"/>
+<area shape="rect" href="class_connected_client.html#a93d1deb4a214f8f9b8c7a7fe0544a084" title="Write object to client." alt="" coords="686,481,838,507"/>
+<area shape="rect" href="class_customer_redirector.html#ad03b58d4d3cf8429fe3091dd76eb3a5a" title="Gets a raw pointer to customer to kitchen queue." alt="" coords="693,318,831,358"/>
+<area shape="rect" href="class_redirector.html#ab08a57b35af50f8300fa14366b83c51d" title="Gets a raw pointer to deal counter." alt="" coords="669,383,855,408"/>
+<area shape="rect" href="class_redirector.html#a4a88a186ef1e9d24c6ad4c7a26846f1a" title="Gets a raw pointer to deals map." alt="" coords="691,432,833,457"/>
+<area shape="rect" href="class_deal.html#a59c6c98167b303739433ac4e041f7f5d" title=" " alt="" coords="697,104,827,129"/>
+<area shape="rect" href="class_customer_redirector.html#aeb0e9c1cd011b4c40ffd4481b469b757" title="Let a ConnectedCustomerClient leave the CustomerRedirector." alt="" coords="693,154,831,194"/>
+<area shape="rect" href="class_deal.html#a95afdeebb28d890702a5f598dc590aa6" title="Print the deal." alt="" coords="721,219,803,244"/>
+<area shape="rect" href="class_deal.html#a37c8f449d406f1c4f5a98ee117f5a09c" title="Set the menu." alt="" coords="695,268,829,293"/>
+<area shape="rect" href="class_order.html#af189ba4b9776308a48a1bfa6ff57d268" title=" " alt="" coords="915,104,1049,129"/>
+<area shape="rect" href="class_order.html#adf058dc273a7638a685ad3051f10b676" title="Print the order." alt="" coords="939,219,1025,244"/>
+<area shape="rect" href="class_order.html#a56f13d3cce881d11f7a3114be282fe15" title="Get the string of price for output." alt="" coords="1109,169,1247,195"/>
+<area shape="rect" href="protocol_8hpp.html#a7b8f3c30e58725a5dd0b167ef51c94ae" title=" " alt="" coords="1138,219,1218,244"/>
+<area shape="rect" href="protocol_8hpp.html#aa563022cd6d3e2abdf7ec1ab99619718" title=" " alt="" coords="1137,268,1219,293"/>
+<area shape="rect" href="class_order.html#a428881a0459bd6868716a6e0bbe2b170" title="Set the menu." alt="" coords="911,268,1053,293"/>
+<area shape="rect" href="class_network_i_o.html#a6d9278695e78a7bef96e51ce131191ff" title="Asynchronously write a data structure to the socket." alt="" coords="903,509,1061,535"/>
+<area shape="rect" href="class_connected_client.html#ae5736d568307f63e5f59e9eac556c262" title="Handles completion of writing." alt="" coords="906,445,1058,485"/>
+</map>
+</div>
 
 </div>
 </div>
