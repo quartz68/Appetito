@@ -1,6 +1,6 @@
 # 🍜 吃了没 Appetito
 
-Restaurant order management system based on C++ and Qt (WIP)
+Restaurant order management system based on C++ (WIP)
 
 ---
 
